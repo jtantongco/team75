@@ -17,11 +17,11 @@
 development:
   adapter: mysql
   encoding: utf8
-  reconnect: false
-  database: team75_project
+  reconnect: true
+  database: team75_development
   pool: 5
   host: team75.heliohost.org
-  username: team75_team75
+  username: team75_db
   password: team75
   socket: /tmp/mysql.sock
 
@@ -35,7 +35,7 @@ test:
   database: team75_test
   pool: 5
   host: team75.heliohost.org
-  username: team75_team75
+  username: team75_db
   password: team75
   socket: /tmp/mysql.sock
 
@@ -46,6 +46,6 @@ production:
   database: team75_production
   pool: 5
   host: team75.heliohost.org
-  username: team75_team75
+  username: team75_db
   password: team75
   socket: /tmp/mysql.sock
