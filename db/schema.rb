@@ -65,6 +65,14 @@ ActiveRecord::Schema.define(:version => 20100222234907) do
     t.integer "Hours",       :null => false
   end
 
+  create_table "Student", :primary_key => "v_id", :force => true do |t|
+    t.integer "student_id"
+    t.string  "faculty"
+    t.string  "program"
+    t.integer "year"
+    t.date    "grad_date"
+  end
+
   create_table "Supervises", :primary_key => "Pid", :force => true do |t|
     t.integer "VSid",      :null => false
     t.date    "StartDate", :null => false
@@ -85,6 +93,44 @@ ActiveRecord::Schema.define(:version => 20100222234907) do
 
   add_index "VolunteerSupervisor", ["loginName"], :name => "loginName", :unique => true
 
+  create_table "orientation", :primary_key => "o_id", :force => true do |t|
+    t.date   "start"
+    t.date   "end"
+    t.string "name"
+    t.string "description"
+    t.string "location"
+  end
+
+  create_table "orientation_project", :id => false, :force => true do |t|
+    t.integer "p_id",     :default => 0, :null => false
+    t.integer "o_id",     :default => 0, :null => false
+    t.integer "priority"
+  end
+
+  add_index "orientation_project", ["o_id"], :name => "o_id"
+
+  create_table "orientation_registration", :id => false, :force => true do |t|
+    t.integer "v_id",     :default => 0, :null => false
+    t.integer "o_id",     :default => 0, :null => false
+    t.boolean "attended"
+  end
+
+  add_index "orientation_registration", ["o_id"], :name => "o_id"
+
+  create_table "self_report", :primary_key => "r_id", :force => true do |t|
+    t.integer "v_id"
+    t.integer "p_id"
+    t.integer "s_id"
+    t.date    "date_reported"
+    t.date    "start"
+    t.date    "end"
+    t.boolean "verified"
+  end
+
+  add_index "self_report", ["p_id"], :name => "p_id"
+  add_index "self_report", ["s_id"], :name => "s_id"
+  add_index "self_report", ["v_id"], :name => "v_id"
+
   create_table "volunteers", :primary_key => "v_id", :force => true do |t|
     t.string   "first_name", :null => false
     t.string   "last_name",  :null => false
@@ -93,23 +139,5 @@ ActiveRecord::Schema.define(:version => 20100222234907) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-  
-  create_table "student", :primary_key => "v_id", :force => true do |t|
-    t.integer  "student_id", :null => false
-    t.integer  "year",       :null => false
-    t.string   "faculty",    :null => false
-    t.string   "program",    :null => false
-	t.date	   "grad_date"   :null => false
-  end
-  
-  add_index "student", ["v_id"], :name => "v_id"
-  
-  create_table "orientation", :primary_key => "o_id", :force => true do |t|
-    t.string   "name",           :null => false
-    t.string   "description",    :null => false
-    t.string   "location",       :null => false
-	t.date	   "start"           :null => false
-	t.date	   "end"             :null => false
-  end
-  
+
 end
