@@ -43,3 +43,449 @@ Migrating to CreateVolunteers (20100222234907)
   [4;35;1mSQL (27.1ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
   [4;36;1mSQL (27.1ms)[0m   [0;1mdescribe `volunteers`[0m
   [4;35;1mSQL (28.3ms)[0m   [0mSHOW KEYS FROM `volunteers`[0m
+/!\ FAILSAFE /!\  Mon Feb 22 16:43:58 -0800 2010
+  Status: 500 Internal Server Error
+  no such file to load -- mysql
+    c:/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    c:/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    c:/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:156:in `require'
+    c:/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    c:/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:156:in `require'
+    c:/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/kernel/requires.rb:7:in `require_library_or_gem'
+    c:/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/kernel/reporting.rb:11:in `silence_warnings'
+    c:/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/kernel/requires.rb:5:in `require_library_or_gem'
+    c:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:61:in `mysql_connection'
+    c:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `send'
+    c:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    c:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    c:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `checkout'
+    c:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    c:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `checkout'
+    c:/Ruby/lib/ruby/1.8/monitor.rb:242:in `synchronize'
+    c:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    c:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    c:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    c:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    c:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    c:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+    c:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+    c:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    c:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    c:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+    c:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+    c:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+    c:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+    c:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+    c:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    c:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+    c:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    c:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+    c:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+    c:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+    c:/Ruby/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+    c:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+    c:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+    c:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+    c:/Ruby/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+    c:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+    c:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/webrick.rb:50:in `service'
+    c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    c:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/webrick.rb:14:in `run'
+    c:/Ruby/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/commands/server.rb:111
+    c:/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    c:/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+/!\ FAILSAFE /!\  Mon Feb 22 16:44:04 -0800 2010
+  Status: 500 Internal Server Error
+  no such file to load -- mysql
+    c:/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    c:/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    c:/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:156:in `require'
+    c:/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    c:/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:156:in `require'
+    c:/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/kernel/requires.rb:7:in `require_library_or_gem'
+    c:/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/kernel/reporting.rb:11:in `silence_warnings'
+    c:/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/kernel/requires.rb:5:in `require_library_or_gem'
+    c:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:61:in `mysql_connection'
+    c:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `send'
+    c:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    c:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    c:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `checkout'
+    c:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    c:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `checkout'
+    c:/Ruby/lib/ruby/1.8/monitor.rb:242:in `synchronize'
+    c:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    c:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    c:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    c:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    c:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    c:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+    c:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+    c:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    c:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    c:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+    c:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+    c:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+    c:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+    c:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+    c:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    c:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+    c:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    c:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+    c:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+    c:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+    c:/Ruby/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+    c:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+    c:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+    c:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+    c:/Ruby/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+    c:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+    c:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/webrick.rb:50:in `service'
+    c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    c:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/webrick.rb:14:in `run'
+    c:/Ruby/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/commands/server.rb:111
+    c:/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    c:/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+  [4;36;1mSQL (0.0ms)[0m   [0;1mNoMethodError: undefined method `ord' for 0:Fixnum: SET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mNoMethodError: undefined method `ord' for 0:Fixnum: SET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mNoMethodError: undefined method `ord' for 0:Fixnum: SET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mNoMethodError: undefined method `ord' for 0:Fixnum: SET NAMES 'utf8'[0m
+  [4;36;1mSQL (27.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (71.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (27.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (28.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateVolunteers (20100222234907)
+  [4;36;1mSQL (27.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (27.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (29.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (28.0ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+  [4;36;1mSQL (28.0ms)[0m   [0;1mdescribe `volunteers`[0m
+  [4;35;1mSQL (28.0ms)[0m   [0mSHOW KEYS FROM `volunteers`[0m
+  [4;36;1mSQL (27.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (31.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (34.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (27.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateVolunteers (20100222234907)
+  [4;36;1mSQL (27.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (27.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (27.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (28.0ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+  [4;36;1mSQL (28.0ms)[0m   [0;1mdescribe `volunteers`[0m
+  [4;35;1mSQL (27.0ms)[0m   [0mSHOW KEYS FROM `volunteers`[0m
+  [4;36;1mSQL (107.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (107.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#index (for 127.0.0.1 at 2010-02-23 11:52:28) [GET]
+  [4;36;1mVolunteer Load (109.0ms)[0m   [0;1mSELECT * FROM `volunteers` [0m
+Rendering template within layouts/volunteers
+Rendering volunteers/index
+Completed in 2761ms (View: 2645, DB: 323) | 200 OK [http://localhost/volunteers]
+  [4;35;1mSQL (107.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (114.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#new (for 127.0.0.1 at 2010-02-23 11:52:34) [GET]
+  [4;35;1mVolunteer Columns (108.0ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+Rendering template within layouts/volunteers
+Rendering volunteers/new
+Completed in 128ms (View: 14, DB: 329) | 200 OK [http://localhost/volunteers/new]
+  [4;36;1mSQL (107.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (109.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#create (for 127.0.0.1 at 2010-02-23 11:52:40) [POST]
+  Parameters: {"commit"=>"Create", "volunteer"=>{"last_name"=>"Chu", "first_name"=>"Vincent"}, "authenticity_token"=>"2njWFq1zlwgj2/YqKwb+x3CmdyzAm+AU+W0tSO63i0Q="}
+  [4;36;1mVolunteer Columns (129.0ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+  [4;35;1mSQL (109.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mVolunteer Create (0.0ms)[0m   [0;1mMysql::Error: Column 'password' cannot be null: INSERT INTO `volunteers` (`created_at`, `updated_at`, `v_id`, `last_name`, `password`, `first_name`, `email`) VALUES('2010-02-23 19:52:41', '2010-02-23 19:52:41', NULL, 'Chu', NULL, 'Vincent', NULL)[0m
+  [4;35;1mSQL (109.0ms)[0m   [0mROLLBACK[0m
+
+ActiveRecord::StatementInvalid (Mysql::Error: Column 'password' cannot be null: INSERT INTO `volunteers` (`created_at`, `updated_at`, `v_id`, `last_name`, `password`, `first_name`, `email`) VALUES('2010-02-23 19:52:41', '2010-02-23 19:52:41', NULL, 'Chu', NULL, 'Vincent', NULL)):
+  app/controllers/volunteers_controller.rb:46
+  app/controllers/volunteers_controller.rb:45:in `create'
+  c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (56.0ms)
+Rendered rescues/_request_and_response (19.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (106.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (108.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (108.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (478.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateVolunteers (20100222234907)
+  [4;36;1mSQL (109.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (107.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (107.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (568.0ms)[0m   [0mSHOW FIELDS FROM `Administrator`[0m
+  [4;36;1mSQL (193.0ms)[0m   [0;1mdescribe `Administrator`[0m
+  [4;35;1mSQL (339.0ms)[0m   [0mSHOW KEYS FROM `Administrator`[0m
+  [4;36;1mSQL (219.0ms)[0m   [0;1mSHOW FIELDS FROM `Awarded`[0m
+  [4;35;1mSQL (107.0ms)[0m   [0mdescribe `Awarded`[0m
+  [4;36;1mSQL (534.0ms)[0m   [0;1mSHOW KEYS FROM `Awarded`[0m
+  [4;35;1mSQL (236.0ms)[0m   [0mSHOW FIELDS FROM `GroupProfiles`[0m
+  [4;36;1mSQL (389.0ms)[0m   [0;1mdescribe `GroupProfiles`[0m
+  [4;35;1mSQL (1171.1ms)[0m   [0mSHOW KEYS FROM `GroupProfiles`[0m
+  [4;36;1mSQL (275.0ms)[0m   [0;1mSHOW FIELDS FROM `OrientationSession`[0m
+  [4;35;1mSQL (109.0ms)[0m   [0mdescribe `OrientationSession`[0m
+  [4;36;1mSQL (476.0ms)[0m   [0;1mSHOW KEYS FROM `OrientationSession`[0m
+  [4;35;1mSQL (164.0ms)[0m   [0mSHOW FIELDS FROM `Project`[0m
+  [4;36;1mSQL (271.0ms)[0m   [0;1mdescribe `Project`[0m
+  [4;35;1mSQL (908.1ms)[0m   [0mSHOW KEYS FROM `Project`[0m
+  [4;36;1mSQL (293.0ms)[0m   [0;1mSHOW FIELDS FROM `Reports`[0m
+  [4;35;1mSQL (108.0ms)[0m   [0mdescribe `Reports`[0m
+  [4;36;1mSQL (188.0ms)[0m   [0;1mSHOW KEYS FROM `Reports`[0m
+  [4;35;1mSQL (164.0ms)[0m   [0mSHOW FIELDS FROM `RewardProfile`[0m
+  [4;36;1mSQL (110.0ms)[0m   [0;1mdescribe `RewardProfile`[0m
+  [4;35;1mSQL (1857.1ms)[0m   [0mSHOW KEYS FROM `RewardProfile`[0m
+  [4;36;1mSQL (261.0ms)[0m   [0;1mSHOW FIELDS FROM `Rewards`[0m
+  [4;35;1mSQL (108.0ms)[0m   [0mdescribe `Rewards`[0m
+  [4;36;1mSQL (109.0ms)[0m   [0;1mSHOW KEYS FROM `Rewards`[0m
+  [4;35;1mSQL (198.0ms)[0m   [0mSHOW FIELDS FROM `Supervises`[0m
+  [4;36;1mSQL (109.0ms)[0m   [0;1mdescribe `Supervises`[0m
+  [4;35;1mSQL (110.0ms)[0m   [0mSHOW KEYS FROM `Supervises`[0m
+  [4;36;1mSQL (378.0ms)[0m   [0;1mSHOW FIELDS FROM `VolunteerSupervisor`[0m
+  [4;35;1mSQL (108.0ms)[0m   [0mdescribe `VolunteerSupervisor`[0m
+  [4;36;1mSQL (122.0ms)[0m   [0;1mSHOW KEYS FROM `VolunteerSupervisor`[0m
+  [4;35;1mSQL (183.0ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+  [4;36;1mSQL (108.0ms)[0m   [0;1mdescribe `volunteers`[0m
+  [4;35;1mSQL (222.0ms)[0m   [0mSHOW KEYS FROM `volunteers`[0m
+  [4;36;1mSQL (138.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (106.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (106.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (108.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateVolunteers (20100222234907)
+  [4;36;1mSQL (110.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (108.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (106.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (113.0ms)[0m   [0mSHOW FIELDS FROM `Administrator`[0m
+  [4;36;1mSQL (108.0ms)[0m   [0;1mdescribe `Administrator`[0m
+  [4;35;1mSQL (107.0ms)[0m   [0mSHOW KEYS FROM `Administrator`[0m
+  [4;36;1mSQL (108.0ms)[0m   [0;1mSHOW FIELDS FROM `Awarded`[0m
+  [4;35;1mSQL (106.0ms)[0m   [0mdescribe `Awarded`[0m
+  [4;36;1mSQL (109.0ms)[0m   [0;1mSHOW KEYS FROM `Awarded`[0m
+  [4;35;1mSQL (108.0ms)[0m   [0mSHOW FIELDS FROM `GroupProfiles`[0m
+  [4;36;1mSQL (109.0ms)[0m   [0;1mdescribe `GroupProfiles`[0m
+  [4;35;1mSQL (108.0ms)[0m   [0mSHOW KEYS FROM `GroupProfiles`[0m
+  [4;36;1mSQL (108.0ms)[0m   [0;1mSHOW FIELDS FROM `OrientationSession`[0m
+  [4;35;1mSQL (108.0ms)[0m   [0mdescribe `OrientationSession`[0m
+  [4;36;1mSQL (109.0ms)[0m   [0;1mSHOW KEYS FROM `OrientationSession`[0m
+  [4;35;1mSQL (109.0ms)[0m   [0mSHOW FIELDS FROM `Project`[0m
+  [4;36;1mSQL (107.0ms)[0m   [0;1mdescribe `Project`[0m
+  [4;35;1mSQL (113.0ms)[0m   [0mSHOW KEYS FROM `Project`[0m
+  [4;36;1mSQL (109.0ms)[0m   [0;1mSHOW FIELDS FROM `Reports`[0m
+  [4;35;1mSQL (144.0ms)[0m   [0mdescribe `Reports`[0m
+  [4;36;1mSQL (109.0ms)[0m   [0;1mSHOW KEYS FROM `Reports`[0m
+  [4;35;1mSQL (109.0ms)[0m   [0mSHOW FIELDS FROM `RewardProfile`[0m
+  [4;36;1mSQL (107.0ms)[0m   [0;1mdescribe `RewardProfile`[0m
+  [4;35;1mSQL (113.0ms)[0m   [0mSHOW KEYS FROM `RewardProfile`[0m
+  [4;36;1mSQL (108.0ms)[0m   [0;1mSHOW FIELDS FROM `Rewards`[0m
+  [4;35;1mSQL (107.0ms)[0m   [0mdescribe `Rewards`[0m
+  [4;36;1mSQL (109.0ms)[0m   [0;1mSHOW KEYS FROM `Rewards`[0m
+  [4;35;1mSQL (107.0ms)[0m   [0mSHOW FIELDS FROM `Supervises`[0m
+  [4;36;1mSQL (108.0ms)[0m   [0;1mdescribe `Supervises`[0m
+  [4;35;1mSQL (107.0ms)[0m   [0mSHOW KEYS FROM `Supervises`[0m
+  [4;36;1mSQL (108.0ms)[0m   [0;1mSHOW FIELDS FROM `VolunteerSupervisor`[0m
+  [4;35;1mSQL (110.0ms)[0m   [0mdescribe `VolunteerSupervisor`[0m
+  [4;36;1mSQL (109.0ms)[0m   [0;1mSHOW KEYS FROM `VolunteerSupervisor`[0m
+  [4;35;1mSQL (109.0ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+  [4;36;1mSQL (108.0ms)[0m   [0;1mdescribe `volunteers`[0m
+  [4;35;1mSQL (107.0ms)[0m   [0mSHOW KEYS FROM `volunteers`[0m
+  [4;36;1mSQL (107.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (106.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (107.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (108.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateVolunteers (20100222234907)
+  [4;36;1mSQL (108.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (108.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (111.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (107.0ms)[0m   [0mSHOW FIELDS FROM `Administrator`[0m
+  [4;36;1mSQL (110.0ms)[0m   [0;1mdescribe `Administrator`[0m
+  [4;35;1mSQL (109.0ms)[0m   [0mSHOW KEYS FROM `Administrator`[0m
+  [4;36;1mSQL (108.0ms)[0m   [0;1mSHOW FIELDS FROM `Awarded`[0m
+  [4;35;1mSQL (113.0ms)[0m   [0mdescribe `Awarded`[0m
+  [4;36;1mSQL (109.0ms)[0m   [0;1mSHOW KEYS FROM `Awarded`[0m
+  [4;35;1mSQL (108.0ms)[0m   [0mSHOW FIELDS FROM `GroupProfiles`[0m
+  [4;36;1mSQL (111.0ms)[0m   [0;1mdescribe `GroupProfiles`[0m
+  [4;35;1mSQL (108.0ms)[0m   [0mSHOW KEYS FROM `GroupProfiles`[0m
+  [4;36;1mSQL (107.0ms)[0m   [0;1mSHOW FIELDS FROM `OrientationSession`[0m
+  [4;35;1mSQL (107.0ms)[0m   [0mdescribe `OrientationSession`[0m
+  [4;36;1mSQL (108.0ms)[0m   [0;1mSHOW KEYS FROM `OrientationSession`[0m
+  [4;35;1mSQL (108.0ms)[0m   [0mSHOW FIELDS FROM `Project`[0m
+  [4;36;1mSQL (107.0ms)[0m   [0;1mdescribe `Project`[0m
+  [4;35;1mSQL (108.0ms)[0m   [0mSHOW KEYS FROM `Project`[0m
+  [4;36;1mSQL (129.0ms)[0m   [0;1mSHOW FIELDS FROM `Reports`[0m
+  [4;35;1mSQL (112.0ms)[0m   [0mdescribe `Reports`[0m
+  [4;36;1mSQL (107.0ms)[0m   [0;1mSHOW KEYS FROM `Reports`[0m
+  [4;35;1mSQL (109.0ms)[0m   [0mSHOW FIELDS FROM `RewardProfile`[0m
+  [4;36;1mSQL (110.0ms)[0m   [0;1mdescribe `RewardProfile`[0m
+  [4;35;1mSQL (108.0ms)[0m   [0mSHOW KEYS FROM `RewardProfile`[0m
+  [4;36;1mSQL (107.0ms)[0m   [0;1mSHOW FIELDS FROM `Rewards`[0m
+  [4;35;1mSQL (107.0ms)[0m   [0mdescribe `Rewards`[0m
+  [4;36;1mSQL (130.0ms)[0m   [0;1mSHOW KEYS FROM `Rewards`[0m
+  [4;35;1mSQL (110.0ms)[0m   [0mSHOW FIELDS FROM `Supervises`[0m
+  [4;36;1mSQL (109.0ms)[0m   [0;1mdescribe `Supervises`[0m
+  [4;35;1mSQL (108.0ms)[0m   [0mSHOW KEYS FROM `Supervises`[0m
+  [4;36;1mSQL (109.0ms)[0m   [0;1mSHOW FIELDS FROM `VolunteerSupervisor`[0m
+  [4;35;1mSQL (111.0ms)[0m   [0mdescribe `VolunteerSupervisor`[0m
+  [4;36;1mSQL (327.0ms)[0m   [0;1mSHOW KEYS FROM `VolunteerSupervisor`[0m
+  [4;35;1mSQL (109.0ms)[0m   [0mSHOW FIELDS FROM `test`[0m
+  [4;36;1mSQL (214.0ms)[0m   [0;1mdescribe `test`[0m
+  [4;35;1mSQL (108.0ms)[0m   [0mSHOW KEYS FROM `test`[0m
+  [4;36;1mSQL (108.0ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+  [4;35;1mSQL (108.0ms)[0m   [0mdescribe `volunteers`[0m
+  [4;36;1mSQL (107.0ms)[0m   [0;1mSHOW KEYS FROM `volunteers`[0m
+  [4;36;1mSQL (111.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (108.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (109.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (110.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateVolunteers (20100222234907)
+  [4;36;1mSQL (109.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (111.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (109.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (112.0ms)[0m   [0mSHOW FIELDS FROM `Administrator`[0m
+  [4;36;1mSQL (109.0ms)[0m   [0;1mdescribe `Administrator`[0m
+  [4;35;1mSQL (111.0ms)[0m   [0mSHOW KEYS FROM `Administrator`[0m
+  [4;36;1mSQL (111.0ms)[0m   [0;1mSHOW FIELDS FROM `Awarded`[0m
+  [4;35;1mSQL (110.0ms)[0m   [0mdescribe `Awarded`[0m
+  [4;36;1mSQL (111.0ms)[0m   [0;1mSHOW KEYS FROM `Awarded`[0m
+  [4;35;1mSQL (117.0ms)[0m   [0mSHOW FIELDS FROM `GroupProfiles`[0m
+  [4;36;1mSQL (111.0ms)[0m   [0;1mdescribe `GroupProfiles`[0m
+  [4;35;1mSQL (111.0ms)[0m   [0mSHOW KEYS FROM `GroupProfiles`[0m
+  [4;36;1mSQL (110.0ms)[0m   [0;1mSHOW FIELDS FROM `OrientationSession`[0m
+  [4;35;1mSQL (113.0ms)[0m   [0mdescribe `OrientationSession`[0m
+  [4;36;1mSQL (110.0ms)[0m   [0;1mSHOW KEYS FROM `OrientationSession`[0m
+  [4;35;1mSQL (111.0ms)[0m   [0mSHOW FIELDS FROM `Project`[0m
+  [4;36;1mSQL (108.0ms)[0m   [0;1mdescribe `Project`[0m
+  [4;35;1mSQL (110.0ms)[0m   [0mSHOW KEYS FROM `Project`[0m
+  [4;36;1mSQL (109.0ms)[0m   [0;1mSHOW FIELDS FROM `Reports`[0m
+  [4;35;1mSQL (109.0ms)[0m   [0mdescribe `Reports`[0m
+  [4;36;1mSQL (109.0ms)[0m   [0;1mSHOW KEYS FROM `Reports`[0m
+  [4;35;1mSQL (110.0ms)[0m   [0mSHOW FIELDS FROM `RewardProfile`[0m
+  [4;36;1mSQL (113.0ms)[0m   [0;1mdescribe `RewardProfile`[0m
+  [4;35;1mSQL (110.0ms)[0m   [0mSHOW KEYS FROM `RewardProfile`[0m
+  [4;36;1mSQL (110.0ms)[0m   [0;1mSHOW FIELDS FROM `Rewards`[0m
+  [4;35;1mSQL (111.0ms)[0m   [0mdescribe `Rewards`[0m
+  [4;36;1mSQL (109.0ms)[0m   [0;1mSHOW KEYS FROM `Rewards`[0m
+  [4;35;1mSQL (109.0ms)[0m   [0mSHOW FIELDS FROM `Supervises`[0m
+  [4;36;1mSQL (110.0ms)[0m   [0;1mdescribe `Supervises`[0m
+  [4;35;1mSQL (110.0ms)[0m   [0mSHOW KEYS FROM `Supervises`[0m
+  [4;36;1mSQL (110.0ms)[0m   [0;1mSHOW FIELDS FROM `VolunteerSupervisor`[0m
+  [4;35;1mSQL (109.0ms)[0m   [0mdescribe `VolunteerSupervisor`[0m
+  [4;36;1mSQL (109.0ms)[0m   [0;1mSHOW KEYS FROM `VolunteerSupervisor`[0m
+  [4;35;1mSQL (112.0ms)[0m   [0mSHOW FIELDS FROM `test`[0m
+  [4;36;1mSQL (110.0ms)[0m   [0;1mdescribe `test`[0m
+  [4;35;1mSQL (111.0ms)[0m   [0mSHOW KEYS FROM `test`[0m
+  [4;36;1mSQL (110.0ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+  [4;35;1mSQL (109.0ms)[0m   [0mdescribe `volunteers`[0m
+  [4;36;1mSQL (110.0ms)[0m   [0;1mSHOW KEYS FROM `volunteers`[0m
+  [4;36;1mSQL (107.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (108.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (108.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (107.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateVolunteers (20100222234907)
+  [4;36;1mSQL (106.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (153.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (107.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (119.0ms)[0m   [0mSHOW FIELDS FROM `Administrator`[0m
+  [4;36;1mSQL (118.0ms)[0m   [0;1mdescribe `Administrator`[0m
+  [4;35;1mSQL (111.0ms)[0m   [0mSHOW KEYS FROM `Administrator`[0m
+  [4;36;1mSQL (108.0ms)[0m   [0;1mSHOW FIELDS FROM `Awarded`[0m
+  [4;35;1mSQL (109.0ms)[0m   [0mdescribe `Awarded`[0m
+  [4;36;1mSQL (107.0ms)[0m   [0;1mSHOW KEYS FROM `Awarded`[0m
+  [4;35;1mSQL (109.0ms)[0m   [0mSHOW FIELDS FROM `GroupProfiles`[0m
+  [4;36;1mSQL (108.0ms)[0m   [0;1mdescribe `GroupProfiles`[0m
+  [4;35;1mSQL (108.0ms)[0m   [0mSHOW KEYS FROM `GroupProfiles`[0m
+  [4;36;1mSQL (109.0ms)[0m   [0;1mSHOW FIELDS FROM `OrientationSession`[0m
+  [4;35;1mSQL (139.0ms)[0m   [0mdescribe `OrientationSession`[0m
+  [4;36;1mSQL (135.0ms)[0m   [0;1mSHOW KEYS FROM `OrientationSession`[0m
+  [4;35;1mSQL (108.0ms)[0m   [0mSHOW FIELDS FROM `Project`[0m
+  [4;36;1mSQL (109.0ms)[0m   [0;1mdescribe `Project`[0m
+  [4;35;1mSQL (108.0ms)[0m   [0mSHOW KEYS FROM `Project`[0m
+  [4;36;1mSQL (107.0ms)[0m   [0;1mSHOW FIELDS FROM `Reports`[0m
+  [4;35;1mSQL (108.0ms)[0m   [0mdescribe `Reports`[0m
+  [4;36;1mSQL (108.0ms)[0m   [0;1mSHOW KEYS FROM `Reports`[0m
+  [4;35;1mSQL (112.0ms)[0m   [0mSHOW FIELDS FROM `RewardProfile`[0m
+  [4;36;1mSQL (109.0ms)[0m   [0;1mdescribe `RewardProfile`[0m
+  [4;35;1mSQL (109.0ms)[0m   [0mSHOW KEYS FROM `RewardProfile`[0m
+  [4;36;1mSQL (111.0ms)[0m   [0;1mSHOW FIELDS FROM `Rewards`[0m
+  [4;35;1mSQL (108.0ms)[0m   [0mdescribe `Rewards`[0m
+  [4;36;1mSQL (107.0ms)[0m   [0;1mSHOW KEYS FROM `Rewards`[0m
+  [4;35;1mSQL (108.0ms)[0m   [0mSHOW FIELDS FROM `Supervises`[0m
+  [4;36;1mSQL (143.0ms)[0m   [0;1mdescribe `Supervises`[0m
+  [4;35;1mSQL (109.0ms)[0m   [0mSHOW KEYS FROM `Supervises`[0m
+  [4;36;1mSQL (109.0ms)[0m   [0;1mSHOW FIELDS FROM `VolunteerSupervisor`[0m
+  [4;35;1mSQL (109.0ms)[0m   [0mdescribe `VolunteerSupervisor`[0m
+  [4;36;1mSQL (109.0ms)[0m   [0;1mSHOW KEYS FROM `VolunteerSupervisor`[0m
+  [4;35;1mSQL (109.0ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+  [4;36;1mSQL (109.0ms)[0m   [0;1mdescribe `volunteers`[0m
+  [4;35;1mSQL (113.0ms)[0m   [0mSHOW KEYS FROM `volunteers`[0m
+  [4;36;1mSQL (110.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (110.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (107.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (107.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateVolunteers (20100222234907)
+  [4;36;1mSQL (106.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (107.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (108.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (109.0ms)[0m   [0mSHOW FIELDS FROM `Administrator`[0m
+  [4;36;1mSQL (110.0ms)[0m   [0;1mdescribe `Administrator`[0m
+  [4;35;1mSQL (108.0ms)[0m   [0mSHOW KEYS FROM `Administrator`[0m
+  [4;36;1mSQL (109.0ms)[0m   [0;1mSHOW FIELDS FROM `Awarded`[0m
+  [4;35;1mSQL (108.0ms)[0m   [0mdescribe `Awarded`[0m
+  [4;36;1mSQL (109.0ms)[0m   [0;1mSHOW KEYS FROM `Awarded`[0m
+  [4;35;1mSQL (108.0ms)[0m   [0mSHOW FIELDS FROM `GroupProfiles`[0m
+  [4;36;1mSQL (108.0ms)[0m   [0;1mdescribe `GroupProfiles`[0m
+  [4;35;1mSQL (107.0ms)[0m   [0mSHOW KEYS FROM `GroupProfiles`[0m
+  [4;36;1mSQL (109.0ms)[0m   [0;1mSHOW FIELDS FROM `OrientationSession`[0m
+  [4;35;1mSQL (107.0ms)[0m   [0mdescribe `OrientationSession`[0m
+  [4;36;1mSQL (108.0ms)[0m   [0;1mSHOW KEYS FROM `OrientationSession`[0m
+  [4;35;1mSQL (109.0ms)[0m   [0mSHOW FIELDS FROM `Project`[0m
+  [4;36;1mSQL (107.0ms)[0m   [0;1mdescribe `Project`[0m
+  [4;35;1mSQL (108.0ms)[0m   [0mSHOW KEYS FROM `Project`[0m
+  [4;36;1mSQL (108.0ms)[0m   [0;1mSHOW FIELDS FROM `Reports`[0m
+  [4;35;1mSQL (108.0ms)[0m   [0mdescribe `Reports`[0m
+  [4;36;1mSQL (131.0ms)[0m   [0;1mSHOW KEYS FROM `Reports`[0m
+  [4;35;1mSQL (108.0ms)[0m   [0mSHOW FIELDS FROM `RewardProfile`[0m
+  [4;36;1mSQL (108.0ms)[0m   [0;1mdescribe `RewardProfile`[0m
+  [4;35;1mSQL (108.0ms)[0m   [0mSHOW KEYS FROM `RewardProfile`[0m
+  [4;36;1mSQL (109.0ms)[0m   [0;1mSHOW FIELDS FROM `Rewards`[0m
+  [4;35;1mSQL (107.0ms)[0m   [0mdescribe `Rewards`[0m
+  [4;36;1mSQL (129.0ms)[0m   [0;1mSHOW KEYS FROM `Rewards`[0m
+  [4;35;1mSQL (110.0ms)[0m   [0mSHOW FIELDS FROM `Supervises`[0m
+  [4;36;1mSQL (108.0ms)[0m   [0;1mdescribe `Supervises`[0m
+  [4;35;1mSQL (108.0ms)[0m   [0mSHOW KEYS FROM `Supervises`[0m
+  [4;36;1mSQL (108.0ms)[0m   [0;1mSHOW FIELDS FROM `VolunteerSupervisor`[0m
+  [4;35;1mSQL (107.0ms)[0m   [0mdescribe `VolunteerSupervisor`[0m
+  [4;36;1mSQL (109.0ms)[0m   [0;1mSHOW KEYS FROM `VolunteerSupervisor`[0m
+  [4;35;1mSQL (108.0ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+  [4;36;1mSQL (109.0ms)[0m   [0;1mdescribe `volunteers`[0m
+  [4;35;1mSQL (109.0ms)[0m   [0mSHOW KEYS FROM `volunteers`[0m
