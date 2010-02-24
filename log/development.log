@@ -43,3 +43,2114 @@ Migrating to CreateVolunteers (20100222234907)
   [4;35;1mSQL (27.1ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
   [4;36;1mSQL (27.1ms)[0m   [0;1mdescribe `volunteers`[0m
   [4;35;1mSQL (28.3ms)[0m   [0mSHOW KEYS FROM `volunteers`[0m
+  [4;36;1mSQL (27.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (26.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (35.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (27.6ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateVolunteers (20100222234907)
+Migrating to AddVolunteerColumns (20100224013823)
+  [4;36;1mSQL (998.3ms)[0m   [0;1mALTER TABLE `volunteers` ADD `birthday` varchar(30) NOT NULL[0m
+  [4;35;1mSQL (962.8ms)[0m   [0mALTER TABLE `volunteers` ADD `phone_home` varchar(20)[0m
+  [4;36;1mSQL (31.1ms)[0m   [0;1mALTER TABLE `volunteers` ADD `phone_work` varchar(20)[0m
+  [4;35;1mSQL (61.5ms)[0m   [0mALTER TABLE `volunteers` ADD `phone_cell` varchar(20)[0m
+  [4;36;1mSQL (204.5ms)[0m   [0;1mALTER TABLE `volunteers` ADD `address` varchar(50) NOT NULL[0m
+  [4;35;1mSQL (44.4ms)[0m   [0mALTER TABLE `volunteers` ADD `province` varchar(20) NOT NULL[0m
+  [4;36;1mSQL (35.6ms)[0m   [0;1mALTER TABLE `volunteers` ADD `postal_code` varchar(10) NOT NULL[0m
+  [4;35;1mSQL (49.8ms)[0m   [0mALTER TABLE `volunteers` ADD `preferred_contact_method` tinyint(1) NOT NULL[0m
+  [4;36;1mSQL (34.5ms)[0m   [0;1mALTER TABLE `volunteers` ADD `emrg_contact_name` varchar(60) NOT NULL[0m
+  [4;35;1mSQL (48.6ms)[0m   [0mALTER TABLE `volunteers` ADD `emrg_contact_relationship` varchar(30) NOT NULL[0m
+  [4;36;1mSQL (100.0ms)[0m   [0;1mALTER TABLE `volunteers` ADD `emrg_contact_phone_work` varchar(20) NOT NULL[0m
+  [4;35;1mSQL (129.7ms)[0m   [0mALTER TABLE `volunteers` ADD `emrg_contact_phone_home` varchar(20) NOT NULL[0m
+  [4;36;1mSQL (68.4ms)[0m   [0;1mALTER TABLE `volunteers` ADD `special_consideration` text[0m
+  [4;35;1mSQL (101.1ms)[0m   [0mALTER TABLE `volunteers` ADD `how_often_volunteer` text[0m
+  [4;36;1mSQL (43.1ms)[0m   [0;1mALTER TABLE `volunteers` ADD `how_heard_about_farm` text[0m
+  [4;35;1mSQL (47.2ms)[0m   [0mALTER TABLE `volunteers` ADD `why_volunteer` text[0m
+  [4;36;1mSQL (33.2ms)[0m   [0;1mALTER TABLE `volunteers` ADD `skills` text[0m
+  [4;35;1mSQL (39.2ms)[0m   [0mALTER TABLE `volunteers` ADD `first_aid` tinyint(1) NOT NULL[0m
+  [4;36;1mSQL (37.1ms)[0m   [0;1mALTER TABLE `volunteers` ADD `foodsafe_level1` tinyint(1) NOT NULL[0m
+  [4;35;1mSQL (40.8ms)[0m   [0mALTER TABLE `volunteers` ADD `foodsafe_level2` tinyint(1) NOT NULL[0m
+  [4;36;1mSQL (30.9ms)[0m   [0;1mALTER TABLE `volunteers` ADD `own_transportation` tinyint(1) NOT NULL[0m
+  [4;35;1mSQL (32.3ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100224013823')[0m
+  [4;36;1mSQL (26.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (28.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (27.8ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (27.1ms)[0m   [0mSHOW FIELDS FROM `Administrator`[0m
+  [4;36;1mSQL (28.5ms)[0m   [0;1mdescribe `Administrator`[0m
+  [4;35;1mSQL (31.6ms)[0m   [0mSHOW KEYS FROM `Administrator`[0m
+  [4;36;1mSQL (27.3ms)[0m   [0;1mSHOW FIELDS FROM `Awarded`[0m
+  [4;35;1mSQL (26.7ms)[0m   [0mdescribe `Awarded`[0m
+  [4;36;1mSQL (27.4ms)[0m   [0;1mSHOW KEYS FROM `Awarded`[0m
+  [4;35;1mSQL (28.1ms)[0m   [0mSHOW FIELDS FROM `GroupProfiles`[0m
+  [4;36;1mSQL (27.5ms)[0m   [0;1mdescribe `GroupProfiles`[0m
+  [4;35;1mSQL (27.1ms)[0m   [0mSHOW KEYS FROM `GroupProfiles`[0m
+  [4;36;1mSQL (27.4ms)[0m   [0;1mSHOW FIELDS FROM `OrientationSession`[0m
+  [4;35;1mSQL (27.7ms)[0m   [0mdescribe `OrientationSession`[0m
+  [4;36;1mSQL (28.4ms)[0m   [0;1mSHOW KEYS FROM `OrientationSession`[0m
+  [4;35;1mSQL (27.3ms)[0m   [0mSHOW FIELDS FROM `Project`[0m
+  [4;36;1mSQL (32.7ms)[0m   [0;1mdescribe `Project`[0m
+  [4;35;1mSQL (29.9ms)[0m   [0mSHOW KEYS FROM `Project`[0m
+  [4;36;1mSQL (27.2ms)[0m   [0;1mSHOW FIELDS FROM `Reports`[0m
+  [4;35;1mSQL (27.6ms)[0m   [0mdescribe `Reports`[0m
+  [4;36;1mSQL (28.8ms)[0m   [0;1mSHOW KEYS FROM `Reports`[0m
+  [4;35;1mSQL (28.6ms)[0m   [0mSHOW FIELDS FROM `RewardProfile`[0m
+  [4;36;1mSQL (26.7ms)[0m   [0;1mdescribe `RewardProfile`[0m
+  [4;35;1mSQL (36.4ms)[0m   [0mSHOW KEYS FROM `RewardProfile`[0m
+  [4;36;1mSQL (31.8ms)[0m   [0;1mSHOW FIELDS FROM `Rewards`[0m
+  [4;35;1mSQL (27.8ms)[0m   [0mdescribe `Rewards`[0m
+  [4;36;1mSQL (32.1ms)[0m   [0;1mSHOW KEYS FROM `Rewards`[0m
+  [4;35;1mSQL (27.4ms)[0m   [0mSHOW FIELDS FROM `Student`[0m
+  [4;36;1mSQL (27.5ms)[0m   [0;1mdescribe `Student`[0m
+  [4;35;1mSQL (26.9ms)[0m   [0mSHOW KEYS FROM `Student`[0m
+  [4;36;1mSQL (27.3ms)[0m   [0;1mSHOW FIELDS FROM `Supervises`[0m
+  [4;35;1mSQL (27.5ms)[0m   [0mdescribe `Supervises`[0m
+  [4;36;1mSQL (29.2ms)[0m   [0;1mSHOW KEYS FROM `Supervises`[0m
+  [4;35;1mSQL (27.8ms)[0m   [0mSHOW FIELDS FROM `VolunteerSupervisor`[0m
+  [4;36;1mSQL (30.1ms)[0m   [0;1mdescribe `VolunteerSupervisor`[0m
+  [4;35;1mSQL (27.8ms)[0m   [0mSHOW KEYS FROM `VolunteerSupervisor`[0m
+  [4;36;1mSQL (27.4ms)[0m   [0;1mSHOW FIELDS FROM `orientation`[0m
+  [4;35;1mSQL (45.0ms)[0m   [0mdescribe `orientation`[0m
+  [4;36;1mSQL (30.4ms)[0m   [0;1mSHOW KEYS FROM `orientation`[0m
+  [4;35;1mSQL (27.7ms)[0m   [0mSHOW FIELDS FROM `orientation_project`[0m
+  [4;36;1mSQL (27.2ms)[0m   [0;1mdescribe `orientation_project`[0m
+  [4;35;1mSQL (27.6ms)[0m   [0mSHOW KEYS FROM `orientation_project`[0m
+  [4;36;1mSQL (27.2ms)[0m   [0;1mSHOW FIELDS FROM `orientation_registration`[0m
+  [4;35;1mSQL (26.6ms)[0m   [0mdescribe `orientation_registration`[0m
+  [4;36;1mSQL (27.0ms)[0m   [0;1mSHOW KEYS FROM `orientation_registration`[0m
+  [4;35;1mSQL (26.5ms)[0m   [0mSHOW FIELDS FROM `self_report`[0m
+  [4;36;1mSQL (27.4ms)[0m   [0;1mdescribe `self_report`[0m
+  [4;35;1mSQL (26.7ms)[0m   [0mSHOW KEYS FROM `self_report`[0m
+  [4;36;1mSQL (29.1ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+  [4;35;1mSQL (35.8ms)[0m   [0mdescribe `volunteers`[0m
+  [4;36;1mSQL (26.9ms)[0m   [0;1mSHOW KEYS FROM `volunteers`[0m
+  [4;36;1mSQL (26.6ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (26.7ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (26.9ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (26.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (27.1ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (26.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to AddVolunteerColumns (20100224013823)
+  [4;36;1mSQL (112.4ms)[0m   [0;1mALTER TABLE `volunteers` DROP `birthday`[0m
+  [4;35;1mSQL (39.1ms)[0m   [0mALTER TABLE `volunteers` DROP `phone_home`[0m
+  [4;36;1mSQL (37.4ms)[0m   [0;1mALTER TABLE `volunteers` DROP `phone_work`[0m
+  [4;35;1mSQL (60.9ms)[0m   [0mALTER TABLE `volunteers` DROP `phone_cell`[0m
+  [4;36;1mSQL (33.4ms)[0m   [0;1mALTER TABLE `volunteers` DROP `address`[0m
+  [4;35;1mSQL (33.8ms)[0m   [0mALTER TABLE `volunteers` DROP `province`[0m
+  [4;36;1mSQL (82.5ms)[0m   [0;1mALTER TABLE `volunteers` DROP `postal_code`[0m
+  [4;35;1mSQL (34.6ms)[0m   [0mALTER TABLE `volunteers` DROP `preferred_contact_method`[0m
+  [4;36;1mSQL (30.8ms)[0m   [0;1mALTER TABLE `volunteers` DROP `emrg_contact_name`[0m
+  [4;35;1mSQL (38.1ms)[0m   [0mALTER TABLE `volunteers` DROP `emrg_contact_relationship`[0m
+  [4;36;1mSQL (30.6ms)[0m   [0;1mALTER TABLE `volunteers` DROP `special_consideration`[0m
+  [4;35;1mSQL (37.2ms)[0m   [0mALTER TABLE `volunteers` DROP `how_often_volunteer`[0m
+  [4;36;1mSQL (32.7ms)[0m   [0;1mALTER TABLE `volunteers` DROP `how_heard_about_farm`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mMysql::Error: Can't DROP 'why_colunteer'; check that column/key exists: ALTER TABLE `volunteers` DROP `why_colunteer`[0m
+  [4;36;1mSQL (26.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (25.9ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (29.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (27.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateVolunteers (20100222234907)
+Migrating to AddVolunteerColumns (20100224013823)
+  [4;36;1mSQL (26.7ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (26.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (26.9ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (26.9ms)[0m   [0mSHOW FIELDS FROM `Administrator`[0m
+  [4;36;1mSQL (29.3ms)[0m   [0;1mdescribe `Administrator`[0m
+  [4;35;1mSQL (27.7ms)[0m   [0mSHOW KEYS FROM `Administrator`[0m
+  [4;36;1mSQL (27.6ms)[0m   [0;1mSHOW FIELDS FROM `Awarded`[0m
+  [4;35;1mSQL (35.0ms)[0m   [0mdescribe `Awarded`[0m
+  [4;36;1mSQL (27.6ms)[0m   [0;1mSHOW KEYS FROM `Awarded`[0m
+  [4;35;1mSQL (27.9ms)[0m   [0mSHOW FIELDS FROM `GroupProfiles`[0m
+  [4;36;1mSQL (27.3ms)[0m   [0;1mdescribe `GroupProfiles`[0m
+  [4;35;1mSQL (27.0ms)[0m   [0mSHOW KEYS FROM `GroupProfiles`[0m
+  [4;36;1mSQL (28.6ms)[0m   [0;1mSHOW FIELDS FROM `OrientationSession`[0m
+  [4;35;1mSQL (29.5ms)[0m   [0mdescribe `OrientationSession`[0m
+  [4;36;1mSQL (30.7ms)[0m   [0;1mSHOW KEYS FROM `OrientationSession`[0m
+  [4;35;1mSQL (27.6ms)[0m   [0mSHOW FIELDS FROM `Project`[0m
+  [4;36;1mSQL (36.4ms)[0m   [0;1mdescribe `Project`[0m
+  [4;35;1mSQL (27.1ms)[0m   [0mSHOW KEYS FROM `Project`[0m
+  [4;36;1mSQL (26.6ms)[0m   [0;1mSHOW FIELDS FROM `Reports`[0m
+  [4;35;1mSQL (49.3ms)[0m   [0mdescribe `Reports`[0m
+  [4;36;1mSQL (26.5ms)[0m   [0;1mSHOW KEYS FROM `Reports`[0m
+  [4;35;1mSQL (29.5ms)[0m   [0mSHOW FIELDS FROM `RewardProfile`[0m
+  [4;36;1mSQL (32.0ms)[0m   [0;1mdescribe `RewardProfile`[0m
+  [4;35;1mSQL (28.1ms)[0m   [0mSHOW KEYS FROM `RewardProfile`[0m
+  [4;36;1mSQL (30.7ms)[0m   [0;1mSHOW FIELDS FROM `Rewards`[0m
+  [4;35;1mSQL (35.6ms)[0m   [0mdescribe `Rewards`[0m
+  [4;36;1mSQL (29.5ms)[0m   [0;1mSHOW KEYS FROM `Rewards`[0m
+  [4;35;1mSQL (39.5ms)[0m   [0mSHOW FIELDS FROM `Student`[0m
+  [4;36;1mSQL (27.4ms)[0m   [0;1mdescribe `Student`[0m
+  [4;35;1mSQL (27.7ms)[0m   [0mSHOW KEYS FROM `Student`[0m
+  [4;36;1mSQL (29.7ms)[0m   [0;1mSHOW FIELDS FROM `Supervises`[0m
+  [4;35;1mSQL (27.4ms)[0m   [0mdescribe `Supervises`[0m
+  [4;36;1mSQL (29.4ms)[0m   [0;1mSHOW KEYS FROM `Supervises`[0m
+  [4;35;1mSQL (1000.7ms)[0m   [0mSHOW FIELDS FROM `VolunteerSupervisor`[0m
+  [4;36;1mSQL (26.8ms)[0m   [0;1mdescribe `VolunteerSupervisor`[0m
+  [4;35;1mSQL (27.6ms)[0m   [0mSHOW KEYS FROM `VolunteerSupervisor`[0m
+  [4;36;1mSQL (27.1ms)[0m   [0;1mSHOW FIELDS FROM `orientation`[0m
+  [4;35;1mSQL (27.4ms)[0m   [0mdescribe `orientation`[0m
+  [4;36;1mSQL (28.1ms)[0m   [0;1mSHOW KEYS FROM `orientation`[0m
+  [4;35;1mSQL (27.4ms)[0m   [0mSHOW FIELDS FROM `orientation_project`[0m
+  [4;36;1mSQL (28.1ms)[0m   [0;1mdescribe `orientation_project`[0m
+  [4;35;1mSQL (71.3ms)[0m   [0mSHOW KEYS FROM `orientation_project`[0m
+  [4;36;1mSQL (27.5ms)[0m   [0;1mSHOW FIELDS FROM `orientation_registration`[0m
+  [4;35;1mSQL (43.3ms)[0m   [0mdescribe `orientation_registration`[0m
+  [4;36;1mSQL (28.9ms)[0m   [0;1mSHOW KEYS FROM `orientation_registration`[0m
+  [4;35;1mSQL (27.3ms)[0m   [0mSHOW FIELDS FROM `self_report`[0m
+  [4;36;1mSQL (27.7ms)[0m   [0;1mdescribe `self_report`[0m
+  [4;35;1mSQL (27.6ms)[0m   [0mSHOW KEYS FROM `self_report`[0m
+  [4;36;1mSQL (30.6ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+  [4;35;1mSQL (26.5ms)[0m   [0mdescribe `volunteers`[0m
+  [4;36;1mSQL (38.7ms)[0m   [0;1mSHOW KEYS FROM `volunteers`[0m
+  [4;36;1mSQL (29.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (26.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (27.1ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (26.6ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (26.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (26.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to AddVolunteerColumns (20100224013823)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mMysql::Error: Can't DROP 'birthday'; check that column/key exists: ALTER TABLE `volunteers` DROP `birthday`[0m
+  [4;36;1mSQL (27.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (26.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (27.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (29.9ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (27.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (29.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to AddVolunteerColumns (20100224013823)
+  [4;36;1mSQL (35.6ms)[0m   [0;1mDELETE FROM schema_migrations WHERE version = '20100224013823'[0m
+Migrating to CreateVolunteers (20100222234907)
+  [4;35;1mSQL (34.7ms)[0m   [0mDROP TABLE `volunteers`[0m
+  [4;36;1mSQL (34.2ms)[0m   [0;1mDELETE FROM schema_migrations WHERE version = '20100222234907'[0m
+  [4;35;1mSQL (26.6ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (30.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (27.2ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (28.1ms)[0m   [0;1mSHOW FIELDS FROM `Administrator`[0m
+  [4;35;1mSQL (35.9ms)[0m   [0mdescribe `Administrator`[0m
+  [4;36;1mSQL (27.9ms)[0m   [0;1mSHOW KEYS FROM `Administrator`[0m
+  [4;35;1mSQL (34.2ms)[0m   [0mSHOW FIELDS FROM `Awarded`[0m
+  [4;36;1mSQL (28.2ms)[0m   [0;1mdescribe `Awarded`[0m
+  [4;35;1mSQL (48.4ms)[0m   [0mSHOW KEYS FROM `Awarded`[0m
+  [4;36;1mSQL (27.2ms)[0m   [0;1mSHOW FIELDS FROM `GroupProfiles`[0m
+  [4;35;1mSQL (34.0ms)[0m   [0mdescribe `GroupProfiles`[0m
+  [4;36;1mSQL (29.8ms)[0m   [0;1mSHOW KEYS FROM `GroupProfiles`[0m
+  [4;35;1mSQL (34.3ms)[0m   [0mSHOW FIELDS FROM `OrientationSession`[0m
+  [4;36;1mSQL (37.8ms)[0m   [0;1mdescribe `OrientationSession`[0m
+  [4;35;1mSQL (38.5ms)[0m   [0mSHOW KEYS FROM `OrientationSession`[0m
+  [4;36;1mSQL (28.6ms)[0m   [0;1mSHOW FIELDS FROM `Project`[0m
+  [4;35;1mSQL (28.1ms)[0m   [0mdescribe `Project`[0m
+  [4;36;1mSQL (26.5ms)[0m   [0;1mSHOW KEYS FROM `Project`[0m
+  [4;35;1mSQL (28.9ms)[0m   [0mSHOW FIELDS FROM `Reports`[0m
+  [4;36;1mSQL (27.6ms)[0m   [0;1mdescribe `Reports`[0m
+  [4;35;1mSQL (30.3ms)[0m   [0mSHOW KEYS FROM `Reports`[0m
+  [4;36;1mSQL (27.6ms)[0m   [0;1mSHOW FIELDS FROM `RewardProfile`[0m
+  [4;35;1mSQL (27.5ms)[0m   [0mdescribe `RewardProfile`[0m
+  [4;36;1mSQL (27.1ms)[0m   [0;1mSHOW KEYS FROM `RewardProfile`[0m
+  [4;35;1mSQL (26.9ms)[0m   [0mSHOW FIELDS FROM `Rewards`[0m
+  [4;36;1mSQL (27.0ms)[0m   [0;1mdescribe `Rewards`[0m
+  [4;35;1mSQL (30.9ms)[0m   [0mSHOW KEYS FROM `Rewards`[0m
+  [4;36;1mSQL (28.4ms)[0m   [0;1mSHOW FIELDS FROM `Student`[0m
+  [4;35;1mSQL (26.9ms)[0m   [0mdescribe `Student`[0m
+  [4;36;1mSQL (28.7ms)[0m   [0;1mSHOW KEYS FROM `Student`[0m
+  [4;35;1mSQL (30.2ms)[0m   [0mSHOW FIELDS FROM `Supervises`[0m
+  [4;36;1mSQL (256.9ms)[0m   [0;1mdescribe `Supervises`[0m
+  [4;35;1mSQL (28.2ms)[0m   [0mSHOW KEYS FROM `Supervises`[0m
+  [4;36;1mSQL (27.7ms)[0m   [0;1mSHOW FIELDS FROM `VolunteerSupervisor`[0m
+  [4;35;1mSQL (27.8ms)[0m   [0mdescribe `VolunteerSupervisor`[0m
+  [4;36;1mSQL (27.5ms)[0m   [0;1mSHOW KEYS FROM `VolunteerSupervisor`[0m
+  [4;35;1mSQL (26.7ms)[0m   [0mSHOW FIELDS FROM `orientation`[0m
+  [4;36;1mSQL (29.3ms)[0m   [0;1mdescribe `orientation`[0m
+  [4;35;1mSQL (32.4ms)[0m   [0mSHOW KEYS FROM `orientation`[0m
+  [4;36;1mSQL (31.7ms)[0m   [0;1mSHOW FIELDS FROM `orientation_project`[0m
+  [4;35;1mSQL (33.6ms)[0m   [0mdescribe `orientation_project`[0m
+  [4;36;1mSQL (27.4ms)[0m   [0;1mSHOW KEYS FROM `orientation_project`[0m
+  [4;35;1mSQL (29.9ms)[0m   [0mSHOW FIELDS FROM `orientation_registration`[0m
+  [4;36;1mSQL (27.2ms)[0m   [0;1mdescribe `orientation_registration`[0m
+  [4;35;1mSQL (31.6ms)[0m   [0mSHOW KEYS FROM `orientation_registration`[0m
+  [4;36;1mSQL (42.9ms)[0m   [0;1mSHOW FIELDS FROM `self_report`[0m
+  [4;35;1mSQL (28.9ms)[0m   [0mdescribe `self_report`[0m
+  [4;36;1mSQL (28.1ms)[0m   [0;1mSHOW KEYS FROM `self_report`[0m
+  [4;36;1mSQL (26.7ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (26.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (27.1ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (29.7ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateVolunteers (20100222234907)
+  [4;36;1mSQL (44.7ms)[0m   [0;1mCREATE TABLE `volunteers` (`v_id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `first_name` varchar(255) NOT NULL, `last_name` varchar(255) NOT NULL, `email` varchar(255) NOT NULL, `password` varchar(255) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (28.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100222234907')[0m
+Migrating to AddVolunteerColumns (20100224013823)
+  [4;36;1mSQL (32.1ms)[0m   [0;1mALTER TABLE `volunteers` ADD `birthday` varchar(30) NOT NULL[0m
+  [4;35;1mSQL (41.5ms)[0m   [0mALTER TABLE `volunteers` ADD `phone_home` varchar(20)[0m
+  [4;36;1mSQL (32.6ms)[0m   [0;1mALTER TABLE `volunteers` ADD `phone_work` varchar(20)[0m
+  [4;35;1mSQL (42.1ms)[0m   [0mALTER TABLE `volunteers` ADD `phone_cell` varchar(20)[0m
+  [4;36;1mSQL (84.5ms)[0m   [0;1mALTER TABLE `volunteers` ADD `address` varchar(50) NOT NULL[0m
+  [4;35;1mSQL (32.6ms)[0m   [0mALTER TABLE `volunteers` ADD `province` varchar(20) NOT NULL[0m
+  [4;36;1mSQL (31.3ms)[0m   [0;1mALTER TABLE `volunteers` ADD `postal_code` varchar(10) NOT NULL[0m
+  [4;35;1mSQL (59.7ms)[0m   [0mALTER TABLE `volunteers` ADD `preferred_contact_method` tinyint(1) NOT NULL[0m
+  [4;36;1mSQL (31.4ms)[0m   [0;1mALTER TABLE `volunteers` ADD `emrg_contact_name` varchar(60) NOT NULL[0m
+  [4;35;1mSQL (37.8ms)[0m   [0mALTER TABLE `volunteers` ADD `emrg_contact_relationship` varchar(30) NOT NULL[0m
+  [4;36;1mSQL (39.5ms)[0m   [0;1mALTER TABLE `volunteers` ADD `emrg_contact_phone_work` varchar(20) NOT NULL[0m
+  [4;35;1mSQL (35.2ms)[0m   [0mALTER TABLE `volunteers` ADD `emrg_contact_phone_home` varchar(20) NOT NULL[0m
+  [4;36;1mSQL (44.0ms)[0m   [0;1mALTER TABLE `volunteers` ADD `special_consideration` text[0m
+  [4;35;1mSQL (29.8ms)[0m   [0mALTER TABLE `volunteers` ADD `how_often_volunteer` text[0m
+  [4;36;1mSQL (36.1ms)[0m   [0;1mALTER TABLE `volunteers` ADD `how_heard_about_farm` text[0m
+  [4;35;1mSQL (62.3ms)[0m   [0mALTER TABLE `volunteers` ADD `why_volunteer` text[0m
+  [4;36;1mSQL (34.3ms)[0m   [0;1mALTER TABLE `volunteers` ADD `skills` text[0m
+  [4;35;1mSQL (39.1ms)[0m   [0mALTER TABLE `volunteers` ADD `first_aid` tinyint(1) NOT NULL[0m
+  [4;36;1mSQL (32.0ms)[0m   [0;1mALTER TABLE `volunteers` ADD `foodsafe_level1` tinyint(1) NOT NULL[0m
+  [4;35;1mSQL (36.4ms)[0m   [0mALTER TABLE `volunteers` ADD `foodsafe_level2` tinyint(1) NOT NULL[0m
+  [4;36;1mSQL (35.0ms)[0m   [0;1mALTER TABLE `volunteers` ADD `own_transportation` tinyint(1) NOT NULL[0m
+  [4;35;1mSQL (27.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100224013823')[0m
+  [4;36;1mSQL (30.7ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (33.9ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (34.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (31.7ms)[0m   [0mSHOW FIELDS FROM `Administrator`[0m
+  [4;36;1mSQL (50.3ms)[0m   [0;1mdescribe `Administrator`[0m
+  [4;35;1mSQL (36.1ms)[0m   [0mSHOW KEYS FROM `Administrator`[0m
+  [4;36;1mSQL (29.4ms)[0m   [0;1mSHOW FIELDS FROM `Awarded`[0m
+  [4;35;1mSQL (26.6ms)[0m   [0mdescribe `Awarded`[0m
+  [4;36;1mSQL (27.8ms)[0m   [0;1mSHOW KEYS FROM `Awarded`[0m
+  [4;35;1mSQL (27.2ms)[0m   [0mSHOW FIELDS FROM `GroupProfiles`[0m
+  [4;36;1mSQL (27.8ms)[0m   [0;1mdescribe `GroupProfiles`[0m
+  [4;35;1mSQL (26.7ms)[0m   [0mSHOW KEYS FROM `GroupProfiles`[0m
+  [4;36;1mSQL (28.2ms)[0m   [0;1mSHOW FIELDS FROM `OrientationSession`[0m
+  [4;35;1mSQL (27.1ms)[0m   [0mdescribe `OrientationSession`[0m
+  [4;36;1mSQL (27.5ms)[0m   [0;1mSHOW KEYS FROM `OrientationSession`[0m
+  [4;35;1mSQL (27.6ms)[0m   [0mSHOW FIELDS FROM `Project`[0m
+  [4;36;1mSQL (50.0ms)[0m   [0;1mdescribe `Project`[0m
+  [4;35;1mSQL (28.0ms)[0m   [0mSHOW KEYS FROM `Project`[0m
+  [4;36;1mSQL (64.8ms)[0m   [0;1mSHOW FIELDS FROM `Reports`[0m
+  [4;35;1mSQL (27.3ms)[0m   [0mdescribe `Reports`[0m
+  [4;36;1mSQL (27.8ms)[0m   [0;1mSHOW KEYS FROM `Reports`[0m
+  [4;35;1mSQL (27.4ms)[0m   [0mSHOW FIELDS FROM `RewardProfile`[0m
+  [4;36;1mSQL (34.8ms)[0m   [0;1mdescribe `RewardProfile`[0m
+  [4;35;1mSQL (27.7ms)[0m   [0mSHOW KEYS FROM `RewardProfile`[0m
+  [4;36;1mSQL (37.1ms)[0m   [0;1mSHOW FIELDS FROM `Rewards`[0m
+  [4;35;1mSQL (27.4ms)[0m   [0mdescribe `Rewards`[0m
+  [4;36;1mSQL (28.8ms)[0m   [0;1mSHOW KEYS FROM `Rewards`[0m
+  [4;35;1mSQL (27.3ms)[0m   [0mSHOW FIELDS FROM `Student`[0m
+  [4;36;1mSQL (27.5ms)[0m   [0;1mdescribe `Student`[0m
+  [4;35;1mSQL (30.0ms)[0m   [0mSHOW KEYS FROM `Student`[0m
+  [4;36;1mSQL (28.8ms)[0m   [0;1mSHOW FIELDS FROM `Supervises`[0m
+  [4;35;1mSQL (26.8ms)[0m   [0mdescribe `Supervises`[0m
+  [4;36;1mSQL (27.6ms)[0m   [0;1mSHOW KEYS FROM `Supervises`[0m
+  [4;35;1mSQL (28.2ms)[0m   [0mSHOW FIELDS FROM `VolunteerSupervisor`[0m
+  [4;36;1mSQL (26.7ms)[0m   [0;1mdescribe `VolunteerSupervisor`[0m
+  [4;35;1mSQL (27.1ms)[0m   [0mSHOW KEYS FROM `VolunteerSupervisor`[0m
+  [4;36;1mSQL (36.5ms)[0m   [0;1mSHOW FIELDS FROM `orientation`[0m
+  [4;35;1mSQL (65.6ms)[0m   [0mdescribe `orientation`[0m
+  [4;36;1mSQL (28.4ms)[0m   [0;1mSHOW KEYS FROM `orientation`[0m
+  [4;35;1mSQL (27.6ms)[0m   [0mSHOW FIELDS FROM `orientation_project`[0m
+  [4;36;1mSQL (36.7ms)[0m   [0;1mdescribe `orientation_project`[0m
+  [4;35;1mSQL (28.3ms)[0m   [0mSHOW KEYS FROM `orientation_project`[0m
+  [4;36;1mSQL (28.0ms)[0m   [0;1mSHOW FIELDS FROM `orientation_registration`[0m
+  [4;35;1mSQL (27.9ms)[0m   [0mdescribe `orientation_registration`[0m
+  [4;36;1mSQL (26.7ms)[0m   [0;1mSHOW KEYS FROM `orientation_registration`[0m
+  [4;35;1mSQL (28.5ms)[0m   [0mSHOW FIELDS FROM `self_report`[0m
+  [4;36;1mSQL (27.8ms)[0m   [0;1mdescribe `self_report`[0m
+  [4;35;1mSQL (32.0ms)[0m   [0mSHOW KEYS FROM `self_report`[0m
+  [4;36;1mSQL (28.7ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+  [4;35;1mSQL (28.7ms)[0m   [0mdescribe `volunteers`[0m
+  [4;36;1mSQL (36.7ms)[0m   [0;1mSHOW KEYS FROM `volunteers`[0m
+  [4;36;1mSQL (26.5ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (37.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#index (for 127.0.0.1 at 2010-02-24 00:45:32) [GET]
+  [4;36;1mVolunteer Load (61.1ms)[0m   [0;1mSELECT * FROM `volunteers` [0m
+Rendering template within layouts/volunteers
+Rendering volunteers/index
+Completed in 88ms (View: 22, DB: 125) | 200 OK [http://localhost/volunteers]
+  [4;35;1mSQL (26.9ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (26.7ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#new (for 127.0.0.1 at 2010-02-24 00:45:34) [GET]
+  [4;35;1mVolunteer Columns (33.3ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+Rendering template within layouts/volunteers
+Rendering volunteers/new
+Completed in 54ms (View: 15, DB: 87) | 200 OK [http://localhost/volunteers/new]
+  [4;36;1mSQL (36.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (29.6ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#create (for 127.0.0.1 at 2010-02-24 00:45:58) [POST]
+  Parameters: {"commit"=>"Create", "volunteer"=>{"last_name"=>"", "first_name"=>""}, "authenticity_token"=>"xi3q8byB0PD8oYa/pWZtfL2qIdkbisZnqWgvk7GguQE="}
+  [4;36;1mVolunteer Columns (28.1ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+  [4;35;1mSQL (26.6ms)[0m   [0mBEGIN[0m
+  [4;36;1mVolunteer Create (0.0ms)[0m   [0;1mMysql::Error: Column 'address' cannot be null: INSERT INTO `volunteers` (`address`, `created_at`, `special_consideration`, `how_heard_about_farm`, `updated_at`, `postal_code`, `foodsafe_level1`, `how_often_volunteer`, `skills`, `first_aid`, `foodsafe_level2`, `phone_home`, `emrg_contact_name`, `emrg_contact_relationship`, `emrg_contact_phone_work`, `v_id`, `phone_work`, `last_name`, `birthday`, `own_transportation`, `phone_cell`, `preferred_contact_method`, `password`, `province`, `first_name`, `email`, `emrg_contact_phone_home`, `why_volunteer`) VALUES(NULL, '2010-02-24 08:45:58', NULL, NULL, '2010-02-24 08:45:58', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL)[0m
+  [4;35;1mSQL (34.7ms)[0m   [0mROLLBACK[0m
+
+ActiveRecord::StatementInvalid (Mysql::Error: Column 'address' cannot be null: INSERT INTO `volunteers` (`address`, `created_at`, `special_consideration`, `how_heard_about_farm`, `updated_at`, `postal_code`, `foodsafe_level1`, `how_often_volunteer`, `skills`, `first_aid`, `foodsafe_level2`, `phone_home`, `emrg_contact_name`, `emrg_contact_relationship`, `emrg_contact_phone_work`, `v_id`, `phone_work`, `last_name`, `birthday`, `own_transportation`, `phone_cell`, `preferred_contact_method`, `password`, `province`, `first_name`, `email`, `emrg_contact_phone_home`, `why_volunteer`) VALUES(NULL, '2010-02-24 08:45:58', NULL, NULL, '2010-02-24 08:45:58', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL)):
+  app/controllers/volunteers_controller.rb:46:in `create'
+  app/controllers/volunteers_controller.rb:45:in `create'
+
+Rendered rescues/_trace (127.8ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+/!\ FAILSAFE /!\  Wed Feb 24 07:58:44 -0800 2010
+  Status: 500 Internal Server Error
+  Unknown MySQL server host 'team75.heliohost.org' (1)
+    /Users/lippe/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:589:in `real_connect'
+    /Users/lippe/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:589:in `connect'
+    /Users/lippe/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:203:in `initialize'
+    /Users/lippe/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:75:in `new'
+    /Users/lippe/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:75:in `mysql_connection'
+    /Users/lippe/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `send'
+    /Users/lippe/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    /Users/lippe/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    /Users/lippe/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `checkout'
+    /Users/lippe/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    /Users/lippe/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `checkout'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/monitor.rb:242:in `synchronize'
+    /Users/lippe/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    /Users/lippe/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    /Users/lippe/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    /Users/lippe/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    /Users/lippe/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    /Users/lippe/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+    /Users/lippe/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+    /Users/lippe/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/lippe/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+    /Users/lippe/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+    /Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+    /Users/lippe/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /Users/lippe/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+    /Users/lippe/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+    /Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+    /Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+    /Users/lippe/.gem/ruby/1.8/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+    /Users/lippe/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+    /Users/lippe/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+    /Users/lippe/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+    /Users/lippe/.gem/ruby/1.8/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Users/lippe/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+    /Users/lippe/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/chunked.rb:15:in `call'
+    /Users/lippe/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:64:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /Users/lippe/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:34:in `run'
+    /Users/lippe/.gem/ruby/1.8/gems/rails-2.3.5/lib/commands/server.rb:111
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+/!\ FAILSAFE /!\  Wed Feb 24 07:59:24 -0800 2010
+  Status: 500 Internal Server Error
+  Unknown MySQL server host 'team75.heliohost.org' (1)
+    /Users/lippe/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:589:in `real_connect'
+    /Users/lippe/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:589:in `connect'
+    /Users/lippe/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:203:in `initialize'
+    /Users/lippe/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:75:in `new'
+    /Users/lippe/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:75:in `mysql_connection'
+    /Users/lippe/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `send'
+    /Users/lippe/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    /Users/lippe/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    /Users/lippe/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `checkout'
+    /Users/lippe/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    /Users/lippe/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `checkout'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/monitor.rb:242:in `synchronize'
+    /Users/lippe/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    /Users/lippe/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    /Users/lippe/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    /Users/lippe/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    /Users/lippe/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    /Users/lippe/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+    /Users/lippe/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+    /Users/lippe/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/lippe/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+    /Users/lippe/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+    /Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+    /Users/lippe/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /Users/lippe/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+    /Users/lippe/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+    /Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+    /Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+    /Users/lippe/.gem/ruby/1.8/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+    /Users/lippe/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+    /Users/lippe/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+    /Users/lippe/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+    /Users/lippe/.gem/ruby/1.8/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Users/lippe/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+    /Users/lippe/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/chunked.rb:15:in `call'
+    /Users/lippe/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:64:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /Users/lippe/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:34:in `run'
+    /Users/lippe/.gem/ruby/1.8/gems/rails-2.3.5/lib/commands/server.rb:111
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+/!\ FAILSAFE /!\  Wed Feb 24 07:59:55 -0800 2010
+  Status: 500 Internal Server Error
+  Unknown MySQL server host 'team75.heliohost.org' (1)
+    /Users/lippe/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:589:in `real_connect'
+    /Users/lippe/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:589:in `connect'
+    /Users/lippe/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:203:in `initialize'
+    /Users/lippe/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:75:in `new'
+    /Users/lippe/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:75:in `mysql_connection'
+    /Users/lippe/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `send'
+    /Users/lippe/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    /Users/lippe/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    /Users/lippe/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `checkout'
+    /Users/lippe/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    /Users/lippe/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `checkout'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/monitor.rb:242:in `synchronize'
+    /Users/lippe/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    /Users/lippe/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    /Users/lippe/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    /Users/lippe/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    /Users/lippe/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    /Users/lippe/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+    /Users/lippe/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+    /Users/lippe/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/lippe/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+    /Users/lippe/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+    /Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+    /Users/lippe/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /Users/lippe/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+    /Users/lippe/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+    /Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+    /Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+    /Users/lippe/.gem/ruby/1.8/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+    /Users/lippe/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+    /Users/lippe/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+    /Users/lippe/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+    /Users/lippe/.gem/ruby/1.8/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Users/lippe/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+    /Users/lippe/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/chunked.rb:15:in `call'
+    /Users/lippe/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:64:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /Users/lippe/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:34:in `run'
+    /Users/lippe/.gem/ruby/1.8/gems/rails-2.3.5/lib/commands/server.rb:111
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateVolunteers (20100222234907)
+Migrating to AddVolunteerColumns (20100224013823)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (2.2ms)[0m   [0mSHOW FIELDS FROM `volunteersjanne`[0m
+  [4;36;1mSQL (2.7ms)[0m   [0;1mdescribe `volunteersjanne`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW KEYS FROM `volunteersjanne`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateVolunteers (20100222234907)
+Migrating to AddVolunteerColumns (20100224013823)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mSHOW FIELDS FROM `volunteersjanne`[0m
+  [4;36;1mSQL (3.1ms)[0m   [0;1mdescribe `volunteersjanne`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW KEYS FROM `volunteersjanne`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateVolunteers (20100222234907)
+Migrating to AddVolunteerColumns (20100224013823)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mSHOW FIELDS FROM `volunteersjanne`[0m
+  [4;36;1mSQL (2.9ms)[0m   [0;1mdescribe `volunteersjanne`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW KEYS FROM `volunteersjanne`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateVolunteers (20100222234907)
+Migrating to AddVolunteerColumns (20100224013823)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mSHOW FIELDS FROM `volunteersjanne`[0m
+  [4;36;1mSQL (2.9ms)[0m   [0;1mdescribe `volunteersjanne`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW KEYS FROM `volunteersjanne`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateVolunteers (20100222234907)
+Migrating to AddVolunteerColumns (20100224013823)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (2.1ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mdescribe `volunteers`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW KEYS FROM `volunteers`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to AddVolunteerColumns (20100224013823)
+  [4;36;1mSQL (87.7ms)[0m   [0;1mALTER TABLE `volunteers` DROP `birthday`[0m
+  [4;35;1mSQL (233.5ms)[0m   [0mALTER TABLE `volunteers` DROP `phone_home`[0m
+  [4;36;1mSQL (133.9ms)[0m   [0;1mALTER TABLE `volunteers` DROP `phone_work`[0m
+  [4;35;1mSQL (110.1ms)[0m   [0mALTER TABLE `volunteers` DROP `phone_cell`[0m
+  [4;36;1mSQL (114.5ms)[0m   [0;1mALTER TABLE `volunteers` DROP `address`[0m
+  [4;35;1mSQL (100.6ms)[0m   [0mALTER TABLE `volunteers` DROP `province`[0m
+  [4;36;1mSQL (100.3ms)[0m   [0;1mALTER TABLE `volunteers` DROP `postal_code`[0m
+  [4;35;1mSQL (100.7ms)[0m   [0mALTER TABLE `volunteers` DROP `preferred_contact_method`[0m
+  [4;36;1mSQL (122.5ms)[0m   [0;1mALTER TABLE `volunteers` DROP `emrg_contact_name`[0m
+  [4;35;1mSQL (137.7ms)[0m   [0mALTER TABLE `volunteers` DROP `emrg_contact_relationship`[0m
+  [4;36;1mSQL (122.1ms)[0m   [0;1mALTER TABLE `volunteers` DROP `special_consideration`[0m
+  [4;35;1mSQL (134.9ms)[0m   [0mALTER TABLE `volunteers` DROP `how_often_volunteer`[0m
+  [4;36;1mSQL (123.4ms)[0m   [0;1mALTER TABLE `volunteers` DROP `how_heard_about_farm`[0m
+  [4;35;1mSQL (125.1ms)[0m   [0mALTER TABLE `volunteers` DROP `why_volunteer`[0m
+  [4;36;1mSQL (121.7ms)[0m   [0;1mALTER TABLE `volunteers` DROP `skills`[0m
+  [4;35;1mSQL (124.0ms)[0m   [0mALTER TABLE `volunteers` DROP `first_aid`[0m
+  [4;36;1mSQL (122.8ms)[0m   [0;1mALTER TABLE `volunteers` DROP `foodsafe_level1`[0m
+  [4;35;1mSQL (144.7ms)[0m   [0mALTER TABLE `volunteers` DROP `foodsafe_level2`[0m
+  [4;36;1mSQL (134.4ms)[0m   [0;1mALTER TABLE `volunteers` DROP `own_transportation`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mDELETE FROM schema_migrations WHERE version = '20100224013823'[0m
+Migrating to CreateVolunteers (20100222234907)
+  [4;36;1mSQL (2.1ms)[0m   [0;1mDROP TABLE `volunteers`[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mDELETE FROM schema_migrations WHERE version = '20100222234907'[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateVolunteers (20100222234907)
+  [4;36;1mSQL (62.1ms)[0m   [0;1mCREATE TABLE `volunteers` (`v_id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `first_name` varchar(255) NOT NULL, `last_name` varchar(255) NOT NULL, `email` varchar(255) NOT NULL, `password` varchar(255) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100222234907')[0m
+Migrating to AddVolunteerColumns (20100224013823)
+  [4;36;1mSQL (155.6ms)[0m   [0;1mALTER TABLE `volunteers` ADD `birthday` varchar(30) NOT NULL[0m
+  [4;35;1mSQL (123.4ms)[0m   [0mALTER TABLE `volunteers` ADD `phone_home` varchar(20)[0m
+  [4;36;1mSQL (122.4ms)[0m   [0;1mALTER TABLE `volunteers` ADD `phone_work` varchar(20)[0m
+  [4;35;1mSQL (129.8ms)[0m   [0mALTER TABLE `volunteers` ADD `phone_cell` varchar(20)[0m
+  [4;36;1mSQL (121.9ms)[0m   [0;1mALTER TABLE `volunteers` ADD `address` varchar(50) NOT NULL[0m
+  [4;35;1mSQL (111.7ms)[0m   [0mALTER TABLE `volunteers` ADD `province` varchar(20) NOT NULL[0m
+  [4;36;1mSQL (111.8ms)[0m   [0;1mALTER TABLE `volunteers` ADD `postal_code` varchar(10) NOT NULL[0m
+  [4;35;1mSQL (111.6ms)[0m   [0mALTER TABLE `volunteers` ADD `preferred_contact_method` tinyint(1) NOT NULL[0m
+  [4;36;1mSQL (122.5ms)[0m   [0;1mALTER TABLE `volunteers` ADD `emrg_contact_name` varchar(60) NOT NULL[0m
+  [4;35;1mSQL (122.8ms)[0m   [0mALTER TABLE `volunteers` ADD `emrg_contact_relationship` varchar(30) NOT NULL[0m
+  [4;36;1mSQL (122.7ms)[0m   [0;1mALTER TABLE `volunteers` ADD `emrg_contact_phone_work` varchar(20) NOT NULL[0m
+  [4;35;1mSQL (122.6ms)[0m   [0mALTER TABLE `volunteers` ADD `emrg_contact_phone_home` varchar(20) NOT NULL[0m
+  [4;36;1mSQL (122.4ms)[0m   [0;1mALTER TABLE `volunteers` ADD `special_consideration` text[0m
+  [4;35;1mSQL (124.4ms)[0m   [0mALTER TABLE `volunteers` ADD `how_often_volunteer` text[0m
+  [4;36;1mSQL (110.4ms)[0m   [0;1mALTER TABLE `volunteers` ADD `how_heard_about_farm` text[0m
+  [4;35;1mSQL (111.0ms)[0m   [0mALTER TABLE `volunteers` ADD `why_volunteer` text[0m
+  [4;36;1mSQL (111.3ms)[0m   [0;1mALTER TABLE `volunteers` ADD `skills` text[0m
+  [4;35;1mSQL (124.2ms)[0m   [0mALTER TABLE `volunteers` ADD `first_aid` tinyint(1) NOT NULL[0m
+  [4;36;1mSQL (144.9ms)[0m   [0;1mALTER TABLE `volunteers` ADD `foodsafe_level1` tinyint(1) NOT NULL[0m
+  [4;35;1mSQL (85.6ms)[0m   [0mALTER TABLE `volunteers` ADD `foodsafe_level2` tinyint(1) NOT NULL[0m
+  [4;36;1mSQL (123.8ms)[0m   [0;1mALTER TABLE `volunteers` ADD `own_transportation` tinyint(1) NOT NULL[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100224013823')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+  [4;36;1mSQL (2.6ms)[0m   [0;1mdescribe `volunteers`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW KEYS FROM `volunteers`[0m
+  [4;36;1mSQL (27.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (26.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#index (for 127.0.0.1 at 2010-02-24 08:17:13) [GET]
+  [4;36;1mVolunteer Load (445.3ms)[0m   [0;1mSELECT * FROM `volunteers` [0m
+Rendering template within layouts/volunteers
+Rendering volunteers/index
+Completed in 524ms (View: 74, DB: 499) | 200 OK [http://localhost/volunteers]
+  [4;35;1mSQL (26.5ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (26.7ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#index (for 127.0.0.1 at 2010-02-24 08:21:13) [GET]
+  [4;35;1mVolunteer Load (35.7ms)[0m   [0mSELECT * FROM `volunteers` [0m
+Rendering template within layouts/volunteers
+Rendering volunteers/index
+Completed in 46ms (View: 6, DB: 89) | 200 OK [http://localhost/volunteers]
+  [4;36;1mSQL (26.5ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (26.6ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#index (for 127.0.0.1 at 2010-02-24 08:21:23) [GET]
+  [4;36;1mVolunteer Load (29.4ms)[0m   [0;1mSELECT * FROM `volunteers` [0m
+Rendering template within layouts/volunteers
+Rendering volunteers/index
+Completed in 44ms (View: 10, DB: 82) | 200 OK [http://localhost/volunteers]
+  [4;35;1mSQL (28.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (26.6ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#new (for 127.0.0.1 at 2010-02-24 08:21:26) [GET]
+  [4;35;1mVolunteer Columns (29.9ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+Rendering template within layouts/volunteers
+Rendering volunteers/new
+Completed in 49ms (View: 14, DB: 85) | 200 OK [http://localhost/volunteers/new]
+  [4;36;1mSQL (29.9ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (27.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#new (for 127.0.0.1 at 2010-02-24 08:23:36) [GET]
+  [4;36;1mVolunteer Columns (30.3ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+Rendering template within layouts/volunteers
+Rendering volunteers/new
+Completed in 43ms (View: 8, DB: 88) | 200 OK [http://localhost/volunteers/new]
+  [4;35;1mSQL (26.9ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (28.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#index (for 127.0.0.1 at 2010-02-24 08:23:38) [GET]
+  [4;35;1mVolunteer Load (28.3ms)[0m   [0mSELECT * FROM `volunteers` [0m
+Rendering template within layouts/volunteers
+Rendering volunteers/index
+Completed in 35ms (View: 2, DB: 83) | 200 OK [http://localhost/volunteers]
+  [4;36;1mSQL (25.9ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (31.7ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#index (for 127.0.0.1 at 2010-02-24 08:23:49) [GET]
+  [4;36;1mVolunteer Load (27.9ms)[0m   [0;1mSELECT * FROM `volunteers` [0m
+Rendering template within layouts/volunteers
+Rendering volunteers/index
+Completed in 34ms (View: 2, DB: 86) | 200 OK [http://localhost/volunteers]
+  [4;35;1mSQL (27.5ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (25.9ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#index (for 127.0.0.1 at 2010-02-24 08:24:09) [GET]
+  [4;35;1mVolunteer Load (27.5ms)[0m   [0mSELECT * FROM `volunteers` [0m
+Rendering template within layouts/volunteers
+Rendering volunteers/index
+Completed in 33ms (View: 1, DB: 81) | 200 OK [http://localhost/volunteers]
+  [4;36;1mSQL (27.6ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (26.7ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#index (for 127.0.0.1 at 2010-02-24 08:24:18) [GET]
+  [4;36;1mVolunteer Load (27.1ms)[0m   [0;1mSELECT * FROM `volunteers` [0m
+Rendering template within layouts/volunteers
+Rendering volunteers/index
+Completed in 40ms (View: 9, DB: 81) | 200 OK [http://localhost/volunteers]
+  [4;35;1mSQL (26.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (26.5ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#index (for 127.0.0.1 at 2010-02-24 08:24:19) [GET]
+  [4;35;1mVolunteer Load (27.0ms)[0m   [0mSELECT * FROM `volunteers` [0m
+Rendering template within layouts/volunteers
+Rendering volunteers/index
+Completed in 32ms (View: 1, DB: 80) | 200 OK [http://localhost/volunteers]
+  [4;36;1mSQL (26.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (26.5ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#index (for 127.0.0.1 at 2010-02-24 08:25:05) [GET]
+  [4;36;1mVolunteer Load (27.9ms)[0m   [0;1mSELECT * FROM `volunteers` [0m
+Rendering template within layouts/volunteers
+Rendering volunteers/index
+Completed in 39ms (View: 7, DB: 81) | 200 OK [http://localhost/volunteers]
+  [4;35;1mSQL (26.8ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (26.9ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#index (for 127.0.0.1 at 2010-02-24 08:25:12) [GET]
+  [4;35;1mVolunteer Load (30.4ms)[0m   [0mSELECT * FROM `volunteers` [0m
+Rendering template within layouts/volunteers
+Rendering volunteers/index
+Completed in 40ms (View: 6, DB: 84) | 200 OK [http://localhost/volunteers]
+  [4;36;1mSQL (28.8ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (26.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#index (for 127.0.0.1 at 2010-02-24 08:25:13) [GET]
+  [4;36;1mVolunteer Load (28.6ms)[0m   [0;1mSELECT * FROM `volunteers` [0m
+Rendering template within layouts/volunteers
+Rendering volunteers/index
+Completed in 34ms (View: 1, DB: 84) | 200 OK [http://localhost/volunteers]
+  [4;35;1mSQL (26.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (252.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#index (for 127.0.0.1 at 2010-02-24 08:25:19) [GET]
+  [4;35;1mVolunteer Load (27.3ms)[0m   [0mSELECT * FROM `volunteers` [0m
+Rendering template within layouts/volunteers
+Rendering volunteers/index
+Completed in 38ms (View: 6, DB: 305) | 200 OK [http://localhost/volunteers]
+  [4;36;1mSQL (26.9ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (52.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#index (for 127.0.0.1 at 2010-02-24 08:25:25) [GET]
+  [4;36;1mVolunteer Load (72.4ms)[0m   [0;1mSELECT * FROM `volunteers` [0m
+Rendering template within layouts/volunteers
+Rendering volunteers/index
+Completed in 82ms (View: 6, DB: 151) | 200 OK [http://localhost/volunteers]
+  [4;35;1mSQL (26.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (26.7ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#index (for 127.0.0.1 at 2010-02-24 08:25:26) [GET]
+  [4;35;1mVolunteer Load (27.6ms)[0m   [0mSELECT * FROM `volunteers` [0m
+Rendering template within layouts/volunteers
+Rendering volunteers/index
+Completed in 34ms (View: 1, DB: 80) | 200 OK [http://localhost/volunteers]
+  [4;36;1mSQL (26.5ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (26.6ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#index (for 127.0.0.1 at 2010-02-24 08:26:11) [GET]
+  [4;36;1mVolunteer Load (28.6ms)[0m   [0;1mSELECT * FROM `volunteers` [0m
+Rendering template within layouts/volunteers
+Rendering volunteers/index
+Completed in 42ms (View: 9, DB: 82) | 200 OK [http://localhost/volunteers]
+  [4;35;1mSQL (61.9ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (25.9ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#index (for 127.0.0.1 at 2010-02-24 08:26:35) [GET]
+  [4;35;1mVolunteer Load (27.0ms)[0m   [0mSELECT * FROM `volunteers` [0m
+Rendering template within layouts/volunteers
+Rendering volunteers/index
+Completed in 32ms (View: 1, DB: 115) | 200 OK [http://localhost/volunteers]
+  [4;36;1mSQL (26.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (26.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#index (for 127.0.0.1 at 2010-02-24 08:26:36) [GET]
+  [4;36;1mVolunteer Load (28.4ms)[0m   [0;1mSELECT * FROM `volunteers` [0m
+Rendering template within layouts/volunteers
+Rendering volunteers/index
+Completed in 35ms (View: 2, DB: 81) | 200 OK [http://localhost/volunteers]
+  [4;35;1mSQL (26.5ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (26.6ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#new (for 127.0.0.1 at 2010-02-24 08:26:48) [GET]
+  [4;35;1mVolunteer Columns (74.5ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+Rendering template within layouts/volunteers
+Rendering volunteers/new
+Completed in 93ms (View: 10, DB: 128) | 200 OK [http://localhost/volunteers/new]
+  [4;36;1mSQL (26.6ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (26.8ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#new (for 127.0.0.1 at 2010-02-24 08:26:51) [GET]
+  [4;36;1mVolunteer Columns (29.0ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+Rendering template within layouts/volunteers
+Rendering volunteers/new
+Completed in 45ms (View: 10, DB: 82) | 200 OK [http://localhost/volunteers/new]
+  [4;35;1mSQL (27.4ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (26.7ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#create (for 127.0.0.1 at 2010-02-24 08:26:52) [POST]
+  Parameters: {"commit"=>"Create", "volunteer"=>{"last_name"=>"", "first_name"=>""}, "authenticity_token"=>"xi3q8byB0PD8oYa/pWZtfL2qIdkbisZnqWgvk7GguQE="}
+  [4;35;1mVolunteer Columns (1159.8ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+  [4;36;1mSQL (56.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mVolunteer Create (0.0ms)[0m   [0mMysql::Error: Column 'address' cannot be null: INSERT INTO `volunteers` (`address`, `created_at`, `special_consideration`, `how_heard_about_farm`, `updated_at`, `postal_code`, `foodsafe_level1`, `how_often_volunteer`, `skills`, `first_aid`, `foodsafe_level2`, `phone_home`, `emrg_contact_name`, `emrg_contact_relationship`, `emrg_contact_phone_work`, `v_id`, `phone_work`, `last_name`, `birthday`, `own_transportation`, `phone_cell`, `preferred_contact_method`, `password`, `province`, `first_name`, `email`, `emrg_contact_phone_home`, `why_volunteer`) VALUES(NULL, '2010-02-24 16:26:53', NULL, NULL, '2010-02-24 16:26:53', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL)[0m
+  [4;36;1mSQL (48.6ms)[0m   [0;1mROLLBACK[0m
+
+ActiveRecord::StatementInvalid (Mysql::Error: Column 'address' cannot be null: INSERT INTO `volunteers` (`address`, `created_at`, `special_consideration`, `how_heard_about_farm`, `updated_at`, `postal_code`, `foodsafe_level1`, `how_often_volunteer`, `skills`, `first_aid`, `foodsafe_level2`, `phone_home`, `emrg_contact_name`, `emrg_contact_relationship`, `emrg_contact_phone_work`, `v_id`, `phone_work`, `last_name`, `birthday`, `own_transportation`, `phone_cell`, `preferred_contact_method`, `password`, `province`, `first_name`, `email`, `emrg_contact_phone_home`, `why_volunteer`) VALUES(NULL, '2010-02-24 16:26:53', NULL, NULL, '2010-02-24 16:26:53', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL)):
+  app/controllers/volunteers_controller.rb:46:in `create'
+  app/controllers/volunteers_controller.rb:45:in `create'
+
+Rendered rescues/_trace (117.6ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (44.4ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (27.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#show (for 127.0.0.1 at 2010-02-24 08:27:08) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mVolunteer Columns (27.5ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+  [4;36;1mVolunteer Load (0.0ms)[0m   [0;1mMysql::Error: Unknown column 'volunteers.id' in 'where clause': SELECT * FROM `volunteers` WHERE (`volunteers`.`id` = '1') [0m
+
+ActiveRecord::StatementInvalid (Mysql::Error: Unknown column 'volunteers.id' in 'where clause': SELECT * FROM `volunteers` WHERE (`volunteers`.`id` = '1') ):
+  app/controllers/volunteers_controller.rb:16:in `show'
+
+Rendered rescues/_trace (67.0ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (28.7ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (26.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#index (for 127.0.0.1 at 2010-02-24 08:28:36) [GET]
+  [4;35;1mVolunteer Load (27.9ms)[0m   [0mSELECT * FROM `volunteers` [0m
+Rendering template within layouts/volunteers
+Rendering volunteers/index
+Completed in 35ms (View: 2, DB: 83) | 200 OK [http://localhost/volunteers]
+  [4;36;1mSQL (26.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (26.7ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#show (for 127.0.0.1 at 2010-02-24 08:28:38) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mVolunteer Columns (30.0ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+  [4;35;1mVolunteer Load (45.0ms)[0m   [0mSELECT * FROM `volunteers` WHERE (`volunteers`.`v_id` = 1) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Volunteer with ID=1):
+  app/controllers/volunteers_controller.rb:16:in `show'
+
+Rendered rescues/_trace (121.9ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#show (for 127.0.0.1 at 2010-02-24 08:29:22) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mVolunteer Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+  [4;35;1mVolunteer Load (0.4ms)[0m   [0mSELECT * FROM `volunteers` WHERE (`volunteers`.`v_id` = 1) [0m
+Rendering template within layouts/volunteers
+Rendering volunteers/show
+Completed in 36ms (View: 28, DB: 3) | 200 OK [http://localhost/volunteers/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#index (for 127.0.0.1 at 2010-02-24 08:29:24) [GET]
+  [4;36;1mVolunteer Load (0.5ms)[0m   [0;1mSELECT * FROM `volunteers` [0m
+Rendering template within layouts/volunteers
+Rendering volunteers/index
+  [4;35;1mVolunteer Columns (78.8ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.length) on line #24 of app/views/volunteers/index.html.erb:
+21: 	</td>
+22: 	<td>
+23: 		<%
+24: 		if volunteer.phone_work.length > 0
+25: 		%>
+26: 			<%=h volunteer.phone_work%> (work)
+27: 		<%
+
+    app/views/volunteers/index.html.erb:24
+    app/views/volunteers/index.html.erb:11:in `each'
+    app/views/volunteers/index.html.erb:11
+    app/controllers/volunteers_controller.rb:7:in `index'
+
+Rendered rescues/_trace (125.6ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#index (for 127.0.0.1 at 2010-02-24 08:29:47) [GET]
+  [4;36;1mVolunteer Load (0.4ms)[0m   [0;1mSELECT * FROM `volunteers` [0m
+Rendering template within layouts/volunteers
+Rendering volunteers/index
+  [4;35;1mVolunteer Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+Completed in 20ms (View: 13, DB: 3) | 200 OK [http://localhost/volunteers]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#index (for 127.0.0.1 at 2010-02-24 08:30:31) [GET]
+  [4;36;1mVolunteer Load (0.5ms)[0m   [0;1mSELECT * FROM `volunteers` [0m
+Rendering template within layouts/volunteers
+Rendering volunteers/index
+  [4;35;1mVolunteer Columns (3.5ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+Completed in 23ms (View: 15, DB: 4) | 200 OK [http://localhost/volunteers]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#index (for 127.0.0.1 at 2010-02-24 08:31:00) [GET]
+  [4;36;1mVolunteer Load (0.4ms)[0m   [0;1mSELECT * FROM `volunteers` [0m
+Rendering template within layouts/volunteers
+Rendering volunteers/index
+  [4;35;1mVolunteer Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+Completed in 21ms (View: 14, DB: 3) | 200 OK [http://localhost/volunteers]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#index (for 127.0.0.1 at 2010-02-24 08:31:01) [GET]
+  [4;36;1mVolunteer Load (0.4ms)[0m   [0;1mSELECT * FROM `volunteers` [0m
+Rendering template within layouts/volunteers
+Rendering volunteers/index
+  [4;35;1mVolunteer Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+Completed in 15ms (View: 9, DB: 2) | 200 OK [http://localhost/volunteers]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#index (for 127.0.0.1 at 2010-02-24 08:31:01) [GET]
+  [4;36;1mVolunteer Load (0.4ms)[0m   [0;1mSELECT * FROM `volunteers` [0m
+Rendering template within layouts/volunteers
+Rendering volunteers/index
+  [4;35;1mVolunteer Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+Completed in 17ms (View: 10, DB: 3) | 200 OK [http://localhost/volunteers]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#index (for 127.0.0.1 at 2010-02-24 08:31:13) [GET]
+  [4;36;1mVolunteer Load (0.4ms)[0m   [0;1mSELECT * FROM `volunteers` [0m
+Rendering template within layouts/volunteers
+Rendering volunteers/index
+  [4;35;1mVolunteer Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+Completed in 87ms (View: 16, DB: 3) | 200 OK [http://localhost/volunteers]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#index (for 127.0.0.1 at 2010-02-24 08:33:25) [GET]
+  [4;36;1mVolunteer Load (0.4ms)[0m   [0;1mSELECT * FROM `volunteers` [0m
+Rendering template within layouts/volunteers
+Rendering volunteers/index
+  [4;35;1mVolunteer Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+Completed in 21ms (View: 15, DB: 3) | 200 OK [http://localhost/volunteers]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#index (for 127.0.0.1 at 2010-02-24 08:36:42) [GET]
+  [4;36;1mVolunteer Load (0.4ms)[0m   [0;1mSELECT * FROM `volunteers` [0m
+Rendering template within layouts/volunteers
+Rendering volunteers/index
+  [4;35;1mVolunteer Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+Completed in 20ms (View: 14, DB: 3) | 200 OK [http://localhost/volunteers]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#index (for 127.0.0.1 at 2010-02-24 08:36:43) [GET]
+  [4;36;1mVolunteer Load (0.3ms)[0m   [0;1mSELECT * FROM `volunteers` [0m
+Rendering template within layouts/volunteers
+Rendering volunteers/index
+  [4;35;1mVolunteer Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+Completed in 16ms (View: 9, DB: 3) | 200 OK [http://localhost/volunteers]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#index (for 127.0.0.1 at 2010-02-24 08:36:43) [GET]
+  [4;36;1mVolunteer Load (0.4ms)[0m   [0;1mSELECT * FROM `volunteers` [0m
+Rendering template within layouts/volunteers
+Rendering volunteers/index
+  [4;35;1mVolunteer Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+Completed in 15ms (View: 9, DB: 3) | 200 OK [http://localhost/volunteers]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#index (for 127.0.0.1 at 2010-02-24 08:36:43) [GET]
+  [4;36;1mVolunteer Load (0.4ms)[0m   [0;1mSELECT * FROM `volunteers` [0m
+Rendering template within layouts/volunteers
+Rendering volunteers/index
+  [4;35;1mVolunteer Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+Completed in 15ms (View: 9, DB: 2) | 200 OK [http://localhost/volunteers]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#index (for 127.0.0.1 at 2010-02-24 08:36:52) [GET]
+  [4;36;1mVolunteer Load (0.4ms)[0m   [0;1mSELECT * FROM `volunteers` [0m
+Rendering template within layouts/volunteers
+Rendering volunteers/index
+  [4;35;1mVolunteer Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+Completed in 21ms (View: 15, DB: 3) | 200 OK [http://localhost/volunteers]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#index (for 127.0.0.1 at 2010-02-24 08:38:08) [GET]
+  [4;36;1mVolunteer Load (0.4ms)[0m   [0;1mSELECT * FROM `volunteers` [0m
+Rendering template within layouts/volunteers
+Rendering volunteers/index
+ERROR: compiling _run_erb_app47views47volunteers47index46html46erb RAISED compile error
+/Users/lippe/Documents/utbytesstudier/kurser/cpsc319/project/team75/app/views/volunteers/index.html.erb:25: syntax error, unexpected '='
+			="#{h volunteer.phone_work} (work)"
+			 ^
+/Users/lippe/Documents/utbytesstudier/kurser/cpsc319/project/team75/app/views/volunteers/index.html.erb:28: syntax error, unexpected '='
+			="#{h volunteer.phone_home} (home)"
+			 ^
+/Users/lippe/Documents/utbytesstudier/kurser/cpsc319/project/team75/app/views/volunteers/index.html.erb:31: syntax error, unexpected '='
+			="#{h volunteer.phone_cell} (cell)"
+			 ^
+Function body:           def _run_erb_app47views47volunteers47index46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<h1>Listing volunteers</h1>\n<p>No. of volunteers in db: "
+; @output_buffer.concat((@volunteers.count).to_s); @output_buffer.concat "</p>\n<table>\n  <tr>\n    <th>Name</th>\n    <th>E-mail</th>\n\t<th>Birthday</th>\n\t<th>Phones</th>\n  </tr>\n\n"
+
+
+
+
+
+
+
+
+;  @volunteers.each do |volunteer| ; @output_buffer.concat "\n  <tr>\n    <td>\n\t\t"
+
+
+; @output_buffer.concat((h volunteer.first_name ).to_s); @output_buffer.concat " "; @output_buffer.concat((h volunteer.last_name ).to_s); @output_buffer.concat "\n\t</td>\n\t<td>\n\t\t<a href=\""
+
+
+; @output_buffer.concat((volunteer.email ).to_s); @output_buffer.concat "\">"; @output_buffer.concat((h volunteer.email ).to_s); @output_buffer.concat "</a>\n\t</td>\n\t<td>\n\t\t"
+
+
+; @output_buffer.concat((h volunteer.birthday ).to_s); @output_buffer.concat "\n\t</td>\n\t<td>\n\t\t"
+
+
+; 
+		if volunteer.phone_work
+			="#{h volunteer.phone_work} (work)"
+		end
+		if volunteer.phone_home
+			="#{h volunteer.phone_home} (home)"
+		end
+		if volunteer.phone_cell
+			="#{h volunteer.phone_cell} (cell)"
+		end
+		; @output_buffer.concat "\n\t\t\n\t</td>\n    <td>"
+
+
+; @output_buffer.concat(( link_to 'Show', volunteer ).to_s); @output_buffer.concat "</td>\n    <td>"
+; @output_buffer.concat(( link_to 'Edit', edit_volunteer_path(volunteer) ).to_s); @output_buffer.concat "</td>\n    <td>"
+; @output_buffer.concat(( link_to 'Destroy', volunteer, :confirm => 'Are you sure?', :method => :delete ).to_s); @output_buffer.concat "</td>\n  </tr>\n"
+
+;  end ; @output_buffer.concat "\n</table>\n\n<br />\n\n"
+
+
+
+
+; @output_buffer.concat(( link_to 'New volunteer', new_volunteer_path ).to_s); @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/lippe/Documents/utbytesstudier/kurser/cpsc319/project/team75/app/views/volunteers/index.html.erb:48:in `compile!'
+/Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:61:in `compile'
+/Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:28:in `render'
+/Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_view/template.rb:205:in `render_template'
+/Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:265:in `render'
+/Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:348:in `_render_with_layout'
+/Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:262:in `render'
+/Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1250:in `render_for_file'
+/Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:951:in `render_without_benchmark'
+/Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/Users/lippe/.gem/ruby/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Users/lippe/.gem/ruby/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:135:in `send'
+/Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:135:in `custom'
+/Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:179:in `call'
+/Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:179:in `respond'
+/Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:173:in `each'
+/Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:173:in `respond'
+/Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:107:in `respond_to'
+/Users/lippe/Documents/utbytesstudier/kurser/cpsc319/project/team75/app/controllers/volunteers_controller.rb:7:in `index'
+/Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1331:in `send'
+/Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1331:in `perform_action_without_filters'
+/Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:617:in `call_filters'
+/Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Users/lippe/.gem/ruby/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Users/lippe/.gem/ruby/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/flash.rb:146:in `perform_action'
+/Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `send'
+/Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process_without_filters'
+/Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process'
+/Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:391:in `process'
+/Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:386:in `call'
+/Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/routing/route_set.rb:437:in `call'
+/Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+/Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/Users/lippe/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/Users/lippe/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/Users/lippe/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/Users/lippe/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+/Users/lippe/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+/Users/lippe/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+/Users/lippe/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/Users/lippe/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+/Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+/Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+/Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+/Users/lippe/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/Users/lippe/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+/Users/lippe/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+/Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+/Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+/Users/lippe/.gem/ruby/1.8/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+/Users/lippe/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+/Users/lippe/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+/Users/lippe/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+/Users/lippe/.gem/ruby/1.8/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+/Users/lippe/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+/Users/lippe/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/chunked.rb:15:in `call'
+/Users/lippe/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:64:in `process'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/Users/lippe/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:34:in `run'
+/Users/lippe/.gem/ruby/1.8/gems/rails-2.3.5/lib/commands/server.rb:111
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/Users/lippe/Documents/utbytesstudier/kurser/cpsc319/project/team75/app/views/volunteers/index.html.erb:25: syntax error, unexpected '='
+			="#{h volunteer.phone_work} (work)"
+			 ^
+/Users/lippe/Documents/utbytesstudier/kurser/cpsc319/project/team75/app/views/volunteers/index.html.erb:28: syntax error, unexpected '='
+			="#{h volunteer.phone_home} (home)"
+			 ^
+/Users/lippe/Documents/utbytesstudier/kurser/cpsc319/project/team75/app/views/volunteers/index.html.erb:31: syntax error, unexpected '='
+			="#{h volunteer.phone_cell} (cell)"
+			 ^) on line #25 of app/views/volunteers/index.html.erb:
+22: 	<td>
+23: 		<%
+24: 		if volunteer.phone_work
+25: 			="#{h volunteer.phone_work} (work)"
+26: 		end
+27: 		if volunteer.phone_home
+28: 			="#{h volunteer.phone_home} (home)"
+
+    app/views/volunteers/index.html.erb:48:in `compile!'
+    app/controllers/volunteers_controller.rb:7:in `index'
+
+Rendered rescues/_trace (46.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#index (for 127.0.0.1 at 2010-02-24 08:38:21) [GET]
+  [4;35;1mVolunteer Load (0.4ms)[0m   [0mSELECT * FROM `volunteers` [0m
+Rendering template within layouts/volunteers
+Rendering volunteers/index
+  [4;36;1mVolunteer Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+Completed in 21ms (View: 14, DB: 2) | 200 OK [http://localhost/volunteers]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#index (for 127.0.0.1 at 2010-02-24 08:46:31) [GET]
+  [4;35;1mVolunteer Load (0.4ms)[0m   [0mSELECT * FROM `volunteers` [0m
+Rendering template within layouts/volunteers
+Rendering volunteers/index
+  [4;36;1mVolunteer Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.length) on line #34 of app/views/volunteers/index.html.erb:
+31: 			@phone = "#{@phone} #{h volunteer.phone_home} (home)"
+32: 		end
+33: 		if volunteer.phone_cell
+34: 			if @phone.length > 0
+35: 				@phone = "#{@phone},"
+36: 			end
+37: 			@phone = "#{@phone} #{h volunteer.phone_cell} (cell)"
+
+    app/views/volunteers/index.html.erb:34
+    app/views/volunteers/index.html.erb:11:in `each'
+    app/views/volunteers/index.html.erb:11
+    app/controllers/volunteers_controller.rb:7:in `index'
+
+Rendered rescues/_trace (48.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#index (for 127.0.0.1 at 2010-02-24 08:46:49) [GET]
+  [4;35;1mVolunteer Load (0.4ms)[0m   [0mSELECT * FROM `volunteers` [0m
+Rendering template within layouts/volunteers
+Rendering volunteers/index
+  [4;36;1mVolunteer Columns (2.6ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+Completed in 22ms (View: 14, DB: 3) | 200 OK [http://localhost/volunteers]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#index (for 127.0.0.1 at 2010-02-24 08:47:10) [GET]
+  [4;35;1mVolunteer Load (0.4ms)[0m   [0mSELECT * FROM `volunteers` [0m
+Rendering template within layouts/volunteers
+Rendering volunteers/index
+  [4;36;1mVolunteer Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+Completed in 16ms (View: 9, DB: 3) | 200 OK [http://localhost/volunteers]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateVolunteers (20100222234907)
+Migrating to AddVolunteerColumns (20100224013823)
+Migrating to AddLocationColumnToVolunteers (20100224164912)
+  [4;36;1mSQL (106.5ms)[0m   [0;1mALTER TABLE `volunteers` ADD `location` text(50) NOT NULL[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100224164912')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (2.3ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mdescribe `volunteers`[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSHOW KEYS FROM `volunteers`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#index (for 127.0.0.1 at 2010-02-24 08:50:43) [GET]
+  [4;35;1mVolunteer Load (0.4ms)[0m   [0mSELECT * FROM `volunteers` [0m
+Rendering template within layouts/volunteers
+Rendering volunteers/index
+  [4;36;1mVolunteer Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+Completed in 17ms (View: 10, DB: 3) | 200 OK [http://localhost/volunteers]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#index (for 127.0.0.1 at 2010-02-24 08:51:37) [GET]
+  [4;35;1mVolunteer Load (0.4ms)[0m   [0mSELECT * FROM `volunteers` [0m
+Rendering template within layouts/volunteers
+Rendering volunteers/index
+  [4;36;1mVolunteer Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+Completed in 16ms (View: 9, DB: 3) | 200 OK [http://localhost/volunteers]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateVolunteers (20100222234907)
+Migrating to AddVolunteerColumns (20100224013823)
+Migrating to AddLocationColumnToVolunteers (20100224164912)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+  [4;36;1mSQL (3.1ms)[0m   [0;1mdescribe `volunteers`[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSHOW KEYS FROM `volunteers`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to AddLocationColumnToVolunteers (20100224164912)
+  [4;36;1mSQL (91.8ms)[0m   [0;1mALTER TABLE `volunteers` DROP `location`[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mDELETE FROM schema_migrations WHERE version = '20100224164912'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (2.2ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mdescribe `volunteers`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW KEYS FROM `volunteers`[0m
+  [4;36;1mSQL (35.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (26.7ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (27.1ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (109.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateVolunteers (20100222234907)
+Migrating to AddVolunteerColumns (20100224013823)
+Migrating to AddLocationColumnToVolunteers (20100224164912)
+  [4;36;1mSQL (12281.7ms)[0m   [0;1mALTER TABLE `volunteers` ADD `location` text(50) NOT NULL[0m
+  [4;35;1mSQL (279.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100224164912')[0m
+  [4;36;1mSQL (31.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (26.8ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (27.1ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (139.6ms)[0m   [0mSHOW FIELDS FROM `Administrator`[0m
+  [4;36;1mSQL (46.8ms)[0m   [0;1mdescribe `Administrator`[0m
+  [4;35;1mSQL (102.3ms)[0m   [0mSHOW KEYS FROM `Administrator`[0m
+  [4;36;1mSQL (96.7ms)[0m   [0;1mSHOW FIELDS FROM `Awarded`[0m
+  [4;35;1mSQL (26.9ms)[0m   [0mdescribe `Awarded`[0m
+  [4;36;1mSQL (737.4ms)[0m   [0;1mSHOW KEYS FROM `Awarded`[0m
+  [4;35;1mSQL (91.4ms)[0m   [0mSHOW FIELDS FROM `GroupProfiles`[0m
+  [4;36;1mSQL (28.5ms)[0m   [0;1mdescribe `GroupProfiles`[0m
+  [4;35;1mSQL (314.9ms)[0m   [0mSHOW KEYS FROM `GroupProfiles`[0m
+  [4;36;1mSQL (85.2ms)[0m   [0;1mSHOW FIELDS FROM `OrientationSession`[0m
+  [4;35;1mSQL (27.3ms)[0m   [0mdescribe `OrientationSession`[0m
+  [4;36;1mSQL (132.4ms)[0m   [0;1mSHOW KEYS FROM `OrientationSession`[0m
+  [4;35;1mSQL (442.5ms)[0m   [0mSHOW FIELDS FROM `Project`[0m
+  [4;36;1mSQL (30.1ms)[0m   [0;1mdescribe `Project`[0m
+  [4;35;1mSQL (231.4ms)[0m   [0mSHOW KEYS FROM `Project`[0m
+  [4;36;1mSQL (86.4ms)[0m   [0;1mSHOW FIELDS FROM `Reports`[0m
+  [4;35;1mSQL (354.5ms)[0m   [0mdescribe `Reports`[0m
+  [4;36;1mSQL (274.8ms)[0m   [0;1mSHOW KEYS FROM `Reports`[0m
+  [4;35;1mSQL (286.0ms)[0m   [0mSHOW FIELDS FROM `RewardProfile`[0m
+  [4;36;1mSQL (28.9ms)[0m   [0;1mdescribe `RewardProfile`[0m
+  [4;35;1mSQL (83.7ms)[0m   [0mSHOW KEYS FROM `RewardProfile`[0m
+  [4;36;1mSQL (527.0ms)[0m   [0;1mSHOW FIELDS FROM `Rewards`[0m
+  [4;35;1mSQL (26.9ms)[0m   [0mdescribe `Rewards`[0m
+  [4;36;1mSQL (26.5ms)[0m   [0;1mSHOW KEYS FROM `Rewards`[0m
+  [4;35;1mSQL (300.0ms)[0m   [0mSHOW FIELDS FROM `Student`[0m
+  [4;36;1mSQL (47.3ms)[0m   [0;1mdescribe `Student`[0m
+  [4;35;1mSQL (27.2ms)[0m   [0mSHOW KEYS FROM `Student`[0m
+  [4;36;1mSQL (484.3ms)[0m   [0;1mSHOW FIELDS FROM `Supervises`[0m
+  [4;35;1mSQL (27.0ms)[0m   [0mdescribe `Supervises`[0m
+  [4;36;1mSQL (30.4ms)[0m   [0;1mSHOW KEYS FROM `Supervises`[0m
+  [4;35;1mSQL (183.4ms)[0m   [0mSHOW FIELDS FROM `VolunteerSupervisor`[0m
+  [4;36;1mSQL (27.1ms)[0m   [0;1mdescribe `VolunteerSupervisor`[0m
+  [4;35;1mSQL (27.8ms)[0m   [0mSHOW KEYS FROM `VolunteerSupervisor`[0m
+  [4;36;1mSQL (272.4ms)[0m   [0;1mSHOW FIELDS FROM `orientation`[0m
+  [4;35;1mSQL (108.4ms)[0m   [0mdescribe `orientation`[0m
+  [4;36;1mSQL (27.7ms)[0m   [0;1mSHOW KEYS FROM `orientation`[0m
+  [4;35;1mSQL (292.3ms)[0m   [0mSHOW FIELDS FROM `orientation_project`[0m
+  [4;36;1mSQL (27.4ms)[0m   [0;1mdescribe `orientation_project`[0m
+  [4;35;1mSQL (26.9ms)[0m   [0mSHOW KEYS FROM `orientation_project`[0m
+  [4;36;1mSQL (298.7ms)[0m   [0;1mSHOW FIELDS FROM `orientation_registration`[0m
+  [4;35;1mSQL (266.5ms)[0m   [0mdescribe `orientation_registration`[0m
+  [4;36;1mSQL (26.6ms)[0m   [0;1mSHOW KEYS FROM `orientation_registration`[0m
+  [4;35;1mSQL (375.4ms)[0m   [0mSHOW FIELDS FROM `self_report`[0m
+  [4;36;1mSQL (31.7ms)[0m   [0;1mdescribe `self_report`[0m
+  [4;35;1mSQL (27.8ms)[0m   [0mSHOW KEYS FROM `self_report`[0m
+  [4;36;1mSQL (37.8ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+  [4;35;1mSQL (29.3ms)[0m   [0mdescribe `volunteers`[0m
+  [4;36;1mSQL (4665.2ms)[0m   [0;1mSHOW KEYS FROM `volunteers`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#new (for 127.0.0.1 at 2010-02-24 08:55:37) [GET]
+  [4;35;1mVolunteer Columns (27.5ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+Rendering template within layouts/volunteers
+Rendering volunteers/new
+Completed in 47ms (View: 14, DB: 28) | 200 OK [http://localhost/volunteers/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#new (for 127.0.0.1 at 2010-02-24 08:56:50) [GET]
+  [4;36;1mVolunteer Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+Rendering template within layouts/volunteers
+Rendering volunteers/new
+Completed in 25ms (View: 17, DB: 2) | 200 OK [http://localhost/volunteers/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#new (for 127.0.0.1 at 2010-02-24 08:57:54) [GET]
+  [4;35;1mVolunteer Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+Rendering template within layouts/volunteers
+Rendering volunteers/new
+Completed in 19ms (View: 11, DB: 2) | 200 OK [http://localhost/volunteers/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#new (for 127.0.0.1 at 2010-02-24 08:58:05) [GET]
+  [4;36;1mVolunteer Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+Rendering template within layouts/volunteers
+Rendering volunteers/new
+Completed in 14ms (View: 7, DB: 2) | 200 OK [http://localhost/volunteers/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#new (for 127.0.0.1 at 2010-02-24 08:59:12) [GET]
+  [4;35;1mVolunteer Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+Rendering template within layouts/volunteers
+Rendering volunteers/new
+Completed in 15ms (View: 8, DB: 2) | 200 OK [http://localhost/volunteers/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#new (for 127.0.0.1 at 2010-02-24 08:59:12) [GET]
+  [4;36;1mVolunteer Columns (2.7ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+Rendering template within layouts/volunteers
+Rendering volunteers/new
+Completed in 16ms (View: 8, DB: 3) | 200 OK [http://localhost/volunteers/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#new (for 127.0.0.1 at 2010-02-24 08:59:21) [GET]
+  [4;35;1mVolunteer Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+Rendering template within layouts/volunteers
+Rendering volunteers/new
+Completed in 14ms (View: 7, DB: 2) | 200 OK [http://localhost/volunteers/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#new (for 127.0.0.1 at 2010-02-24 08:59:21) [GET]
+  [4;36;1mVolunteer Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+Rendering template within layouts/volunteers
+Rendering volunteers/new
+Completed in 79ms (View: 7, DB: 2) | 200 OK [http://localhost/volunteers/new]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#new (for 127.0.0.1 at 2010-02-24 08:59:22) [GET]
+  [4;35;1mVolunteer Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+Rendering template within layouts/volunteers
+Rendering volunteers/new
+Completed in 15ms (View: 8, DB: 2) | 200 OK [http://localhost/volunteers/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#new (for 127.0.0.1 at 2010-02-24 08:59:22) [GET]
+  [4;36;1mVolunteer Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+Rendering template within layouts/volunteers
+Rendering volunteers/new
+Completed in 14ms (View: 8, DB: 2) | 200 OK [http://localhost/volunteers/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#new (for 127.0.0.1 at 2010-02-24 08:59:34) [GET]
+  [4;35;1mVolunteer Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+Rendering template within layouts/volunteers
+Rendering volunteers/new
+Completed in 18ms (View: 11, DB: 2) | 200 OK [http://localhost/volunteers/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#new (for 127.0.0.1 at 2010-02-24 08:59:52) [GET]
+  [4;36;1mVolunteer Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+Rendering template within layouts/volunteers
+Rendering volunteers/new
+Completed in 15ms (View: 8, DB: 2) | 200 OK [http://localhost/volunteers/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#new (for 127.0.0.1 at 2010-02-24 09:00:03) [GET]
+  [4;35;1mVolunteer Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+Rendering template within layouts/volunteers
+Rendering volunteers/new
+Completed in 16ms (View: 8, DB: 3) | 200 OK [http://localhost/volunteers/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#new (for 127.0.0.1 at 2010-02-24 09:00:13) [GET]
+  [4;36;1mVolunteer Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+Rendering template within layouts/volunteers
+Rendering volunteers/new
+Completed in 22ms (View: 14, DB: 2) | 200 OK [http://localhost/volunteers/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#new (for 127.0.0.1 at 2010-02-24 09:00:52) [GET]
+  [4;35;1mVolunteer Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+Rendering template within layouts/volunteers
+Rendering volunteers/new
+Completed in 104ms (View: 92, DB: 3) | 200 OK [http://localhost/volunteers/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#new (for 127.0.0.1 at 2010-02-24 09:01:26) [GET]
+  [4;36;1mVolunteer Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+Rendering template within layouts/volunteers
+Rendering volunteers/new
+Completed in 20ms (View: 13, DB: 3) | 200 OK [http://localhost/volunteers/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#new (for 127.0.0.1 at 2010-02-24 09:05:16) [GET]
+  [4;35;1mVolunteer Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+Rendering template within layouts/volunteers
+Rendering volunteers/new
+
+ActionView::TemplateError (undefined method `password2' for #<Volunteer:0x104517de0>) on line #24 of app/views/volunteers/new.html.erb:
+21: 	</li>
+22: 	<li>
+23: 		<%= f.label :password2, "Confirm password: " %>
+24: 		<%= f.password_field :password2 %>
+25: 	</li>
+26: 	<li>
+27: 		<%= f.submit 'Create' %>
+
+    app/views/volunteers/new.html.erb:24
+    app/views/volunteers/new.html.erb:3
+    app/controllers/volunteers_controller.rb:29:in `new'
+
+Rendered rescues/_trace (60.2ms)
+Rendered rescues/_request_and_response (0.7ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (5.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#new (for 127.0.0.1 at 2010-02-24 09:05:24) [GET]
+  [4;36;1mVolunteer Columns (3.4ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+Rendering template within layouts/volunteers
+Rendering volunteers/new
+Completed in 113ms (View: 17, DB: 9) | 200 OK [http://localhost/volunteers/new]
+  [4;35;1mSQL (0.6ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#new (for 127.0.0.1 at 2010-02-24 09:06:00) [GET]
+  [4;35;1mVolunteer Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+Rendering template within layouts/volunteers
+Rendering volunteers/new
+
+ActionView::TemplateError (undefined method `pass_confirmation' for #<Volunteer:0x10456a860>) on line #24 of app/views/volunteers/new.html.erb:
+21: 	</li>
+22: 	<li>
+23: 		<%= f.label 'pass_confirmation', "Confirm password: " %>
+24: 		<%= f.password_field 'pass_confirmation' %>
+25: 	</li>
+26: 	<li>
+27: 		<%= f.submit 'Create' %>
+
+    app/views/volunteers/new.html.erb:24
+    app/views/volunteers/new.html.erb:3
+    app/controllers/volunteers_controller.rb:29:in `new'
+
+Rendered rescues/_trace (60.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#new (for 127.0.0.1 at 2010-02-24 09:06:46) [GET]
+  [4;36;1mVolunteer Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+Rendering template within layouts/volunteers
+Rendering volunteers/new
+Completed in 20ms (View: 13, DB: 2) | 200 OK [http://localhost/volunteers/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#new (for 127.0.0.1 at 2010-02-24 09:07:58) [GET]
+  [4;35;1mVolunteer Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+Rendering template within layouts/volunteers
+Rendering volunteers/new
+Completed in 22ms (View: 14, DB: 2) | 200 OK [http://localhost/volunteers/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#new (for 127.0.0.1 at 2010-02-24 09:11:10) [GET]
+  [4;36;1mVolunteer Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+Rendering template within layouts/volunteers
+Rendering volunteers/new
+
+ActionView::TemplateError (undefined method `location' for #<Volunteer:0x10451e000>) on line #32 of app/views/volunteers/new.html.erb:
+29: 	</li>
+30: 	<li>
+31: 		<%= f.label :location, "Location: "%>
+32: 		<%= f.text_field :location %>
+33: 	</li>
+34: 	<li>
+35: 		<%= f.label :postal_code, "Postal code: "%>
+
+    app/views/volunteers/new.html.erb:32
+    app/views/volunteers/new.html.erb:3
+    app/controllers/volunteers_controller.rb:29:in `new'
+
+Rendered rescues/_trace (54.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (33.8ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (28.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#new (for 127.0.0.1 at 2010-02-24 09:13:04) [GET]
+  [4;36;1mVolunteer Columns (278.0ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+Rendering template within layouts/volunteers
+Rendering volunteers/new
+Completed in 320ms (View: 36, DB: 340) | 200 OK [http://localhost/volunteers/new]
+  [4;35;1mSQL (26.5ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (25.7ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#new (for 127.0.0.1 at 2010-02-24 09:14:40) [GET]
+  [4;35;1mVolunteer Columns (1099.6ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+Rendering template within layouts/volunteers
+Rendering volunteers/new
+Completed in 1124ms (View: 19, DB: 1152) | 200 OK [http://localhost/volunteers/new]
+  [4;36;1mSQL (28.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (26.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#new (for 127.0.0.1 at 2010-02-24 09:15:00) [GET]
+  [4;36;1mVolunteer Columns (4099.0ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+Rendering template within layouts/volunteers
+Rendering volunteers/new
+Completed in 4122ms (View: 18, DB: 4153) | 200 OK [http://localhost/volunteers/new]
+  [4;35;1mSQL (27.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (27.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#new (for 127.0.0.1 at 2010-02-24 09:22:32) [GET]
+  [4;35;1mVolunteer Columns (30.1ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+Rendering template within layouts/volunteers
+Rendering volunteers/new
+Completed in 124ms (View: 87, DB: 84) | 200 OK [http://localhost/volunteers/new]
+  [4;36;1mSQL (26.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (26.7ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#new (for 127.0.0.1 at 2010-02-24 09:22:51) [GET]
+  [4;36;1mVolunteer Columns (27.4ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+Rendering template within layouts/volunteers
+Rendering volunteers/new
+Completed in 48ms (View: 15, DB: 80) | 200 OK [http://localhost/volunteers/new]
+  [4;35;1mSQL (26.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (27.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#new (for 127.0.0.1 at 2010-02-24 09:23:26) [GET]
+  [4;35;1mVolunteer Columns (29.3ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+Rendering template within layouts/volunteers
+Rendering volunteers/new
+Completed in 50ms (View: 16, DB: 82) | 200 OK [http://localhost/volunteers/new]
+  [4;36;1mSQL (28.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (26.5ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#new (for 127.0.0.1 at 2010-02-24 09:23:38) [GET]
+  [4;36;1mVolunteer Columns (29.3ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+Rendering template within layouts/volunteers
+Rendering volunteers/new
+Completed in 45ms (View: 10, DB: 84) | 200 OK [http://localhost/volunteers/new]
+  [4;35;1mSQL (26.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (64.8ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#new (for 127.0.0.1 at 2010-02-24 09:23:40) [GET]
+  [4;35;1mVolunteer Columns (31.1ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+Rendering template within layouts/volunteers
+Rendering volunteers/new
+Completed in 49ms (View: 12, DB: 122) | 200 OK [http://localhost/volunteers/new]
+  [4;36;1mSQL (26.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (26.8ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#new (for 127.0.0.1 at 2010-02-24 09:28:15) [GET]
+  [4;36;1mVolunteer Columns (974.8ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+Rendering template within layouts/volunteers
+Rendering volunteers/new
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.inject) on line #47 of app/views/volunteers/new.html.erb:
+44: 			</li>
+45: 			<li>
+46: 				<%= f.label :province, "Province: "%>
+47: 				<%= f.select :province, @provinces %>
+48: 			</li>
+49: 		</ul>
+50: 	</fieldset>
+
+    app/views/volunteers/new.html.erb:47
+    app/views/volunteers/new.html.erb:3
+    app/controllers/volunteers_controller.rb:29:in `new'
+
+Rendered rescues/_trace (119.2ms)
+Rendered rescues/_request_and_response (1.8ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (26.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (26.7ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#new (for 127.0.0.1 at 2010-02-24 09:28:43) [GET]
+  [4;35;1mVolunteer Columns (81.8ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+Rendering template within layouts/volunteers
+Rendering volunteers/new
+Completed in 100ms (View: 11, DB: 135) | 200 OK [http://localhost/volunteers/new]
+  [4;36;1mSQL (26.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (26.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#new (for 127.0.0.1 at 2010-02-24 09:28:48) [GET]
+  [4;36;1mVolunteer Columns (1134.7ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+Rendering template within layouts/volunteers
+Rendering volunteers/new
+Completed in 1152ms (View: 12, DB: 1187) | 200 OK [http://localhost/volunteers/new]
+  [4;35;1mSQL (28.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (26.8ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#new (for 127.0.0.1 at 2010-02-24 09:29:11) [GET]
+  [4;35;1mVolunteer Columns (36.8ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+Rendering template within layouts/volunteers
+Rendering volunteers/new
+Completed in 54ms (View: 12, DB: 92) | 200 OK [http://localhost/volunteers/new]
+  [4;36;1mSQL (26.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (28.5ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#new (for 127.0.0.1 at 2010-02-24 09:30:50) [GET]
+  [4;36;1mVolunteer Columns (29.2ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+Rendering template within layouts/volunteers
+Rendering volunteers/new
+
+ActionView::TemplateError (undefined method `stringify_keys' for "British Columbia":String) on line #47 of app/views/volunteers/new.html.erb:
+44: 			</li>
+45: 			<li>
+46: 				<%= f.label :province, "Province: "%>
+47: 				<%= select_tag :province, options_for_select(@provinces), 'British Columbia' %>
+48: 			</li>
+49: 		</ul>
+50: 	</fieldset>
+
+    app/views/volunteers/new.html.erb:47
+    app/views/volunteers/new.html.erb:3
+    app/controllers/volunteers_controller.rb:44:in `new'
+
+Rendered rescues/_trace (50.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (26.6ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (26.6ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#new (for 127.0.0.1 at 2010-02-24 09:31:32) [GET]
+  [4;35;1mVolunteer Columns (28.3ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+Rendering template within layouts/volunteers
+Rendering volunteers/new
+Completed in 49ms (View: 15, DB: 82) | 200 OK [http://localhost/volunteers/new]
+  [4;36;1mSQL (36.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (28.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#new (for 127.0.0.1 at 2010-02-24 09:34:48) [GET]
+
+SyntaxError (/Users/lippe/Documents/utbytesstudier/kurser/cpsc319/project/team75/app/controllers/volunteers_controller.rb:41: syntax error, unexpected ']', expecting kEND):
+  
+
+Rendered rescues/_trace (104.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (26.6ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (31.7ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#new (for 127.0.0.1 at 2010-02-24 09:34:54) [GET]
+  [4;36;1mVolunteer Columns (28.0ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+Rendering template within layouts/volunteers
+Rendering volunteers/new
+Completed in 49ms (View: 14, DB: 86) | 200 OK [http://localhost/volunteers/new]
+  [4;35;1mSQL (26.6ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (26.6ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#new (for 127.0.0.1 at 2010-02-24 09:34:58) [GET]
+  [4;35;1mVolunteer Columns (28.9ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+Rendering template within layouts/volunteers
+Rendering volunteers/new
+Completed in 45ms (View: 11, DB: 82) | 200 OK [http://localhost/volunteers/new]
+  [4;36;1mSQL (26.6ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (26.5ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#new (for 127.0.0.1 at 2010-02-24 09:35:10) [GET]
+  [4;36;1mVolunteer Columns (28.5ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+Rendering template within layouts/volunteers
+Rendering volunteers/new
+Completed in 44ms (View: 11, DB: 82) | 200 OK [http://localhost/volunteers/new]
+  [4;35;1mSQL (26.4ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (26.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#new (for 127.0.0.1 at 2010-02-24 09:35:52) [GET]
+  [4;35;1mVolunteer Columns (32.6ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+Rendering template within layouts/volunteers
+Rendering volunteers/new
+Completed in 56ms (View: 18, DB: 85) | 200 OK [http://localhost/volunteers/new]
+  [4;36;1mSQL (26.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (26.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#new (for 127.0.0.1 at 2010-02-24 09:36:29) [GET]
+  [4;36;1mVolunteer Columns (382.5ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+Rendering template within layouts/volunteers
+Rendering volunteers/new
+Completed in 406ms (View: 18, DB: 435) | 200 OK [http://localhost/volunteers/new]
+  [4;35;1mSQL (26.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (25.7ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#new (for 127.0.0.1 at 2010-02-24 09:37:39) [GET]
+  [4;35;1mVolunteer Columns (29.3ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+Rendering template within layouts/volunteers
+Rendering volunteers/new
+ERROR: compiling _run_erb_app47views47volunteers47new46html46erb RAISED compile error
+/Users/lippe/Documents/utbytesstudier/kurser/cpsc319/project/team75/app/views/volunteers/new.html.erb:50: syntax error, unexpected tSTRING_BEG, expecting ')'
+...concat(( f.label :phone_home "Phone (home): " ).to_s); @outp...
+                              ^
+/Users/lippe/Documents/utbytesstudier/kurser/cpsc319/project/team75/app/views/volunteers/new.html.erb:54: syntax error, unexpected tSTRING_BEG, expecting ')'
+...concat(( f.label :phone_cell "Phone (cell): " ).to_s); @outp...
+                              ^
+/Users/lippe/Documents/utbytesstudier/kurser/cpsc319/project/team75/app/views/volunteers/new.html.erb:58: syntax error, unexpected tSTRING_BEG, expecting ')'
+...concat(( f.label :phone_work "Phone (work): " ).to_s); @outp...
+                              ^
+Function body:           def _run_erb_app47views47volunteers47new46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<h1>New volunteer</h1>\n\n"
+
+;  form_for(@volunteer) do |f| ; @output_buffer.concat "\n\t"
+; @output_buffer.concat(( f.error_messages ).to_s); @output_buffer.concat "\n\t<fieldset>\n\t\t<legend>Personal info</legend>\n\t\t<ul>\n\t\t\t<li>\n\t\t\t\t"
+
+
+
+
+; @output_buffer.concat(( f.label :first_name, "First name: " ).to_s); @output_buffer.concat "\n\t\t\t\t"
+; @output_buffer.concat(( f.text_field :first_name ).to_s); @output_buffer.concat "\n\t\t\t</li>\n\t\t\t<li>\n\t\t\t\t"
+
+
+; @output_buffer.concat(( f.label :last_name, "Last name: " ).to_s); @output_buffer.concat "\n\t\t\t\t"
+; @output_buffer.concat(( f.text_field :last_name ).to_s); @output_buffer.concat "\n\t\t\t</li>\n\t\t\t<li>\n\t\t\t\t"
+
+
+; @output_buffer.concat(( f.label :email, "E-mail address: " ).to_s); @output_buffer.concat "\n\t\t\t\t"
+; @output_buffer.concat(( f.text_field :email ).to_s); @output_buffer.concat "\n\t\t\t</li>\n\t\t\t<li>\n\t\t\t\t"
+
+
+; @output_buffer.concat(( f.label :password, "Password: " ).to_s); @output_buffer.concat "\n\t\t\t\t"
+; @output_buffer.concat(( f.password_field :password ).to_s); @output_buffer.concat "\n\t\t\t</li>\n\t\t\t<li>\n\t\t\t\t"
+
+
+; @output_buffer.concat(( f.label :birthday, "Birthday: " ).to_s); @output_buffer.concat "\n\t\t\t\t"
+; @output_buffer.concat(( f.text_field :birthday ).to_s); @output_buffer.concat "\n\t\t\t</li>\n\t\t</ul>\n\t</fieldset>\n\t<fieldset>\n\t\t<legend>Contact info</legend>\n\t\t<ul>\n\t\t\t<li>\n\t\t\t\t"
+
+
+
+
+
+
+
+; @output_buffer.concat(( f.label :address, "Address: ").to_s); @output_buffer.concat "\n\t\t\t\t"
+; @output_buffer.concat(( f.text_field :address ).to_s); @output_buffer.concat "\n\t\t\t</li>\n\t\t\t<li>\n\t\t\t\t"
+
+
+; @output_buffer.concat(( f.label :location, "Location: ").to_s); @output_buffer.concat "\n\t\t\t\t"
+; @output_buffer.concat(( f.text_field :location ).to_s); @output_buffer.concat "\n\t\t\t</li>\n\t\t\t<li>\n\t\t\t\t"
+
+
+; @output_buffer.concat(( f.label :postal_code, "Postal code: ").to_s); @output_buffer.concat "\n\t\t\t\t"
+; @output_buffer.concat(( f.text_field :postal_code ).to_s); @output_buffer.concat "\n\t\t\t</li>\n\t\t\t<li>\n\t\t\t\t"
+
+
+; @output_buffer.concat(( f.label :province, "Province: ").to_s); @output_buffer.concat "\n\t\t\t\t"
+; @output_buffer.concat(( select_tag :province, options_for_select(@provinces, "BC") ).to_s); @output_buffer.concat "\n\t\t\t</li>\n\t\t\t<li>\n\t\t\t\t"
+
+
+; @output_buffer.concat(( f.label :phone_home "Phone (home): " ).to_s); @output_buffer.concat "\n\t\t\t\t"
+; @output_buffer.concat(( f.text_field :phone_home ).to_s); @output_buffer.concat "\n\t\t\t</li>\n\t\t\t<li>\n\t\t\t\t"
+
+
+; @output_buffer.concat(( f.label :phone_cell "Phone (cell): " ).to_s); @output_buffer.concat "\n\t\t\t\t"
+; @output_buffer.concat(( f.text_field :phone_cell ).to_s); @output_buffer.concat "\n\t\t\t</li>\n\t\t\t<li>\n\t\t\t\t"
+
+
+; @output_buffer.concat(( f.label :phone_work "Phone (work): " ).to_s); @output_buffer.concat "\n\t\t\t\t"
+; @output_buffer.concat(( f.text_field :phone_work ).to_s); @output_buffer.concat "\n\t\t\t</li>\n\t\t</ul>\n\t</fieldset>\n\t<p>"
+
+
+
+; @output_buffer.concat(( f.submit 'Create' ).to_s); @output_buffer.concat "</p>\n"
+;  end ; @output_buffer.concat "\n\n"
+
+; @output_buffer.concat(( link_to 'Back', volunteers_path ).to_s); @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/lippe/Documents/utbytesstudier/kurser/cpsc319/project/team75/app/views/volunteers/new.html.erb:69:in `compile!'
+/Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:61:in `compile'
+/Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:28:in `render'
+/Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_view/template.rb:205:in `render_template'
+/Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:265:in `render'
+/Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:348:in `_render_with_layout'
+/Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:262:in `render'
+/Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1250:in `render_for_file'
+/Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:951:in `render_without_benchmark'
+/Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/Users/lippe/.gem/ruby/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Users/lippe/.gem/ruby/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:135:in `send'
+/Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:135:in `custom'
+/Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:179:in `call'
+/Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:179:in `respond'
+/Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:173:in `each'
+/Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:173:in `respond'
+/Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:107:in `respond_to'
+/Users/lippe/Documents/utbytesstudier/kurser/cpsc319/project/team75/app/controllers/volunteers_controller.rb:44:in `new'
+/Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1331:in `send'
+/Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1331:in `perform_action_without_filters'
+/Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:617:in `call_filters'
+/Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Users/lippe/.gem/ruby/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Users/lippe/.gem/ruby/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/flash.rb:146:in `perform_action'
+/Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `send'
+/Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process_without_filters'
+/Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process'
+/Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:391:in `process'
+/Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:386:in `call'
+/Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/routing/route_set.rb:437:in `call'
+/Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+/Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/Users/lippe/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/Users/lippe/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/Users/lippe/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/Users/lippe/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+/Users/lippe/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+/Users/lippe/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+/Users/lippe/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/Users/lippe/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+/Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+/Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+/Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+/Users/lippe/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/Users/lippe/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+/Users/lippe/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+/Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+/Users/lippe/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+/Users/lippe/.gem/ruby/1.8/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+/Users/lippe/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+/Users/lippe/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+/Users/lippe/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+/Users/lippe/.gem/ruby/1.8/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+/Users/lippe/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+/Users/lippe/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/chunked.rb:15:in `call'
+/Users/lippe/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:64:in `process'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/Users/lippe/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:34:in `run'
+/Users/lippe/.gem/ruby/1.8/gems/rails-2.3.5/lib/commands/server.rb:111
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/Users/lippe/Documents/utbytesstudier/kurser/cpsc319/project/team75/app/views/volunteers/new.html.erb:50: syntax error, unexpected tSTRING_BEG, expecting ')'
+...concat(( f.label :phone_home "Phone (home): " ).to_s); @outp...
+                              ^
+/Users/lippe/Documents/utbytesstudier/kurser/cpsc319/project/team75/app/views/volunteers/new.html.erb:54: syntax error, unexpected tSTRING_BEG, expecting ')'
+...concat(( f.label :phone_cell "Phone (cell): " ).to_s); @outp...
+                              ^
+/Users/lippe/Documents/utbytesstudier/kurser/cpsc319/project/team75/app/views/volunteers/new.html.erb:58: syntax error, unexpected tSTRING_BEG, expecting ')'
+...concat(( f.label :phone_work "Phone (work): " ).to_s); @outp...
+                              ^) on line #50 of app/views/volunteers/new.html.erb:
+47: 				<%= select_tag :province, options_for_select(@provinces, "BC") %>
+48: 			</li>
+49: 			<li>
+50: 				<%= f.label :phone_home "Phone (home): " %>
+51: 				<%= f.text_field :phone_home %>
+52: 			</li>
+53: 			<li>
+
+    app/views/volunteers/new.html.erb:69:in `compile!'
+    app/controllers/volunteers_controller.rb:44:in `new'
+
+Rendered rescues/_trace (111.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (26.7ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (27.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#new (for 127.0.0.1 at 2010-02-24 09:37:53) [GET]
+  [4;36;1mVolunteer Columns (105.8ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+Rendering template within layouts/volunteers
+Rendering volunteers/new
+Completed in 133ms (View: 20, DB: 159) | 200 OK [http://localhost/volunteers/new]
+  [4;35;1mSQL (26.4ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (29.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#new (for 127.0.0.1 at 2010-02-24 09:39:05) [GET]
+  [4;35;1mVolunteer Columns (27.7ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+Rendering template within layouts/volunteers
+Rendering volunteers/new
+Completed in 53ms (View: 20, DB: 83) | 200 OK [http://localhost/volunteers/new]
+  [4;36;1mSQL (26.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (26.9ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#new (for 127.0.0.1 at 2010-02-24 09:39:07) [GET]
+  [4;36;1mVolunteer Columns (28.2ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+Rendering template within layouts/volunteers
+Rendering volunteers/new
+Completed in 47ms (View: 13, DB: 81) | 200 OK [http://localhost/volunteers/new]
+  [4;35;1mSQL (26.5ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (28.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#new (for 127.0.0.1 at 2010-02-24 09:44:42) [GET]
+  [4;35;1mVolunteer Columns (28.3ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+Rendering template within layouts/volunteers
+Rendering volunteers/new
+Completed in 135ms (View: 99, DB: 83) | 200 OK [http://localhost/volunteers/new]
+  [4;36;1mSQL (27.9ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (26.5ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#new (for 127.0.0.1 at 2010-02-24 09:46:19) [GET]
+  [4;36;1mVolunteer Columns (31.4ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+Rendering template within layouts/volunteers
+Rendering volunteers/new
+Completed in 61ms (View: 21, DB: 86) | 200 OK [http://localhost/volunteers/new]

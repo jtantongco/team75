@@ -17,7 +17,7 @@
 development:
   adapter: mysql
   encoding: utf8
-  reconnect: true
+  reconnect: false
   database: team75_development
   pool: 5
   host: team75.heliohost.org

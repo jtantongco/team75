@@ -1,19 +1,70 @@
 <h1>New volunteer</h1>
 
 <% form_for(@volunteer) do |f| %>
-  <%= f.error_messages %>
-
-  <p>
-    <%= f.label :first_name %><br />
-    <%= f.text_field :first_name %>
-  </p>
-  <p>
-    <%= f.label :last_name %><br />
-    <%= f.text_field :last_name %>
-  </p>
-  <p>
-    <%= f.submit 'Create' %>
-  </p>
+	<%= f.error_messages %>
+	<fieldset>
+		<legend>Personal info</legend>
+		<ul>
+			<li>
+				<%= f.label :first_name, "First name: <span class=\"mandatory\">*</span>" %>
+				<%= f.text_field :first_name %>
+			</li>
+			<li>
+				<%= f.label :last_name, "Last name: <span class=\"mandatory\">*</span>" %>
+				<%= f.text_field :last_name %>
+			</li>
+			<li>
+				<%= f.label :email, "E-mail address: <span class=\"mandatory\">*</span>" %>
+				<%= f.text_field :email %>
+			</li>
+			<li>
+				<%= f.label :password, "Password: <span class=\"mandatory\">*</span>" %>
+				<%= f.password_field :password %>
+			</li>
+			<li>
+				<%= f.label :birthday, "Birthday: <span class=\"mandatory\">*</span>" %>
+				<%= f.text_field :birthday %>
+			</li>
+		</ul>
+	</fieldset>
+	<fieldset>
+		<legend>Contact info</legend>
+		<ul>
+			<li>
+				<%= f.label :address, "Address: <span class=\"mandatory\">*</span>"%>
+				<%= f.text_field :address %>
+			</li>
+			<li>
+				<%= f.label :location, "Location: <span class=\"mandatory\">*</span>"%>
+				<%= f.text_field :location %>
+			</li>
+			<li>
+				<%= f.label :postal_code, "Postal code: <span class=\"mandatory\">*</span>" %>
+				<%= f.text_field :postal_code %>
+			</li>
+			<li>
+				<%= f.label :province, "Province: <span class=\"mandatory\">*</span>"%>
+				<%= select_tag :province, options_for_select(@provinces, "BC") %>
+			</li>
+			<li>
+				<%= f.label :phone_home, "Phone (home): " %>
+				<%= f.text_field :phone_home %>
+			</li>
+			<li>
+				<%= f.label :phone_cell, "Phone (cell): " %>
+				<%= f.text_field :phone_cell %>
+			</li>
+			<li>
+				<%= f.label :phone_work, "Phone (work): " %>
+				<%= f.text_field :phone_work %>
+			</li>
+			<li>
+				<%= f.label :preferred_contact_method, "Preferred contact method: " %>
+				<%= select_tag :preferred_contact_method, options_for_select([["Janne", 1], ["Hej", 2]])%>
+			</li>
+		</ul>
+	</fieldset>
+	<p><%= f.submit 'Create' %></p>
 <% end %>
 
 <%= link_to 'Back', volunteers_path %>
