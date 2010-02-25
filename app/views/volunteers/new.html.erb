@@ -3,7 +3,7 @@
 <% form_for(@volunteer) do |f| %>
 	<%= f.error_messages %>
 	<fieldset>
-		<legend>Personal info</legend>
+		<legend>Personal information</legend>
 		<ul>
 			<li>
 				<%= f.label :first_name, "First name: <span class=\"mandatory\">*</span>" %>
@@ -22,13 +22,13 @@
 				<%= f.password_field :password %>
 			</li>
 			<li>
-				<%= f.label :birthday, "Birthday: <span class=\"mandatory\">*</span>" %>
+				<%= f.label :birthday, "Date of birth: <span class=\"mandatory\">*</span>" %>
 				<%= f.text_field :birthday %>
 			</li>
 		</ul>
 	</fieldset>
 	<fieldset>
-		<legend>Contact info</legend>
+		<legend>Contact information</legend>
 		<ul>
 			<li>
 				<%= f.label :address, "Address: <span class=\"mandatory\">*</span>"%>
@@ -60,7 +60,37 @@
 			</li>
 			<li>
 				<%= f.label :preferred_contact_method, "Preferred contact method: " %>
-				<%= select_tag :preferred_contact_method, options_for_select([["Janne", 1], ["Hej", 2]])%>
+				<%= select_tag :preferred_contact_method, options_for_select([["E-mail", 0], ["Home phone", 1], ["Work phone", 2], ["Cell phone", 3]])%>
+			</li>
+		</ul>
+	</fieldset>
+	<fieldset>
+		<legend>Emergency contact information</legend>
+		<ul>
+			<li>
+				<%= f.label :emrg_contact_name, "Name: <span class=\"mandatory\">*</span>" %>
+				<%= f.text_field :emrg_contact_name %>
+			</li>
+			<li>
+				<%= f.label :emrg_contact_relationship, "Relationship: <span class=\"mandatory\">*</span>" %>
+				<%= f.text_field :emrg_contact_relationship %>
+			</li>
+			<li>
+				<%= f.label :emrg_contact_phone_home, "Phone (home):" %>
+				<%= f.text_field :emrg_contact_phone_home %>
+			</li>
+			<li>
+				<%= f.label :emrg_contact_phone_work, "Phone (work):" %>
+				<%= f.text_field :emrg_contact_phone_work %>
+			</li>
+		</ul>
+	</fieldset>
+	<fieldset>
+		<legend>Interests</legend>
+		<ul>
+			<li>Interested to work with: (TODO: list all projects)</li>
+			<li>
+				
 			</li>
 		</ul>
 	</fieldset>
