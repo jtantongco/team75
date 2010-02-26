@@ -1,28 +1,28 @@
 <h1>New volunteer</h1>
 
 <% form_for(@volunteer) do |f| %>
-	<%= f.error_messages %>
+	<%= error_messages_for :object => [@volunteer, @volunteer_extra, @student] %>
 	<fieldset>
 		<legend>Personal information</legend>
 		<ul>
 			<li>
-				<%= f.label :first_name, "First name: <span class=\"mandatory\">*</span>" %>
+				<%= f.label :first_name, "First name: <span class=\"mandatory\">*</span>"%>
 				<%= f.text_field :first_name %>
 			</li>
 			<li>
-				<%= f.label :last_name, "Last name: <span class=\"mandatory\">*</span>" %>
+				<%= f.label :last_name, "Last name: <span class=\"mandatory\">*</span>"%>
 				<%= f.text_field :last_name %>
 			</li>
 			<li>
-				<%= f.label :email, "E-mail address: <span class=\"mandatory\">*</span>" %>
+				<%= f.label :email, "E-mail address: <span class=\"mandatory\">*</span>"%>
 				<%= f.text_field :email %>
 			</li>
 			<li>
-				<%= f.label :password, "Password: <span class=\"mandatory\">*</span>" %>
+				<%= f.label :password, "Password: <span class=\"mandatory\">*</span>"%>
 				<%= f.password_field :password %>
 			</li>
 			<li>
-				<%= f.label :birthday, "Date of birth: <span class=\"mandatory\">*</span>" %>
+				<%= f.label :birthday, "Date of birth: <span class=\"mandatory\">*</span>"%>
 				<%= f.text_field :birthday %>
 			</li>
 		</ul>
@@ -39,28 +39,32 @@
 				<%= f.text_field :location %>
 			</li>
 			<li>
-				<%= f.label :postal_code, "Postal code: <span class=\"mandatory\">*</span>" %>
+				<%= f.label :postal_code, "Postal code: <span class=\"mandatory\">*</span>"%>
 				<%= f.text_field :postal_code %>
 			</li>
 			<li>
 				<%= f.label :province, "Province: <span class=\"mandatory\">*</span>"%>
-				<%= select_tag :province, options_for_select(@provinces, "BC") %>
+				<%= f.select :province, options_for_select(@provinces, "BC") %>
 			</li>
 			<li>
-				<%= f.label :phone_home, "Phone (home): " %>
+				<%= f.label :phone_home, "Phone (home): "%>
 				<%= f.text_field :phone_home %>
 			</li>
 			<li>
-				<%= f.label :phone_cell, "Phone (cell): " %>
+				<%= f.label :phone_cell, "Phone (cell): "%>
 				<%= f.text_field :phone_cell %>
 			</li>
 			<li>
-				<%= f.label :phone_work, "Phone (work): " %>
+				<%= f.label :phone_work, "Phone (work): "%>
 				<%= f.text_field :phone_work %>
 			</li>
 			<li>
-				<%= f.label :preferred_contact_method, "Preferred contact method: " %>
-				<%= select_tag :preferred_contact_method, options_for_select([["E-mail", 0], ["Home phone", 1], ["Work phone", 2], ["Cell phone", 3]])%>
+				<%= f.label :preferred_contact_method, "Contact method: "%>
+				<%= f.select :preferred_contact_method, options_for_select([["E-mail", 0], ["Home phone", 1], ["Work phone", 2], ["Cell phone", 3]])%>
+			</li>
+			<li>
+				<%= f.label :special_consideration, "Special considerations:"%>
+                <%= f.text_area :special_consideration %>
 			</li>
 		</ul>
 	</fieldset>
@@ -68,32 +72,123 @@
 		<legend>Emergency contact information</legend>
 		<ul>
 			<li>
-				<%= f.label :emrg_contact_name, "Name: <span class=\"mandatory\">*</span>" %>
+				<%= f.label :emrg_contact_name, "Name: <span class=\"mandatory\">*</span>"%>
 				<%= f.text_field :emrg_contact_name %>
 			</li>
 			<li>
-				<%= f.label :emrg_contact_relationship, "Relationship: <span class=\"mandatory\">*</span>" %>
+				<%= f.label :emrg_contact_relationship, "Relationship: <span class=\"mandatory\">*</span>"%>
 				<%= f.text_field :emrg_contact_relationship %>
 			</li>
 			<li>
-				<%= f.label :emrg_contact_phone_home, "Phone (home):" %>
+				<%= f.label :emrg_contact_phone_home, "Phone (home):"%>
 				<%= f.text_field :emrg_contact_phone_home %>
 			</li>
 			<li>
-				<%= f.label :emrg_contact_phone_work, "Phone (work):" %>
+				<%= f.label :emrg_contact_phone_work, "Phone (work):"%>
 				<%= f.text_field :emrg_contact_phone_work %>
 			</li>
 		</ul>
 	</fieldset>
-	<fieldset>
-		<legend>Interests</legend>
+	<p>
+		<%= check_box_tag "is_student", "1", {}, :onchange => "$('#student_information').toggle()"%>
+		<%= label_tag "is_student", "Are you a student?", :class => "normal"%>
+	</p>
+	<% fields_for(@student) do |student| %>
+	<fieldset id="student_information">
+		<legend>Student information</legend>
 		<ul>
-			<li>Interested to work with: (TODO: list all projects)</li>
 			<li>
-				
+			</li>
+			<li>
+				<%= student.label :student_id,  "Student ID: <span class=\"mandatory\">*</span>"%>
+				<%= student.text_field :student_id %>
+			</li>
+			<li>
+				<%= student.label :faculty, "Faculty: <span class=\"mandatory\">*</span>"%>
+				<%= student.text_field :faculty %>
+			</li>
+			<li>
+				<%= student.label :program, "Program: <span class=\"mandatory\">*</span>"%>
+				<%= student.text_field :program %>
+			</li>
+			<li>
+				<%= student.label :year, "Year: <span class=\"mandatory\">*</span>"%>
+				<%= student.select :year, options_for_select([["1","1"],["2","2"],["3","3"],["4","4"],["5","5"],["6","6"]]) %>
 			</li>
 		</ul>
 	</fieldset>
+	<% end %>
+	<% fields_for(@volunteer_extra) do |volunteer_extra| %>
+	<fieldset>
+		<legend>Interests</legend>
+		<ul>
+			<li>
+				<%= label_tag "Interested to work with:"%>
+				<i>(TODO: list all projects)</i>
+			</li>
+			<li>
+				<%= volunteer_extra.label :how_often_volunteer, "How often would you like to volunteer at the UBC Farm?"%>
+				<%= volunteer_extra.text_area :how_often_volunteer %>
+			</li>
+			<li>
+				<%= volunteer_extra.label :how_heard_about_farm, "How did you hear about the farm?"%>
+				<%= volunteer_extra.text_area :how_heard_about_farm %>
+			</li>
+			<li>
+				<%= volunteer_extra.label :why_volunteer, "Why do you want to volunteer at the UBC Farm?"%>
+				<%= volunteer_extra.text_area :why_volunteer %>
+			</li>
+		</ul>
+	</fieldset>
+	<fieldset>
+		<legend>Skills and experience</legend>
+		<ul>
+			<li>
+				<%= volunteer_extra.label :skills_and_knowledge, "What skills and knowledge can you contribute to the UBC Farm?"%>
+				<%= volunteer_extra.text_area :skills_and_knowledge %>
+			</li>
+			<li>
+				<%= label_tag "", "Would you be able to contribute any of the following skills?", :class => "normal"%>
+			</li>
+			<li>
+				<%= volunteer_extra.check_box :skill_farming %>
+				<%= volunteer_extra.label :skill_farming, "Farming or gardening experience", :class => "normal"%><br />
+				<%= volunteer_extra.check_box :skill_construction %>
+				<%= volunteer_extra.label :skill_construction, "Construction / Carpentry", :class => "normal"%><br />
+				<%= volunteer_extra.check_box :skill_sales %>
+				<%= volunteer_extra.label :skill_sales, "Sales / Cash handling", :class => "normal"%><br />
+				<%= volunteer_extra.check_box :skill_fundraising %>
+				<%= volunteer_extra.label :skill_fundraising, "Fundraising", :class => "normal"%><br />
+				<%= volunteer_extra.check_box :skill_music %>
+				<%= volunteer_extra.label :skill_music, "Musical performance", :class => "normal"%><br />
+				<%= volunteer_extra.check_box :skill_art %>
+				<%= volunteer_extra.label :skill_art, "Artistic skills (posters etc)", :class => "normal"%><br />
+				<%= volunteer_extra.check_box :skill_computer %>
+				<%= volunteer_extra.label :skill_computer, "Computer skills", :class => "normal"%><br />
+			</li>
+			<li>
+				<%= label_tag "", "Do you have any of the following?", :class => "normal"%>
+			</li>
+			<li>
+				<%= volunteer_extra.check_box :first_aid %>
+				<%= volunteer_extra.label :first_aid, "CPR / First aid", :class => "normal"%><br />
+				<%= volunteer_extra.check_box :foodsafe_level1 %>
+				<%= volunteer_extra.label :foodsafe_level1, "Foodsafe level 1", :class => "normal"%><br />
+				<%= volunteer_extra.check_box :foodsafe_level2 %>
+				<%= volunteer_extra.label :foodsafe_level2, "Foodsafe level 2", :class => "normal"%><br />
+			</li>
+			<li>
+				<%= label_tag "", "Do you have your own transportation?  <span class=\"mandatory\">*</span>", :class => "normal"%><br />
+				
+				<%= volunteer_extra.radio_button :own_transportation, "1"%>
+				<%= label_tag "volunteer_extra_own_transportation_1", "Yes", :class => "normal"%>
+				
+				<%= volunteer_extra.radio_button :own_transportation, "0"%> 
+				<%= label_tag "volunteer_extra_own_transportation_0", "No", :class => "normal"%>
+			</li>
+		</ul>
+	</fieldset>
+	<% end %>
 	<p><%= f.submit 'Create' %></p>
 <% end %>
 

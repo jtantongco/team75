@@ -26,9 +26,27 @@ form ul li {
 	margin-bottom: 3px;
 }
 
+form ul li input, form ul li textarea, form ul li select {
+	margin-left: 10px;
+}
+
+textarea {
+	height: 60px;
+}
+
 form ul li label {
 	float: left;
-	width: 120px;
+	margin-left: 0px;
+	width: 250px;
+}
+
+form ul li label.normal {
+	width: auto;
+	float: none;
+}
+
+.mandatory {
+	color: red;
 }
 
 .fieldWithErrors {

@@ -40,6 +40,8 @@ class VolunteersController < ApplicationController
       ["Yukon", "YT"]
     ]
     @volunteer = Volunteer.new
+    @volunteer_extra = VolunteerExtra.new
+    @student = Student.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -49,6 +51,21 @@ class VolunteersController < ApplicationController
 
   # GET /volunteers/1/edit
   def edit
+    @provinces = [
+      ["Alberta", "AB"], 
+      ["British Columbia", "BC"], 
+      ["Manitoba", "MB"], 
+      ["New Brunswick", "NB"], 
+      ["Newfoundland and Labrador", "NL"], 
+      ["Northwest Territories", "NT"], 
+      ["Nova Scotia", "NS"], 
+      ["Nunavut", "NU"], 
+      ["Ontario", "ON"], 
+      ["Prince Edward Island", "PE"], 
+      ["Quebec", "QC"], 
+      ["Saskatchewan", "SK"], 
+      ["Yukon", "YT"]
+    ]
     @volunteer = Volunteer.find(params[:id])
   end
 
@@ -56,9 +73,20 @@ class VolunteersController < ApplicationController
   # POST /volunteers.xml
   def create
     @volunteer = Volunteer.new(params[:volunteer])
+    @volunteer_extra = VolunteerExtra.new(params[:volunteer_extra])
+    @student = Student.new(params[:student])
 
     respond_to do |format|
-      if @volunteer.save
+      if @volunteer.valid? & @volunteer_extra.valid? & @student.valid?        
+        Volunteer.transaction do
+          @volunteer.save!
+          
+          @volunteer_extra.v_id = @volunteer.v_id
+          @student.v_id = @volunteer.v_id
+          
+          @volunteer_extra.save!
+          @student.save!
+        end
         flash[:notice] = 'Volunteer was successfully created.'
         format.html { redirect_to(@volunteer) }
         format.xml  { render :xml => @volunteer, :status => :created, :location => @volunteer }
