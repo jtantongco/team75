@@ -1,0 +1,17 @@
+<h1>Account Login</h1>
+
+<% if flash[:message] %><div><%= flash[:message] %></div><% end %>
+<% if flash[:error] %><div><%= flash[:error] %></div><% end %> 
+
+<p>Please log into your UBC Volunteer Farm account below with your username and password.</p>
+<b>Your username is the email that you used to register your volunteer account with.</b>
+<p>If you do not have an account yet, then please click on 'Register' and create one now!</p>
+
+<%= form_tag :action => 'process_login' %>
+Username: <%= text_field "user", "email" %>&#x00A;
+Password: <%= password_field "user", "password" %>&#x00A;
+<%= submit_tag "Submit" %> 
+<%= form_tag %> 
+
+<p>
+<%= link_to 'Register', new_volunteer_path %>

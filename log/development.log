@@ -1,0 +1,408 @@
+# Logfile created on Fri Feb 26 15:12:23 -0800 2010  [4;36;1mSQL (58.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (44.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#index (for 127.0.0.1 at 2010-02-26 15:12:41) [GET]
+  [4;36;1mVolunteer Load (49.0ms)[0m   [0;1mSELECT * FROM `volunteers` [0m
+Rendering template within layouts/volunteers
+Rendering volunteers/index
+  [4;35;1mVolunteer Columns (62.0ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+
+ActionView::TemplateError (undefined method `count' for #<Array:0x492f654>) on line #2 of app/views/volunteers/index.html.erb:
+1: <h1>Listing volunteers</h1>
+2: <p>No. of volunteers in db: <%=@volunteers.count%></p>
+3: <table>
+4:   <tr>
+5:     <th>Name</th>
+
+    app/views/volunteers/index.html.erb:2
+    app/controllers/volunteers_controller.rb:7:in `index'
+
+Rendered rescues/_trace (134.0ms)
+Rendered rescues/_request_and_response (4.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (47.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (46.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#index (for 127.0.0.1 at 2010-02-27 09:17:21) [GET]
+  [4;36;1mVolunteer Load (1357.0ms)[0m   [0;1mSELECT * FROM `volunteers` [0m
+Rendering template within layouts/volunteers
+Rendering volunteers/index
+  [4;35;1mVolunteer Columns (94.0ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+
+ActionView::TemplateError (undefined method `count' for #<Array:0x4a1f1cc>) on line #2 of app/views/volunteers/index.html.erb:
+1: <h1>Listing volunteers</h1>
+2: <p>No. of volunteers in db: <%=@volunteers.count%></p>
+3: <table>
+4:   <tr>
+5:     <th>Name</th>
+
+    app/views/volunteers/index.html.erb:2
+    app/controllers/volunteers_controller.rb:7:in `index'
+
+Rendered rescues/_trace (125.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (32.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (62.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#show (for 127.0.0.1 at 2010-02-27 09:17:27) [GET]
+  Parameters: {"id"=>"show"}
+  [4;36;1mVolunteer Columns (125.0ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+  [4;35;1mVolunteer Load (47.0ms)[0m   [0mSELECT * FROM `volunteers` WHERE (`volunteers`.`v_id` = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Volunteer with ID=show):
+  app/controllers/volunteers_controller.rb:16:in `show'
+
+Rendered rescues/_trace (156.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (47.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (31.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#show (for 127.0.0.1 at 2010-02-27 09:17:36) [GET]
+  Parameters: {"id"=>"index"}
+  [4;36;1mVolunteer Columns (47.0ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+  [4;35;1mVolunteer Load (47.0ms)[0m   [0mSELECT * FROM `volunteers` WHERE (`volunteers`.`v_id` = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Volunteer with ID=index):
+  app/controllers/volunteers_controller.rb:16:in `show'
+
+Rendered rescues/_trace (78.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (47.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (46.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#show (for 127.0.0.1 at 2010-02-27 09:17:39) [GET]
+  Parameters: {"id"=>"edit"}
+  [4;36;1mVolunteer Columns (265.0ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+  [4;35;1mVolunteer Load (62.0ms)[0m   [0mSELECT * FROM `volunteers` WHERE (`volunteers`.`v_id` = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Volunteer with ID=edit):
+  app/controllers/volunteers_controller.rb:16:in `show'
+
+Rendered rescues/_trace (78.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (31.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (62.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#new (for 127.0.0.1 at 2010-02-27 09:17:55) [GET]
+  [4;36;1mVolunteer Columns (46.0ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+  [4;35;1mVolunteerExtra Columns (94.0ms)[0m   [0mSHOW FIELDS FROM `volunteer_extras`[0m
+  [4;36;1mStudent Columns (468.0ms)[0m   [0;1mSHOW FIELDS FROM `students`[0m
+Rendering template within layouts/volunteers
+Rendering volunteers/new
+Completed in 3681ms (View: 3042, DB: 701) | 200 OK [http://localhost/volunteers/new]
+  [4;36;1mSQL (47.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (46.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (47.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (187.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to BatchCreateVolunteerTables (20100225213428)
+  [4;36;1mSQL (46.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (63.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (47.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (78.0ms)[0m   [0mSHOW FIELDS FROM `administrators`[0m
+  [4;36;1mSQL (46.0ms)[0m   [0;1mdescribe `administrators`[0m
+  [4;35;1mSQL (219.0ms)[0m   [0mSHOW KEYS FROM `administrators`[0m
+  [4;36;1mSQL (125.0ms)[0m   [0;1mSHOW FIELDS FROM `awarded_profiles`[0m
+  [4;35;1mSQL (47.0ms)[0m   [0mdescribe `awarded_profiles`[0m
+  [4;36;1mSQL (156.0ms)[0m   [0;1mSHOW KEYS FROM `awarded_profiles`[0m
+  [4;35;1mSQL (172.0ms)[0m   [0mSHOW FIELDS FROM `group_profiles`[0m
+  [4;36;1mSQL (46.0ms)[0m   [0;1mdescribe `group_profiles`[0m
+  [4;35;1mSQL (344.0ms)[0m   [0mSHOW KEYS FROM `group_profiles`[0m
+  [4;36;1mSQL (124.0ms)[0m   [0;1mSHOW FIELDS FROM `orientation_projects`[0m
+  [4;35;1mSQL (94.0ms)[0m   [0mdescribe `orientation_projects`[0m
+  [4;36;1mSQL (172.0ms)[0m   [0;1mSHOW KEYS FROM `orientation_projects`[0m
+  [4;35;1mSQL (93.0ms)[0m   [0mSHOW FIELDS FROM `orientation_registrations`[0m
+  [4;36;1mSQL (47.0ms)[0m   [0;1mdescribe `orientation_registrations`[0m
+  [4;35;1mSQL (281.0ms)[0m   [0mSHOW KEYS FROM `orientation_registrations`[0m
+  [4;36;1mSQL (93.0ms)[0m   [0;1mSHOW FIELDS FROM `orientations`[0m
+  [4;35;1mSQL (63.0ms)[0m   [0mdescribe `orientations`[0m
+  [4;36;1mSQL (249.0ms)[0m   [0;1mSHOW KEYS FROM `orientations`[0m
+  [4;35;1mSQL (141.0ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+  [4;36;1mSQL (62.0ms)[0m   [0;1mdescribe `projects`[0m
+  [4;35;1mSQL (125.0ms)[0m   [0mSHOW KEYS FROM `projects`[0m
+  [4;36;1mSQL (125.0ms)[0m   [0;1mSHOW FIELDS FROM `reports`[0m
+  [4;35;1mSQL (47.0ms)[0m   [0mdescribe `reports`[0m
+  [4;36;1mSQL (109.0ms)[0m   [0;1mSHOW KEYS FROM `reports`[0m
+  [4;35;1mSQL (156.0ms)[0m   [0mSHOW FIELDS FROM `reward_profiles`[0m
+  [4;36;1mSQL (47.0ms)[0m   [0;1mdescribe `reward_profiles`[0m
+  [4;35;1mSQL (421.0ms)[0m   [0mSHOW KEYS FROM `reward_profiles`[0m
+  [4;36;1mSQL (125.0ms)[0m   [0;1mSHOW FIELDS FROM `rewards`[0m
+  [4;35;1mSQL (46.0ms)[0m   [0mdescribe `rewards`[0m
+  [4;36;1mSQL (47.0ms)[0m   [0;1mSHOW KEYS FROM `rewards`[0m
+  [4;35;1mSQL (390.0ms)[0m   [0mSHOW FIELDS FROM `schema_info`[0m
+  [4;36;1mSQL (47.0ms)[0m   [0;1mdescribe `schema_info`[0m
+  [4;35;1mSQL (47.0ms)[0m   [0mSHOW KEYS FROM `schema_info`[0m
+  [4;36;1mSQL (109.0ms)[0m   [0;1mSHOW FIELDS FROM `self_reports`[0m
+  [4;35;1mSQL (47.0ms)[0m   [0mdescribe `self_reports`[0m
+  [4;36;1mSQL (561.0ms)[0m   [0;1mSHOW KEYS FROM `self_reports`[0m
+  [4;35;1mSQL (125.0ms)[0m   [0mSHOW FIELDS FROM `students`[0m
+  [4;36;1mSQL (63.0ms)[0m   [0;1mdescribe `students`[0m
+  [4;35;1mSQL (327.0ms)[0m   [0mSHOW KEYS FROM `students`[0m
+  [4;36;1mSQL (109.0ms)[0m   [0;1mSHOW FIELDS FROM `supervises`[0m
+  [4;35;1mSQL (78.0ms)[0m   [0mdescribe `supervises`[0m
+  [4;36;1mSQL (47.0ms)[0m   [0;1mSHOW KEYS FROM `supervises`[0m
+  [4;35;1mSQL (94.0ms)[0m   [0mSHOW FIELDS FROM `supervisors`[0m
+  [4;36;1mSQL (47.0ms)[0m   [0;1mdescribe `supervisors`[0m
+  [4;35;1mSQL (109.0ms)[0m   [0mSHOW KEYS FROM `supervisors`[0m
+  [4;36;1mSQL (187.0ms)[0m   [0;1mSHOW FIELDS FROM `supervisorsBackup`[0m
+  [4;35;1mSQL (62.0ms)[0m   [0mdescribe `supervisorsBackup`[0m
+  [4;36;1mSQL (47.0ms)[0m   [0;1mSHOW KEYS FROM `supervisorsBackup`[0m
+  [4;35;1mSQL (47.0ms)[0m   [0mSHOW FIELDS FROM `volunteer_extras`[0m
+  [4;36;1mSQL (62.0ms)[0m   [0;1mdescribe `volunteer_extras`[0m
+  [4;35;1mSQL (94.0ms)[0m   [0mSHOW KEYS FROM `volunteer_extras`[0m
+  [4;36;1mSQL (94.0ms)[0m   [0;1mSHOW FIELDS FROM `volunteer_project_interests`[0m
+  [4;35;1mSQL (46.0ms)[0m   [0mdescribe `volunteer_project_interests`[0m
+  [4;36;1mSQL (156.0ms)[0m   [0;1mSHOW KEYS FROM `volunteer_project_interests`[0m
+  [4;35;1mSQL (203.0ms)[0m   [0mSHOW FIELDS FROM `volunteer_projects`[0m
+  [4;36;1mSQL (47.0ms)[0m   [0;1mdescribe `volunteer_projects`[0m
+  [4;35;1mSQL (78.0ms)[0m   [0mSHOW KEYS FROM `volunteer_projects`[0m
+  [4;36;1mSQL (62.0ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+  [4;35;1mSQL (47.0ms)[0m   [0mdescribe `volunteers`[0m
+  [4;36;1mSQL (31.0ms)[0m   [0;1mSHOW KEYS FROM `volunteers`[0m
+  [4;36;1mSQL (46.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (47.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-27 13:14:59) [GET]
+
+ActionController::RoutingError (No route matches "/volunteeres" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (63.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (47.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#index (for 127.0.0.1 at 2010-02-27 13:15:02) [GET]
+  [4;36;1mVolunteer Load (47.0ms)[0m   [0;1mSELECT * FROM `volunteers` [0m
+Rendering template within layouts/volunteers
+Rendering volunteers/index
+  [4;35;1mVolunteer Columns (47.0ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+
+ActionView::TemplateError (undefined method `count' for #<Array:0x4938dd0>) on line #2 of app/views/volunteers/index.html.erb:
+1: <h1>Listing volunteers</h1>
+2: <p>No. of volunteers in db: <%=@volunteers.count%></p>
+3: <table>
+4:   <tr>
+5:     <th>Name</th>
+
+    app/views/volunteers/index.html.erb:2
+    app/controllers/volunteers_controller.rb:7:in `index'
+
+Rendered rescues/_trace (125.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (46.8ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (62.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (46.8ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (202.8ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to BatchCreateVolunteerTables (20100225213428)
+  [4;36;1mSQL (140.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (46.8ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (46.8ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (46.8ms)[0m   [0mSHOW FIELDS FROM `administrators`[0m
+  [4;36;1mSQL (46.8ms)[0m   [0;1mdescribe `administrators`[0m
+  [4;35;1mSQL (124.8ms)[0m   [0mSHOW KEYS FROM `administrators`[0m
+  [4;36;1mSQL (218.4ms)[0m   [0;1mSHOW FIELDS FROM `awarded_profiles`[0m
+  [4;35;1mSQL (46.8ms)[0m   [0mdescribe `awarded_profiles`[0m
+  [4;36;1mSQL (187.2ms)[0m   [0;1mSHOW KEYS FROM `awarded_profiles`[0m
+  [4;35;1mSQL (202.8ms)[0m   [0mSHOW FIELDS FROM `group_profiles`[0m
+  [4;36;1mSQL (46.8ms)[0m   [0;1mdescribe `group_profiles`[0m
+  [4;35;1mSQL (46.8ms)[0m   [0mSHOW KEYS FROM `group_profiles`[0m
+  [4;36;1mSQL (46.8ms)[0m   [0;1mSHOW FIELDS FROM `orientation_projects`[0m
+  [4;35;1mSQL (46.8ms)[0m   [0mdescribe `orientation_projects`[0m
+  [4;36;1mSQL (312.0ms)[0m   [0;1mSHOW KEYS FROM `orientation_projects`[0m
+  [4;35;1mSQL (46.8ms)[0m   [0mSHOW FIELDS FROM `orientation_registrations`[0m
+  [4;36;1mSQL (46.8ms)[0m   [0;1mdescribe `orientation_registrations`[0m
+  [4;35;1mSQL (46.8ms)[0m   [0mSHOW KEYS FROM `orientation_registrations`[0m
+  [4;36;1mSQL (46.8ms)[0m   [0;1mSHOW FIELDS FROM `orientations`[0m
+  [4;35;1mSQL (717.6ms)[0m   [0mdescribe `orientations`[0m
+  [4;36;1mSQL (46.8ms)[0m   [0;1mSHOW KEYS FROM `orientations`[0m
+  [4;35;1mSQL (46.8ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+  [4;36;1mSQL (46.8ms)[0m   [0;1mdescribe `projects`[0m
+  [4;35;1mSQL (46.8ms)[0m   [0mSHOW KEYS FROM `projects`[0m
+  [4;36;1mSQL (46.8ms)[0m   [0;1mSHOW FIELDS FROM `reports`[0m
+  [4;35;1mSQL (46.8ms)[0m   [0mdescribe `reports`[0m
+  [4;36;1mSQL (46.8ms)[0m   [0;1mSHOW KEYS FROM `reports`[0m
+  [4;35;1mSQL (46.8ms)[0m   [0mSHOW FIELDS FROM `reward_profiles`[0m
+  [4;36;1mSQL (31.2ms)[0m   [0;1mdescribe `reward_profiles`[0m
+  [4;35;1mSQL (686.4ms)[0m   [0mSHOW KEYS FROM `reward_profiles`[0m
+  [4;36;1mSQL (140.4ms)[0m   [0;1mSHOW FIELDS FROM `rewards`[0m
+  [4;35;1mSQL (46.8ms)[0m   [0mdescribe `rewards`[0m
+  [4;36;1mSQL (46.8ms)[0m   [0;1mSHOW KEYS FROM `rewards`[0m
+  [4;35;1mSQL (156.0ms)[0m   [0mSHOW FIELDS FROM `schema_info`[0m
+  [4;36;1mSQL (46.8ms)[0m   [0;1mdescribe `schema_info`[0m
+  [4;35;1mSQL (46.8ms)[0m   [0mSHOW KEYS FROM `schema_info`[0m
+  [4;36;1mSQL (124.8ms)[0m   [0;1mSHOW FIELDS FROM `self_reports`[0m
+  [4;35;1mSQL (46.8ms)[0m   [0mdescribe `self_reports`[0m
+  [4;36;1mSQL (280.8ms)[0m   [0;1mSHOW KEYS FROM `self_reports`[0m
+  [4;35;1mSQL (46.8ms)[0m   [0mSHOW FIELDS FROM `students`[0m
+  [4;36;1mSQL (46.8ms)[0m   [0;1mdescribe `students`[0m
+  [4;35;1mSQL (171.6ms)[0m   [0mSHOW KEYS FROM `students`[0m
+  [4;36;1mSQL (156.0ms)[0m   [0;1mSHOW FIELDS FROM `supervises`[0m
+  [4;35;1mSQL (62.4ms)[0m   [0mdescribe `supervises`[0m
+  [4;36;1mSQL (62.4ms)[0m   [0;1mSHOW KEYS FROM `supervises`[0m
+  [4;35;1mSQL (31.2ms)[0m   [0mSHOW FIELDS FROM `supervisors`[0m
+  [4;36;1mSQL (46.8ms)[0m   [0;1mdescribe `supervisors`[0m
+  [4;35;1mSQL (46.8ms)[0m   [0mSHOW KEYS FROM `supervisors`[0m
+  [4;36;1mSQL (78.0ms)[0m   [0;1mSHOW FIELDS FROM `supervisorsBackup`[0m
+  [4;35;1mSQL (46.8ms)[0m   [0mdescribe `supervisorsBackup`[0m
+  [4;36;1mSQL (46.8ms)[0m   [0;1mSHOW KEYS FROM `supervisorsBackup`[0m
+  [4;35;1mSQL (46.8ms)[0m   [0mSHOW FIELDS FROM `volunteer_extras`[0m
+  [4;36;1mSQL (62.4ms)[0m   [0;1mdescribe `volunteer_extras`[0m
+  [4;35;1mSQL (46.8ms)[0m   [0mSHOW KEYS FROM `volunteer_extras`[0m
+  [4;36;1mSQL (156.0ms)[0m   [0;1mSHOW FIELDS FROM `volunteer_project_interests`[0m
+  [4;35;1mSQL (78.0ms)[0m   [0mdescribe `volunteer_project_interests`[0m
+  [4;36;1mSQL (156.0ms)[0m   [0;1mSHOW KEYS FROM `volunteer_project_interests`[0m
+  [4;35;1mSQL (1638.0ms)[0m   [0mSHOW FIELDS FROM `volunteer_projects`[0m
+  [4;36;1mSQL (62.4ms)[0m   [0;1mdescribe `volunteer_projects`[0m
+  [4;35;1mSQL (93.6ms)[0m   [0mSHOW KEYS FROM `volunteer_projects`[0m
+  [4;36;1mSQL (62.4ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+  [4;35;1mSQL (46.8ms)[0m   [0mdescribe `volunteers`[0m
+  [4;36;1mSQL (46.8ms)[0m   [0;1mSHOW KEYS FROM `volunteers`[0m
+  [4;36;1mSQL (46.8ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (46.8ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#index (for 127.0.0.1 at 2010-03-02 16:59:24) [GET]
+  [4;36;1mVolunteer Load (62.4ms)[0m   [0;1mSELECT * FROM `volunteers` [0m
+Rendering template within layouts/volunteers
+Rendering volunteers/index
+  [4;35;1mVolunteer Columns (873.6ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+Completed in 1201ms (View: 140, DB: 1030) | 200 OK [http://localhost/volunteers]
+  [4;36;1mSQL (46.8ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (62.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#index (for 127.0.0.1 at 2010-03-02 16:59:37) [GET]
+Rendering accounts/index
+Completed in 16ms (View: 16, DB: 109) | 200 OK [http://localhost/accounts]
+  [4;36;1mSQL (46.8ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (46.8ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#new (for 127.0.0.1 at 2010-03-02 16:59:38) [GET]
+  [4;36;1mVolunteer Columns (46.8ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+  [4;35;1mVolunteerExtra Columns (46.8ms)[0m   [0mSHOW FIELDS FROM `volunteer_extras`[0m
+  [4;36;1mStudent Columns (93.6ms)[0m   [0;1mSHOW FIELDS FROM `students`[0m
+Rendering template within layouts/volunteers
+Rendering volunteers/new
+Completed in 328ms (View: 94, DB: 281) | 200 OK [http://localhost/volunteers/new]
+  [4;35;1mSQL (62.4ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (46.8ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#index (for 127.0.0.1 at 2010-03-02 16:59:40) [GET]
+Rendering accounts/index
+Completed in 0ms (View: 0, DB: 109) | 200 OK [http://localhost/accounts]
+  [4;35;1mSQL (46.8ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (62.4ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#login (for 127.0.0.1 at 2010-03-02 16:59:42) [GET]
+  [4;35;1mVolunteer Columns (46.8ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+Rendering accounts/login
+Completed in 94ms (View: 16, DB: 156) | 200 OK [http://localhost/accounts/login]
+  [4;36;1mSQL (46.8ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (31.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#process_login (for 127.0.0.1 at 2010-03-02 16:59:46) [POST]
+  Parameters: {"authenticity_token"=>"/XIRaN7TXf+glakLALbQ85UgXVPQ4XSIIM0dGOEibx4=", "user"=>{"email"=>"anli8013@interchange.ubc.ca", "password"=>"asfdsa"}, "commit"=>"Submit"}
+  [4;36;1mVolunteer Columns (62.4ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+  [4;35;1mVolunteer Load (46.8ms)[0m   [0mSELECT * FROM `volunteers` WHERE (`volunteers`.`email` = 'anli8013@interchange.ubc.ca' AND `volunteers`.`password` = 'asfdsa') LIMIT 1[0m
+Redirected to http://localhost:3000/accounts/login?email=anli8013%40interchange.ubc.ca
+Completed in 109ms (DB: 187) | 302 Found [http://localhost/accounts/process_login]
+  [4;36;1mSQL (31.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (46.8ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#login (for 127.0.0.1 at 2010-03-02 16:59:46) [GET]
+  Parameters: {"email"=>"anli8013@interchange.ubc.ca"}
+  [4;36;1mVolunteer Columns (46.8ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+Rendering accounts/login
+Completed in 62ms (View: 0, DB: 125) | 200 OK [http://localhost/accounts/login?email=anli8013%40interchange.ubc.ca]
+  [4;35;1mSQL (46.8ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (31.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#process_login (for 127.0.0.1 at 2010-03-02 16:59:52) [POST]
+  Parameters: {"authenticity_token"=>"/XIRaN7TXf+glakLALbQ85UgXVPQ4XSIIM0dGOEibx4=", "user"=>{"email"=>"anli8013@interchange.ubc.ca", "password"=>"123456"}, "commit"=>"Submit"}
+  [4;35;1mVolunteer Columns (46.8ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+  [4;36;1mVolunteer Load (46.8ms)[0m   [0;1mSELECT * FROM `volunteers` WHERE (`volunteers`.`email` = 'anli8013@interchange.ubc.ca' AND `volunteers`.`password` = '123456') LIMIT 1[0m
+Redirected to http://localhost:3000/accounts/my_account
+Completed in 109ms (DB: 172) | 302 Found [http://localhost/accounts/process_login]
+  [4;35;1mSQL (46.8ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (46.8ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#my_account (for 127.0.0.1 at 2010-03-02 16:59:53) [GET]
+  [4;35;1mVolunteer Columns (78.0ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+  [4;36;1mVolunteer Load (46.8ms)[0m   [0;1mSELECT * FROM `volunteers` WHERE (`volunteers`.`v_id` = 11) [0m
+Rendering accounts/my_account
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `volunteers` WHERE (`volunteers`.`v_id` = 11) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `volunteers` WHERE (`volunteers`.`v_id` = 11) [0m
+Completed in 172ms (View: 16, DB: 218) | 200 OK [http://localhost/accounts/my_account]
+  [4;35;1mSQL (46.8ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (46.8ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#logout (for 127.0.0.1 at 2010-03-02 16:59:56) [GET]
+  [4;35;1mVolunteer Columns (62.4ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+  [4;36;1mVolunteer Load (46.8ms)[0m   [0;1mSELECT * FROM `volunteers` WHERE (`volunteers`.`v_id` = 11) [0m
+Redirected to http://localhost:3000/accounts/login
+Completed in 109ms (DB: 203) | 302 Found [http://localhost/accounts/logout]
+  [4;35;1mSQL (62.4ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (46.8ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#login (for 127.0.0.1 at 2010-03-02 17:00:00) [GET]
+  [4;35;1mVolunteer Columns (46.8ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+Rendering accounts/login
+Completed in 78ms (View: 16, DB: 156) | 200 OK [http://localhost/accounts/login]
+  [4;36;1mSQL (62.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (46.8ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#my_account (for 127.0.0.1 at 2010-03-02 17:00:06) [GET]
+Redirected to http://localhost:3000/account/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 0ms (DB: 109) | 302 Found [http://localhost/accounts/my_account]
+  [4;36;1mSQL (46.8ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (46.8ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-02 17:00:07) [GET]
+
+ActionController::RoutingError (No route matches "/account/login" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+  C:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  C:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  C:/Ruby19/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (46.8ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (62.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#my_account (for 127.0.0.1 at 2010-03-02 17:00:58) [GET]
+Redirected to http://localhost:3000/accounts/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 0ms (DB: 109) | 302 Found [http://localhost/accounts/my_account]
+  [4;36;1mSQL (46.8ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (62.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#login (for 127.0.0.1 at 2010-03-02 17:00:59) [GET]
+  [4;36;1mVolunteer Columns (62.4ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+Rendering accounts/login
+Completed in 78ms (View: 16, DB: 172) | 200 OK [http://localhost/accounts/login]

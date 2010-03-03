@@ -1,0 +1,5 @@
+<h1>Volunteer Account Info</h1> 
+
+<p>Welcome <%= Volunteer.find(session[:id]).first_name %> <%= Volunteer.find(session[:id]).last_name %>!  You have successfully logged in.  You may log out, change your account details, log hours or join a project!</p>
+
+<%= link_to 'Logout', :action => 'logout' %>  

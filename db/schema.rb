@@ -11,7 +11,7 @@
 
 ActiveRecord::Schema.define(:version => 20100225213428) do
 
-  create_table "Administrator", :primary_key => "Aid", :force => true do |t|
+  create_table "administrators", :primary_key => "Aid", :force => true do |t|
     t.string "Name",      :null => false
     t.string "LoginName", :null => false
     t.string "Password",  :null => false
@@ -20,64 +20,18 @@ ActiveRecord::Schema.define(:version => 20100225213428) do
     t.string "Email"
   end
 
-  add_index "Administrator", ["LoginName"], :name => "LoginName", :unique => true
+  add_index "administrators", ["LoginName"], :name => "LoginName", :unique => true
 
-  create_table "Awarded", :primary_key => "AWid", :force => true do |t|
+  create_table "awarded_profiles", :primary_key => "AWid", :force => true do |t|
     t.integer "Rid", :null => false
     t.integer "Vid", :null => false
   end
 
-  create_table "GroupProfiles", :primary_key => "Gid", :force => true do |t|
+  create_table "group_profiles", :primary_key => "Gid", :force => true do |t|
     t.string  "Name",                                :null => false
     t.integer "NumberOfParticipants", :default => 0, :null => false
     t.integer "VSid",                                :null => false
   end
-
-  create_table "Project", :primary_key => "Pid", :force => true do |t|
-    t.string  "Name",        :null => false
-    t.date    "StartDate",   :null => false
-    t.date    "EndDate",     :null => false
-    t.string  "Status",      :null => false
-    t.string  "Description"
-    t.integer "RPid",        :null => false
-  end
-
-  create_table "Reports", :primary_key => "REPid", :force => true do |t|
-    t.string "ViewName", :null => false
-  end
-
-  create_table "RewardProfile", :primary_key => "RPid", :force => true do |t|
-    t.string "Description"
-    t.string "Name",        :null => false
-  end
-
-  add_index "RewardProfile", ["Name"], :name => "Name", :unique => true
-
-  create_table "Rewards", :primary_key => "Rid", :force => true do |t|
-    t.integer "RPid",        :null => false
-    t.string  "Description"
-    t.integer "Hours",       :null => false
-  end
-
-  create_table "Supervises", :primary_key => "Pid", :force => true do |t|
-    t.integer "VSid",      :null => false
-    t.date    "StartDate", :null => false
-    t.date    "EndDate",   :null => false
-    t.string  "Status",    :null => false
-  end
-
-  add_index "Supervises", ["VSid"], :name => "VSid"
-
-  create_table "VolunteerSupervisor", :primary_key => "VSid", :force => true do |t|
-    t.string "Name",      :null => false
-    t.string "loginName", :null => false
-    t.string "Password",  :null => false
-    t.string "Address",   :null => false
-    t.string "PhoneNum"
-    t.string "Email"
-  end
-
-  add_index "VolunteerSupervisor", ["loginName"], :name => "loginName", :unique => true
 
   create_table "orientation_projects", :id => false, :force => true do |t|
     t.integer "p_id",     :default => 0, :null => false
@@ -103,6 +57,36 @@ ActiveRecord::Schema.define(:version => 20100225213428) do
     t.string "location"
   end
 
+  create_table "projects", :primary_key => "Pid", :force => true do |t|
+    t.string  "Name",        :null => false
+    t.date    "StartDate",   :null => false
+    t.date    "EndDate",     :null => false
+    t.string  "Status",      :null => false
+    t.string  "Description"
+    t.integer "RPid",        :null => false
+  end
+
+  create_table "reports", :primary_key => "REPid", :force => true do |t|
+    t.string "ViewName", :null => false
+  end
+
+  create_table "reward_profiles", :primary_key => "RPid", :force => true do |t|
+    t.string "Description"
+    t.string "Name",        :null => false
+  end
+
+  add_index "reward_profiles", ["Name"], :name => "Name", :unique => true
+
+  create_table "rewards", :primary_key => "Rid", :force => true do |t|
+    t.integer "RPid",        :null => false
+    t.string  "Description"
+    t.integer "Hours",       :null => false
+  end
+
+  create_table "schema_info", :id => false, :force => true do |t|
+    t.integer "version"
+  end
+
   create_table "self_reports", :primary_key => "r_id", :force => true do |t|
     t.integer "v_id"
     t.integer "p_id"
@@ -124,6 +108,31 @@ ActiveRecord::Schema.define(:version => 20100225213428) do
     t.integer "year"
     t.date    "grad_date"
   end
+
+  create_table "supervises", :primary_key => "Pid", :force => true do |t|
+    t.integer "VSid",      :null => false
+    t.date    "StartDate", :null => false
+    t.date    "EndDate",   :null => false
+    t.string  "Status",    :null => false
+  end
+
+  add_index "supervises", ["VSid"], :name => "VSid"
+
+  create_table "supervisors", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "supervisorsBackup", :primary_key => "VSid", :force => true do |t|
+    t.string "Name",      :null => false
+    t.string "loginName", :null => false
+    t.string "Password",  :null => false
+    t.string "Address",   :null => false
+    t.string "PhoneNum"
+    t.string "Email"
+  end
+
+  add_index "supervisorsBackup", ["loginName"], :name => "loginName", :unique => true
 
   create_table "volunteer_extras", :primary_key => "v_id", :force => true do |t|
     t.text    "how_often_volunteer"
