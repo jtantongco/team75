@@ -16,6 +16,15 @@ a { color: #000; }
 a:visited { color: #666; }
 a:hover { color: #fff; background-color:#000; }
 
+p.flash_message {
+	color: green;
+}
+
+p.flash_error {
+	color: red;
+}
+
+
 form ul {
 	list-style-type: none;
 	margin-left: 0;

@@ -7,11 +7,10 @@
 <b>Your username is the email that you used to register your volunteer account with.</b>
 <p>If you do not have an account yet, then please click on 'Register' and create one now!</p>
 
-<%= form_tag :action => 'process_login' %>
+<% form_tag :action => 'process_login' do -%>
 Username: <%= text_field "user", "email" %>&#x00A;
 Password: <%= password_field "user", "password" %>&#x00A;
 <%= submit_tag "Submit" %> 
-<%= form_tag %> 
-
+<% end -%>
 <p>
 <%= link_to 'Register', new_volunteer_path %>

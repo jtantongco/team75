@@ -1,0 +1,88 @@
+	<fieldset>
+		<legend>Personal information</legend>
+		<ul>
+			<li>
+				<%= form.label :first_name, "First name: <span class=\"mandatory\">*</span>"%>
+				<%= form.text_field :first_name %>
+			</li>
+			<li>
+				<%= form.label :last_name, "Last name: <span class=\"mandatory\">*</span>"%>
+				<%= form.text_field :last_name %>
+			</li>
+			<li>
+				<%= form.label :email, "E-mail address: <span class=\"mandatory\">*</span>"%>
+				<%= form.text_field :email %>
+			</li>
+			<li>
+				<%= form.label :password, "Password: <span class=\"mandatory\">*</span>"%>
+				<%= form.password_field :password %>
+			</li>
+			<li>
+				<%= form.label :birthday, "Date of birth: <span class=\"mandatory\">*</span>"%>
+				<%= form.text_field :birthday %>
+			</li>
+		</ul>
+	</fieldset>
+	<fieldset>
+		<legend>Contact information</legend>
+		<ul>
+			<li>
+				<%= form.label :address, "Address: <span class=\"mandatory\">*</span>"%>
+				<%= form.text_field :address %>
+			</li>
+			<li>
+				<%= form.label :location, "Location: <span class=\"mandatory\">*</span>"%>
+				<%= form.text_field :location %>
+			</li>
+			<li>
+				<%= form.label :postal_code, "Postal code: <span class=\"mandatory\">*</span>"%>
+				<%= form.text_field :postal_code %>
+			</li>
+			<li>
+				<%= form.label :province, "Province: <span class=\"mandatory\">*</span>"%>
+				<%= form.select :province, options_for_select(province_options, "BC") %>
+			</li>
+			<li>
+				<%= form.label :phone_home, "Phone (home): "%>
+				<%= form.text_field :phone_home %>
+			</li>
+			<li>
+				<%= form.label :phone_cell, "Phone (cell): "%>
+				<%= form.text_field :phone_cell %>
+			</li>
+			<li>
+				<%= form.label :phone_work, "Phone (work): "%>
+				<%= form.text_field :phone_work %>
+			</li>
+			<li>
+				<%= form.label :preferred_contact_method, "Contact method: "%>
+				<%= form.select :preferred_contact_method, options_for_select([["E-mail", 0], ["Home phone", 1], ["Work phone", 2], ["Cell phone", 3]])%>
+			</li>
+			<li>
+				<%= form.label :special_consideration, "Special considerations:"%>
+                <%= form.text_area :special_consideration %>
+			</li>
+		</ul>
+	</fieldset>
+	<fieldset>
+		<legend>Emergency contact information</legend>
+		<ul>
+			<li>
+				<%= form.label :emrg_contact_name, "Name: <span class=\"mandatory\">*</span>"%>
+				<%= form.text_field :emrg_contact_name %>
+			</li>
+			<li>
+				<%= form.label :emrg_contact_relationship, "Relationship: <span class=\"mandatory\">*</span>"%>
+				<%= form.text_field :emrg_contact_relationship %>
+			</li>
+			<li>
+				<%= form.label :emrg_contact_phone_home, "Phone (home):"%>
+				<%= form.text_field :emrg_contact_phone_home %>
+			</li>
+			<li>
+				<%= form.label :emrg_contact_phone_work, "Phone (work):"%>
+				<%= form.text_field :emrg_contact_phone_work %>
+			</li>
+		</ul>
+	</fieldset>
+	<p><%= form.submit 'Update' %></p>		

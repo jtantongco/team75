@@ -24,21 +24,6 @@ class VolunteersController < ApplicationController
   # GET /volunteers/new
   # GET /volunteers/new.xml
   def new
-    @provinces = [
-      ["Alberta", "AB"], 
-      ["British Columbia", "BC"], 
-      ["Manitoba", "MB"], 
-      ["New Brunswick", "NB"], 
-      ["Newfoundland and Labrador", "NL"], 
-      ["Northwest Territories", "NT"], 
-      ["Nova Scotia", "NS"], 
-      ["Nunavut", "NU"], 
-      ["Ontario", "ON"], 
-      ["Prince Edward Island", "PE"], 
-      ["Quebec", "QC"], 
-      ["Saskatchewan", "SK"], 
-      ["Yukon", "YT"]
-    ]
     @volunteer = Volunteer.new
     @volunteer_extra = VolunteerExtra.new
     @student = Student.new
@@ -51,21 +36,6 @@ class VolunteersController < ApplicationController
 
   # GET /volunteers/1/edit
   def edit
-    @provinces = [
-      ["Alberta", "AB"], 
-      ["British Columbia", "BC"], 
-      ["Manitoba", "MB"], 
-      ["New Brunswick", "NB"], 
-      ["Newfoundland and Labrador", "NL"], 
-      ["Northwest Territories", "NT"], 
-      ["Nova Scotia", "NS"], 
-      ["Nunavut", "NU"], 
-      ["Ontario", "ON"], 
-      ["Prince Edward Island", "PE"], 
-      ["Quebec", "QC"], 
-      ["Saskatchewan", "SK"], 
-      ["Yukon", "YT"]
-    ]
     @volunteer = Volunteer.find(params[:id])
   end
 

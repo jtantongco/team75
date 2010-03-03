@@ -44,7 +44,7 @@
 			</li>
 			<li>
 				<%= f.label :province, "Province: <span class=\"mandatory\">*</span>"%>
-				<%= f.select :province, options_for_select(@provinces, "BC") %>
+				<%= f.select :province, options_for_select(province_options, "BC") %>
 			</li>
 			<li>
 				<%= f.label :phone_home, "Phone (home): "%>
