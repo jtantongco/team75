@@ -1,4 +1,7 @@
 class Volunteer < ActiveRecord::Base
+	
+	  validates_presence_of :first_name, :last_name, :email, :password, :birthday, :address, :location, :postal_code, :province, :emrg_contact_name, :emrg_contact_relationship 
+	   
   set_primary_key "v_id"
   
   has_one :student,
