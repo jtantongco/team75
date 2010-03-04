@@ -1,6 +1,8 @@
 <h1>Editing account details</h1>
-<% form_for(@user, :url => { :action => "save_account" }) do |f| %>
-	<%= error_messages_for :object => [@user] %>
+<% if flash[:error] %><p class="flash_error"><%=flash[:error]%></p><% end %>
+<% if flash[:message] %><p class="flash_message"><%=flash[:message]%></p><% end %>
+<% form_for(@user, :url => { :action => "update_account" }) do |f| %>
+	<%= f.error_messages %>
 	<%= render :partial => "volunteers/form_volunteer_info", :locals => {:form =>f } %>
 <% end %>
 <%= link_to 'Back', :action => :my_account %>

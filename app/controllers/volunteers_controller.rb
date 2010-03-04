@@ -61,8 +61,8 @@ class VolunteersController < ApplicationController
         format.html { redirect_to(@volunteer) }
         format.xml  { render :xml => @volunteer, :status => :created, :location => @volunteer }
       else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @volunteer.errors, :status => :unprocessable_entity }
+        #format.html { render :action => "new" }
+        #format.xml  { render :xml => @volunteer.errors, :status => :unprocessable_entity }
       end
     end
   end

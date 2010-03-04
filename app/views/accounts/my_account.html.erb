@@ -2,5 +2,5 @@
 <% if flash[:message] %><p class="flash_message"><%=flash[:message]%></p><% end %>
 <p>Welcome <%= Volunteer.find(session[:id]).first_name %> <%= Volunteer.find(session[:id]).last_name %>!</p>
 <p> You have successfully logged in.  You may log out, change your account details, log hours or join a project!</p>
-
+<p><%= link_to 'Edit account', :action => :edit_account %></p>
 <%= link_to 'Logout', :action => 'logout' %>  
