@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100225213428) do
+ActiveRecord::Schema.define(:version => 20100304224837) do
 
   create_table "administrators", :primary_key => "Aid", :force => true do |t|
     t.string "Name",      :null => false
@@ -118,12 +118,7 @@ ActiveRecord::Schema.define(:version => 20100225213428) do
 
   add_index "supervises", ["VSid"], :name => "VSid"
 
-  create_table "supervisors", :force => true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "supervisorsBackup", :primary_key => "VSid", :force => true do |t|
+  create_table "supervisors", :primary_key => "VSid", :force => true do |t|
     t.string "Name",      :null => false
     t.string "loginName", :null => false
     t.string "Password",  :null => false
@@ -132,7 +127,7 @@ ActiveRecord::Schema.define(:version => 20100225213428) do
     t.string "Email"
   end
 
-  add_index "supervisorsBackup", ["loginName"], :name => "loginName", :unique => true
+  add_index "supervisors", ["loginName"], :name => "loginName", :unique => true
 
   create_table "volunteer_extras", :primary_key => "v_id", :force => true do |t|
     t.text    "how_often_volunteer"
@@ -163,27 +158,27 @@ ActiveRecord::Schema.define(:version => 20100225213428) do
   end
 
   create_table "volunteers", :primary_key => "v_id", :force => true do |t|
-    t.string   "first_name",                               :null => false
-    t.string   "last_name",                                :null => false
-    t.string   "email",                                    :null => false
-    t.string   "password",                                 :null => false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "birthday",                  :limit => 30,  :null => false
+    t.string   "first_name",                                                  :null => false
+    t.string   "last_name",                                                   :null => false
+    t.string   "email",                                                       :null => false
+    t.string   "password",                                                    :null => false
+    t.date     "birthday",                                                    :null => false
     t.string   "phone_home",                :limit => 20
     t.string   "phone_work",                :limit => 20
     t.string   "phone_cell",                :limit => 20
-    t.string   "address",                   :limit => 50,  :null => false
-    t.text     "location",                  :limit => 255, :null => false
-    t.string   "province",                  :limit => 20,  :null => false
-    t.string   "postal_code",               :limit => 10,  :null => false
-    t.boolean  "preferred_contact_method",                 :null => false
-    t.string   "emrg_contact_name",         :limit => 60,  :null => false
-    t.string   "emrg_contact_relationship", :limit => 30,  :null => false
-    t.string   "emrg_contact_phone_work",   :limit => 20,  :null => false
-    t.string   "emrg_contact_phone_home",   :limit => 20,  :null => false
+    t.string   "address",                   :limit => 50,                     :null => false
+    t.text     "location",                  :limit => 255,                    :null => false
+    t.string   "province",                  :limit => 20,                     :null => false
+    t.string   "postal_code",               :limit => 10,                     :null => false
+    t.boolean  "preferred_contact_method",                                    :null => false
+    t.string   "emrg_contact_name",         :limit => 60,                     :null => false
+    t.string   "emrg_contact_relationship", :limit => 30,                     :null => false
+    t.string   "emrg_contact_phone_work",   :limit => 20,                     :null => false
+    t.string   "emrg_contact_phone_home",   :limit => 20,                     :null => false
     t.text     "special_consideration"
-    t.boolean  "activated"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "activated",                                :default => false, :null => false
   end
 
 end
