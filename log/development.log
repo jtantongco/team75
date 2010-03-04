@@ -1,0 +1,1231 @@
+# Logfile created on 2010-03-04 09:33:09 -0800  [4;36;1mSQL (46.8ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (46.8ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-04 09:36:27) [GET]
+
+ActionController::RoutingError (No route matches "/login" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+  C:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  C:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  C:/Ruby19/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (31.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (78.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#index (for 127.0.0.1 at 2010-03-04 09:36:34) [GET]
+  [4;36;1mVolunteer Load (1294.8ms)[0m   [0;1mSELECT * FROM `volunteers` [0m
+Rendering template within layouts/volunteers
+Rendering volunteers/index
+  [4;35;1mVolunteer Columns (109.2ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+Completed in 4805ms (View: 234, DB: 1513) | 200 OK [http://localhost/volunteers]
+  [4;36;1mSQL (46.8ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (46.8ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#edit (for 127.0.0.1 at 2010-03-04 09:37:07) [GET]
+  Parameters: {"id"=>"15"}
+  [4;36;1mVolunteer Columns (78.0ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+  [4;35;1mVolunteer Load (46.8ms)[0m   [0mSELECT * FROM `volunteers` WHERE (`volunteers`.`v_id` = 15) [0m
+Rendering template within layouts/volunteers
+Rendering volunteers/edit
+
+ActionView::TemplateError (wrong number of arguments (0 for 1)) on line #5 of app/views/volunteers/_form_volunteer_info.html.erb:
+2: 		<legend>Personal information</legend>
+3: 		<ul>
+4: 			<li>
+5: 				<%= form.label :first_name, "First name: <span class=\"mandatory\">*</span>"%>
+6: 				<%= form.text_field :first_name %>
+7: 			</li>
+8: 			<li>
+
+    app/views/volunteers/_form_volunteer_info.html.erb:5
+    app/views/volunteers/edit.html.erb:5:in `block in _run_erb_app47views47volunteers47edit46html46erb'
+    app/views/volunteers/edit.html.erb:3
+    <internal:prelude>:8:in `synchronize'
+    C:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    C:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    C:/Ruby19/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (140.4ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (78.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (46.8ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#index (for 127.0.0.1 at 2010-03-04 09:37:18) [GET]
+  [4;36;1mVolunteer Load (109.2ms)[0m   [0;1mSELECT * FROM `volunteers` [0m
+Rendering template within layouts/volunteers
+Rendering volunteers/index
+  [4;35;1mVolunteer Columns (46.8ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+Completed in 187ms (View: 16, DB: 281) | 200 OK [http://localhost/volunteers]
+  [4;36;1mSQL (46.8ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (31.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#edit (for 127.0.0.1 at 2010-03-04 09:37:20) [GET]
+  Parameters: {"id"=>"11"}
+  [4;36;1mVolunteer Columns (2059.2ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+  [4;35;1mVolunteer Load (218.4ms)[0m   [0mSELECT * FROM `volunteers` WHERE (`volunteers`.`v_id` = 11) [0m
+Rendering template within layouts/volunteers
+Rendering volunteers/edit
+
+ActionView::TemplateError (wrong number of arguments (0 for 1)) on line #5 of app/views/volunteers/_form_volunteer_info.html.erb:
+2: 		<legend>Personal information</legend>
+3: 		<ul>
+4: 			<li>
+5: 				<%= form.label :first_name, "First name: <span class=\"mandatory\">*</span>"%>
+6: 				<%= form.text_field :first_name %>
+7: 			</li>
+8: 			<li>
+
+    app/views/volunteers/_form_volunteer_info.html.erb:5
+    app/views/volunteers/edit.html.erb:5:in `block in _run_erb_app47views47volunteers47edit46html46erb'
+    app/views/volunteers/edit.html.erb:3
+    <internal:prelude>:8:in `synchronize'
+    C:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    C:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    C:/Ruby19/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (171.6ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (31.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (46.8ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#index (for 127.0.0.1 at 2010-03-04 09:37:29) [GET]
+  [4;36;1mVolunteer Load (124.8ms)[0m   [0;1mSELECT * FROM `volunteers` [0m
+Rendering template within layouts/volunteers
+Rendering volunteers/index
+  [4;35;1mVolunteer Columns (46.8ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+Completed in 187ms (View: 16, DB: 250) | 200 OK [http://localhost/volunteers]
+  [4;36;1mSQL (62.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (31.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-04 09:37:48) [GET]
+
+ActionController::RoutingError (No route matches "/anli8013@interchange.ubc.ca" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+  C:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  C:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  C:/Ruby19/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (46.8ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (46.8ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#index (for 127.0.0.1 at 2010-03-04 09:37:57) [GET]
+Rendering template within layouts/accounts
+Rendering accounts/index
+Completed in 31ms (View: 31, DB: 94) | 200 OK [http://localhost/accounts]
+  [4;36;1mSQL (46.8ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (31.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#login (for 127.0.0.1 at 2010-03-04 09:38:00) [GET]
+  [4;36;1mVolunteer Columns (46.8ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+Rendering template within layouts/accounts
+Rendering accounts/login
+Completed in 94ms (View: 31, DB: 125) | 200 OK [http://localhost/accounts/login]
+  [4;35;1mSQL (31.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (31.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#process_login (for 127.0.0.1 at 2010-03-04 09:38:08) [POST]
+  Parameters: {"authenticity_token"=>"bKcyn4tFnk5PlJKeMSz06knVzGwwfID/vVjjrC8l2v8=", "user"=>{"email"=>"anli8013@interchange.ubc.ca", "password"=>"123456"}, "commit"=>"Submit"}
+  [4;35;1mVolunteer Columns (62.4ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+  [4;36;1mVolunteer Load (46.8ms)[0m   [0;1mSELECT * FROM `volunteers` WHERE (`volunteers`.`email` = 'anli8013@interchange.ubc.ca' AND `volunteers`.`password` = '123456') LIMIT 1[0m
+Redirected to http://localhost:3000/accounts/my_account
+Completed in 125ms (DB: 172) | 302 Found [http://localhost/accounts/process_login]
+  [4;35;1mSQL (31.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (46.8ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#my_account (for 127.0.0.1 at 2010-03-04 09:38:08) [GET]
+  [4;35;1mVolunteer Columns (46.8ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+  [4;36;1mVolunteer Load (46.8ms)[0m   [0;1mSELECT * FROM `volunteers` WHERE (`volunteers`.`v_id` = 11) [0m
+Rendering template within layouts/accounts
+Rendering accounts/my_account
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `volunteers` WHERE (`volunteers`.`v_id` = 11) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `volunteers` WHERE (`volunteers`.`v_id` = 11) [0m
+Completed in 140ms (View: 31, DB: 172) | 200 OK [http://localhost/accounts/my_account]
+  [4;35;1mSQL (46.8ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (31.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#logout (for 127.0.0.1 at 2010-03-04 09:38:15) [GET]
+  [4;35;1mVolunteer Columns (46.8ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+  [4;36;1mVolunteer Load (93.6ms)[0m   [0;1mSELECT * FROM `volunteers` WHERE (`volunteers`.`v_id` = 11) [0m
+Redirected to http://localhost:3000/accounts/login
+Completed in 187ms (DB: 218) | 302 Found [http://localhost/accounts/logout]
+  [4;35;1mSQL (46.8ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (46.8ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#login (for 127.0.0.1 at 2010-03-04 09:38:15) [GET]
+  [4;35;1mVolunteer Columns (62.4ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+Rendering template within layouts/accounts
+Rendering accounts/login
+Completed in 94ms (View: 16, DB: 156) | 200 OK [http://localhost/accounts/login]
+  [4;36;1mSQL (46.8ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (46.8ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#new (for 127.0.0.1 at 2010-03-04 09:38:48) [GET]
+  [4;36;1mVolunteer Columns (46.8ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+  [4;35;1mVolunteerExtra Columns (156.0ms)[0m   [0mSHOW FIELDS FROM `volunteer_extras`[0m
+  [4;36;1mStudent Columns (124.8ms)[0m   [0;1mSHOW FIELDS FROM `students`[0m
+Rendering template within layouts/volunteers
+Rendering volunteers/new
+Completed in 421ms (View: 78, DB: 421) | 200 OK [http://localhost/volunteers/new]
+  [4;35;1mSQL (46.8ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (46.8ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#create (for 127.0.0.1 at 2010-03-04 09:41:14) [POST]
+  Parameters: {"authenticity_token"=>"9WDXVa7dP/mPPCPn5quYPdBpDXAYFGzg3gBgDFLD9LA=", "volunteer"=>{"first_name"=>"John", "last_name"=>"Smith", "email"=>"holy_dragon_88@hotmail.com", "password"=>"qwerty", "birthday"=>"January 1 1970", "address"=>"1234 Maple Street", "location"=>"Vancouver", "postal_code"=>"V5P 1A2", "province"=>"BC", "phone_home"=>"", "phone_cell"=>"", "phone_work"=>"", "preferred_contact_method"=>"0", "special_consideration"=>"", "emrg_contact_name"=>"Pocahontas", "emrg_contact_relationship"=>"Wife", "emrg_contact_phone_home"=>"", "emrg_contact_phone_work"=>""}, "student"=>{"student_id"=>"", "faculty"=>"", "program"=>"", "year"=>"1"}, "volunteer_extra"=>{"how_often_volunteer"=>"", "how_heard_about_farm"=>"", "why_volunteer"=>"", "skills_and_knowledge"=>"", "skill_farming"=>"0", "skill_construction"=>"0", "skill_sales"=>"0", "skill_fundraising"=>"0", "skill_music"=>"0", "skill_art"=>"0", "skill_computer"=>"0", "first_aid"=>"0", "foodsafe_level1"=>"0", "foodsafe_level2"=>"0", "own_transportation"=>"0"}, "commit"=>"Create"}
+  [4;35;1mVolunteer Columns (10420.8ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+  [4;36;1mVolunteerExtra Columns (4742.4ms)[0m   [0;1mSHOW FIELDS FROM `volunteer_extras`[0m
+  [4;35;1mStudent Columns (9313.2ms)[0m   [0mSHOW FIELDS FROM `students`[0m
+Rendering template within layouts/volunteers
+Rendering volunteers/new
+Completed in 25537ms (View: 562, DB: 24570) | 200 OK [http://localhost/volunteers]
+  [4;36;1mSQL (46.8ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (46.8ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#create (for 127.0.0.1 at 2010-03-04 09:41:52) [POST]
+  Parameters: {"authenticity_token"=>"9WDXVa7dP/mPPCPn5quYPdBpDXAYFGzg3gBgDFLD9LA=", "volunteer"=>{"first_name"=>"John", "last_name"=>"Smith", "email"=>"holy_dragon_88@hotmail.com", "password"=>"qwerty", "birthday"=>"January 1 1970", "address"=>"1234 Maple Street", "location"=>"Vancouver", "postal_code"=>"V5P 1A2", "province"=>"BC", "phone_home"=>"", "phone_cell"=>"", "phone_work"=>"", "preferred_contact_method"=>"0", "special_consideration"=>"", "emrg_contact_name"=>"Pocahontas", "emrg_contact_relationship"=>"Wife", "emrg_contact_phone_home"=>"", "emrg_contact_phone_work"=>""}, "is_student"=>"1", "student"=>{"student_id"=>"", "faculty"=>"", "program"=>"", "year"=>"1"}, "volunteer_extra"=>{"how_often_volunteer"=>"", "how_heard_about_farm"=>"", "why_volunteer"=>"", "skills_and_knowledge"=>"", "skill_farming"=>"0", "skill_construction"=>"0", "skill_sales"=>"0", "skill_fundraising"=>"0", "skill_music"=>"0", "skill_art"=>"0", "skill_computer"=>"0", "first_aid"=>"0", "foodsafe_level1"=>"0", "foodsafe_level2"=>"0", "own_transportation"=>"0"}, "commit"=>"Create"}
+  [4;36;1mVolunteer Columns (1840.8ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+  [4;35;1mVolunteerExtra Columns (2043.6ms)[0m   [0mSHOW FIELDS FROM `volunteer_extras`[0m
+  [4;36;1mStudent Columns (5335.2ms)[0m   [0;1mSHOW FIELDS FROM `students`[0m
+Rendering template within layouts/volunteers
+Rendering volunteers/new
+Completed in 9282ms (View: 31, DB: 9313) | 200 OK [http://localhost/volunteers]
+  [4;35;1mSQL (46.8ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (46.8ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#create (for 127.0.0.1 at 2010-03-04 09:42:17) [POST]
+  Parameters: {"authenticity_token"=>"9WDXVa7dP/mPPCPn5quYPdBpDXAYFGzg3gBgDFLD9LA=", "volunteer"=>{"first_name"=>"John", "last_name"=>"Smith", "email"=>"holy_dragon_88@hotmail.com", "password"=>"qwerty", "birthday"=>"January 1 1970", "address"=>"1234 Maple Street", "location"=>"Vancouver", "postal_code"=>"V5P 1A2", "province"=>"BC", "phone_home"=>"", "phone_cell"=>"", "phone_work"=>"", "preferred_contact_method"=>"0", "special_consideration"=>"", "emrg_contact_name"=>"Pocahontas", "emrg_contact_relationship"=>"Wife", "emrg_contact_phone_home"=>"", "emrg_contact_phone_work"=>""}, "is_student"=>"1", "student"=>{"student_id"=>"", "faculty"=>"", "program"=>"", "year"=>"1"}, "volunteer_extra"=>{"how_often_volunteer"=>"", "how_heard_about_farm"=>"", "why_volunteer"=>"", "skills_and_knowledge"=>"", "skill_farming"=>"0", "skill_construction"=>"0", "skill_sales"=>"0", "skill_fundraising"=>"0", "skill_music"=>"0", "skill_art"=>"0", "skill_computer"=>"0", "first_aid"=>"0", "foodsafe_level1"=>"0", "foodsafe_level2"=>"0", "own_transportation"=>"1"}, "commit"=>"Create"}
+  [4;35;1mVolunteer Columns (1404.0ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+  [4;36;1mVolunteerExtra Columns (62.4ms)[0m   [0;1mSHOW FIELDS FROM `volunteer_extras`[0m
+  [4;35;1mStudent Columns (1669.2ms)[0m   [0mSHOW FIELDS FROM `students`[0m
+  [4;36;1mSQL (46.8ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mVolunteer Create (8283.6ms)[0m   [0mINSERT INTO `volunteers` (`first_name`, `last_name`, `email`, `password`, `created_at`, `updated_at`, `birthday`, `phone_home`, `phone_work`, `phone_cell`, `address`, `location`, `province`, `postal_code`, `preferred_contact_method`, `emrg_contact_name`, `emrg_contact_relationship`, `emrg_contact_phone_work`, `emrg_contact_phone_home`, `special_consideration`, `activated`) VALUES('John', 'Smith', 'holy_dragon_88@hotmail.com', 'qwerty', '2010-03-04 17:42:20', '2010-03-04 17:42:20', 'January 1 1970', '', '', '', '1234 Maple Street', 'Vancouver', 'BC', 'V5P 1A2', 0, 'Pocahontas', 'Wife', '', '', '', NULL)[0m
+  [4;36;1mVolunteerExtra Create (1232.4ms)[0m   [0;1mINSERT INTO `volunteer_extras` (`how_often_volunteer`, `how_heard_about_farm`, `why_volunteer`, `skills_and_knowledge`, `first_aid`, `foodsafe_level1`, `foodsafe_level2`, `own_transportation`, `skill_farming`, `skill_construction`, `skill_sales`, `skill_fundraising`, `skill_music`, `skill_art`, `skill_computer`, `v_id`) VALUES('', '', '', '', 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 23)[0m
+  [4;35;1mStudent Create (561.6ms)[0m   [0mINSERT INTO `students` (`student_id`, `faculty`, `program`, `year`, `grad_date`, `v_id`) VALUES(NULL, '', '', 1, NULL, 23)[0m
+  [4;36;1mSQL (904.8ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/volunteers/23
+Completed in 14290ms (DB: 14258) | 302 Found [http://localhost/volunteers]
+  [4;35;1mSQL (46.8ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (46.8ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#show (for 127.0.0.1 at 2010-03-04 09:42:32) [GET]
+  Parameters: {"id"=>"23"}
+  [4;35;1mVolunteer Columns (140.4ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+  [4;36;1mVolunteer Load (46.8ms)[0m   [0;1mSELECT * FROM `volunteers` WHERE (`volunteers`.`v_id` = 23) [0m
+Rendering template within layouts/volunteers
+Rendering volunteers/show
+Completed in 234ms (View: 31, DB: 281) | 200 OK [http://localhost/volunteers/23]
+  [4;35;1mSQL (46.8ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (46.8ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#index (for 127.0.0.1 at 2010-03-04 09:42:40) [GET]
+  [4;35;1mVolunteer Load (280.8ms)[0m   [0mSELECT * FROM `volunteers` [0m
+Rendering template within layouts/volunteers
+Rendering volunteers/index
+  [4;36;1mVolunteer Columns (93.6ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+Completed in 390ms (View: 16, DB: 468) | 200 OK [http://localhost/volunteers]
+  [4;35;1mSQL (46.8ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (46.8ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#index (for 127.0.0.1 at 2010-03-04 09:43:03) [GET]
+Rendering template within layouts/accounts
+Rendering accounts/index
+Completed in 16ms (View: 0, DB: 94) | 200 OK [http://localhost/accounts]
+  [4;35;1mSQL (46.8ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (62.4ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#login (for 127.0.0.1 at 2010-03-04 09:43:06) [GET]
+  [4;35;1mVolunteer Columns (46.8ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+Rendering template within layouts/accounts
+Rendering accounts/login
+Completed in 62ms (View: 0, DB: 156) | 200 OK [http://localhost/accounts/login]
+  [4;36;1mSQL (46.8ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (31.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#process_login (for 127.0.0.1 at 2010-03-04 09:43:15) [POST]
+  Parameters: {"authenticity_token"=>"9WDXVa7dP/mPPCPn5quYPdBpDXAYFGzg3gBgDFLD9LA=", "user"=>{"email"=>"holy_dragon_88@hotmail.com", "password"=>"qwerty"}, "commit"=>"Submit"}
+  [4;36;1mVolunteer Columns (78.0ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+  [4;35;1mVolunteer Load (46.8ms)[0m   [0mSELECT * FROM `volunteers` WHERE (`volunteers`.`email` = 'holy_dragon_88@hotmail.com' AND `volunteers`.`password` = 'qwerty') LIMIT 1[0m
+Redirected to http://localhost:3000/accounts/my_account
+Completed in 125ms (DB: 203) | 302 Found [http://localhost/accounts/process_login]
+  [4;36;1mSQL (46.8ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (46.8ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#my_account (for 127.0.0.1 at 2010-03-04 09:43:16) [GET]
+  [4;36;1mVolunteer Columns (78.0ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+  [4;35;1mVolunteer Load (46.8ms)[0m   [0mSELECT * FROM `volunteers` WHERE (`volunteers`.`v_id` = 23) [0m
+Rendering template within layouts/accounts
+Rendering accounts/my_account
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `volunteers` WHERE (`volunteers`.`v_id` = 23) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `volunteers` WHERE (`volunteers`.`v_id` = 23) [0m
+Completed in 140ms (View: 0, DB: 218) | 200 OK [http://localhost/accounts/my_account]
+  [4;36;1mSQL (46.8ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (31.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#logout (for 127.0.0.1 at 2010-03-04 09:43:19) [GET]
+  [4;36;1mVolunteer Columns (46.8ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+  [4;35;1mVolunteer Load (46.8ms)[0m   [0mSELECT * FROM `volunteers` WHERE (`volunteers`.`v_id` = 23) [0m
+Redirected to http://localhost:3000/accounts/login
+Completed in 109ms (DB: 172) | 302 Found [http://localhost/accounts/logout]
+  [4;36;1mSQL (31.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (46.8ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#login (for 127.0.0.1 at 2010-03-04 09:43:20) [GET]
+  [4;36;1mVolunteer Columns (46.8ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+Rendering template within layouts/accounts
+Rendering accounts/login
+Completed in 62ms (View: 0, DB: 125) | 200 OK [http://localhost/accounts/login]
+  [4;35;1mSQL (31.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (31.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#login (for 127.0.0.1 at 2010-03-04 09:54:01) [GET]
+  [4;35;1mVolunteer Columns (920.4ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+Rendering template within layouts/accounts
+Rendering accounts/login
+
+ActionView::TemplateError (undefined local variable or method `forgot_password' for #<ActionView::Base:0x3b36c40>) on line #18 of app/views/accounts/login.html.erb:
+15: <% end -%>
+16: <p>
+17: <%= link_to 'Register', new_volunteer_path %> |
+18: <%= link_to 'Forgot Password', forgot_password %>
+
+    app/views/accounts/login.html.erb:18
+    <internal:prelude>:8:in `synchronize'
+    C:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    C:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    C:/Ruby19/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (78.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (62.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (31.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#my_account (for 127.0.0.1 at 2010-03-04 09:54:40) [GET]
+Redirected to http://localhost:3000/accounts/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 0ms (DB: 94) | 302 Found [http://localhost/accounts/my_account]
+  [4;36;1mSQL (46.8ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (46.8ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#login (for 127.0.0.1 at 2010-03-04 09:54:41) [GET]
+  [4;36;1mVolunteer Columns (46.8ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+Rendering template within layouts/accounts
+Rendering accounts/login
+
+ActionView::TemplateError (undefined local variable or method `forgot_password' for #<ActionView::Base:0x465a4a0>) on line #18 of app/views/accounts/login.html.erb:
+15: <% end -%>
+16: <p>
+17: <%= link_to 'Register', new_volunteer_path %> |
+18: <%= link_to 'Forgot Password', forgot_password %>
+
+    app/views/accounts/login.html.erb:18
+    <internal:prelude>:8:in `synchronize'
+    C:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    C:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    C:/Ruby19/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (93.6ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (78.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (46.8ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#login (for 127.0.0.1 at 2010-03-04 09:55:12) [GET]
+  [4;35;1mVolunteer Columns (46.8ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+Rendering template within layouts/accounts
+Rendering accounts/login
+Completed in 94ms (View: 16, DB: 172) | 200 OK [http://localhost/accounts/login]
+  [4;36;1mSQL (46.8ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (46.8ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#forgot_password (for 127.0.0.1 at 2010-03-04 09:55:16) [GET]
+Redirected to http://localhost:3000/accounts/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 0ms (DB: 94) | 302 Found [http://localhost/accounts/forgot_password]
+  [4;36;1mSQL (62.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (31.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#login (for 127.0.0.1 at 2010-03-04 09:55:17) [GET]
+  [4;36;1mVolunteer Columns (546.0ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+Rendering template within layouts/accounts
+Rendering accounts/login
+Completed in 546ms (View: 0, DB: 640) | 200 OK [http://localhost/accounts/login]
+  [4;35;1mSQL (62.4ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (46.8ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#forgot_password (for 127.0.0.1 at 2010-03-04 09:56:15) [GET]
+Rendering template within layouts/accounts
+Rendering accounts/forgot_password
+
+ActionView::TemplateError (undefined local variable or method `login' for #<ActionView::Base:0x5defdc0>) on line #14 of app/views/accounts/forgot_password.html.erb:
+11: <%= submit_tag "Submit" %> 
+12: <% end -%>
+13: <p>
+14: <%= link_to 'Back', login %>
+
+    app/views/accounts/forgot_password.html.erb:14
+    <internal:prelude>:8:in `synchronize'
+    C:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    C:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    C:/Ruby19/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (93.6ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (31.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (46.8ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#forgot_password (for 127.0.0.1 at 2010-03-04 09:56:34) [GET]
+Rendering template within layouts/accounts
+Rendering accounts/forgot_password
+Completed in 16ms (View: 16, DB: 78) | 200 OK [http://localhost/accounts/forgot_password]
+  [4;35;1mSQL (46.8ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (46.8ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#forgot_password (for 127.0.0.1 at 2010-03-04 09:56:52) [GET]
+Rendering template within layouts/accounts
+Rendering accounts/forgot_password
+Completed in 16ms (View: 16, DB: 94) | 200 OK [http://localhost/accounts/forgot_password]
+  [4;36;1mSQL (31.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (62.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#login (for 127.0.0.1 at 2010-03-04 10:07:27) [GET]
+  [4;36;1mVolunteer Columns (62.4ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+Rendering template within layouts/accounts
+Rendering accounts/login
+Completed in 359ms (View: 140, DB: 156) | 200 OK [http://localhost/accounts/login]
+  [4;35;1mSQL (93.6ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (31.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#forgot_password (for 127.0.0.1 at 2010-03-04 10:07:29) [GET]
+
+NameError (undefined local variable or method `email' for #<AccountsController:0x5857b60>):
+  app/controllers/accounts_controller.rb:38:in `forgot_password'
+  <internal:prelude>:8:in `synchronize'
+  C:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  C:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  C:/Ruby19/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (78.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (46.8ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (78.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#forgot_password (for 127.0.0.1 at 2010-03-04 10:08:12) [GET]
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.[]):
+  app/controllers/accounts_controller.rb:38:in `forgot_password'
+  <internal:prelude>:8:in `synchronize'
+  C:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  C:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  C:/Ruby19/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (78.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (46.8ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (46.8ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#forgot_password (for 127.0.0.1 at 2010-03-04 10:09:26) [GET]
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.[]):
+  app/controllers/accounts_controller.rb:38:in `forgot_password'
+  <internal:prelude>:8:in `synchronize'
+  C:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  C:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  C:/Ruby19/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (78.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (46.8ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (31.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#forgot_password (for 127.0.0.1 at 2010-03-04 10:12:54) [GET]
+
+SyntaxError (C:/InstantRails-2.0-win/rails_apps/work/team75/app/controllers/accounts_controller.rb:47: syntax error, unexpected $end, expecting keyword_end):
+  <internal:prelude>:8:in `synchronize'
+  C:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  C:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  C:/Ruby19/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (124.8ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (78.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (46.8ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#forgot_password (for 127.0.0.1 at 2010-03-04 10:13:25) [GET]
+Rendering template within layouts/accounts
+Rendering accounts/forgot_password
+Completed in 16ms (View: 16, DB: 125) | 200 OK [http://localhost/accounts/forgot_password]
+  [4;35;1mSQL (46.8ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (46.8ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#login (for 127.0.0.1 at 2010-03-04 10:15:57) [GET]
+  [4;35;1mVolunteer Columns (62.4ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+Rendering template within layouts/accounts
+Rendering accounts/login
+Completed in 78ms (View: 0, DB: 156) | 200 OK [http://localhost/accounts/login]
+  [4;36;1mSQL (46.8ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (31.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#forgot_password (for 127.0.0.1 at 2010-03-04 10:17:23) [GET]
+Rendering template within layouts/accounts
+Rendering accounts/forgot_password
+Completed in 16ms (View: 16, DB: 78) | 200 OK [http://localhost/accounts/forgot_password]
+  [4;36;1mSQL (46.8ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (46.8ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#forgot_password (for 127.0.0.1 at 2010-03-04 10:17:32) [POST]
+  Parameters: {"authenticity_token"=>"K+jgmo0izD3RKJI8TmdqgyuB4Lh8ZNP+SuGqNL1YHPc=", "user"=>{"email"=>"holy_dragon_88@hotmail.com"}, "commit"=>"Submit"}
+  [4;36;1mVolunteer Columns (46.8ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+  [4;35;1mVolunteer Load (46.8ms)[0m   [0mSELECT * FROM `volunteers` WHERE (`volunteers`.`email` = 'holy_dragon_88@hotmail.com') LIMIT 1[0m
+
+NoMethodError (undefined method `user' for #<AccountsController:0x571a540>):
+  app/controllers/accounts_controller.rb:40:in `forgot_password'
+  <internal:prelude>:8:in `synchronize'
+  C:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  C:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  C:/Ruby19/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (78.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (62.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (46.8ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#forgot_password (for 127.0.0.1 at 2010-03-04 10:18:55) [POST]
+  Parameters: {"authenticity_token"=>"K+jgmo0izD3RKJI8TmdqgyuB4Lh8ZNP+SuGqNL1YHPc=", "user"=>{"email"=>"holy_dragon_88@hotmail.com"}, "commit"=>"Submit"}
+
+SyntaxError (C:/InstantRails-2.0-win/rails_apps/work/team75/app/controllers/accounts_controller.rb:40: syntax error, unexpected tFID, expecting keyword_then or ';' or '\n'
+C:/InstantRails-2.0-win/rails_apps/work/team75/app/controllers/accounts_controller.rb:48: syntax error, unexpected keyword_end, expecting $end):
+  <internal:prelude>:8:in `synchronize'
+  C:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  C:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  C:/Ruby19/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (78.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (62.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (46.8ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#forgot_password (for 127.0.0.1 at 2010-03-04 10:22:17) [POST]
+  Parameters: {"authenticity_token"=>"K+jgmo0izD3RKJI8TmdqgyuB4Lh8ZNP+SuGqNL1YHPc=", "user"=>{"email"=>"holy_dragon_88@hotmail.com"}, "commit"=>"Submit"}
+
+SyntaxError (C:/InstantRails-2.0-win/rails_apps/work/team75/app/controllers/accounts_controller.rb:40: syntax error, unexpected tFID, expecting keyword_then or ';' or '\n'
+C:/InstantRails-2.0-win/rails_apps/work/team75/app/controllers/accounts_controller.rb:48: syntax error, unexpected keyword_end, expecting $end):
+  <internal:prelude>:8:in `synchronize'
+  C:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  C:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  C:/Ruby19/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (78.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (31.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (31.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#forgot_password (for 127.0.0.1 at 2010-03-04 10:22:39) [POST]
+  Parameters: {"authenticity_token"=>"K+jgmo0izD3RKJI8TmdqgyuB4Lh8ZNP+SuGqNL1YHPc=", "user"=>{"email"=>"holy_dragon_88@hotmail.com"}, "commit"=>"Submit"}
+  [4;36;1mVolunteer Columns (46.8ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+  [4;35;1mVolunteer Load (31.2ms)[0m   [0mSELECT * FROM `volunteers` WHERE (`volunteers`.`email` = 'holy_dragon_88@hotmail.com') LIMIT 1[0m
+
+NoMethodError (undefined method `user' for #<AccountsController:0x57ee800>):
+  app/controllers/accounts_controller.rb:40:in `forgot_password'
+  <internal:prelude>:8:in `synchronize'
+  C:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  C:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  C:/Ruby19/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (78.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (31.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (62.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#forgot_password (for 127.0.0.1 at 2010-03-04 10:25:20) [POST]
+  Parameters: {"authenticity_token"=>"K+jgmo0izD3RKJI8TmdqgyuB4Lh8ZNP+SuGqNL1YHPc=", "user"=>{"email"=>"holy_dragon_88@hotmail.com"}, "commit"=>"Submit"}
+  [4;36;1mVolunteer Columns (62.4ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+  [4;35;1mVolunteer Load (46.8ms)[0m   [0mSELECT * FROM `volunteers` WHERE (`volunteers`.`email` = 'holy_dragon_88@hotmail.com') LIMIT 1[0m
+
+NoMethodError (undefined method `user' for #<AccountsController:0x418f920>):
+  app/controllers/accounts_controller.rb:40:in `forgot_password'
+  <internal:prelude>:8:in `synchronize'
+  C:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  C:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  C:/Ruby19/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (78.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (109.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (46.8ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#index (for 127.0.0.1 at 2010-03-04 10:25:26) [GET]
+Rendering template within layouts/accounts
+Rendering accounts/index
+Completed in 47ms (View: 47, DB: 156) | 200 OK [http://localhost/accounts/]
+  [4;36;1mSQL (46.8ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (46.8ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#login (for 127.0.0.1 at 2010-03-04 10:25:29) [GET]
+  [4;36;1mVolunteer Columns (46.8ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+Rendering template within layouts/accounts
+Rendering accounts/login
+Completed in 62ms (View: 0, DB: 140) | 200 OK [http://localhost/accounts/login]
+  [4;35;1mSQL (46.8ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (31.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#forgot_password (for 127.0.0.1 at 2010-03-04 10:25:31) [GET]
+Rendering template within layouts/accounts
+Rendering accounts/forgot_password
+Completed in 16ms (View: 16, DB: 78) | 200 OK [http://localhost/accounts/forgot_password]
+  [4;35;1mSQL (46.8ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (46.8ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#forgot_password (for 127.0.0.1 at 2010-03-04 10:25:39) [POST]
+  Parameters: {"authenticity_token"=>"K+jgmo0izD3RKJI8TmdqgyuB4Lh8ZNP+SuGqNL1YHPc=", "user"=>{"email"=>"holy_dragon_88@hotmail.com"}, "commit"=>"Submit"}
+  [4;35;1mVolunteer Columns (46.8ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+  [4;36;1mVolunteer Load (46.8ms)[0m   [0;1mSELECT * FROM `volunteers` WHERE (`volunteers`.`email` = 'holy_dragon_88@hotmail.com') LIMIT 1[0m
+
+NoMethodError (undefined method `user' for #<AccountsController:0x58f66e0>):
+  app/controllers/accounts_controller.rb:40:in `forgot_password'
+  <internal:prelude>:8:in `synchronize'
+  C:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  C:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  C:/Ruby19/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (46.8ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (46.8ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (62.4ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#forgot_password (for 127.0.0.1 at 2010-03-04 10:25:41) [GET]
+Rendering template within layouts/accounts
+Rendering accounts/forgot_password
+Completed in 0ms (View: 0, DB: 109) | 200 OK [http://localhost/accounts/forgot_password]
+  [4;35;1mSQL (46.8ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (31.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#forgot_password (for 127.0.0.1 at 2010-03-04 10:25:44) [POST]
+  Parameters: {"authenticity_token"=>"K+jgmo0izD3RKJI8TmdqgyuB4Lh8ZNP+SuGqNL1YHPc=", "user"=>{"email"=>"asfdasdfs"}, "commit"=>"Submit"}
+  [4;35;1mVolunteer Columns (46.8ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+  [4;36;1mVolunteer Load (46.8ms)[0m   [0;1mSELECT * FROM `volunteers` WHERE (`volunteers`.`email` = 'asfdasdfs') LIMIT 1[0m
+
+NoMethodError (undefined method `user' for #<AccountsController:0x41c0dc0>):
+  app/controllers/accounts_controller.rb:40:in `forgot_password'
+  <internal:prelude>:8:in `synchronize'
+  C:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  C:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  C:/Ruby19/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (46.8ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (46.8ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (31.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#forgot_password (for 127.0.0.1 at 2010-03-04 10:30:09) [GET]
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.[]):
+  app/controllers/accounts_controller.rb:38:in `forgot_password'
+  <internal:prelude>:8:in `synchronize'
+  C:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  C:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  C:/Ruby19/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (109.2ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (46.8ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (46.8ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#index (for 127.0.0.1 at 2010-03-04 10:30:15) [GET]
+Rendering template within layouts/accounts
+Rendering accounts/index
+Completed in 16ms (View: 16, DB: 94) | 200 OK [http://localhost/accounts/]
+  [4;35;1mSQL (62.4ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (46.8ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#login (for 127.0.0.1 at 2010-03-04 10:30:18) [GET]
+  [4;35;1mVolunteer Columns (46.8ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+Rendering template within layouts/accounts
+Rendering accounts/login
+Completed in 62ms (View: 0, DB: 156) | 200 OK [http://localhost/accounts/login]
+  [4;36;1mSQL (46.8ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (46.8ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#forgot_password (for 127.0.0.1 at 2010-03-04 10:31:39) [GET]
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.[]):
+  app/controllers/accounts_controller.rb:38:in `forgot_password'
+  <internal:prelude>:8:in `synchronize'
+  C:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  C:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  C:/Ruby19/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (46.8ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (46.8ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (46.8ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#index (for 127.0.0.1 at 2010-03-04 10:33:15) [GET]
+Rendering template within layouts/accounts
+Rendering accounts/index
+Completed in 0ms (View: 0, DB: 94) | 200 OK [http://localhost/accounts/]
+  [4;36;1mSQL (62.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (31.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#login (for 127.0.0.1 at 2010-03-04 10:33:17) [GET]
+  [4;36;1mVolunteer Columns (1731.6ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+Rendering template within layouts/accounts
+Rendering accounts/login
+Completed in 1763ms (View: 0, DB: 1825) | 200 OK [http://localhost/accounts/login]
+  [4;35;1mSQL (124.8ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (46.8ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#forgot_password (for 127.0.0.1 at 2010-03-04 10:33:20) [GET]
+Rendering template within layouts/accounts
+Rendering accounts/forgot_password
+Completed in 0ms (View: 0, DB: 172) | 200 OK [http://localhost/accounts/forgot_password]
+  [4;35;1mSQL (62.4ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (46.8ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#forgot_password (for 127.0.0.1 at 2010-03-04 10:33:26) [POST]
+  Parameters: {"authenticity_token"=>"K+jgmo0izD3RKJI8TmdqgyuB4Lh8ZNP+SuGqNL1YHPc=", "user"=>{"email"=>"qwerasdg"}, "commit"=>"Submit"}
+  [4;35;1mVolunteer Columns (78.0ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+  [4;36;1mVolunteer Load (109.2ms)[0m   [0;1mSELECT * FROM `volunteers` WHERE (`volunteers`.`email` = 'qwerasdg') LIMIT 1[0m
+
+NoMethodError (undefined method `user' for #<AccountsController:0x3744a60>):
+  app/controllers/accounts_controller.rb:40:in `forgot_password'
+  <internal:prelude>:8:in `synchronize'
+  C:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  C:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  C:/Ruby19/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (124.8ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (46.8ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (31.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#index (for 127.0.0.1 at 2010-03-04 10:34:59) [GET]
+Rendering template within layouts/accounts
+Rendering accounts/index
+Completed in 0ms (View: 0, DB: 78) | 200 OK [http://localhost/accounts/]
+  [4;35;1mSQL (46.8ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (46.8ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#login (for 127.0.0.1 at 2010-03-04 10:35:01) [GET]
+  [4;35;1mVolunteer Columns (46.8ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+Rendering template within layouts/accounts
+Rendering accounts/login
+Completed in 62ms (View: 0, DB: 140) | 200 OK [http://localhost/accounts/login]
+  [4;36;1mSQL (46.8ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (46.8ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#forgot_password (for 127.0.0.1 at 2010-03-04 10:35:02) [GET]
+Rendering template within layouts/accounts
+Rendering accounts/forgot_password
+Completed in 0ms (View: 0, DB: 94) | 200 OK [http://localhost/accounts/forgot_password]
+  [4;36;1mSQL (46.8ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (46.8ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#forgot_password (for 127.0.0.1 at 2010-03-04 10:35:05) [POST]
+  Parameters: {"authenticity_token"=>"K+jgmo0izD3RKJI8TmdqgyuB4Lh8ZNP+SuGqNL1YHPc=", "user"=>{"email"=>"dfhgdf"}, "commit"=>"Submit"}
+  [4;36;1mVolunteer Columns (46.8ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+  [4;35;1mVolunteer Load (46.8ms)[0m   [0mSELECT * FROM `volunteers` WHERE (`volunteers`.`email` = 'dfhgdf') LIMIT 1[0m
+Rendering template within layouts/accounts
+Rendering accounts/forgot_password
+Completed in 109ms (View: 0, DB: 187) | 200 OK [http://localhost/accounts/forgot_password]
+  [4;36;1mSQL (46.8ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (46.8ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#forgot_password (for 127.0.0.1 at 2010-03-04 10:35:50) [POST]
+  Parameters: {"authenticity_token"=>"K+jgmo0izD3RKJI8TmdqgyuB4Lh8ZNP+SuGqNL1YHPc=", "user"=>{"email"=>"dfhgdf"}, "commit"=>"Submit"}
+  [4;36;1mVolunteer Columns (93.6ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+  [4;35;1mVolunteer Load (78.0ms)[0m   [0mSELECT * FROM `volunteers` WHERE (`volunteers`.`email` = 'dfhgdf') LIMIT 1[0m
+Rendering template within layouts/accounts
+Rendering accounts/forgot_password
+Completed in 234ms (View: 16, DB: 265) | 200 OK [http://localhost/accounts/forgot_password]
+  [4;36;1mSQL (31.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (46.8ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#forgot_password (for 127.0.0.1 at 2010-03-04 10:35:54) [POST]
+  Parameters: {"authenticity_token"=>"K+jgmo0izD3RKJI8TmdqgyuB4Lh8ZNP+SuGqNL1YHPc=", "user"=>{"email"=>"qwerwaeg"}, "commit"=>"Submit"}
+  [4;36;1mVolunteer Columns (1669.2ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+  [4;35;1mVolunteer Load (62.4ms)[0m   [0mSELECT * FROM `volunteers` WHERE (`volunteers`.`email` = 'qwerwaeg') LIMIT 1[0m
+Rendering template within layouts/accounts
+Rendering accounts/forgot_password
+Completed in 1732ms (View: 0, DB: 1810) | 200 OK [http://localhost/accounts/forgot_password]
+  [4;36;1mSQL (62.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (31.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#login (for 127.0.0.1 at 2010-03-04 10:36:00) [GET]
+  [4;36;1mVolunteer Columns (62.4ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+Rendering template within layouts/accounts
+Rendering accounts/login
+Completed in 78ms (View: 0, DB: 156) | 200 OK [http://localhost/accounts/login]
+  [4;35;1mSQL (46.8ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (46.8ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#forgot_password (for 127.0.0.1 at 2010-03-04 10:36:02) [GET]
+Rendering template within layouts/accounts
+Rendering accounts/forgot_password
+Completed in 0ms (View: 0, DB: 94) | 200 OK [http://localhost/accounts/forgot_password]
+  [4;35;1mSQL (46.8ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (31.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#forgot_password (for 127.0.0.1 at 2010-03-04 10:36:05) [POST]
+  Parameters: {"authenticity_token"=>"K+jgmo0izD3RKJI8TmdqgyuB4Lh8ZNP+SuGqNL1YHPc=", "user"=>{"email"=>"dsf"}, "commit"=>"Submit"}
+  [4;35;1mVolunteer Columns (46.8ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+  [4;36;1mVolunteer Load (78.0ms)[0m   [0;1mSELECT * FROM `volunteers` WHERE (`volunteers`.`email` = 'dsf') LIMIT 1[0m
+Rendering template within layouts/accounts
+Rendering accounts/forgot_password
+Completed in 125ms (View: 0, DB: 203) | 200 OK [http://localhost/accounts/forgot_password]
+  [4;35;1mSQL (46.8ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (46.8ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#forgot_password (for 127.0.0.1 at 2010-03-04 10:36:13) [POST]
+  Parameters: {"authenticity_token"=>"K+jgmo0izD3RKJI8TmdqgyuB4Lh8ZNP+SuGqNL1YHPc=", "user"=>{"email"=>"holy_dragon_88@hotmail.com"}, "commit"=>"Submit"}
+  [4;35;1mVolunteer Columns (46.8ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+  [4;36;1mVolunteer Load (46.8ms)[0m   [0;1mSELECT * FROM `volunteers` WHERE (`volunteers`.`email` = 'holy_dragon_88@hotmail.com') LIMIT 1[0m
+
+SyntaxError (C:/InstantRails-2.0-win/rails_apps/work/team75/app/models/emailer.rb:3: syntax error, unexpected tSTRING_BEG, expecting keyword_end
+    @subject  'Forgot Password'
+               ^
+C:/InstantRails-2.0-win/rails_apps/work/team75/app/models/emailer.rb:4: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+C:/InstantRails-2.0-win/rails_apps/work/team75/app/models/emailer.rb:5: syntax error, unexpected tSTRING_BEG, expecting keyword_end
+    @from  'iForgotPass@gmail.com'
+            ^
+C:/InstantRails-2.0-win/rails_apps/work/team75/app/models/emailer.rb:6: syntax error, unexpected tIDENTIFIER, expecting keyword_end):
+  app/controllers/accounts_controller.rb:43:in `forgot_password'
+  <internal:prelude>:8:in `synchronize'
+  C:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  C:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  C:/Ruby19/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (78.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (46.8ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (78.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#index (for 127.0.0.1 at 2010-03-04 10:36:57) [GET]
+Rendering template within layouts/accounts
+Rendering accounts/index
+Completed in 0ms (View: 0, DB: 125) | 200 OK [http://localhost/accounts/]
+  [4;35;1mSQL (31.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (46.8ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#login (for 127.0.0.1 at 2010-03-04 10:36:59) [GET]
+  [4;35;1mVolunteer Columns (62.4ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+Rendering template within layouts/accounts
+Rendering accounts/login
+Completed in 78ms (View: 0, DB: 140) | 200 OK [http://localhost/accounts/login]
+  [4;36;1mSQL (46.8ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (46.8ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#forgot_password (for 127.0.0.1 at 2010-03-04 10:37:01) [GET]
+Rendering template within layouts/accounts
+Rendering accounts/forgot_password
+Completed in 0ms (View: 0, DB: 94) | 200 OK [http://localhost/accounts/forgot_password]
+  [4;36;1mSQL (62.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (46.8ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#forgot_password (for 127.0.0.1 at 2010-03-04 10:37:06) [POST]
+  Parameters: {"authenticity_token"=>"K+jgmo0izD3RKJI8TmdqgyuB4Lh8ZNP+SuGqNL1YHPc=", "user"=>{"email"=>"qwerqwt"}, "commit"=>"Submit"}
+  [4;36;1mVolunteer Columns (46.8ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+  [4;35;1mVolunteer Load (46.8ms)[0m   [0mSELECT * FROM `volunteers` WHERE (`volunteers`.`email` = 'qwerqwt') LIMIT 1[0m
+Rendering template within layouts/accounts
+Rendering accounts/forgot_password
+Completed in 94ms (View: 0, DB: 203) | 200 OK [http://localhost/accounts/forgot_password]
+  [4;36;1mSQL (46.8ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (46.8ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#forgot_password (for 127.0.0.1 at 2010-03-04 10:37:16) [POST]
+  Parameters: {"authenticity_token"=>"K+jgmo0izD3RKJI8TmdqgyuB4Lh8ZNP+SuGqNL1YHPc=", "user"=>{"email"=>"holy_dragon_88@hotmail.com"}, "commit"=>"Submit"}
+  [4;36;1mVolunteer Columns (46.8ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+  [4;35;1mVolunteer Load (46.8ms)[0m   [0mSELECT * FROM `volunteers` WHERE (`volunteers`.`email` = 'holy_dragon_88@hotmail.com') LIMIT 1[0m
+
+SyntaxError (C:/InstantRails-2.0-win/rails_apps/work/team75/app/models/emailer.rb:3: syntax error, unexpected tSTRING_BEG, expecting keyword_end
+    @subject  "Forgot Password"
+               ^
+C:/InstantRails-2.0-win/rails_apps/work/team75/app/models/emailer.rb:4: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+C:/InstantRails-2.0-win/rails_apps/work/team75/app/models/emailer.rb:5: syntax error, unexpected tSTRING_BEG, expecting keyword_end
+    @from  "iForgotPass@gmail.com"
+            ^
+C:/InstantRails-2.0-win/rails_apps/work/team75/app/models/emailer.rb:6: syntax error, unexpected tIDENTIFIER, expecting keyword_end):
+  app/controllers/accounts_controller.rb:43:in `forgot_password'
+  <internal:prelude>:8:in `synchronize'
+  C:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  C:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  C:/Ruby19/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (109.2ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (46.8ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (46.8ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#index (for 127.0.0.1 at 2010-03-04 10:38:08) [GET]
+Rendering template within layouts/accounts
+Rendering accounts/index
+Completed in 16ms (View: 16, DB: 94) | 200 OK [http://localhost/accounts/]
+  [4;36;1mSQL (46.8ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (46.8ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#login (for 127.0.0.1 at 2010-03-04 10:46:16) [GET]
+  [4;36;1mVolunteer Columns (46.8ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+Rendering template within layouts/accounts
+Rendering accounts/login
+Completed in 78ms (View: 16, DB: 140) | 200 OK [http://localhost/accounts/login]
+  [4;35;1mSQL (46.8ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (46.8ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#forgot_password (for 127.0.0.1 at 2010-03-04 10:46:18) [GET]
+Rendering template within layouts/accounts
+Rendering accounts/forgot_password
+Completed in 16ms (View: 16, DB: 94) | 200 OK [http://localhost/accounts/forgot_password]
+  [4;35;1mSQL (46.8ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (62.4ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#forgot_password (for 127.0.0.1 at 2010-03-04 10:46:20) [POST]
+  Parameters: {"authenticity_token"=>"K+jgmo0izD3RKJI8TmdqgyuB4Lh8ZNP+SuGqNL1YHPc=", "user"=>{"email"=>"afdaf"}, "commit"=>"Submit"}
+  [4;35;1mVolunteer Columns (62.4ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+  [4;36;1mVolunteer Load (109.2ms)[0m   [0;1mSELECT * FROM `volunteers` WHERE (`volunteers`.`email` = 'afdaf') LIMIT 1[0m
+Rendering template within layouts/accounts
+Rendering accounts/forgot_password
+Completed in 187ms (View: 0, DB: 281) | 200 OK [http://localhost/accounts/forgot_password]
+  [4;35;1mSQL (46.8ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (62.4ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#forgot_password (for 127.0.0.1 at 2010-03-04 10:46:27) [POST]
+  Parameters: {"authenticity_token"=>"K+jgmo0izD3RKJI8TmdqgyuB4Lh8ZNP+SuGqNL1YHPc=", "user"=>{"email"=>"holy_dragon_88@hotmail.com"}, "commit"=>"Submit"}
+  [4;35;1mVolunteer Columns (46.8ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+  [4;36;1mVolunteer Load (46.8ms)[0m   [0;1mSELECT * FROM `volunteers` WHERE (`volunteers`.`email` = 'holy_dragon_88@hotmail.com') LIMIT 1[0m
+
+NoMethodError (undefined method `recipient' for #<Emailer:0x449c2e0>):
+  app/models/emailer.rb:4:in `forgot_password'
+  app/controllers/accounts_controller.rb:43:in `forgot_password'
+  <internal:prelude>:8:in `synchronize'
+  C:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  C:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  C:/Ruby19/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (78.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (62.4ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (46.8ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#forgot_password (for 127.0.0.1 at 2010-03-04 10:46:59) [GET]
+Rendering template within layouts/accounts
+Rendering accounts/forgot_password
+Completed in 16ms (View: 16, DB: 109) | 200 OK [http://localhost/accounts/forgot_password]
+  [4;35;1mSQL (46.8ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (46.8ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#forgot_password (for 127.0.0.1 at 2010-03-04 10:47:02) [GET]
+Rendering template within layouts/accounts
+Rendering accounts/forgot_password
+Completed in 0ms (View: 0, DB: 94) | 200 OK [http://localhost/accounts/forgot_password]
+  [4;35;1mSQL (46.8ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (46.8ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#forgot_password (for 127.0.0.1 at 2010-03-04 10:47:11) [POST]
+  Parameters: {"authenticity_token"=>"K+jgmo0izD3RKJI8TmdqgyuB4Lh8ZNP+SuGqNL1YHPc=", "user"=>{"email"=>"holy_dragon_88@hotmail.com"}, "commit"=>"Submit"}
+  [4;35;1mVolunteer Columns (608.4ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+  [4;36;1mVolunteer Load (46.8ms)[0m   [0;1mSELECT * FROM `volunteers` WHERE (`volunteers`.`email` = 'holy_dragon_88@hotmail.com') LIMIT 1[0m
+Sent mail to holy_dragon_88@hotmail.com
+
+Date: Thu, 4 Mar 2010 10:47:12 -0800
+From: iForgotPass@gmail.com
+To: holy_dragon_88@hotmail.com
+Subject: Forgot Password
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Greetings.
+
+This is an automated system reply from the Volunteer Management System.
+You are receiving this email because a request for your account password has been received by the system.
+Your password is qwerty
+
+Please login and change it to something more memorable.
+
+Cheers.
+Rendering template within layouts/accounts
+Rendering accounts/forgot_password
+Completed in 9157ms (View: 0, DB: 749) | 200 OK [http://localhost/accounts/forgot_password]
+  [4;35;1mSQL (31.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (46.8ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#login (for 127.0.0.1 at 2010-03-04 10:51:17) [GET]
+  [4;35;1mVolunteer Columns (343.2ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+Rendering template within layouts/accounts
+Rendering accounts/login
+Completed in 359ms (View: 0, DB: 421) | 200 OK [http://localhost/accounts/login]
+  [4;36;1mSQL (46.8ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (46.8ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#forgot_password (for 127.0.0.1 at 2010-03-04 10:51:20) [GET]
+Rendering template within layouts/accounts
+Rendering accounts/forgot_password
+Completed in 16ms (View: 16, DB: 94) | 200 OK [http://localhost/accounts/forgot_password]
+  [4;36;1mSQL (62.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (46.8ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#forgot_password (for 127.0.0.1 at 2010-03-04 10:51:23) [POST]
+  Parameters: {"authenticity_token"=>"K+jgmo0izD3RKJI8TmdqgyuB4Lh8ZNP+SuGqNL1YHPc=", "user"=>{"email"=>"adfdgsdg"}, "commit"=>"Submit"}
+  [4;36;1mVolunteer Columns (46.8ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+  [4;35;1mVolunteer Load (358.8ms)[0m   [0mSELECT * FROM `volunteers` WHERE (`volunteers`.`email` = 'adfdgsdg') LIMIT 1[0m
+Rendering template within layouts/accounts
+Rendering accounts/forgot_password
+Completed in 421ms (View: 0, DB: 515) | 200 OK [http://localhost/accounts/forgot_password]
+  [4;36;1mSQL (46.8ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (46.8ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#forgot_password (for 127.0.0.1 at 2010-03-04 10:51:32) [POST]
+  Parameters: {"authenticity_token"=>"K+jgmo0izD3RKJI8TmdqgyuB4Lh8ZNP+SuGqNL1YHPc=", "user"=>{"email"=>"holy_dragon_88@hotmail.com"}, "commit"=>"Submit"}
+  [4;36;1mVolunteer Columns (46.8ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+  [4;35;1mVolunteer Load (93.6ms)[0m   [0mSELECT * FROM `volunteers` WHERE (`volunteers`.`email` = 'holy_dragon_88@hotmail.com') LIMIT 1[0m
+Sent mail to holy_dragon_88@hotmail.com
+
+Date: Thu, 4 Mar 2010 10:51:33 -0800
+From: iForgotPass@gmail.com
+To: holy_dragon_88@hotmail.com
+Subject: Volunteer Account - Forgotten Password
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Greetings!
+
+Please do not reply to this email as it is an automated system reply from the Volunteer Management System.
+You are receiving this email because a request for your account password has been received by the system.
+
+Your password is qwerty
+
+Please login and change it to something more memorable.
+
+Cheers!
+Rendering template within layouts/accounts
+Rendering accounts/forgot_password
+Completed in 1248ms (View: 0, DB: 234) | 200 OK [http://localhost/accounts/forgot_password]
+  [4;36;1mSQL (46.8ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (46.8ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#forgot_password (for 127.0.0.1 at 2010-03-04 10:53:50) [POST]
+  Parameters: {"authenticity_token"=>"K+jgmo0izD3RKJI8TmdqgyuB4Lh8ZNP+SuGqNL1YHPc=", "user"=>{"email"=>"holy_dragon_88@hotmail.com"}, "commit"=>"Submit"}
+  [4;36;1mVolunteer Columns (46.8ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+  [4;35;1mVolunteer Load (46.8ms)[0m   [0mSELECT * FROM `volunteers` WHERE (`volunteers`.`email` = 'holy_dragon_88@hotmail.com') LIMIT 1[0m
+Sent mail to holy_dragon_88@hotmail.com
+
+Date: Thu, 4 Mar 2010 10:53:51 -0800
+From: iForgotPass@gmail.com
+To: holy_dragon_88@hotmail.com
+Subject: Volunteer Account - Forgotten Password
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Greetings!
+
+Please do not reply to this email as it is an automated system reply from the Volunteer Management System.
+You are receiving this email because a request for your account password has been received by the system.
+
+Your password is qwerty
+
+Please login and change it to something more memorable.
+
+Cheers!
+Rendering template within layouts/accounts
+Rendering accounts/forgot_password
+Completed in 1373ms (View: 16, DB: 187) | 200 OK [http://localhost/accounts/forgot_password]
+  [4;36;1mSQL (46.8ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (46.8ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#login (for 127.0.0.1 at 2010-03-04 10:53:57) [GET]
+  [4;36;1mVolunteer Columns (31.2ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+Rendering template within layouts/accounts
+Rendering accounts/login
+Completed in 62ms (View: 0, DB: 125) | 200 OK [http://localhost/accounts/login]
+  [4;35;1mSQL (46.8ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (46.8ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#forgot_password (for 127.0.0.1 at 2010-03-04 10:53:59) [GET]
+Rendering template within layouts/accounts
+Rendering accounts/forgot_password
+Completed in 0ms (View: 0, DB: 94) | 200 OK [http://localhost/accounts/forgot_password]
+  [4;35;1mSQL (78.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (46.8ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#forgot_password (for 127.0.0.1 at 2010-03-04 10:55:51) [GET]
+Rendering template within layouts/accounts
+Rendering accounts/forgot_password
+Completed in 16ms (View: 16, DB: 125) | 200 OK [http://localhost/accounts/forgot_password]
+  [4;35;1mSQL (46.8ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (31.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#forgot_password (for 127.0.0.1 at 2010-03-04 10:56:05) [POST]
+  Parameters: {"authenticity_token"=>"K+jgmo0izD3RKJI8TmdqgyuB4Lh8ZNP+SuGqNL1YHPc=", "user"=>{"email"=>"holy_dragon_88@hotmail.com"}, "commit"=>"Submit"}
+  [4;35;1mVolunteer Columns (265.2ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+  [4;36;1mVolunteer Load (46.8ms)[0m   [0;1mSELECT * FROM `volunteers` WHERE (`volunteers`.`email` = 'holy_dragon_88@hotmail.com') LIMIT 1[0m
+Sent mail to holy_dragon_88@hotmail.com
+
+Date: Thu, 4 Mar 2010 10:56:05 -0800
+From: iForgotPass@gmail.com
+To: holy_dragon_88@hotmail.com
+Subject: Volunteer Account - Forgotten Password
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Greetings!
+
+Please do not reply to this email as it is an automated system reply from the Volunteer Management System.
+You are receiving this email because a request for your account password has been received by the system.
+
+Your password is qwerty
+
+Please login and change it to something more memorable.
+
+Cheers!
+Rendering template within layouts/accounts
+Rendering accounts/forgot_password
+Completed in 1451ms (View: 0, DB: 390) | 200 OK [http://localhost/accounts/forgot_password]
+  [4;35;1mSQL (46.8ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (46.8ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#login (for 127.0.0.1 at 2010-03-04 10:56:17) [GET]
+  [4;35;1mVolunteer Columns (31.2ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+Rendering template within layouts/accounts
+Rendering accounts/login
+Completed in 62ms (View: 0, DB: 125) | 200 OK [http://localhost/accounts/login]
+  [4;36;1mSQL (46.8ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (62.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#forgot_password (for 127.0.0.1 at 2010-03-04 10:56:20) [GET]
+Rendering template within layouts/accounts
+Rendering accounts/forgot_password
+Completed in 0ms (View: 0, DB: 109) | 200 OK [http://localhost/accounts/forgot_password]
+  [4;36;1mSQL (46.8ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (46.8ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#forgot_password (for 127.0.0.1 at 2010-03-04 10:56:24) [POST]
+  Parameters: {"authenticity_token"=>"K+jgmo0izD3RKJI8TmdqgyuB4Lh8ZNP+SuGqNL1YHPc=", "user"=>{"email"=>"afdasfas"}, "commit"=>"Submit"}
+  [4;36;1mVolunteer Columns (46.8ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+  [4;35;1mVolunteer Load (62.4ms)[0m   [0mSELECT * FROM `volunteers` WHERE (`volunteers`.`email` = 'afdasfas') LIMIT 1[0m
+Rendering template within layouts/accounts
+Rendering accounts/forgot_password
+Completed in 109ms (View: 0, DB: 203) | 200 OK [http://localhost/accounts/forgot_password]
