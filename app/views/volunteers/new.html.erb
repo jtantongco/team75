@@ -2,93 +2,9 @@
 
 <% form_for(@volunteer) do |f| %>
 	<%= error_messages_for :object => [@volunteer, @volunteer_extra, @student] %>
-	<fieldset>
-		<legend>Personal information</legend>
-		<ul>
-			<li>
-				<%= f.label :first_name, "First name: <span class=\"mandatory\">*</span>"%>
-				<%= f.text_field :first_name %>
-			</li>
-			<li>
-				<%= f.label :last_name, "Last name: <span class=\"mandatory\">*</span>"%>
-				<%= f.text_field :last_name %>
-			</li>
-			<li>
-				<%= f.label :email, "E-mail address: <span class=\"mandatory\">*</span>"%>
-				<%= f.text_field :email %>
-			</li>
-			<li>
-				<%= f.label :password, "Password: <span class=\"mandatory\">*</span>"%>
-				<%= f.password_field :password %>
-			</li>
-			<li>
-				<%= f.label :birthday, "Date of birth: <span class=\"mandatory\">*</span>"%>
-				<%= f.text_field :birthday %>
-			</li>
-		</ul>
-	</fieldset>
-	<fieldset>
-		<legend>Contact information</legend>
-		<ul>
-			<li>
-				<%= f.label :address, "Address: <span class=\"mandatory\">*</span>"%>
-				<%= f.text_field :address %>
-			</li>
-			<li>
-				<%= f.label :location, "Location: <span class=\"mandatory\">*</span>"%>
-				<%= f.text_field :location %>
-			</li>
-			<li>
-				<%= f.label :postal_code, "Postal code: <span class=\"mandatory\">*</span>"%>
-				<%= f.text_field :postal_code %>
-			</li>
-			<li>
-				<%= f.label :province, "Province: <span class=\"mandatory\">*</span>"%>
-				<%= f.select :province, options_for_select(province_options, "BC") %>
-			</li>
-			<li>
-				<%= f.label :phone_home, "Phone (home): "%>
-				<%= f.text_field :phone_home %>
-			</li>
-			<li>
-				<%= f.label :phone_cell, "Phone (cell): "%>
-				<%= f.text_field :phone_cell %>
-			</li>
-			<li>
-				<%= f.label :phone_work, "Phone (work): "%>
-				<%= f.text_field :phone_work %>
-			</li>
-			<li>
-				<%= f.label :preferred_contact_method, "Contact method: "%>
-				<%= f.select :preferred_contact_method, options_for_select([["E-mail", 0], ["Home phone", 1], ["Work phone", 2], ["Cell phone", 3]])%>
-			</li>
-			<li>
-				<%= f.label :special_consideration, "Special considerations:"%>
-                <%= f.text_area :special_consideration %>
-			</li>
-		</ul>
-	</fieldset>
-	<fieldset>
-		<legend>Emergency contact information</legend>
-		<ul>
-			<li>
-				<%= f.label :emrg_contact_name, "Name: <span class=\"mandatory\">*</span>"%>
-				<%= f.text_field :emrg_contact_name %>
-			</li>
-			<li>
-				<%= f.label :emrg_contact_relationship, "Relationship: <span class=\"mandatory\">*</span>"%>
-				<%= f.text_field :emrg_contact_relationship %>
-			</li>
-			<li>
-				<%= f.label :emrg_contact_phone_home, "Phone (home):"%>
-				<%= f.text_field :emrg_contact_phone_home %>
-			</li>
-			<li>
-				<%= f.label :emrg_contact_phone_work, "Phone (work):"%>
-				<%= f.text_field :emrg_contact_phone_work %>
-			</li>
-		</ul>
-	</fieldset>
+	
+	<%= render :partial => "form_volunteer_info", :locals => {:form => f}%>
+	
 	<p>
 		<%= check_box_tag "is_student", "1", {}, :onchange => "$('#student_information').toggle()"%>
 		<%= label_tag "is_student", "Are you a student?", :class => "normal"%>
@@ -180,10 +96,10 @@
 			<li>
 				<%= label_tag "", "Do you have your own transportation?  <span class=\"mandatory\">*</span>", :class => "normal"%><br />
 				
-				<%= volunteer_extra.radio_button :own_transportation, "1"%>
+				<%= volunteer_extra.radio_button :own_transportation, "true"%>
 				<%= label_tag "volunteer_extra_own_transportation_1", "Yes", :class => "normal"%>
 				
-				<%= volunteer_extra.radio_button :own_transportation, "0"%> 
+				<%= volunteer_extra.radio_button :own_transportation, "false"%> 
 				<%= label_tag "volunteer_extra_own_transportation_0", "No", :class => "normal"%>
 			</li>
 		</ul>

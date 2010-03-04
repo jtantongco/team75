@@ -44,18 +44,29 @@ class VolunteersController < ApplicationController
   def create
     @volunteer = Volunteer.new(params[:volunteer])
     @volunteer_extra = VolunteerExtra.new(params[:volunteer_extra])
-    @student = Student.new(params[:student])
+    
+    if params[:is_student]
+    	@student = Student.new(params[:student])
+    	@go_ahead = @student.valid?
+	else
+		@go_ahead = true;
+		@student = Student.new
+	end
 
     respond_to do |format|
-      if @volunteer.valid? & @volunteer_extra.valid? & @student.valid?        
+      if @volunteer.valid? & @volunteer_extra.valid? & @go_ahead         
         Volunteer.transaction do
+        		
           @volunteer.save!
           
           @volunteer_extra.v_id = @volunteer.v_id
-          @student.v_id = @volunteer.v_id
-          
+        
           @volunteer_extra.save!
-          @student.save!
+          
+          if params[:is_student]
+          	 @student.v_id = @volunteer.v_id
+          	 @student.save!
+      	  end
         end
         flash[:notice] = 'Volunteer was successfully created.'
         format.html { redirect_to(@volunteer) }

@@ -1229,3 +1229,529 @@ Processing AccountsController#forgot_password (for 127.0.0.1 at 2010-03-04 10:56
 Rendering template within layouts/accounts
 Rendering accounts/forgot_password
 Completed in 109ms (View: 0, DB: 203) | 200 OK [http://localhost/accounts/forgot_password]
+  [4;36;1mSQL (27.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (27.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#index (for 127.0.0.1 at 2010-03-04 13:23:02) [GET]
+  [4;36;1mVolunteer Load (56.0ms)[0m   [0;1mSELECT * FROM `volunteers` [0m
+Rendering template within layouts/volunteers
+Rendering volunteers/index
+  [4;35;1mVolunteer Columns (34.0ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+Completed in 345ms (View: 183, DB: 144) | 200 OK [http://localhost/volunteers]
+  [4;36;1mSQL (27.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (28.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#index (for 127.0.0.1 at 2010-03-04 13:41:28) [GET]
+  [4;36;1mVolunteer Load (55.0ms)[0m   [0;1mSELECT * FROM `volunteers` [0m
+Rendering template within layouts/volunteers
+Rendering volunteers/index
+  [4;35;1mVolunteer Columns (28.0ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+Completed in 174ms (View: 74, DB: 138) | 200 OK [http://localhost/volunteers]
+  [4;36;1mSQL (26.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (26.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#new (for 127.0.0.1 at 2010-03-04 13:41:31) [GET]
+  [4;36;1mVolunteer Columns (28.0ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+  [4;35;1mVolunteerExtra Columns (29.0ms)[0m   [0mSHOW FIELDS FROM `volunteer_extras`[0m
+  [4;36;1mStudent Columns (27.0ms)[0m   [0;1mSHOW FIELDS FROM `students`[0m
+Rendering template within layouts/volunteers
+Rendering volunteers/new
+Completed in 334ms (View: 174, DB: 136) | 200 OK [http://localhost/volunteers/new]
+  [4;35;1mSQL (27.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (28.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#create (for 127.0.0.1 at 2010-03-04 13:42:05) [POST]
+  Parameters: {"commit"=>"Create", "volunteer"=>{"address"=>"fdsakjd", "location"=>"fdsakjdsa;lgjsakgl", "special_consideration"=>"", "postal_code"=>"fdskalfjdsajklf", "emrg_contact_phone_work"=>"fdisoaf", "emrg_contact_relationship"=>"fdsajogs", "emrg_contact_name"=>"fds;fjdoisai", "phone_home"=>"", "phone_work"=>"", "birthday"=>"fdsafdsaf", "last_name"=>"fdsajfk", "preferred_contact_method"=>"0", "phone_cell"=>"", "province"=>"BC", "password"=>"fdsalklfdsaf;lds", "emrg_contact_phone_home"=>"fdsioahfsphiupsau", "email"=>"fsalgjsla;asj", "first_name"=>"fdsakfdsak"}, "authenticity_token"=>"h5rmE/8/ITSNwygy5rxMHfuYo7yJVUh053J6I7QFaYA=", "student"=>{"student_id"=>"", "faculty"=>"", "year"=>"1", "program"=>""}, "volunteer_extra"=>{"skill_computer"=>"0", "skill_construction"=>"0", "skill_art"=>"0", "skill_farming"=>"0", "skill_fundraising"=>"0", "how_heard_about_farm"=>"", "foodsafe_level1"=>"0", "skill_music"=>"0", "foodsafe_level2"=>"0", "first_aid"=>"0", "how_often_volunteer"=>"", "skills_and_knowledge"=>"", "own_transportation"=>"0", "skill_sales"=>"0", "why_volunteer"=>""}}
+  [4;35;1mVolunteer Columns (126.0ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+  [4;36;1mVolunteerExtra Columns (28.0ms)[0m   [0;1mSHOW FIELDS FROM `volunteer_extras`[0m
+Rendering template within layouts/volunteers
+Rendering volunteers/new
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.errors) on line #4 of app/views/volunteers/new.html.erb:
+1: <h1>New volunteer</h1>
+2: 
+3: <% form_for(@volunteer) do |f| %>
+4: 	<%= error_messages_for :object => [@volunteer, @volunteer_extra, @student] %>
+5: 	<fieldset>
+6: 		<legend>Personal information</legend>
+7: 		<ul>
+
+    app/views/volunteers/new.html.erb:4
+    app/views/volunteers/new.html.erb:3
+    app/controllers/volunteers_controller.rb:74
+    app/controllers/volunteers_controller.rb:55:in `create'
+    c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (104.0ms)
+Rendered rescues/_request_and_response (3.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (27.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (32.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#new (for 127.0.0.1 at 2010-03-04 13:43:09) [GET]
+  [4;35;1mVolunteer Columns (29.0ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+  [4;36;1mVolunteerExtra Columns (29.0ms)[0m   [0;1mSHOW FIELDS FROM `volunteer_extras`[0m
+  [4;35;1mStudent Columns (28.0ms)[0m   [0mSHOW FIELDS FROM `students`[0m
+Rendering template within layouts/volunteers
+Rendering volunteers/new
+Completed in 244ms (View: 127, DB: 145) | 200 OK [http://localhost/volunteers/new]
+  [4;36;1mSQL (28.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (26.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#create (for 127.0.0.1 at 2010-03-04 13:43:51) [POST]
+  Parameters: {"commit"=>"Create", "volunteer"=>{"address"=>"fdsakjd", "location"=>"fdsakjdsa;lgjsakgl", "special_consideration"=>"", "postal_code"=>"fdskalfjdsajklf", "emrg_contact_phone_work"=>"fdisoaf", "emrg_contact_relationship"=>"fdsajogs", "emrg_contact_name"=>"fds;fjdoisai", "phone_home"=>"", "phone_work"=>"", "birthday"=>"fdsafdsaf", "last_name"=>"fdsajfk", "preferred_contact_method"=>"0", "phone_cell"=>"", "province"=>"BC", "password"=>"flds;jfdlsajfds", "emrg_contact_phone_home"=>"fdsioahfsphiupsau", "email"=>"fsalgjsla;asj", "first_name"=>"fdsakfdsak"}, "authenticity_token"=>"h5rmE/8/ITSNwygy5rxMHfuYo7yJVUh053J6I7QFaYA=", "student"=>{"student_id"=>"", "faculty"=>"", "year"=>"1", "program"=>""}, "volunteer_extra"=>{"skill_computer"=>"0", "skill_construction"=>"0", "skill_art"=>"0", "skill_farming"=>"0", "skill_fundraising"=>"0", "how_heard_about_farm"=>"", "foodsafe_level1"=>"0", "skill_music"=>"0", "foodsafe_level2"=>"0", "first_aid"=>"0", "how_often_volunteer"=>"", "skills_and_knowledge"=>"", "own_transportation"=>"0", "skill_sales"=>"0", "why_volunteer"=>""}}
+  [4;36;1mVolunteer Columns (29.0ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+  [4;35;1mVolunteerExtra Columns (28.0ms)[0m   [0mSHOW FIELDS FROM `volunteer_extras`[0m
+  [4;36;1mStudent Columns (28.0ms)[0m   [0;1mSHOW FIELDS FROM `students`[0m
+Rendering template within layouts/volunteers
+Rendering volunteers/new
+Completed in 198ms (View: 67, DB: 139) | 200 OK [http://localhost/volunteers]
+  [4;35;1mSQL (27.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (28.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#create (for 127.0.0.1 at 2010-03-04 13:43:59) [POST]
+  Parameters: {"commit"=>"Create", "volunteer"=>{"address"=>"fdsakjd", "location"=>"fdsakjdsa;lgjsakgl", "special_consideration"=>"", "postal_code"=>"fdskalfjdsajklf", "emrg_contact_phone_work"=>"fdisoaf", "emrg_contact_relationship"=>"fdsajogs", "emrg_contact_name"=>"fds;fjdoisai", "phone_home"=>"", "phone_work"=>"", "birthday"=>"fdsafdsaf", "last_name"=>"fdsajfk", "preferred_contact_method"=>"0", "phone_cell"=>"", "province"=>"BC", "password"=>"flds;jfdlsajfds", "emrg_contact_phone_home"=>"fdsioahfsphiupsau", "email"=>"fsalgjsla;asj", "first_name"=>"fdsakfdsak"}, "authenticity_token"=>"h5rmE/8/ITSNwygy5rxMHfuYo7yJVUh053J6I7QFaYA=", "student"=>{"student_id"=>"", "faculty"=>"", "year"=>"1", "program"=>""}, "volunteer_extra"=>{"skill_computer"=>"0", "skill_construction"=>"0", "skill_art"=>"0", "skill_farming"=>"0", "skill_fundraising"=>"0", "how_heard_about_farm"=>"", "foodsafe_level1"=>"0", "skill_music"=>"0", "foodsafe_level2"=>"0", "first_aid"=>"0", "how_often_volunteer"=>"", "skills_and_knowledge"=>"", "own_transportation"=>"1", "skill_sales"=>"0", "why_volunteer"=>""}, "is_student"=>"1"}
+  [4;35;1mVolunteer Columns (32.0ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+  [4;36;1mVolunteerExtra Columns (30.0ms)[0m   [0;1mSHOW FIELDS FROM `volunteer_extras`[0m
+  [4;35;1mStudent Columns (27.0ms)[0m   [0mSHOW FIELDS FROM `students`[0m
+  [4;36;1mSQL (26.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mVolunteer Create (27.0ms)[0m   [0mINSERT INTO `volunteers` (`address`, `created_at`, `location`, `special_consideration`, `updated_at`, `postal_code`, `phone_home`, `emrg_contact_name`, `emrg_contact_relationship`, `emrg_contact_phone_work`, `phone_work`, `last_name`, `birthday`, `phone_cell`, `preferred_contact_method`, `activated`, `password`, `province`, `first_name`, `email`, `emrg_contact_phone_home`) VALUES('fdsakjd', '2010-03-04 21:43:59', 'fdsakjdsa;lgjsakgl', '', '2010-03-04 21:43:59', 'fdskalfjdsajklf', '', 'fds;fjdoisai', 'fdsajogs', 'fdisoaf', '', 'fdsajfk', 'fdsafdsaf', '', 0, NULL, 'flds;jfdlsajfds', 'BC', 'fdsakfdsak', 'fsalgjsla;asj', 'fdsioahfsphiupsau')[0m
+  [4;36;1mVolunteerExtra Create (29.0ms)[0m   [0;1mINSERT INTO `volunteer_extras` (`skill_construction`, `skill_computer`, `skill_farming`, `skill_art`, `how_heard_about_farm`, `skill_fundraising`, `foodsafe_level1`, `skill_music`, `how_often_volunteer`, `first_aid`, `foodsafe_level2`, `skills_and_knowledge`, `v_id`, `own_transportation`, `why_volunteer`, `skill_sales`) VALUES(0, 0, 0, 0, '', 0, 0, 0, '', 0, 0, '', 24, 1, '', 0)[0m
+  [4;35;1mStudent Create (29.0ms)[0m   [0mINSERT INTO `students` (`student_id`, `grad_date`, `faculty`, `v_id`, `year`, `program`) VALUES(NULL, NULL, '', 24, 1, '')[0m
+  [4;36;1mSQL (38.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/volunteers/24
+Completed in 300ms (DB: 293) | 302 Found [http://localhost/volunteers]
+  [4;35;1mSQL (28.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (28.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#show (for 127.0.0.1 at 2010-03-04 13:43:59) [GET]
+  Parameters: {"id"=>"24"}
+  [4;35;1mVolunteer Columns (29.0ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+  [4;36;1mVolunteer Load (27.0ms)[0m   [0;1mSELECT * FROM `volunteers` WHERE (`volunteers`.`v_id` = 24) [0m
+Rendering template within layouts/volunteers
+Rendering volunteers/show
+Completed in 93ms (View: 18, DB: 112) | 200 OK [http://localhost/volunteers/24]
+  [4;35;1mSQL (27.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (27.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#index (for 127.0.0.1 at 2010-03-04 13:44:13) [GET]
+  [4;35;1mVolunteer Load (99.0ms)[0m   [0mSELECT * FROM `volunteers` [0m
+Rendering template within layouts/volunteers
+Rendering volunteers/index
+  [4;36;1mVolunteer Columns (29.0ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+Completed in 214ms (View: 65, DB: 182) | 200 OK [http://localhost/volunteers]
+  [4;35;1mSQL (27.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (28.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#new (for 127.0.0.1 at 2010-03-04 13:44:26) [GET]
+  [4;35;1mVolunteer Columns (28.0ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+  [4;36;1mVolunteerExtra Columns (28.0ms)[0m   [0;1mSHOW FIELDS FROM `volunteer_extras`[0m
+  [4;35;1mStudent Columns (29.0ms)[0m   [0mSHOW FIELDS FROM `students`[0m
+Rendering template within layouts/volunteers
+Rendering volunteers/new
+Completed in 180ms (View: 63, DB: 140) | 200 OK [http://localhost/volunteers/new]
+  [4;36;1mSQL (28.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (27.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#create (for 127.0.0.1 at 2010-03-04 13:44:44) [POST]
+  Parameters: {"commit"=>"Create", "volunteer"=>{"address"=>"fdlksaf", "location"=>"fdsafjdskfgsdal", "special_consideration"=>"", "postal_code"=>"fdsaff", "emrg_contact_phone_work"=>"", "emrg_contact_relationship"=>"ggjsakfdsajfkks", "emrg_contact_name"=>"fdsafj", "phone_home"=>"", "phone_work"=>"", "birthday"=>"fdsjlaf;lks", "last_name"=>"jfdsla", "preferred_contact_method"=>"0", "phone_cell"=>"", "province"=>"BC", "password"=>"fdsaf", "emrg_contact_phone_home"=>"", "email"=>"fdsagsalkgska", "first_name"=>"vfkds;jl"}, "authenticity_token"=>"h5rmE/8/ITSNwygy5rxMHfuYo7yJVUh053J6I7QFaYA=", "student"=>{"student_id"=>"", "faculty"=>"", "year"=>"1", "program"=>""}, "volunteer_extra"=>{"skill_computer"=>"0", "skill_construction"=>"0", "skill_art"=>"0", "skill_farming"=>"0", "skill_fundraising"=>"0", "how_heard_about_farm"=>"", "foodsafe_level1"=>"0", "skill_music"=>"0", "foodsafe_level2"=>"0", "first_aid"=>"0", "how_often_volunteer"=>"", "skills_and_knowledge"=>"", "own_transportation"=>"1", "skill_sales"=>"0", "why_volunteer"=>""}}
+  [4;36;1mVolunteer Columns (28.0ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+  [4;35;1mVolunteerExtra Columns (28.0ms)[0m   [0mSHOW FIELDS FROM `volunteer_extras`[0m
+  [4;36;1mStudent Columns (29.0ms)[0m   [0;1mSHOW FIELDS FROM `students`[0m
+  [4;35;1mSQL (27.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mVolunteer Create (29.0ms)[0m   [0;1mINSERT INTO `volunteers` (`address`, `created_at`, `location`, `special_consideration`, `updated_at`, `postal_code`, `phone_home`, `emrg_contact_name`, `emrg_contact_relationship`, `emrg_contact_phone_work`, `phone_work`, `last_name`, `birthday`, `phone_cell`, `preferred_contact_method`, `activated`, `password`, `province`, `first_name`, `email`, `emrg_contact_phone_home`) VALUES('fdlksaf', '2010-03-04 21:44:45', 'fdsafjdskfgsdal', '', '2010-03-04 21:44:45', 'fdsaff', '', 'fdsafj', 'ggjsakfdsajfkks', '', '', 'jfdsla', 'fdsjlaf;lks', '', 0, NULL, 'fdsaf', 'BC', 'vfkds;jl', 'fdsagsalkgska', '')[0m
+  [4;35;1mVolunteerExtra Create (29.0ms)[0m   [0mINSERT INTO `volunteer_extras` (`skill_construction`, `skill_computer`, `skill_farming`, `skill_art`, `how_heard_about_farm`, `skill_fundraising`, `foodsafe_level1`, `skill_music`, `how_often_volunteer`, `first_aid`, `foodsafe_level2`, `skills_and_knowledge`, `v_id`, `own_transportation`, `why_volunteer`, `skill_sales`) VALUES(0, 0, 0, 0, '', 0, 0, 0, '', 0, 0, '', 25, 1, '', 0)[0m
+  [4;36;1mSQL (48.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/volunteers/25
+Completed in 275ms (DB: 273) | 302 Found [http://localhost/volunteers]
+  [4;35;1mSQL (27.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (48.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#show (for 127.0.0.1 at 2010-03-04 13:44:45) [GET]
+  Parameters: {"id"=>"25"}
+  [4;35;1mVolunteer Columns (29.0ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+  [4;36;1mVolunteer Load (29.0ms)[0m   [0;1mSELECT * FROM `volunteers` WHERE (`volunteers`.`v_id` = 25) [0m
+Rendering template within layouts/volunteers
+Rendering volunteers/show
+Completed in 85ms (View: 10, DB: 133) | 200 OK [http://localhost/volunteers/25]
+  [4;35;1mSQL (27.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (27.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#index (for 127.0.0.1 at 2010-03-04 13:44:59) [GET]
+  [4;35;1mVolunteer Load (58.0ms)[0m   [0mSELECT * FROM `volunteers` [0m
+Rendering template within layouts/volunteers
+Rendering volunteers/index
+  [4;36;1mVolunteer Columns (32.0ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+Completed in 174ms (View: 69, DB: 144) | 200 OK [http://localhost/volunteers]
+  [4;35;1mSQL (28.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (29.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#new (for 127.0.0.1 at 2010-03-04 13:45:01) [GET]
+  [4;35;1mVolunteer Columns (28.0ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+  [4;36;1mVolunteerExtra Columns (44.0ms)[0m   [0;1mSHOW FIELDS FROM `volunteer_extras`[0m
+  [4;35;1mStudent Columns (28.0ms)[0m   [0mSHOW FIELDS FROM `students`[0m
+Rendering template within layouts/volunteers
+Rendering volunteers/new
+Completed in 196ms (View: 64, DB: 157) | 200 OK [http://localhost/volunteers/new]
+  [4;36;1mSQL (27.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (27.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#create (for 127.0.0.1 at 2010-03-04 13:45:30) [POST]
+  Parameters: {"commit"=>"Create", "volunteer"=>{"address"=>"fdsiovj", "location"=>"fkjgs9g8sa9", "special_consideration"=>"", "postal_code"=>"fdks", "emrg_contact_phone_work"=>"dfsk", "emrg_contact_relationship"=>"fdj;", "emrg_contact_name"=>"dsfjk", "phone_home"=>"", "phone_work"=>"", "birthday"=>"fdsf2jds", "last_name"=>"fdlksajbkfdb", "preferred_contact_method"=>"0", "phone_cell"=>"", "province"=>"BC", "password"=>"fdsfdlksksd", "emrg_contact_phone_home"=>"gfjskldskajg", "email"=>"fmcs", "first_name"=>"fdsfje28"}, "authenticity_token"=>"h5rmE/8/ITSNwygy5rxMHfuYo7yJVUh053J6I7QFaYA=", "student"=>{"student_id"=>"f98d2ugu", "faculty"=>"fdskjfd", "year"=>"1", "program"=>"fdskfjd"}, "volunteer_extra"=>{"skill_computer"=>"0", "skill_construction"=>"0", "skill_art"=>"0", "skill_farming"=>"0", "skill_fundraising"=>"0", "how_heard_about_farm"=>"", "foodsafe_level1"=>"0", "skill_music"=>"0", "foodsafe_level2"=>"0", "first_aid"=>"0", "how_often_volunteer"=>"", "skills_and_knowledge"=>"", "own_transportation"=>"0", "skill_sales"=>"0", "why_volunteer"=>""}, "is_student"=>"1"}
+  [4;36;1mVolunteer Columns (32.0ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+  [4;35;1mVolunteerExtra Columns (27.0ms)[0m   [0mSHOW FIELDS FROM `volunteer_extras`[0m
+  [4;36;1mStudent Columns (25.0ms)[0m   [0;1mSHOW FIELDS FROM `students`[0m
+Rendering template within layouts/volunteers
+Rendering volunteers/new
+Completed in 257ms (View: 65, DB: 138) | 200 OK [http://localhost/volunteers]
+  [4;35;1mSQL (27.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (27.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#create (for 127.0.0.1 at 2010-03-04 13:45:40) [POST]
+  Parameters: {"commit"=>"Create", "volunteer"=>{"address"=>"fdsiovj", "location"=>"fkjgs9g8sa9", "special_consideration"=>"", "postal_code"=>"fdks", "emrg_contact_phone_work"=>"dfsk", "emrg_contact_relationship"=>"fdj;", "emrg_contact_name"=>"dsfjk", "phone_home"=>"", "phone_work"=>"", "birthday"=>"fdsf2jds", "last_name"=>"fdlksajbkfdb", "preferred_contact_method"=>"0", "phone_cell"=>"", "province"=>"BC", "password"=>"fdsfdlksksd", "emrg_contact_phone_home"=>"gfjskldskajg", "email"=>"fmcs", "first_name"=>"fdsfje28"}, "authenticity_token"=>"h5rmE/8/ITSNwygy5rxMHfuYo7yJVUh053J6I7QFaYA=", "student"=>{"student_id"=>"f98d2ugu", "faculty"=>"fdskjfd", "year"=>"1", "program"=>"fdskfjd"}, "volunteer_extra"=>{"skill_computer"=>"0", "skill_construction"=>"0", "skill_art"=>"0", "skill_farming"=>"0", "skill_fundraising"=>"0", "how_heard_about_farm"=>"", "foodsafe_level1"=>"0", "skill_music"=>"0", "foodsafe_level2"=>"0", "first_aid"=>"0", "how_often_volunteer"=>"", "skills_and_knowledge"=>"", "own_transportation"=>"1", "skill_sales"=>"0", "why_volunteer"=>""}, "is_student"=>"1"}
+  [4;35;1mVolunteer Columns (28.0ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+  [4;36;1mVolunteerExtra Columns (28.0ms)[0m   [0;1mSHOW FIELDS FROM `volunteer_extras`[0m
+  [4;35;1mStudent Columns (28.0ms)[0m   [0mSHOW FIELDS FROM `students`[0m
+  [4;36;1mSQL (28.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mVolunteer Create (27.0ms)[0m   [0mINSERT INTO `volunteers` (`address`, `created_at`, `location`, `special_consideration`, `updated_at`, `postal_code`, `phone_home`, `emrg_contact_name`, `emrg_contact_relationship`, `emrg_contact_phone_work`, `phone_work`, `last_name`, `birthday`, `phone_cell`, `preferred_contact_method`, `activated`, `password`, `province`, `first_name`, `email`, `emrg_contact_phone_home`) VALUES('fdsiovj', '2010-03-04 21:45:41', 'fkjgs9g8sa9', '', '2010-03-04 21:45:41', 'fdks', '', 'dsfjk', 'fdj;', 'dfsk', '', 'fdlksajbkfdb', 'fdsf2jds', '', 0, NULL, 'fdsfdlksksd', 'BC', 'fdsfje28', 'fmcs', 'gfjskldskajg')[0m
+  [4;36;1mVolunteerExtra Create (27.0ms)[0m   [0;1mINSERT INTO `volunteer_extras` (`skill_construction`, `skill_computer`, `skill_farming`, `skill_art`, `how_heard_about_farm`, `skill_fundraising`, `foodsafe_level1`, `skill_music`, `how_often_volunteer`, `first_aid`, `foodsafe_level2`, `skills_and_knowledge`, `v_id`, `own_transportation`, `why_volunteer`, `skill_sales`) VALUES(0, 0, 0, 0, '', 0, 0, 0, '', 0, 0, '', 26, 1, '', 0)[0m
+  [4;35;1mStudent Create (27.0ms)[0m   [0mINSERT INTO `students` (`student_id`, `grad_date`, `faculty`, `v_id`, `year`, `program`) VALUES(0, NULL, 'fdskjfd', 26, 1, 'fdskfjd')[0m
+  [4;36;1mSQL (70.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/volunteers/26
+Completed in 355ms (DB: 317) | 302 Found [http://localhost/volunteers]
+  [4;35;1mSQL (27.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (29.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#show (for 127.0.0.1 at 2010-03-04 13:45:41) [GET]
+  Parameters: {"id"=>"26"}
+  [4;35;1mVolunteer Columns (29.0ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+  [4;36;1mVolunteer Load (47.0ms)[0m   [0;1mSELECT * FROM `volunteers` WHERE (`volunteers`.`v_id` = 26) [0m
+Rendering template within layouts/volunteers
+Rendering volunteers/show
+Completed in 103ms (View: 10, DB: 132) | 200 OK [http://localhost/volunteers/26]
+  [4;35;1mSQL (96.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (27.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#index (for 127.0.0.1 at 2010-03-04 13:47:17) [GET]
+  [4;35;1mVolunteer Load (66.0ms)[0m   [0mSELECT * FROM `volunteers` [0m
+Rendering template within layouts/volunteers
+Rendering volunteers/index
+  [4;36;1mVolunteer Columns (29.0ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+Completed in 248ms (View: 136, DB: 218) | 200 OK [http://localhost/volunteers]
+  [4;35;1mSQL (29.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (27.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#new (for 127.0.0.1 at 2010-03-04 13:47:19) [GET]
+  [4;35;1mVolunteer Columns (29.0ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+  [4;36;1mVolunteerExtra Columns (28.0ms)[0m   [0;1mSHOW FIELDS FROM `volunteer_extras`[0m
+  [4;35;1mStudent Columns (28.0ms)[0m   [0mSHOW FIELDS FROM `students`[0m
+Rendering template within layouts/volunteers
+Rendering volunteers/new
+Completed in 206ms (View: 86, DB: 141) | 200 OK [http://localhost/volunteers/new]
+  [4;36;1mSQL (26.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (29.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#create (for 127.0.0.1 at 2010-03-04 13:47:41) [POST]
+  Parameters: {"commit"=>"Create", "volunteer"=>{"address"=>"fdsu", "location"=>"fdslfslkg", "special_consideration"=>"", "postal_code"=>"fdsvcmv", "emrg_contact_phone_work"=>"", "emrg_contact_relationship"=>"-00e019r9999", "emrg_contact_name"=>"fdjsllll", "phone_home"=>"", "phone_work"=>"", "birthday"=>"fd92f9du80", "last_name"=>"fdslkfj", "preferred_contact_method"=>"0", "phone_cell"=>"", "province"=>"BC", "password"=>"fdsklvs", "emrg_contact_phone_home"=>"", "email"=>"fdskbfdbmd", "first_name"=>"fd8s0f70"}, "authenticity_token"=>"h5rmE/8/ITSNwygy5rxMHfuYo7yJVUh053J6I7QFaYA=", "student"=>{"student_id"=>"", "faculty"=>"", "year"=>"1", "program"=>""}, "volunteer_extra"=>{"skill_computer"=>"0", "skill_construction"=>"0", "skill_art"=>"0", "skill_farming"=>"0", "skill_fundraising"=>"0", "how_heard_about_farm"=>"", "foodsafe_level1"=>"0", "skill_music"=>"0", "foodsafe_level2"=>"0", "first_aid"=>"0", "how_often_volunteer"=>"", "skills_and_knowledge"=>"", "own_transportation"=>"false", "skill_sales"=>"0", "why_volunteer"=>""}}
+  [4;36;1mVolunteer Columns (29.0ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+  [4;35;1mVolunteerExtra Columns (28.0ms)[0m   [0mSHOW FIELDS FROM `volunteer_extras`[0m
+  [4;36;1mStudent Columns (30.0ms)[0m   [0;1mSHOW FIELDS FROM `students`[0m
+Rendering template within layouts/volunteers
+Rendering volunteers/new
+Completed in 258ms (View: 125, DB: 142) | 200 OK [http://localhost/volunteers]
+  [4;35;1mSQL (26.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (28.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#create (for 127.0.0.1 at 2010-03-04 13:49:05) [POST]
+  Parameters: {"commit"=>"Create", "volunteer"=>{"address"=>"fdsu", "location"=>"fdslfslkg", "special_consideration"=>"", "postal_code"=>"fdsvcmv", "emrg_contact_phone_work"=>"", "emrg_contact_relationship"=>"-00e019r9999", "emrg_contact_name"=>"fdjsllll", "phone_home"=>"", "phone_work"=>"", "birthday"=>"fd92f9du80", "last_name"=>"fdslkfj", "preferred_contact_method"=>"0", "phone_cell"=>"", "province"=>"BC", "password"=>"fdsklvs", "emrg_contact_phone_home"=>"", "email"=>"fdskbfdbmd", "first_name"=>"fd8s0f70"}, "authenticity_token"=>"h5rmE/8/ITSNwygy5rxMHfuYo7yJVUh053J6I7QFaYA=", "student"=>{"student_id"=>"", "faculty"=>"", "year"=>"1", "program"=>""}, "volunteer_extra"=>{"skill_computer"=>"0", "skill_construction"=>"0", "skill_art"=>"0", "skill_farming"=>"0", "skill_fundraising"=>"0", "how_heard_about_farm"=>"", "foodsafe_level1"=>"0", "skill_music"=>"0", "foodsafe_level2"=>"0", "first_aid"=>"0", "how_often_volunteer"=>"", "skills_and_knowledge"=>"", "own_transportation"=>"false", "skill_sales"=>"0", "why_volunteer"=>""}, "is_student"=>"1"}
+  [4;35;1mVolunteer Columns (29.0ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+  [4;36;1mVolunteerExtra Columns (28.0ms)[0m   [0;1mSHOW FIELDS FROM `volunteer_extras`[0m
+  [4;35;1mStudent Columns (28.0ms)[0m   [0mSHOW FIELDS FROM `students`[0m
+Rendering template within layouts/volunteers
+Rendering volunteers/new
+Completed in 200ms (View: 66, DB: 139) | 200 OK [http://localhost/volunteers]
+  [4;36;1mSQL (30.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (27.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#index (for 127.0.0.1 at 2010-03-04 13:53:19) [GET]
+  [4;36;1mVolunteer Load (114.0ms)[0m   [0;1mSELECT * FROM `volunteers` [0m
+Rendering template within layouts/volunteers
+Rendering volunteers/index
+  [4;35;1mVolunteer Columns (49.0ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+Completed in 254ms (View: 75, DB: 220) | 200 OK [http://localhost/volunteers]
+  [4;36;1mSQL (27.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (28.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#new (for 127.0.0.1 at 2010-03-04 13:53:22) [GET]
+  [4;36;1mVolunteer Columns (29.0ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+  [4;35;1mVolunteerExtra Columns (29.0ms)[0m   [0mSHOW FIELDS FROM `volunteer_extras`[0m
+  [4;36;1mStudent Columns (28.0ms)[0m   [0;1mSHOW FIELDS FROM `students`[0m
+Rendering template within layouts/volunteers
+Rendering volunteers/new
+Completed in 219ms (View: 90, DB: 141) | 200 OK [http://localhost/volunteers/new]
+  [4;35;1mSQL (28.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (29.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#create (for 127.0.0.1 at 2010-03-04 13:53:43) [POST]
+  Parameters: {"commit"=>"Create", "volunteer"=>{"address"=>"fdsfk;", "location"=>"jfds;fsa", "special_consideration"=>"", "postal_code"=>"f;", "emrg_contact_phone_work"=>"", "emrg_contact_relationship"=>"fks;f'sdfls", "emrg_contact_name"=>"f;d'glf", "phone_home"=>"", "phone_work"=>"", "birthday"=>"fdslj", "last_name"=>"fdsjlfjd2m", "preferred_contact_method"=>"0", "phone_cell"=>"", "province"=>"BC", "password"=>"fcjsvc9vc0", "emrg_contact_phone_home"=>"", "email"=>"fdsnmvc", "first_name"=>"jvldvjdfis"}, "authenticity_token"=>"h5rmE/8/ITSNwygy5rxMHfuYo7yJVUh053J6I7QFaYA=", "student"=>{"student_id"=>"", "faculty"=>"", "year"=>"1", "program"=>""}, "volunteer_extra"=>{"skill_computer"=>"0", "skill_construction"=>"0", "skill_art"=>"0", "skill_farming"=>"0", "skill_fundraising"=>"0", "how_heard_about_farm"=>"", "foodsafe_level1"=>"0", "skill_music"=>"0", "foodsafe_level2"=>"0", "first_aid"=>"0", "how_often_volunteer"=>"", "skills_and_knowledge"=>"", "own_transportation"=>"false", "skill_sales"=>"0", "why_volunteer"=>""}}
+  [4;35;1mVolunteer Columns (32.0ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+  [4;36;1mVolunteerExtra Columns (29.0ms)[0m   [0;1mSHOW FIELDS FROM `volunteer_extras`[0m
+  [4;35;1mStudent Columns (27.0ms)[0m   [0mSHOW FIELDS FROM `students`[0m
+  [4;36;1mSQL (28.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mVolunteer Create (32.0ms)[0m   [0mINSERT INTO `volunteers` (`address`, `created_at`, `location`, `special_consideration`, `updated_at`, `postal_code`, `phone_home`, `emrg_contact_name`, `emrg_contact_relationship`, `emrg_contact_phone_work`, `phone_work`, `last_name`, `birthday`, `phone_cell`, `preferred_contact_method`, `activated`, `password`, `province`, `first_name`, `email`, `emrg_contact_phone_home`) VALUES('fdsfk;', '2010-03-04 21:53:43', 'jfds;fsa', '', '2010-03-04 21:53:43', 'f;', '', 'f;d\'glf', 'fks;f\'sdfls', '', '', 'fdsjlfjd2m', 'fdslj', '', 0, NULL, 'fcjsvc9vc0', 'BC', 'jvldvjdfis', 'fdsnmvc', '')[0m
+  [4;36;1mVolunteerExtra Create (27.0ms)[0m   [0;1mINSERT INTO `volunteer_extras` (`skill_construction`, `skill_computer`, `skill_farming`, `skill_art`, `how_heard_about_farm`, `skill_fundraising`, `foodsafe_level1`, `skill_music`, `how_often_volunteer`, `first_aid`, `foodsafe_level2`, `skills_and_knowledge`, `v_id`, `own_transportation`, `why_volunteer`, `skill_sales`) VALUES(0, 0, 0, 0, '', 0, 0, 0, '', 0, 0, '', 27, 0, '', 0)[0m
+  [4;35;1mSQL (817.0ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/volunteers/27
+Completed in 1050ms (DB: 1049) | 302 Found [http://localhost/volunteers]
+  [4;36;1mSQL (28.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (28.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#show (for 127.0.0.1 at 2010-03-04 13:53:44) [GET]
+  Parameters: {"id"=>"27"}
+  [4;36;1mVolunteer Columns (30.0ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+  [4;35;1mVolunteer Load (29.0ms)[0m   [0mSELECT * FROM `volunteers` WHERE (`volunteers`.`v_id` = 27) [0m
+Rendering template within layouts/volunteers
+Rendering volunteers/show
+Completed in 99ms (View: 16, DB: 115) | 200 OK [http://localhost/volunteers/27]
+  [4;36;1mSQL (27.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (38.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#index (for 127.0.0.1 at 2010-03-04 13:53:50) [GET]
+  [4;36;1mVolunteer Load (57.0ms)[0m   [0;1mSELECT * FROM `volunteers` [0m
+Rendering template within layouts/volunteers
+Rendering volunteers/index
+  [4;35;1mVolunteer Columns (29.0ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+Completed in 245ms (View: 144, DB: 151) | 200 OK [http://localhost/volunteers]
+  [4;36;1mSQL (28.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (27.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#new (for 127.0.0.1 at 2010-03-04 13:57:02) [GET]
+  [4;36;1mVolunteer Columns (34.0ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+  [4;35;1mVolunteerExtra Columns (30.0ms)[0m   [0mSHOW FIELDS FROM `volunteer_extras`[0m
+  [4;36;1mStudent Columns (29.0ms)[0m   [0;1mSHOW FIELDS FROM `students`[0m
+Rendering template within layouts/volunteers
+Rendering volunteers/new
+
+ActionView::TemplateError (wrong number of arguments (0 for 1)) on line #5 of app/views/volunteers/_form_volunteer_info.html.erb:
+2: 		<legend>Personal information</legend>
+3: 		<ul>
+4: 			<li>
+5: 				<%= form.label :first_name, "First name: <span class=\"mandatory\">*</span>"%>
+6: 				<%= form.text_field :first_name %>
+7: 			</li>
+8: 			<li>
+
+    app/views/volunteers/_form_volunteer_info.html.erb:5:in `form'
+    app/views/volunteers/_form_volunteer_info.html.erb:5
+    app/views/volunteers/new.html.erb:6
+    app/views/volunteers/new.html.erb:3
+    app/controllers/volunteers_controller.rb:31:in `new'
+    c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (177.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (29.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (28.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#new (for 127.0.0.1 at 2010-03-04 13:57:53) [GET]
+  [4;35;1mVolunteer Columns (30.0ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+  [4;36;1mVolunteerExtra Columns (28.0ms)[0m   [0;1mSHOW FIELDS FROM `volunteer_extras`[0m
+  [4;35;1mStudent Columns (29.0ms)[0m   [0mSHOW FIELDS FROM `students`[0m
+Rendering template within layouts/volunteers
+Rendering volunteers/new
+Rendered volunteers/_form_volunteer_info (24.0ms)
+Completed in 209ms (View: 91, DB: 144) | 200 OK [http://localhost/volunteers/new]
+  [4;36;1mSQL (27.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (27.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#new (for 127.0.0.1 at 2010-03-04 13:58:26) [GET]
+  [4;36;1mVolunteer Columns (28.0ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+  [4;35;1mVolunteerExtra Columns (29.0ms)[0m   [0mSHOW FIELDS FROM `volunteer_extras`[0m
+  [4;36;1mStudent Columns (29.0ms)[0m   [0;1mSHOW FIELDS FROM `students`[0m
+Rendering template within layouts/volunteers
+Rendering volunteers/new
+Rendered volunteers/_form_volunteer_info (490.0ms)
+Completed in 661ms (View: 543, DB: 140) | 200 OK [http://localhost/volunteers/new]
+  [4;35;1mSQL (27.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (28.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#create (for 127.0.0.1 at 2010-03-04 13:58:51) [POST]
+  Parameters: {"commit"=>"Create", "volunteer"=>{"address"=>"fdsjfds;l", "location"=>"fjdsal;jfjlsak", "birthday(1i)"=>"2010", "special_consideration"=>"", "birthday(2i)"=>"3", "postal_code"=>"fjds;alfks", "birthday(3i)"=>"4", "emrg_contact_phone_work"=>"", "emrg_contact_relationship"=>"fjdsklfds", "emrg_contact_name"=>"fdsfjkdsa", "phone_home"=>"", "phone_work"=>"", "last_name"=>"fdsjafl;sk", "preferred_contact_method"=>"0", "phone_cell"=>"", "province"=>"BC", "password"=>"fdjsla;f", "emrg_contact_phone_home"=>"", "email"=>"fdjsal", "first_name"=>"freswfj"}, "authenticity_token"=>"h5rmE/8/ITSNwygy5rxMHfuYo7yJVUh053J6I7QFaYA=", "student"=>{"student_id"=>"", "faculty"=>"", "year"=>"1", "program"=>""}, "volunteer_extra"=>{"skill_computer"=>"0", "skill_construction"=>"0", "skill_art"=>"0", "skill_farming"=>"0", "skill_fundraising"=>"0", "how_heard_about_farm"=>"", "foodsafe_level1"=>"0", "skill_music"=>"0", "foodsafe_level2"=>"0", "first_aid"=>"0", "how_often_volunteer"=>"", "skills_and_knowledge"=>"", "own_transportation"=>"false", "skill_sales"=>"0", "why_volunteer"=>""}}
+  [4;35;1mVolunteer Columns (30.0ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+
+ActiveRecord::MultiparameterAssignmentErrors (1 error(s) on assignment of multiparameter attributes):
+  app/controllers/volunteers_controller.rb:45:in `new'
+  app/controllers/volunteers_controller.rb:45:in `create'
+  c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (72.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (38.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (28.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#new (for 127.0.0.1 at 2010-03-04 14:04:52) [GET]
+  [4;36;1mVolunteer Columns (29.0ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+  [4;35;1mVolunteerExtra Columns (33.0ms)[0m   [0mSHOW FIELDS FROM `volunteer_extras`[0m
+  [4;36;1mStudent Columns (28.0ms)[0m   [0;1mSHOW FIELDS FROM `students`[0m
+Rendering template within layouts/volunteers
+Rendering volunteers/new
+Rendered volunteers/_form_volunteer_info (18.0ms)
+Completed in 192ms (View: 45, DB: 156) | 200 OK [http://localhost/volunteers/new]
+  [4;35;1mSQL (28.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (30.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#create (for 127.0.0.1 at 2010-03-04 14:05:14) [POST]
+  Parameters: {"commit"=>"Create", "volunteer"=>{"address"=>"fdsafsafsafs", "location"=>"afsafa", "birthday(1i)"=>"2010", "special_consideration"=>"", "birthday(2i)"=>"3", "postal_code"=>"fafdsafafa", "birthday(3i)"=>"4", "emrg_contact_phone_work"=>"", "emrg_contact_relationship"=>"fdf2fd", "emrg_contact_name"=>"fdsafdsa1", "phone_home"=>"", "phone_work"=>"", "last_name"=>"fdsafa", "preferred_contact_method"=>"0", "phone_cell"=>"", "province"=>"BC", "password"=>"fdsgsgasgas", "emrg_contact_phone_home"=>"", "email"=>"fasd", "first_name"=>"fdsafas"}, "authenticity_token"=>"h5rmE/8/ITSNwygy5rxMHfuYo7yJVUh053J6I7QFaYA=", "student"=>{"student_id"=>"", "faculty"=>"", "year"=>"1", "program"=>""}, "volunteer_extra"=>{"skill_computer"=>"0", "skill_construction"=>"0", "skill_art"=>"0", "skill_farming"=>"0", "skill_fundraising"=>"0", "how_heard_about_farm"=>"", "foodsafe_level1"=>"0", "skill_music"=>"0", "foodsafe_level2"=>"0", "first_aid"=>"0", "how_often_volunteer"=>"", "skills_and_knowledge"=>"", "own_transportation"=>"false", "skill_sales"=>"0", "why_volunteer"=>""}}
+  [4;35;1mVolunteer Columns (29.0ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+  [4;36;1mVolunteerExtra Columns (30.0ms)[0m   [0;1mSHOW FIELDS FROM `volunteer_extras`[0m
+  [4;35;1mStudent Columns (141.0ms)[0m   [0mSHOW FIELDS FROM `students`[0m
+  [4;36;1mSQL (148.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mVolunteer Create (28.0ms)[0m   [0mINSERT INTO `volunteers` (`address`, `created_at`, `location`, `special_consideration`, `updated_at`, `postal_code`, `phone_home`, `emrg_contact_name`, `emrg_contact_relationship`, `emrg_contact_phone_work`, `phone_work`, `last_name`, `birthday`, `phone_cell`, `preferred_contact_method`, `activated`, `password`, `province`, `first_name`, `email`, `emrg_contact_phone_home`) VALUES('fdsafsafsafs', '2010-03-04 22:05:15', 'afsafa', '', '2010-03-04 22:05:15', 'fafdsafafa', '', 'fdsafdsa1', 'fdf2fd', '', '', 'fdsafa', '2010-03-04 00:00:00', '', 0, NULL, 'fdsgsgasgas', 'BC', 'fdsafas', 'fasd', '')[0m
+  [4;36;1mVolunteerExtra Create (27.0ms)[0m   [0;1mINSERT INTO `volunteer_extras` (`skill_construction`, `skill_computer`, `skill_farming`, `skill_art`, `how_heard_about_farm`, `skill_fundraising`, `foodsafe_level1`, `skill_music`, `how_often_volunteer`, `first_aid`, `foodsafe_level2`, `skills_and_knowledge`, `v_id`, `own_transportation`, `why_volunteer`, `skill_sales`) VALUES(0, 0, 0, 0, '', 0, 0, 0, '', 0, 0, '', 1, 0, '', 0)[0m
+  [4;35;1mSQL (142.0ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/volunteers/1
+Completed in 589ms (DB: 603) | 302 Found [http://localhost/volunteers]
+  [4;36;1mSQL (100.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (28.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#show (for 127.0.0.1 at 2010-03-04 14:05:15) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mVolunteer Columns (30.0ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+  [4;35;1mVolunteer Load (98.0ms)[0m   [0mSELECT * FROM `volunteers` WHERE (`volunteers`.`v_id` = 1) [0m
+Rendering template within layouts/volunteers
+Rendering volunteers/show
+Completed in 143ms (View: 6, DB: 256) | 200 OK [http://localhost/volunteers/1]
+  [4;36;1mSQL (125.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (27.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#index (for 127.0.0.1 at 2010-03-04 14:05:19) [GET]
+  [4;36;1mVolunteer Load (28.0ms)[0m   [0;1mSELECT * FROM `volunteers` [0m
+Rendering template within layouts/volunteers
+Rendering volunteers/index
+  [4;35;1mVolunteer Columns (28.0ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+Completed in 84ms (View: 16, DB: 208) | 200 OK [http://localhost/volunteers]
+  [4;36;1mSQL (51.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (28.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#new (for 127.0.0.1 at 2010-03-04 14:05:46) [GET]
+  [4;36;1mVolunteer Columns (31.0ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+  [4;35;1mVolunteerExtra Columns (76.0ms)[0m   [0mSHOW FIELDS FROM `volunteer_extras`[0m
+  [4;36;1mStudent Columns (29.0ms)[0m   [0;1mSHOW FIELDS FROM `students`[0m
+Rendering template within layouts/volunteers
+Rendering volunteers/new
+Rendered volunteers/_form_volunteer_info (17.0ms)
+Completed in 196ms (View: 43, DB: 215) | 200 OK [http://localhost/volunteers/new]
+  [4;35;1mSQL (28.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (27.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#create (for 127.0.0.1 at 2010-03-04 14:08:22) [POST]
+  Parameters: {"commit"=>"Create", "volunteer"=>{"address"=>"gdsgsd", "location"=>"gdsgdsg", "birthday(1i)"=>"2010", "special_consideration"=>"", "birthday(2i)"=>"2", "postal_code"=>"sdgdsfgds", "birthday(3i)"=>"31", "emrg_contact_phone_work"=>"", "emrg_contact_relationship"=>"gfds", "emrg_contact_name"=>"gfdsgdsgs", "phone_home"=>"", "phone_work"=>"", "last_name"=>"gdfgdsg", "preferred_contact_method"=>"0", "phone_cell"=>"", "province"=>"BC", "password"=>"gdgdsgsd", "emrg_contact_phone_home"=>"", "email"=>"dsgds", "first_name"=>"fsdgsdgs"}, "authenticity_token"=>"h5rmE/8/ITSNwygy5rxMHfuYo7yJVUh053J6I7QFaYA=", "student"=>{"student_id"=>"", "faculty"=>"", "year"=>"1", "program"=>""}, "volunteer_extra"=>{"skill_computer"=>"0", "skill_construction"=>"0", "skill_art"=>"0", "skill_farming"=>"0", "skill_fundraising"=>"0", "how_heard_about_farm"=>"", "foodsafe_level1"=>"0", "skill_music"=>"0", "foodsafe_level2"=>"0", "first_aid"=>"0", "how_often_volunteer"=>"", "skills_and_knowledge"=>"", "own_transportation"=>"false", "skill_sales"=>"0", "why_volunteer"=>""}}
+  [4;35;1mVolunteer Columns (29.0ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+  [4;36;1mVolunteerExtra Columns (29.0ms)[0m   [0;1mSHOW FIELDS FROM `volunteer_extras`[0m
+  [4;35;1mStudent Columns (29.0ms)[0m   [0mSHOW FIELDS FROM `students`[0m
+  [4;36;1mSQL (28.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mVolunteer Create (28.0ms)[0m   [0mINSERT INTO `volunteers` (`address`, `location`, `created_at`, `special_consideration`, `postal_code`, `updated_at`, `phone_home`, `emrg_contact_name`, `emrg_contact_relationship`, `emrg_contact_phone_work`, `phone_work`, `last_name`, `birthday`, `phone_cell`, `preferred_contact_method`, `activated`, `password`, `province`, `first_name`, `email`, `emrg_contact_phone_home`) VALUES('gdsgsd', 'gdsgdsg', '2010-03-04 22:08:22', '', 'sdgdsfgds', '2010-03-04 22:08:22', '', 'gfdsgdsgs', 'gfds', '', '', 'gdfgdsg', '2010-03-03', '', 0, 0, 'gdgdsgsd', 'BC', 'fsdgsdgs', 'dsgds', '')[0m
+  [4;36;1mVolunteerExtra Create (27.0ms)[0m   [0;1mINSERT INTO `volunteer_extras` (`skill_construction`, `skill_computer`, `skill_farming`, `skill_art`, `how_heard_about_farm`, `skill_fundraising`, `foodsafe_level1`, `skill_music`, `how_often_volunteer`, `first_aid`, `foodsafe_level2`, `skills_and_knowledge`, `v_id`, `own_transportation`, `why_volunteer`, `skill_sales`) VALUES(0, 0, 0, 0, '', 0, 0, 0, '', 0, 0, '', 2, 0, '', 0)[0m
+  [4;35;1mSQL (33.0ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/volunteers/2
+Completed in 234ms (DB: 258) | 302 Found [http://localhost/volunteers]
+  [4;36;1mSQL (26.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (30.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#show (for 127.0.0.1 at 2010-03-04 14:08:23) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mVolunteer Columns (29.0ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+  [4;35;1mVolunteer Load (31.0ms)[0m   [0mSELECT * FROM `volunteers` WHERE (`volunteers`.`v_id` = 2) [0m
+Rendering template within layouts/volunteers
+Rendering volunteers/show
+Completed in 74ms (View: 5, DB: 116) | 200 OK [http://localhost/volunteers/2]
+  [4;36;1mSQL (27.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (27.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#index (for 127.0.0.1 at 2010-03-04 14:08:26) [GET]
+  [4;36;1mVolunteer Load (30.0ms)[0m   [0;1mSELECT * FROM `volunteers` [0m
+Rendering template within layouts/volunteers
+Rendering volunteers/index
+  [4;35;1mVolunteer Columns (29.0ms)[0m   [0mSHOW FIELDS FROM `volunteers`[0m
+Completed in 80ms (View: 13, DB: 113) | 200 OK [http://localhost/volunteers]
+  [4;36;1mSQL (46.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (27.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VolunteersController#new (for 127.0.0.1 at 2010-03-04 14:08:28) [GET]
+  [4;36;1mVolunteer Columns (28.0ms)[0m   [0;1mSHOW FIELDS FROM `volunteers`[0m
+  [4;35;1mVolunteerExtra Columns (29.0ms)[0m   [0mSHOW FIELDS FROM `volunteer_extras`[0m
+  [4;36;1mStudent Columns (28.0ms)[0m   [0;1mSHOW FIELDS FROM `students`[0m
+Rendering template within layouts/volunteers
+Rendering volunteers/new
+Rendered volunteers/_form_volunteer_info (16.0ms)
+Completed in 145ms (View: 41, DB: 158) | 200 OK [http://localhost/volunteers/new]
