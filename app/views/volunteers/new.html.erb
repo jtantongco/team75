@@ -30,6 +30,10 @@
 				<%= student.label :year, "Year: <span class=\"mandatory\">*</span>"%>
 				<%= student.select :year, options_for_select([["1","1"],["2","2"],["3","3"],["4","4"],["5","5"],["6","6"]]) %>
 			</li>
+			<li>
+				<%= student.label :grad_date, "Graduation Date:"%>
+				<%= student.date_select :grad_date, :start_year => Time.now.year, :end_year => Time.now.year+10 %>
+			</li>
 		</ul>
 	</fieldset>
 	<% end %>
