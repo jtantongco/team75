@@ -43,37 +43,25 @@ class VolunteersController < ApplicationController
   # POST /volunteers.xml
   def create
     @volunteer = Volunteer.new(params[:volunteer])
-    @volunteer_extra = VolunteerExtra.new(params[:volunteer_extra])
-    
+    @volunteer.build_volunteer_extra(params[:volunteer_extra])
+
     if params[:is_student]
-    	@student = Student.new(params[:student])
-    	@go_ahead = @student.valid?
-	else
-		@go_ahead = true;
-		@student = Student.new
-	end
+      @volunteer.build_student(params[:student])
+    end
 
     respond_to do |format|
-      if @volunteer.valid? & @volunteer_extra.valid? & @go_ahead         
-        Volunteer.transaction do
-        		
-          @volunteer.save!
-          
-          @volunteer_extra.v_id = @volunteer.v_id
-        
-          @volunteer_extra.save!
-          
-          if params[:is_student]
-          	 @student.v_id = @volunteer.v_id
-          	 @student.save!
-      	  end
-        end
+      if @volunteer.save         
         flash[:notice] = 'Volunteer was successfully created.'
         format.html { redirect_to(@volunteer) }
         format.xml  { render :xml => @volunteer, :status => :created, :location => @volunteer }
       else
-        #format.html { render :action => "new" }
-        #format.xml  { render :xml => @volunteer.errors, :status => :unprocessable_entity }
+        @volunteer_extra = @volunteer.volunteer_extra
+        @student = @volunteer.student
+        if !@student
+          @student = Student.new
+        end
+        format.html { render :action => "new" }
+        format.xml  { render :xml => @volunteer.errors, :status => :unprocessable_entity }
       end
     end
   end

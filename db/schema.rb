@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100304224837) do
+ActiveRecord::Schema.define(:version => 20100304225839) do
 
   create_table "administrators", :primary_key => "Aid", :force => true do |t|
     t.string "Name",      :null => false
@@ -33,22 +33,6 @@ ActiveRecord::Schema.define(:version => 20100304224837) do
     t.integer "VSid",                                :null => false
   end
 
-  create_table "orientation_projects", :id => false, :force => true do |t|
-    t.integer "p_id",     :default => 0, :null => false
-    t.integer "o_id",     :default => 0, :null => false
-    t.integer "priority"
-  end
-
-  add_index "orientation_projects", ["o_id"], :name => "o_id"
-
-  create_table "orientation_registrations", :id => false, :force => true do |t|
-    t.integer "v_id",     :default => 0, :null => false
-    t.integer "o_id",     :default => 0, :null => false
-    t.boolean "attended"
-  end
-
-  add_index "orientation_registrations", ["o_id"], :name => "o_id"
-
   create_table "orientations", :primary_key => "o_id", :force => true do |t|
     t.date   "start"
     t.date   "end"
@@ -56,6 +40,14 @@ ActiveRecord::Schema.define(:version => 20100304224837) do
     t.string "description"
     t.string "location"
   end
+
+  create_table "orientations_projects", :id => false, :force => true do |t|
+    t.integer "project_id",     :default => 0, :null => false
+    t.integer "orientation_id", :default => 0, :null => false
+    t.integer "priority"
+  end
+
+  add_index "orientations_projects", ["orientation_id"], :name => "o_id"
 
   create_table "projects", :primary_key => "Pid", :force => true do |t|
     t.string  "Name",        :null => false
@@ -88,20 +80,20 @@ ActiveRecord::Schema.define(:version => 20100304224837) do
   end
 
   create_table "self_reports", :primary_key => "r_id", :force => true do |t|
-    t.integer "v_id"
-    t.integer "p_id"
-    t.integer "s_id"
+    t.integer "volunteer_id"
+    t.integer "project_id"
+    t.integer "supervisor_id"
     t.date    "date_reported"
     t.date    "start"
     t.date    "end"
     t.boolean "verified"
   end
 
-  add_index "self_reports", ["p_id"], :name => "p_id"
-  add_index "self_reports", ["s_id"], :name => "s_id"
-  add_index "self_reports", ["v_id"], :name => "v_id"
+  add_index "self_reports", ["project_id"], :name => "p_id"
+  add_index "self_reports", ["supervisor_id"], :name => "s_id"
+  add_index "self_reports", ["volunteer_id"], :name => "v_id"
 
-  create_table "students", :primary_key => "v_id", :force => true do |t|
+  create_table "students", :primary_key => "volunteer_id", :force => true do |t|
     t.integer "student_id"
     t.string  "faculty"
     t.string  "program"
@@ -129,7 +121,7 @@ ActiveRecord::Schema.define(:version => 20100304224837) do
 
   add_index "supervisors", ["loginName"], :name => "loginName", :unique => true
 
-  create_table "volunteer_extras", :primary_key => "v_id", :force => true do |t|
+  create_table "volunteer_extras", :primary_key => "volunteer_id", :force => true do |t|
     t.text    "how_often_volunteer"
     t.text    "how_heard_about_farm"
     t.text    "why_volunteer"
@@ -148,37 +140,45 @@ ActiveRecord::Schema.define(:version => 20100304224837) do
   end
 
   create_table "volunteer_project_interests", :id => false, :force => true do |t|
-    t.integer "v_id", :default => 0, :null => false
-    t.integer "p_id", :default => 0, :null => false
-  end
-
-  create_table "volunteer_projects", :id => false, :force => true do |t|
-    t.integer "v_id", :default => 0, :null => false
-    t.integer "p_id", :default => 0, :null => false
+    t.integer "volunteer_id", :default => 0, :null => false
+    t.integer "project_id",   :default => 0, :null => false
   end
 
   create_table "volunteers", :primary_key => "v_id", :force => true do |t|
-    t.string   "first_name",                                                  :null => false
-    t.string   "last_name",                                                   :null => false
-    t.string   "email",                                                       :null => false
-    t.string   "password",                                                    :null => false
-    t.date     "birthday",                                                    :null => false
+    t.string   "first_name",                               :null => false
+    t.string   "last_name",                                :null => false
+    t.string   "email",                                    :null => false
+    t.string   "password",                                 :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.date     "birthday",                                 :null => false
     t.string   "phone_home",                :limit => 20
     t.string   "phone_work",                :limit => 20
     t.string   "phone_cell",                :limit => 20
-    t.string   "address",                   :limit => 50,                     :null => false
-    t.text     "location",                  :limit => 255,                    :null => false
-    t.string   "province",                  :limit => 20,                     :null => false
-    t.string   "postal_code",               :limit => 10,                     :null => false
-    t.boolean  "preferred_contact_method",                                    :null => false
-    t.string   "emrg_contact_name",         :limit => 60,                     :null => false
-    t.string   "emrg_contact_relationship", :limit => 30,                     :null => false
-    t.string   "emrg_contact_phone_work",   :limit => 20,                     :null => false
-    t.string   "emrg_contact_phone_home",   :limit => 20,                     :null => false
+    t.string   "address",                   :limit => 50,  :null => false
+    t.text     "location",                  :limit => 255, :null => false
+    t.string   "province",                  :limit => 20,  :null => false
+    t.string   "postal_code",               :limit => 10,  :null => false
+    t.boolean  "preferred_contact_method",                 :null => false
+    t.string   "emrg_contact_name",         :limit => 60,  :null => false
+    t.string   "emrg_contact_relationship", :limit => 30,  :null => false
+    t.string   "emrg_contact_phone_work",   :limit => 20,  :null => false
+    t.string   "emrg_contact_phone_home",   :limit => 20,  :null => false
     t.text     "special_consideration"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.boolean  "activated",                                :default => false, :null => false
+    t.boolean  "activated"
+  end
+
+  create_table "volunteers_orientations", :id => false, :force => true do |t|
+    t.integer "volunteer_id",   :default => 0, :null => false
+    t.integer "orientation_id", :default => 0, :null => false
+    t.boolean "attended"
+  end
+
+  add_index "volunteers_orientations", ["orientation_id"], :name => "o_id"
+
+  create_table "volunteers_projects", :id => false, :force => true do |t|
+    t.integer "volunteer_id", :default => 0, :null => false
+    t.integer "project_id",   :default => 0, :null => false
   end
 
 end

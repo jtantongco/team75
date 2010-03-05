@@ -23,7 +23,7 @@ development:
   host: team75.heliohost.org
   username: team75_db
   password: team75
-# socket: /tmp/mysql.sock
+  socket: /tmp/mysql.sock
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".

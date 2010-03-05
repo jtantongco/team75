@@ -101,7 +101,6 @@ class BatchCreateVolunteerTables < ActiveRecord::Migration
   end
 
   def self.down
-    drop_table  :volunteers
     drop_table  :volunteer_extras
     drop_table  :students
     drop_table  :volunteer_projects
@@ -110,5 +109,6 @@ class BatchCreateVolunteerTables < ActiveRecord::Migration
     drop_table  :orientation_projects
     drop_table  :orientation_registrations
     drop_table  :self_reports
+    drop_table  :volunteers
   end
 end
