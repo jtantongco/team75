@@ -35,10 +35,27 @@ class AccountsController < ApplicationController
         flash[:message] = '[[todo, validate data and save]] Your account has been updated.'
         redirect_to :action => :my_account
       else
-        flash[:error] = 'You did not enter the form correctly. Please fix any errors!'
         render :action => "edit_account"
       end
     end
+    
+    def report_hours
+      @user = Volunteer.find_by_v_id(session[:id])
+      @report = SelfReport.new
+      
+      if request.post?
+        @report = SelfReport.new(params[:self_report])
+        @report.volunteer_id = @user.v_id
+
+        if @report.save
+          flash[:message] = '[todo: redirect to report list] Your hour report has been saved. It will be verified by the supervisor.'
+          redirect_to :action => :my_account
+        else
+          render :action => :report_hours
+        end
+      end
+    end
+    
     
     def forgot_password
       if request.post?

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100304225839) do
+ActiveRecord::Schema.define(:version => 20100307045006) do
 
   create_table "administrators", :primary_key => "Aid", :force => true do |t|
     t.string "Name",      :null => false
@@ -41,13 +41,13 @@ ActiveRecord::Schema.define(:version => 20100304225839) do
     t.string "location"
   end
 
-  create_table "orientations_projects", :id => false, :force => true do |t|
+  create_table "project_orientations", :id => false, :force => true do |t|
     t.integer "project_id",     :default => 0, :null => false
     t.integer "orientation_id", :default => 0, :null => false
     t.integer "priority"
   end
 
-  add_index "orientations_projects", ["orientation_id"], :name => "o_id"
+  add_index "project_orientations", ["orientation_id"], :name => "o_id"
 
   create_table "projects", :primary_key => "Pid", :force => true do |t|
     t.string  "Name",        :null => false
@@ -80,13 +80,14 @@ ActiveRecord::Schema.define(:version => 20100304225839) do
   end
 
   create_table "self_reports", :primary_key => "r_id", :force => true do |t|
-    t.integer "volunteer_id"
-    t.integer "project_id"
-    t.integer "supervisor_id"
-    t.date    "date_reported"
-    t.date    "start"
-    t.date    "end"
-    t.boolean "verified"
+    t.integer  "volunteer_id",                              :null => false
+    t.integer  "project_id",                                :null => false
+    t.integer  "supervisor_id",                             :null => false
+    t.datetime "start_time",                                :null => false
+    t.datetime "end_time",                                  :null => false
+    t.integer  "verified",      :limit => 1, :default => 0, :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "self_reports", ["project_id"], :name => "p_id"
