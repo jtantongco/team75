@@ -1,4 +1,11 @@
+require 'digest/sha1'
+
 class VolunteersController < ApplicationController
+
+  def hash (str)
+    return Digest::SHA1.hexdigest(str)
+  end
+
   # GET /volunteers
   # GET /volunteers.xml
   def index
@@ -44,6 +51,8 @@ class VolunteersController < ApplicationController
   def create
     @volunteer = Volunteer.new(params[:volunteer])
     @volunteer.build_volunteer_extra(params[:volunteer_extra])
+    
+    @volunteer.password = hash(@volunteer.password)
 
     if params[:is_student]
       @volunteer.build_student(params[:student])
