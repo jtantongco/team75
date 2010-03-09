@@ -34,18 +34,18 @@ class AccountsController < ApplicationController
     def my_account
     end
 
+   
     def edit_account
       @user = Volunteer.find_by_v_id(session[:id])
-    end
-    
-    def update_account
-      @user = Volunteer.find_by_v_id(session[:id])
-      if @user.update_attributes(params[:volunteer])
-        flash[:message] = '[[todo, validate data and save]] Your account has been updated.'
-        redirect_to :action => :my_account
-      else
-        render :action => "edit_account"
+      if request.post?
+        if @user.update_attributes(params[:volunteer])
+          flash[:message] = '[[todo, validate data and save]] Your account has been updated.'
+          redirect_to :action => :my_account
+        else
+          flash[:error] = 'Error(s) occurred'
+        end
       end
+      render :action => "edit_account"
     end
     
     def report_hours
