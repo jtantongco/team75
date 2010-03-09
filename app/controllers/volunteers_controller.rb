@@ -51,15 +51,14 @@ class VolunteersController < ApplicationController
   def create
     @volunteer = Volunteer.new(params[:volunteer])
     @volunteer.build_volunteer_extra(params[:volunteer_extra])
-    
-    @volunteer.password = hash(@volunteer.password)
 
     if params[:is_student]
       @volunteer.build_student(params[:student])
     end
 
     respond_to do |format|
-      if @volunteer.save         
+      if @volunteer.save
+      	@volunteer.update_attribute("password", hash(@volunteer.password))         
         flash[:notice] = 'Volunteer was successfully created.'
         format.html { redirect_to(@volunteer) }
         format.xml  { render :xml => @volunteer, :status => :created, :location => @volunteer }
