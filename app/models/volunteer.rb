@@ -12,16 +12,18 @@ class Volunteer < ActiveRecord::Base
 
   validates_format_of :email,
 					  :with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i,
-					  :message => 'Email address must be valid'
+					  :message => 'must be valid'
 				
   validates_format_of :postal_code,
 					  :with => /^[a-zA-Z]\d[a-zA-Z]\d[a-zA-Z]\d$/,
-					  :message => 'Postal code must be valid'
+					  :message => 'must be valid'
 
   validates_uniqueness_of :email,
-  						  :message => 'This email address has already been used'
+  						  :message => 'address has already been used'
+  						  
+  validates_confirmation_of :password
   						 
-  def full_name()
+  def name()
     first_name + " " + last_name
   end
 end

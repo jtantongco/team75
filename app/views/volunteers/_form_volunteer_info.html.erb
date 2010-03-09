@@ -1,3 +1,10 @@
+<%
+# Partial for the part of the form that contains volunteer information
+# Parameters: form (the form object), skip_password (true if the password field should not be added)
+	
+skip_password = nil if local_assigns[:skip_password].nil?
+%>
+
 	<fieldset>
 		<legend>Personal information</legend>
 		<ul>
@@ -13,14 +20,21 @@
 				<%= form.label :email, "E-mail address: <span class=\"mandatory\">*</span>"%>
 				<%= form.text_field :email %>
 			</li>
+			<% if !skip_password then %>
 			<li>
 				<%= form.label :password, "Password: <span class=\"mandatory\">*</span>"%>
 				<%= form.password_field :password %>
 			</li>
 			<li>
+				<%= form.label :password_confirmation, "Confirm password: <span class=\"mandatory\">*</span>"%>
+				<%= form.password_field :password_confirmation %>
+			</li>
+			<% end %>
+			<li>
 				<%= form.label :birthday, "Date of birth: <span class=\"mandatory\">*</span>"%>
 				<%= form.date_select :birthday, :start_year => Time.now.year-50, :end_year => Time.now.year-10 %>
 			</li>
+			
 		</ul>
 	</fieldset>
 	<fieldset>

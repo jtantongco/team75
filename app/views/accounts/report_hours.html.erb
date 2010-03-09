@@ -4,7 +4,7 @@
 <% form_for(@report, :url => { :action => "report_hours" }) do |f| %>
 	<%= f.error_messages %>
 	<ul>
-		<li><%=label_tag("Report for: ") + " " + @user.full_name %></li>
+		<li><%=label_tag("Report for: ") + " " + @user.name %></li>
 		<li>
 			<%=f.label :project_id, "Project: <span class=\"mandatory\">*</span>"%>
 			<%=f.text_field :project_id%> (todo: get projects from model)
