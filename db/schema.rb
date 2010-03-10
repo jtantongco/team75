@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100310044751) do
+ActiveRecord::Schema.define(:version => 20100310045206) do
 
   create_table "administrators", :primary_key => "Aid", :force => true do |t|
     t.string "Name",      :null => false
@@ -169,7 +169,7 @@ ActiveRecord::Schema.define(:version => 20100310044751) do
     t.boolean  "activated"
     t.string   "activation_code"
     t.boolean  "contract_signed",                          :default => false
-    t.integer  "active_status",             :limit => 1,   :default => 1,     :null => false
+    t.boolean  "active_status",                            :default => true,  :null => false
   end
 
   create_table "volunteers_orientations", :id => false, :force => true do |t|
