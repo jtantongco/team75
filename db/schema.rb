@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100310045206) do
+ActiveRecord::Schema.define(:version => 20100310055617) do
 
   create_table "administrators", :primary_key => "Aid", :force => true do |t|
     t.string "Name",      :null => false
@@ -34,11 +34,11 @@ ActiveRecord::Schema.define(:version => 20100310045206) do
   end
 
   create_table "orientations", :primary_key => "o_id", :force => true do |t|
-    t.date   "start"
-    t.date   "end"
-    t.string "name"
-    t.string "description"
-    t.string "location"
+    t.datetime "start_time",  :null => false
+    t.datetime "end_time",    :null => false
+    t.string   "name"
+    t.string   "description"
+    t.string   "location"
   end
 
   create_table "project_orientations", :id => false, :force => true do |t|
