@@ -1,7 +1,7 @@
 require 'digest/sha1'
 
 class AccountsController < ApplicationController
-    before_filter :login_required, :except => [:login, :process_login, :index, :logout, :forgot_password]
+    before_filter :login_required, :except => [:login, :process_login, :index, :logout, :forgot_password, :account_created]
     
     def login
       @user = Volunteer.new
@@ -91,5 +91,24 @@ class AccountsController < ApplicationController
     
     def hash (str)
       return Digest::SHA1.hexdigest(str)
+    end
+    
+    def account_created
+    end
+    
+    def redispatch_activation_code
+		user = Volunteer.find_by_v_id(session[:id])
+		Emailer.deliver_confirm_email(user.email, user.activation_code)
+		flash[:message] = "Your request has been received and an email will be sent to you shortly."
+	end
+    
+    def verify
+    	user = Volunteer.find_by_v_id(session[:id])
+    	if user != nil && user.activation_code == params[:activation_code]
+    		user.activated = 1
+    		user.save
+    	else
+    		flash[:message] = "Sorry, please make sure you have entered your activation code correctly."
+    	end
     end
 end

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100307045006) do
+ActiveRecord::Schema.define(:version => 20100309230127) do
 
   create_table "administrators", :primary_key => "Aid", :force => true do |t|
     t.string "Name",      :null => false
@@ -167,6 +167,7 @@ ActiveRecord::Schema.define(:version => 20100307045006) do
     t.string   "emrg_contact_phone_home",   :limit => 20,  :null => false
     t.text     "special_consideration"
     t.boolean  "activated"
+    t.string   "activation_code"
   end
 
   create_table "volunteers_orientations", :id => false, :force => true do |t|

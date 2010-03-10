@@ -6,4 +6,12 @@ class Emailer < ActionMailer::Base
     sent_on  sent_at
     body['pass'] = pass
   end
+  
+  def confirm_email (recipient, code, sent_at = Time.now)
+  	subject  "Volunteer Account - Email confirmation"
+    recipients  recipient
+    from  "iForgotPass@gmail.com"
+    sent_on  sent_at
+  	body['code'] = code
+  end
 end

@@ -3,6 +3,9 @@
 	<p class="flash_message"><%=flash[:message]%></p>
 <% end %>
 
+<% if @user.activated %>
+
+
 <p>Welcome <%= @user.name %>!</p>
 <p>You have successfully logged in.  You may log out, change your account details, log hours or join a project!</p>
 
@@ -12,3 +15,16 @@
 </p>
 
 <p><%= link_to 'Logout', :action => 'logout' %>  </p>
+
+<% else %>
+
+Your account is currently not activated, please enter the activation code you received in your email below to activate your account.  If you wish to be sent another email with your activation password, click
+<%= link_to 'here', :action => :redispatch_activation_code %>
+
+<p>
+<% form_tag :action => 'verify' do -%>
+Activation Code:  <%= text_field_tag "activation_code" %>
+<%= submit_tag "Submit" %> 
+<% end -%>
+
+<% end %>
