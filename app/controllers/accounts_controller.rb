@@ -3,6 +3,7 @@ require 'digest/sha1'
 class AccountsController < ApplicationController
     before_filter :login_required, :except => [:login, :process_login, :index, :logout, :forgot_password, :account_created]
     
+
     def login
       @user = Volunteer.new
       @user.email = params[:email]
@@ -31,13 +32,12 @@ class AccountsController < ApplicationController
       redirect_to :action => 'login' 
     end
 
+    @user = Volunteer.find_by_v_id(session[:id]) if defined? session[:id]
+
     def my_account
-      @user = Volunteer.find_by_v_id(session[:id])
     end
 
-   
     def edit_account
-      @user = Volunteer.find_by_v_id(session[:id])
       if request.put?
         if @user.update_attributes(params[:volunteer])
           flash[:message] = 'Your account has been updated.'
@@ -48,8 +48,26 @@ class AccountsController < ApplicationController
       end
     end
     
+    def change_password
+      if request.put?
+        old_password = params[:old_password]
+        new_password = params[:password]
+        confirm_password = params[:password_confirmation]
+        if @user.password == hash(old_password)
+          if new_password.length > 0 && new_password == confirm_password
+            @user.update_attribute("password", hash(new_password))
+            flash[:message] = 'Your password has been changed.'
+            redirect_to :action => :my_account
+          else
+            @user.errors.add "New password", "and confirmation password do not match."
+          end
+        else
+          @user.errors.add "Old password", "is invalid"
+        end
+      end
+    end
+    
     def report_hours
-      @user = Volunteer.find_by_v_id(session[:id])
       @report = SelfReport.new
       
       if request.post?

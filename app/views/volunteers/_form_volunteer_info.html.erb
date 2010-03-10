@@ -20,7 +20,7 @@ skip_password = nil if local_assigns[:skip_password].nil?
 				<%= form.label :email, "E-mail address: <span class=\"mandatory\">*</span>"%>
 				<%= form.text_field :email %>
 			</li>
-			<% if !skip_password then %>
+			<% if !skip_password %>
 			<li>
 				<%= form.label :password, "Password: <span class=\"mandatory\">*</span>"%>
 				<%= form.password_field :password %>
