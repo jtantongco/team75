@@ -16,7 +16,7 @@
 
 <p>
 	<%= link_to 'Edit account', 	:action => :edit_account %> |
-	<%= link_to 'Report hours', 	:action => :report_hours %>
+	<%= link_to 'Report hours', 	:controller => :self_report, :action => :create_report %>
 </p>
 
 <p><%= link_to 'Logout', :action => 'logout' %>  </p>
