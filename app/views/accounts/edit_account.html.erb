@@ -1,6 +1,10 @@
 <h1>Editing account details</h1>
 <% if flash[:error] %><p class="flash_error"><%=flash[:error]%></p><% end %>
 <% if flash[:message] %><p class="flash_message"><%=flash[:message]%></p><% end %>
+<p>
+	<%= link_to 'Change password', :action => :change_password %> |
+	Deactivate account
+</p>
 <% form_for(@user, :url => { :action => "edit_account" }) do |f| %>
 	<%= f.error_messages %>
 	<%= render :partial => "volunteers/form_volunteer_info", :locals => {:form => f, :skip_password => true } %>

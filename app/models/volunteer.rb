@@ -26,4 +26,8 @@ class Volunteer < ActiveRecord::Base
   def name()
     first_name + " " + last_name
   end
+  
+  def activated()
+    active_status == true
+  end
 end

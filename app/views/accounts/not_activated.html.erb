@@ -1,0 +1,13 @@
+<h1>Please activate your account</h1>
+<p>
+	Your account is currently not activated, please enter the activation code you received in your email below to activate your account. 
+	If you wish to be sent another email with your activation password, click
+	<%= link_to 'here', :action => :redispatch_activation_code %>
+</p>
+
+<% form_tag :action => 'verify' do -%>
+	<p>
+		Activation Code:  <%= text_field_tag "activation_code" %>
+		<%= submit_tag "Submit" %> 
+	</p>
+<% end -%>

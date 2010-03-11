@@ -3,29 +3,20 @@
 	<p class="flash_message"><%=flash[:message]%></p>
 <% end %>
 
-<% if @user.activated %>
+<% if !@user.contract_signed %>
+	<p class="flash_error">
+		You have not yet signed the volunteer contract.
+		Please do so <%= link_to 'here', :action => :sign_contract %>.
+	</p>
+<% end %>
 
 
 <p>Welcome <%= @user.name %>!</p>
 <p>You have successfully logged in.  You may log out, change your account details, log hours or join a project!</p>
 
 <p>
-	<%= link_to 'Edit account', :action => :edit_account %> |
-	<%= link_to 'Change password', :action => :change_password %> |
-	<%= link_to 'Report hours', :action => :report_hours %>
+	<%= link_to 'Edit account', 	:action => :edit_account %> |
+	<%= link_to 'Report hours', 	:action => :report_hours %>
 </p>
 
 <p><%= link_to 'Logout', :action => 'logout' %>  </p>
-
-<% else %>
-
-Your account is currently not activated, please enter the activation code you received in your email below to activate your account.  If you wish to be sent another email with your activation password, click
-<%= link_to 'here', :action => :redispatch_activation_code %>
-
-<p>
-<% form_tag :action => 'verify' do -%>
-Activation Code:  <%= text_field_tag "activation_code" %>
-<%= submit_tag "Submit" %> 
-<% end -%>
-
-<% end %>

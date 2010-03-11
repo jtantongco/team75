@@ -1,0 +1,13 @@
+<h1>Volunteer Contract</h1>
+<% if flash[:error] %><p class="flash_error"><%=flash[:error]%></p><% end %>
+<% form_tag :action => :sign_contract do %>
+	<p><%= text_area_tag 'volunteer_contract', volunteer_contract_text, :readonly => 'readonly' %></p>
+	<p>
+		<%= check_box_tag :accept %>
+		<%= label_tag :accept, "I have read the contract thoroughly and accept something something...." %>
+	</p>
+	<p>
+		<%= submit_tag "Submit" %>
+	</p>
+<% end %>
+<%= link_to "Back to My account", :action => :my_account %>
