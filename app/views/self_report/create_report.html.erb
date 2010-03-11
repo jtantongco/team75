@@ -1,0 +1,29 @@
+<h1>Report worked hours</h1>
+<% if flash[:error] %><p class="flash_error"><%=flash[:error]%></p><% end %>
+<% if flash[:message] %><p class="flash_message"><%=flash[:message]%></p><% end %>
+<% form_for(@report, :url => { :action => "report_hours" }) do |f| %>
+	<%= f.error_messages %>
+	<ul>
+		<li><%=label_tag("Report for: ") + " " + @user.name %></li>
+		<li>
+			<%=f.label :project_id, "Project: <span class=\"mandatory\">*</span>"%>
+			<%=f.text_field :project_id%> (todo: get projects from model)
+		</li>
+		<li>
+			<%=f.label :supervisor_id, "Supervisor: <span class=\"mandatory\">*</span>"%>
+			<%=f.text_field :supervisor_id %> (todo: get supervisors from model)
+		</li>
+		<li>
+			<%=f.label :start_time, "Start: <span class=\"mandatory\">*</span>"%>
+			<%=f.datetime_select :start_time, :default => Time.now, :minute_step => 15 %>
+		</li>
+		<li>
+			<%=f.label :end_time, "End: <span class=\"mandatory\">*</span>"%>
+			<%=f.datetime_select :end_time, :default => Time.now, :minute_step => 15 %>
+		</li>
+		<li>
+			<%=f.submit "Create report"%>
+		</li>
+	</ul>
+<% end %>
+<%= link_to 'Back', :action => :my_account %>
