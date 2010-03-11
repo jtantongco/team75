@@ -1,0 +1,22 @@
+	<ul>
+		<li>
+			<%=form.label :name, "Name: <span class=\"mandatory\">*</span>"%>
+			<%=form.text_field :name%> 
+		</li>
+		<li>
+			<%=form.label :description, "Description: <span class=\"mandatory\">*</span>"%>
+			<%=form.text_area :description %>
+		</li>
+		<li>
+			<%=form.label :start_time, "Start: <span class=\"mandatory\">*</span>"%>
+			<%=form.datetime_select :start_time, :default => Time.now, :minute_step => 15 %>
+		</li>
+		<li>
+			<%=form.label :end_time, "End: <span class=\"mandatory\">*</span>"%>
+			<%=form.datetime_select :end_time, :default => Time.now, :minute_step => 15 %>
+		</li>
+		<li>
+			<%=form.label :location, "Location: <span class=\"mandatory\">*</span>"%>
+			<%=form.text_area :location %>
+		</li>
+	</ul>

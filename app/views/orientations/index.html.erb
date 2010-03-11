@@ -1,0 +1,26 @@
+<h1>Listing Orientations</h1>
+<p>No. of orientations in db: <%=@orientations.count%></p>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>description</th>
+  </tr>
+
+<% @orientations.each do |orientation| %>
+  <tr>
+    <td>
+		<%=h orientation.name %>
+	</td>
+	<td>
+		<%=h orientation.description %>
+	</td>
+	
+    <td><%= link_to 'Edit', edit_orientation_path(orientation) %></td>
+    <td><%= link_to 'Destroy', orientation, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Orientation', new_orientation_path %>
