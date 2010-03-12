@@ -1,0 +1,13 @@
+<%
+@page_title = 'List of reports'
+%>
+<h1>Your reported hours</h1>
+<% if flash[:error] %><p class="flash_error"><%=flash[:error]%></p><% end %>
+<% if flash[:message] %><p class="flash_message"><%=flash[:message]%></p><% end %>
+
+<p><%= link_to 'Create a new hour report', :action => 'create_report' %></p>
+<h2>Unverified reports</h2>
+<%= render :partial => 'self_reports_table', :locals => {:reports => @reports, :unverified => true}%>
+
+<h2>Verified reports</h2>
+<%= render :partial => 'self_reports_table', :locals => {:reports => @reports}%>

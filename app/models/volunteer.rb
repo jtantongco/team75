@@ -23,7 +23,7 @@ class Volunteer < ActiveRecord::Base
   						  
   validates_confirmation_of :password
   						 
-  def name()
+  def name
     first_name + " " + last_name
   end
 end

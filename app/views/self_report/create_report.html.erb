@@ -1,7 +1,7 @@
 <h1>Report worked hours</h1>
 <% if flash[:error] %><p class="flash_error"><%=flash[:error]%></p><% end %>
 <% if flash[:message] %><p class="flash_message"><%=flash[:message]%></p><% end %>
-<% form_for(@report, :url => { :action => "report_hours" }) do |f| %>
+<% form_for @report, :url => { :action => "create_report" } do |f| %>
 	<%= f.error_messages %>
 	<ul>
 		<li><%=label_tag("Report for: ") + " " + @user.name %></li>
@@ -14,16 +14,20 @@
 			<%=f.text_field :supervisor_id %> (todo: get supervisors from model)
 		</li>
 		<li>
-			<%=f.label :start_time, "Start: <span class=\"mandatory\">*</span>"%>
-			<%=f.datetime_select :start_time, :default => Time.now, :minute_step => 15 %>
+			<%=f.label :date, "Date: <span class=\"mandatory\">*</span>"%>
+			<%=f.date_select :date, :default => Date.today %>
 		</li>
 		<li>
-			<%=f.label :end_time, "End: <span class=\"mandatory\">*</span>"%>
-			<%=f.datetime_select :end_time, :default => Time.now, :minute_step => 15 %>
+			<%=f.label :start_time, "Start time: <span class=\"mandatory\">*</span>"%>
+			<%=f.time_select :start_time, :default => Time.now, :minute_step => 15 %>
+		</li>
+		<li>
+			<%=f.label :end_time, "End time: <span class=\"mandatory\">*</span>"%>
+			<%=f.time_select :end_time, :default => Time.now, :minute_step => 15 %>
 		</li>
 		<li>
 			<%=f.submit "Create report"%>
 		</li>
 	</ul>
 <% end %>
-<%= link_to 'Back', :action => :my_account %>
+<%= link_to 'Back', :action => :index %>
