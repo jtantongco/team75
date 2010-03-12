@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  f_id: 
+  project_id: 
+  volunteer_id: 
+  feedback: MyString
+
+two:
+  f_id: 
+  project_id: 
+  volunteer_id: 
+  feedback: MyString

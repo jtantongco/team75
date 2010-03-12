@@ -1,0 +1,23 @@
+<% @page_title = "Provide feedback for #{@project.name}"%>
+<h1><%="Provide feedback for #{@project.name}"%></h1>
+<% if flash[:error] %><p class="flash_error"><%=flash[:error]%></p><% end %>
+<% if flash[:message] %><p class="flash_message"><%=flash[:message]%></p><% end %>
+
+<% form_for @project_feedback, :url => { :action => :provide_feedback } do |f| %>
+	<%=f.error_messages%>
+	<ul>
+		<li>
+			<%=label_tag '', 'Feedback from: ' %>
+			<%=@user.name%>
+		</li>
+		<li>
+			<%=label_tag '', 'Project: ' %>
+			<%=@project.name%>
+		</li>
+		<li>
+			<%=f.label :feedback, 'Feedback: <span class="mandatory">*</span>'%>
+			<%=f.text_area :feedback %>
+		</li>
+		<li><%=f.submit 'Send feedback'%></li>
+	</ul>
+<% end %>
