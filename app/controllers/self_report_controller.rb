@@ -6,8 +6,7 @@ class SelfReportController < ApplicationController
     @report = SelfReport.new
 
     if request.post?
-      @report = SelfReport.new(params[:self_report])
-      @report.volunteer_id = @user.v_id
+      @report = @user.self_reports.build(params[:self_report])
 
       if @report.save
         flash[:message] = 'Your hour report has been saved. It will be verified by the supervisor.'
@@ -18,7 +17,7 @@ class SelfReportController < ApplicationController
   
   def edit_report
     begin
-      @report = @user.self_report.find(params[:id])
+      @report = @user.self_reports.find(params[:id])
     rescue
       flash[:error] = 'Report not found'
       redirect_to :action => :index
@@ -29,19 +28,18 @@ class SelfReportController < ApplicationController
         flash[:message] = 'Your report has been updated.'
         redirect_to :action => :index
       end
-      logger.info 'POST'
     end
   end
   
   # Lists the volunteers reported hours
   def index
-    @reports = @user.self_report
+    @reports = @user.self_reports
   end
   
   
   def delete
     begin
-      @report = @user.self_report.find(params[:id])
+      @report = @user.self_reports.find(params[:id])
       @report.destroy
     rescue
       flash[:error] = 'Report not found'

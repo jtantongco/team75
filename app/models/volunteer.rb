@@ -3,7 +3,7 @@ class Volunteer < ActiveRecord::Base
 
   has_one :student,         :dependent => :destroy
   has_one :volunteer_extra, :dependent => :destroy
-  has_many :self_report
+  has_many :self_reports
   
   validates_presence_of :first_name, :last_name, :email, :password, :birthday,
     :address, :location, :postal_code, :province,

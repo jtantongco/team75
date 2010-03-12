@@ -51,19 +51,19 @@ class VolunteersController < ApplicationController
   def create
     @volunteer = Volunteer.new(params[:volunteer])
     @volunteer.build_volunteer_extra(params[:volunteer_extra])
-	@volunteer.activation_code = hash(@volunteer.email)
-	@volunteer.activated = 0
-	
+    @volunteer.activation_code = hash(@volunteer.email)
+    @volunteer.activated = 0
+
     if params[:is_student]
       @volunteer.build_student(params[:student])
     end
 
     respond_to do |format|
       if @volunteer.save
-      	@volunteer.update_attribute("password", hash(@volunteer.password))  
-      	
-      	dispatch_confirmation( @volunteer )       
-      	
+        @volunteer.update_attribute("password", hash(@volunteer.password))  
+
+        dispatch_confirmation( @volunteer )       
+
         flash[:notice] = 'Volunteer was successfully created. An email has been sent to the registered email with details on how to activate your account.'
         format.html { redirect_to :controller => 'accounts', :action => 'account_created' }
         format.xml  { render :xml => @volunteer, :status => :created, :location => @volunteer }
@@ -78,11 +78,11 @@ class VolunteersController < ApplicationController
       end
     end
   end
-  	
+
   def dispatch_confirmation( volunteer )
-  	Emailer.deliver_confirm_email( volunteer.email, volunteer.activation_code )
+    Emailer.deliver_confirm_email( volunteer.email, volunteer.activation_code )
   end
-  
+
   # PUT /volunteers/1
   # PUT /volunteers/1.xml
   def update

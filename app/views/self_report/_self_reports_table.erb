@@ -22,8 +22,8 @@ unverified = false if local_assigns[:unverified].nil?
 	<% if report.verified == !unverified %>
 	<tr>
 		<td><%=report.date%></td>
-		<td><%=report.project%></td>
-		<td><%=report.supervisor%></td>
+		<td><%=report.project.name%></td>
+		<td><%=report.supervisor.name%></td>
 		<td><%=report.hours%></td>
 		<% if unverified %>
 		<td><%= link_to "Edit"	,  :action => :edit_report, :id => report.id %></td>

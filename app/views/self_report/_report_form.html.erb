@@ -4,11 +4,11 @@
 		<li><%=label_tag("Report for: ") + " " + @user.name %></li>
 		<li>
 			<%=f.label :project_id, "Project: <span class=\"mandatory\">*</span>"%>
-			<%=f.text_field :project_id%> (todo: get projects from model)
+			<%=f.collection_select :project_id, Project.find(:all, :order => :name), :id, :name %>
 		</li>
 		<li>
 			<%=f.label :supervisor_id, "Supervisor: <span class=\"mandatory\">*</span>"%>
-			<%=f.text_field :supervisor_id %> (todo: get supervisors from model)
+			<%=f.collection_select :supervisor_id, Supervisor.find(:all, :order => :name), :id, :name %>
 		</li>
 		<li>
 			<%=f.label :date, "Date: <span class=\"mandatory\">*</span>"%>
@@ -16,7 +16,7 @@
 		</li>
 		<li>
 			<%=f.label :start_time, "Start time: <span class=\"mandatory\">*</span>"%>
-			<%=f.time_select :start_time, :default => Time.now, :minute_step => 15 %>
+			<%=f.time_select :start_time, :default => Time.now - 1.hour, :minute_step => 15 %>
 		</li>
 		<li>
 			<%=f.label :end_time, "End time: <span class=\"mandatory\">*</span>"%>
