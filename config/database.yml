@@ -20,7 +20,7 @@ development:
   reconnect: false
   database: team75_development
   pool: 5
-  #host: team75.heliohost.org
+  host: team75.heliohost.org
   username: team75_db
   password: team75
   socket: /tmp/mysql.sock

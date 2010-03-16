@@ -1,7 +1,7 @@
 require 'digest/sha1'
 
 class AccountsController < ApplicationController
-  before_filter :login_required, :except => [:login, :process_login, :index, :logout, :forgot_password, :account_created]
+  before_filter :login_required, :except => [:login, :process_login, :index, :logout, :forgot_password, :account_created, :reactivate_account]
 
   @user = Volunteer.find_by_v_id(session[:id]) if defined? session[:id]
 
@@ -12,7 +12,10 @@ class AccountsController < ApplicationController
     if request.post?
       user = Volunteer.find_by_email(params[:user][:email]) 
       if user != nil
-        if user.password == hash(params[:user][:password])
+        if !user.active_status
+          flash[:error] = 'Your account is currently deactivated.  You may not proceed until you reactivate it.  If you wish to reactivate your account, please click on "Reactive Account" below and follow the instructions to reactivate your account.'
+          redirect_to :action => 'login', :email => params[:user][:email]
+        elsif user.password == hash(params[:user][:password])
           session[:id] = user.id # Remember the user's id during this session 
           redirect_to :action => 'my_account'
         else
@@ -33,6 +36,7 @@ class AccountsController < ApplicationController
   end
 
   def my_account
+    redirect_to :action => 'deactivated' if @user.active_status == 0
     redirect_to :action => 'not_activated' if !@user.activated
   end
 
@@ -113,5 +117,36 @@ class AccountsController < ApplicationController
     else
       flash[:message] = "Sorry, please make sure you have entered your activation code correctly."
     end
+  end
+  
+  def deactivate_account
+    user = Volunteer.find_by_v_id(session[:id])
+    if user != nil
+      user.active_status = 0
+      user.save
+    end
+    reset_session
+    flash[:message] = 'Your account has been deactivated.' 
+    redirect_to :action => 'login' 
+  end 
+  
+  def reactivate_account
+    if request.post?
+      user = Volunteer.find_by_email(params[:user][:email])
+      if user == nil
+        flash[:message] = "Sorry we could not find an account associated with that email.  Please check your typing."
+      elsif !user.active_status
+        user.active_status = 1
+        user.save
+        flash[:message] = "Your account has now been reactivated.  Please try logging in."
+        redirect_to :action => :login
+      else
+        flash[:message] = "Your account is currently active."
+      end
+    end
+  end
+  
+  def view_projects
+     @projects = Project.all
   end
 end

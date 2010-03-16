@@ -7,6 +7,7 @@
 <b>Your username is the email that you used to register your volunteer account with.</b>
 <p>If you do not have an account yet, then please click on 'Register' and create one now!</p>
 <p>If you have forgotten your password, then please click on 'Forgot Password' and follow the instructions to retrieve it.<p>
+<p>If you have deactivated your account and would like to reactivate it, then please click on 'Reactivate Account' and follow the instructions to reactivate it.<p>
 
 <% form_tag do -%>
 Username: <%= text_field "user", "email" %>&#x00A;
@@ -15,4 +16,5 @@ Password: <%= password_field "user", "password" %>&#x00A;
 <% end -%>
 <p>
 <%= link_to 'Register', new_volunteer_path %> |
-<%= link_to 'Forgot Password', 'forgot_password' %>
+<%= link_to 'Forgot Password', 'forgot_password' %> |
+<%= link_to 'Reactivate Account', 'reactivate_account' %>

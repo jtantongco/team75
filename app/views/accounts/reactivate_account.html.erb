@@ -1,0 +1,13 @@
+<h1>Reactivate Account</h1>
+
+<% if flash[:message] %><p class="flash_message"><%= flash[:message] %></p><% end %>
+
+<p>If your account is currently deactivated, please enter your email that you registered your account with below to reactivate it.<p>
+
+<% form_tag :action => 'reactivate_account' do -%>
+Email: <%= text_field "user", "email" %>
+<p>
+<%= submit_tag "Submit" %> 
+<% end -%>
+<p>
+<%= link_to 'Back', 'login' %>
