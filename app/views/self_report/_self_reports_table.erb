@@ -13,6 +13,7 @@ unverified = false if local_assigns[:unverified].nil?
 		<th>Project</th>
 		<th>Supervisor</th>
 		<th>Hours</th>
+		<th>Task description</th>
 		<% if unverified %>
 		<th></th>
 		<th></th>
@@ -25,6 +26,7 @@ unverified = false if local_assigns[:unverified].nil?
 		<td><%=report.project.name%></td>
 		<td><%=report.supervisor.name%></td>
 		<td><%=report.hours%></td>
+		<td><%=report.task_description%></td>
 		<% if unverified %>
 		<td><%= link_to "Edit"	,  :action => :edit_report, :id => report.id %></td>
 		<td><%= link_to "Delete", {:action => :delete, :id => report.id}, {:confirm => 'Are you sure you want to delete this hour report?'} %></td>

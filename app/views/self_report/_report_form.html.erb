@@ -23,6 +23,10 @@
 			<%=f.time_select :end_time, :default => Time.now, :minute_step => 15 %>
 		</li>
 		<li>
+			<%=f.label :task_description, "Task description: <span class=\"mandatory\">*</span>" %>
+			<%=f.text_area :task_description %>
+		</li>
+		<li>
 			<%=f.submit submit%>
 		</li>
 	</ul>
