@@ -15,12 +15,12 @@
 		<%=h orientation.description %>
 	</td>
 	
-    <td><%= link_to 'Edit', edit_orientation_path(orientation) %></td>
-    <td><%= link_to 'Destroy', orientation, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Edit', :action => :edit %></td>
+    <td><%= link_to 'Destroy', :confirm => 'Are you sure?', :action => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Orientation', new_orientation_path %>
+<%= link_to 'New Orientation', :action => :new %>

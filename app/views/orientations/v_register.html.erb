@@ -1,0 +1,38 @@
+<% if flash[:message] %><p class="flash_message"><%=flash[:message]%></p><% end %>
+
+<h1>Unregistered Orientations</h1>
+<p>No. of orientations you have not registered for: <%=@orien_view.count%></p>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+	<th>Location</th>
+	<th>Start Time</th>
+	<th>End Time</th>
+  </tr>
+
+<% @orien_view.each do |o| %>
+  <tr>
+    <td>
+		<%=h o.name %>
+	</td>
+	<td>
+		<%=h o.description %>
+	</td>
+	<td>
+		<%=h o.location %>
+	</td>
+	<td>
+		<%=h o.start_time %>
+	</td>
+	<td>
+		<%=h o.end_time %>
+	</td>
+    <td><%= link_to 'Register', :action => :v_add_orientation, :orien => o %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Back', :action => :v_orientations %>

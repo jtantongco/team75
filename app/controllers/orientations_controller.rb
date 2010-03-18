@@ -1,4 +1,5 @@
 require 'digest/sha1'
+require 'app/models/volunteers_orientation.rb'
 
 class OrientationsController < ApplicationController
   # GET /orientations
@@ -84,4 +85,79 @@ class OrientationsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+  def v_orientations
+    user = Volunteer.find_by_v_id(session[:id])
+    if user != nil
+        @volunteers_orientations = VolunteersOrientation.find(:all, :conditions => { :volunteer_id => user.v_id })
+    else 
+        redirect_to :action => :index
+    end
+  end
+  
+  def v_register
+    user = Volunteer.find_by_v_id(session[:id])
+    if user != nil
+    	
+    	# Find all orientations that volunteer is registered in
+        @volunteers_orientations = VolunteersOrientation.find(:all, :conditions => { :volunteer_id => user.v_id })
+        
+        # Get all orientations
+        @orientations_all = Orientation.all
+        
+        # Array to hold the orientations that the volunteer has not registered for
+        @orien_view = Array.new
+        
+        # For each orientation
+        @orientations_all.each { |o|
+            
+            # Variable to hold whether this orientation is already registered by volunteer, default = false
+            is_registered = false
+            
+            # Check to see if orientation is already registered, if so, is_registered turns true
+            @volunteers_orientations.each { |ov|
+                    
+                if ov.orientation_id == o.o_id
+                    is_registered = true
+                end
+            }
+
+            if !is_registered
+                @orien_view.push(o)
+            end
+        }
+    else
+        redirect_to :action => :index
+    end
+        
+  end
+  
+  def v_add_orientation
+  	orientation = Orientation.find_by_o_id(params[:orien])
+  	
+  	@orien_vol = VolunteersOrientation.new
+  	@orien_vol.volunteer_id = session[:id]
+  	@orien_vol.orientation_id = params[:orien]
+  	@orien_vol.attended = false
+  	
+  	if @orien_vol.save
+        flash[:message] = 'Successfully registered for '+orientation.name+'!'
+        redirect_to :action => :v_register
+      else
+      	flash[:message] = 'Something went wrong with the v_add_orientation method :('
+        render :action => :v_register
+     end
+  end
+  
+  def v_cancle
+  	
+  	@vo = VolunteersOrientation.find_by_orientation_id_and_volunteer_id(params[:o_id], params[:v_id])
+
+	@sql = "DELETE FROM volunteers_orientations WHERE volunteer_id = "+@vo.volunteer_id.to_s+" AND orientation_id = "+@vo.orientation_id.to_s
+	ActiveRecord::Base.connection.execute(@sql)
+
+	flash[:message] = 'Removed '+ params[:name]
+    redirect_to :action => :v_orientations
+  end
+  	
 end
