@@ -112,10 +112,11 @@ class AccountsController < ApplicationController
   def verify
     user = Volunteer.find_by_v_id(session[:id])
     if user != nil && user.activation_code == params[:activation_code]
-      user.activated = 1
-      user.save
+      user.update_attribute(:activated, true)
+      flash[:message] = "Account has been successfully activated!"
+      redirect_to :action => :my_account
     else
-      flash[:message] = "Sorry, please make sure you have entered your activation code correctly."
+      flash[:error] = "Sorry, please make sure you have entered your activation code correctly."
     end
   end
   
