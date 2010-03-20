@@ -1,0 +1,54 @@
+/********************************************************************************************
+File:           clf-required-fullwidth.css
+Version:        6.0
+Last Modified:  Aug-25-2009
+---------------------------------------------------------------------------------------------
+Description:    Stylehseet for the University of British Columbia's web sites.
+---------------------------------------------------------------------------------------------
+Notes:          CSS styles for the minimum full-width Common Look and Feel Template.
+---------------------------------------------------------------------------------------------
+Version Notes:
+- v.6.0:        Official CSS styles released with Template 6.0.
+---------------------------------------------------------------------------------------------
+Contact:        UBC Public Affairs
+                t: 604.822.2130
+                e: web.admin@ubc.ca
+                w: www.webcommunications.ubc.ca
+
+********************************************************************************************/
+@import url("helper/reset.css");
+@import url("helper/clf-required.css");
+
+#UbcHeaderWrapper  .UbcContainer
+{
+	width: 100%;
+}
+
+#UbcHeaderWrapper #UbcHeader li
+{
+	margin: 0;
+	padding: 0 3px 0 0;
+}
+
+#UbcHeaderWrapper #UbcHeader li#UbcHeaderLine,
+#UbcHeaderWrapper #UbcHeader li#UbcSubUnitLine
+{
+	padding: 0;
+}
+
+#UbcHeaderWrapper #UbcMainNavWrapper
+{
+	width: 100%;
+	background: #fff;
+}
+
+#UbcHeaderWrapper #UbcMainNav
+{
+	width: 100%;
+	margin: 0 auto;
+}
+
+#UbcMainNav ul.UbcSubMenu 
+{
+	width: 100%;
+}

@@ -1,21 +1,3 @@
-body { background-color: #fff; color: #333; }
-
-body, p, ol, ul, td {
-	font-family: verdana, arial, helvetica, sans-serif;
-	font-size:   13px;
-	line-height: 18px;
-}
-
-pre {
-	background-color: #eee;
-	padding: 10px;
-	font-size: 11px;
-}
-
-a { color: #000; }
-a:visited { color: #666; }
-a:hover { color: #fff; background-color:#000; }
-
 p.flash_message {
 	color: green;
 }
@@ -23,36 +5,35 @@ p.flash_message {
 p.flash_error {
 	color: red;
 }
-
-
-form ul {
+#UbcMainContent legend {
+	font-weight: bold;
+	margin: 5px 0 5px 0;
+}
+#UbcMainContent form ul {
 	list-style-type: none;
 	margin-left: 0;
 	padding-left: 0;
 }
 
-form ul li {
+#UbcMainContent form ul li {
 	margin-bottom: 3px;
 }
 
-textarea {
+#UbcMainContent textarea {
 	height: 60px;
 }
 
-form ul li label {
+
+#UbcMainContent form ul li label {
 	float: left;
 	margin-left: 0px;
 	margin-right: 10px;
 	width: 250px;
 }
 
-form ul li label.normal {
+#UbcMainContent form ul li label.normal {
 	width: auto;
 	float: none;
-}
-
-fieldset {
-	width: 800px;
 }
 
 .mandatory {

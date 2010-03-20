@@ -1,0 +1,416 @@
+﻿/********************************************************************************************
+File:           clf-2-column.css
+Version:        6.0.1
+Last Modified:  Sep-10-2009
+---------------------------------------------------------------------------------------------
+Description:    Stylehseet for the University of British Columbia's web sites.
+---------------------------------------------------------------------------------------------
+Notes:          CSS styles for the 2 column layout.
+---------------------------------------------------------------------------------------------
+Version Notes:
+- v.6.0:        Official CSS styles released with Template 6.0.
+
+- v.6.0.1:		a. { line-height: 1em; } set for ".UbcLinksBar li" to counteract typographical 
+				line-height changes.
+				
+				b. Homepage main column lists are now bulleted
+				
+				Only customized UL have their margins, padding and list-style removed.
+---------------------------------------------------------------------------------------------
+Contact:        UBC Public Affairs
+                t: 604.822.2130
+                e: web.admin@ubc.ca
+                w: www.webcommunications.ubc.ca
+
+********************************************************************************************/
+
+#UbcContent
+{
+	padding-top: 17px;
+}
+
+#UbcMainContent
+{
+	margin: 0 17px;
+	width: 580px;
+}
+
+#UbcMainContent ul.UBCStoriesListing, #UbcMainContent ul.UbcPortalLinks, #UbcMainContent .UbcPortalLinks ul
+{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+#UbcMainContent #UbcHeadlineWidget
+{
+	margin: 0 0 35px 0;
+}
+
+#UbcMainContent li.UbcMenuSection
+{
+	float: left;
+	width: 162px;
+	margin: 0 18px 0 0;
+}
+
+#UbcMainContent li.UbcMenuSection h2
+{
+	color: #333e4e;
+	font-size: 120%;
+	font-weight: bold;
+	margin: 0.5em 0;
+}
+
+#UbcMainContent li.UbcMenuSection h2 a
+{
+	color: #333e4e;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+#UbcMainContent li.UbcMenuSection h2 a:hover
+{
+	text-decoration: underline;
+}
+
+#UbcMainContent li.UbcMenuSection li a
+{
+	display: block;
+	padding: 0.5em 0 0.5em 20px;
+	background: url(../img/home/arrowOff.gif) no-repeat left 0.5em;
+	color: #5d5d5d;
+	line-height: 1.3em;
+}
+
+#UbcMainContent li.UbcMenuSection li a:hover
+{
+	background-image: url(../img/home/arrowOn.gif);
+}
+
+#UbcMainContent div.UbcNavSectionBorder
+{
+	border-top: 1px solid #e5e5e5;
+	margin: 15px 0;
+	clear: both;
+}
+
+/* Content Sidebar */
+
+#UbcContentSidebar
+{
+	width: 340px;
+	margin-top: 0;
+}
+
+#UbcContentSidebar div
+{
+	margin-bottom: 17px;
+}
+
+#UbcContentSidebar p
+{
+	margin: 0.5em 0;
+}
+
+	/* Quick Links */
+
+	#UbcContentSidebar div.UbcQuickLinks
+	{
+		padding-top: 0;
+	}
+
+	#UbcContentSidebar div.UbcQuickLinks p,
+	#UbcContentSidebar div.UbcQuickLinks h4
+	{
+		width: 263px;
+		/*margin-top: 0;*/
+	}
+
+	#UbcContentSidebar div.UbcQuickLinks ul
+	{
+		border-top: 1px solid #fff;
+	}
+
+	#UbcContentSidebar div.UbcQuickLinks li
+	{
+		padding-left: 10px;
+	}
+	
+	#UbcContentSidebar div.UbcQuickLinks li.UbcMoreLink
+	{
+	    border: none;
+	    padding: 0;
+	    position: static;
+	}
+
+	#UbcContentSidebar div.UbcQuickLinks li a.UbcArrow
+	{
+		padding: 0;
+		margin: 0;
+		width: 22px;
+		/*float: right;*/
+		text-indent: -5000px;
+		position: absolute;
+		top: 0px;
+		right: 8px;
+		height: 100%;
+	}
+
+	#UbcContentSidebar div.UbcQuickLinks a.UbcMore
+	{
+		display: block;
+		height: 22px;
+		width: 64px;
+		position: absolute;
+		bottom: 5px;
+		right: 8px;
+		text-indent: -5000px;
+		background: url(../img/home/moreBtn.gif) no-repeat;
+	}
+
+	#UbcContentSidebar div.UbcQuickLinks ul.UbcLinksBar
+	{
+		width: 340px;
+		border: none;
+	}
+
+	#UbcContentSidebar div.UbcQuickLinks ul.UbcLinksBar li
+	{
+		float: left;
+		width: 68px;
+		height: 28px;
+		padding: 0 0 5px 0;
+		border: none;
+		background: #fff;
+		line-height: 0.9em; !important;
+	}
+
+	#UbcContentSidebar div.UbcQuickLinks ul.UbcLinksBar li.UbcSelected
+	{
+		background: #fff url(../img/home/selectedQuickLink.gif) no-repeat bottom center;
+	}
+
+	#UbcContentSidebar div.UbcQuickLinks ul.UbcLinksBar li a
+	{
+		display: table;
+		height: 100%;
+		width: 67px;
+		text-align: center;
+		color: #fff;
+		font-size: 80%;
+		font-weight: bold;
+		text-decoration: none;
+		background: #7e99aa;
+		border-right: 1px solid #6b8291;
+		border-bottom: 1px solid #6b8291;
+	}
+
+	#UbcContentSidebar div.UbcQuickLinks ul.UbcLinksBar li a:hover
+	{
+		background: #002859;
+	}
+
+	#UbcContentSidebar div.UbcQuickLinks ul.UbcLinksBar li.UbcSelected a
+	{
+		background: #002859;
+		border-bottom: 1px solid #002859;
+	}
+
+	/* From http://www.ilikespam.com/blog/centering-multiple-line-content-with-css*/
+	#UbcContentSidebar div.UbcQuickLinks ul.UbcLinksBar li a span
+	{
+		display: table-cell;
+		vertical-align: middle;
+		text-align: center;
+		width: 63px;
+		padding: 0 2px;
+	}
+	
+	/* Campus Tours */
+	#UbcContentSidebar div.UbcTours
+	{
+		background: #5a7282;
+		padding: 3px 10px;
+	}
+	
+	#UbcContentSidebar div.UbcTours h3
+	{
+		margin-top: 0.5em;
+		color: #fff;
+	}
+	
+	#UbcContentSidebar div.UbcTours a
+	{
+		display: block;
+		float: left;
+		width: 156px;
+		margin: 0 7px 0 0;
+		padding: 110px 0 10px 0;
+		color: #fff;
+	}
+	
+	#UbcContentSidebar div.UbcTours a.UbcVancouverCampusLink
+	{
+		background: url(../img/home/vancouverCampus.jpg) no-repeat;
+	}
+	
+	#UbcContentSidebar div.UbcTours a.UbcVancouverCampusLink:hover
+	{
+		background-position: -156px 0px;
+	}
+	
+	#UbcContentSidebar div.UbcTours a.UbcOkanaganCampusLink
+	{
+		background: url(../img/home/okanaganCampus.jpg) no-repeat;
+		margin-right: 0;
+	}
+	
+	#UbcContentSidebar div.UbcTours a.UbcOkanaganCampusLink:hover
+	{
+		background-position: -156px 0px;
+	}
+	
+	/* Headline Widget */
+	#UBCHeadlineWidget
+	{
+	    width: 580px;
+	    height: 378px;
+	    overflow: hidden;
+	    position: relative;
+	    background: #6a8799 url(../img/home/headlineWidgetBg.gif) bottom left repeat-x;
+	    margin: 0 0 37px 0;
+	}
+	
+	#UBCHeadlineWidget ul.UBCStoriesListing li
+	{
+	    width: 580px;
+	    height: 378px;
+	    overflow: hidden;
+	}
+	
+	#UBCHeadlineWidget ul.UBCStoriesListing li h4
+	{
+	    color: #fff;
+	    font-size: 150%;
+	    width: 425px;
+	    margin: 0.5em 0 0.2em 14px;
+	}
+	
+	#UBCHeadlineWidget ul.UBCStoriesListing li p
+	{
+	    color: #fff;
+	    width: 425px;
+	    margin: 0.3em 0 0.3em 14px;
+	}
+	
+	#UBCHeadlineWidget ul.UBCStoriesListing li a.UBCHeadlineReadMore
+	{
+	    display: block;
+	    width: 95px;
+	    height: 23px;
+	    text-indent: -5000px;
+	    background: url(../img/home/headlineWidgetReadMoreBtn.gif) no-repeat;
+	    margin: 0 0 0 14px;
+	}
+	
+	#UBCHeadlineWidget ul.UBCStoriesListing li div.UBCHeadlinePicture
+	{
+	    width: 580px;
+	    height: 275px;
+	    overflow: hidden;
+	    vertical-align: middle;
+	}
+	
+	#UBCHeadlineWidget ul.UBCStoriesListing li div.UBCHeadlinePicture img
+	{
+	    display: block;
+	    margin: 0 auto;
+	}
+	
+	#UBCHeadlineWidget div.UbcHeadlineNav
+	{
+	    position: absolute;
+	    width: 120px;
+	    height: 70px;
+	    padding: 0 0 0 10px;
+	    bottom: 20px;
+	    right: 0px;
+	    border-left: 1px solid #637c8c;
+	    color: #fff;
+	    z-index: 100;
+	}
+	
+	#UBCHeadlineWidget div.UbcHeadlineNav a
+	{
+	    display: block;
+	    width: 22px;
+	    height: 22px;
+	    float: left;
+	    text-indent: -5000px;
+	    margin: 0 2px;
+	}
+	
+	#UBCHeadlineWidget div.UbcHeadlineNav span
+	{
+	    display: block;
+	    float: left;
+	    height: 17px;
+	    font-weight: bold;
+	    padding: 5px 2px 0 2px;
+	}
+	
+	#UBCHeadlineWidget div.UbcHeadlineNav a.UbcHeadlineNavPause
+	{
+	    background: url(../img/home/headlineWidgetPauseBtn.gif) no-repeat;
+	}
+	
+	#UBCHeadlineWidget div.UbcHeadlineNav a.UbcHeadlineNavPause:hover
+	{
+	    background-position: 0 -22px;
+	}
+	
+	#UBCHeadlineWidget div.UbcHeadlineNav a.UbcHeadlineNavNext
+	{
+	    background: url(../img/home/headlineWidgetNextBtn.gif) no-repeat;
+	}
+	
+	#UBCHeadlineWidget div.UbcHeadlineNav a.UbcHeadlineNavNext:hover
+	{
+	    background-position: 0 -22px;
+	}
+	
+	#UBCHeadlineWidget div.UbcHeadlineNav a.UbcHeadlineNavPrev
+	{
+	    background: url(../img/home/headlineWidgetPrevBtn.gif) no-repeat;
+	}
+	
+	#UBCHeadlineWidget div.UbcHeadlineNav a.UbcHeadlineNavPrev:hover
+	{
+	    background-position: 0 -22px;
+	}
+	
+	#UBCHeadlineWidget div.UbcHeadlineNav a.UbcHeadlineNavPlay
+	{
+	    background: url(../img/home/headlineWidgetPlayBtn.gif) no-repeat;
+	}
+	
+	#UBCHeadlineWidget div.UbcHeadlineNav a.UbcHeadlineNavPlay:hover
+	{
+	    background-position: 0 -22px;
+	}
+	
+	#UbcContentSidebar .UbcLinksSection li ul {
+		width: 233px;
+		padding-left: 20px;
+		overflow: hidden;
+		list-style: disc;
+		margin: 0;
+	}
+	
+	#UbcContentSidebar .UbcLinksSection li ul li {
+		border: none;
+		margin: 0.3em 0;
+		padding: 0;
+		list-style: disc;
+	}
