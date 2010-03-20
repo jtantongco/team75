@@ -1,4 +1,6 @@
-	<ul>
+<% form_for @orientation, :url => {:action => form_action} do |form| %>
+	<%= error_messages_for :object => [@orientation] %>
+		<ul>
 		<li>
 			<%=form.label :name, "Name: <span class=\"mandatory\">*</span>"%>
 			<%=form.text_field :name%> 
@@ -20,3 +22,6 @@
 			<%=form.text_area :location %>
 		</li>
 	</ul>
+		
+	<p><%= form.submit submit %></p>
+<% end %>
