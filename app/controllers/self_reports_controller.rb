@@ -1,4 +1,4 @@
-class SelfReportController < ApplicationController
+class SelfReportsController < ApplicationController
   before_filter :login_required
   @user = Volunteer.find_by_v_id(session[:id]) if defined? session[:id]
   

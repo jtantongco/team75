@@ -1,5 +1,9 @@
+<% content_for (:navigation) do %>
+	<% if volunteer_menu? %>
+		<%=render :partial => 'layouts/menu_volunteers'%>
+	<% end %>
+<% end %>
+
 <%=render :partial => 'layouts/default_header' %>
-
 <%= yield %>
-
 <%=render :partial => 'layouts/default_footer' %>

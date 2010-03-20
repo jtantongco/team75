@@ -1,0 +1,41 @@
+<li>
+	<% if volunteer_logged_in? %>
+	<%=menu_link_to('Volunteer', :controller => 'accounts', :action => 'my_account') %>
+	<ul>
+		<li>
+			<%=menu_link_to('Edit account',	:controller => 'accounts', 		:action => 'edit_account')%>
+			<% if controller.action_name == 'edit_account' || controller.action_name == 'change_password' %>
+			<ul>
+				<li><%=menu_link_to('Change password', :controller => 'accounts', :action => 'change_password')%></li>
+			</ul>
+			<% end %>
+		</li>
+		<li>
+			<%=menu_link_to('Report hours',	:controller => 'self_reports',	:action => 'index')%>
+			<% if controller.controller_name == 'self_reports'%>
+			<ul>
+				<li><%=menu_link_to('Create hour report', :controller => 'self_reports', :action => 'create_report')%></li>
+			</ul>
+			<% end %>
+		</li>
+		<li>
+			<%=menu_link_to('View projects',:controller => 'accounts',		:action => 'view_projects')%>
+		</li>
+		<li>
+			<%=menu_link_to('Orientations',	:controller => 'orientations',	:action => 'v_orientations')%>
+			<% if controller.action_name == 'v_orientations' || controller.action_name == 'v_register' %>
+			<ul>
+				<li><%=menu_link_to('Register', :controller => 'orientations', :action => 'v_register')%></li>
+			</ul>
+			<% end %>
+		</li>
+		<li class="UbcLast"><%=menu_link_to('Logout', 		:controller => 'accounts',		:action => 'logout')%></li>	
+	</ul>
+	<% else %>
+	<%=menu_link_to('Volunteer', :controller => 'accounts', :action => 'index') %>
+	<ul>
+		<li><%=menu_link_to('Login', 	:controller => 'accounts', 		:action => 'login')%></li>
+		<li><%=menu_link_to('Register', :controller => 'volunteers', 	:action => 'new')%></li>
+	</ul>
+	<% end %>
+</li>

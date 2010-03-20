@@ -1,3 +1,6 @@
+<%
+@title 	= 'My account'
+%>
 <h1>Volunteer Account Info</h1> 
 <% if flash[:message] %>
 	<p class="flash_message"><%=flash[:message]%></p>
@@ -16,7 +19,7 @@
 
 <p>
 	<%= link_to 'Edit account', 	:action => :edit_account %> |
-	<%= link_to 'Report hours', 	:controller => :self_report, :action => :index %> |
+	<%= link_to 'Report hours', 	:controller => :self_reports, :action => :index %> |
 	<%= link_to 'View current projects', 	:action => :view_projects %> |
 	<%= link_to 'My Registered Orientations', 	:controller => :orientations, :action => :v_orientations %>
 </p>

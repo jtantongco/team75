@@ -16,6 +16,7 @@ class AccountsController < ApplicationController
           flash[:error] = 'Your account is currently deactivated.  You may not proceed until you reactivate it.  If you wish to reactivate your account, please click on "Reactive Account" below and follow the instructions to reactivate your account.'
           redirect_to :action => 'login', :email => params[:user][:email]
         elsif user.password == hash(params[:user][:password])
+          session[:volunteer] = true
           session[:id] = user.id # Remember the user's id during this session 
           redirect_to :action => 'my_account'
         else
