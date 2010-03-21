@@ -36,7 +36,6 @@ class SelfReportsController < ApplicationController
     @reports = @user.self_reports
   end
   
-  
   def delete
     begin
       @report = @user.self_reports.find(params[:id])
@@ -47,4 +46,23 @@ class SelfReportsController < ApplicationController
     
     redirect_to :action => :index
   end
+  
+  def rapid_entry
+  	@report = SelfReport.new
+  	
+  	if request.post?
+	  	@report = @user.self_reports.build(params[:self_report])
+	  	@volunteer = Volunteer.find_by_email(params[:user][:email])
+	  	  
+	  	if @volunteer != nil && @report != nil
+	  	  if @report.save
+		  	flash[:message] = 'Your hour report has been saved. It will be verified by the supervisor.'
+		    redirect_to :action => :rapid_entry
+	      end
+	  	else
+	  	  flash[:error] = 'Volunteer not found.  Please make sure you correctly put in your email'	
+	  	end
+  	end
+  end
+  
 end
