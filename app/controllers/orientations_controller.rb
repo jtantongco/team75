@@ -43,17 +43,11 @@ class OrientationsController < ApplicationController
   # POST /orientations
   # POST /orientations.xml
   def create
+  	
     @orientation = Orientation.new(params[:orientation])
 
-    respond_to do |format|
-      if @orientation.save
-        flash[:notice] = 'orientation was successfully created.'
-        format.html { redirect_to(@orientation) }
-        format.xml  { render :xml => @orientation, :status => :created, :location => @orientation }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @orientation.errors, :status => :unprocessable_entity }
-      end
+    if @orientation.save
+        redirect_to :action => :index
     end
   end
 

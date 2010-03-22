@@ -16,6 +16,7 @@ class AccountsController < ApplicationController
           flash[:error] = 'Your account is currently deactivated.  You may not proceed until you reactivate it.  If you wish to reactivate your account, please click on "Reactive Account" below and follow the instructions to reactivate your account.'
           redirect_to :action => 'login', :email => params[:user][:email]
         elsif user.password == hash(params[:user][:password])
+          session[:volunteer] = true
           session[:id] = user.id # Remember the user's id during this session 
           redirect_to :action => 'my_account'
         else
@@ -112,10 +113,11 @@ class AccountsController < ApplicationController
   def verify
     user = Volunteer.find_by_v_id(session[:id])
     if user != nil && user.activation_code == params[:activation_code]
-      user.activated = 1
-      user.save
+      user.update_attribute(:activated, true)
+      flash[:message] = "Account has been successfully activated!"
+      redirect_to :action => :my_account
     else
-      flash[:message] = "Sorry, please make sure you have entered your activation code correctly."
+      flash[:error] = "Sorry, please make sure you have entered your activation code correctly."
     end
   end
   

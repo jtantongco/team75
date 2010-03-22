@@ -1,5 +1,6 @@
 class ProjectsController < ApplicationController
-#  before_filter :login_required, :only => :provide_feedback
+  before_filter :login_required
+  
   def provide_feedback
     @project = Project.find_by_p_id(params[:id])
     @project_feedback = @project.project_feedbacks.new

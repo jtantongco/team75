@@ -1,7 +1,11 @@
 ActionController::Routing::Routes.draw do |map|
+<<<<<<< HEAD
   # map.resources :a_accounts
 
   # map.resources :s_accounts
+=======
+  map.resources :administrators
+>>>>>>> e079c8443443a038ba08a1a515e5cda2a9eea3cf
 
   map.resources :volunteers
 
@@ -44,6 +48,8 @@ ActionController::Routing::Routes.draw do |map|
   # Install the default routes as the lowest priority.
   # Note: These default routes make all actions in every controller accessible via GET requests. You should
   # consider removing or commenting them out if you're using named routes and resources.
+  map.root :controller => 'accounts'
+  
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
 end

@@ -1,0 +1,32 @@
+<%
+# Partial for the left menu
+%>
+
+<ul id="UbcSecondNav">
+	<% if volunteer_menu? %>
+	<li>
+		<a href="#" class="UbcCurrent">Volunteer</a>
+		<ul>
+			<li> <a href="#">Login</a></li>
+			<li class="UbcLast"><a href="#">Register</a></li>
+		</ul>
+	</li>
+	<% else %>
+	<li>
+		<a href="#" class="UbcCurrent">Link 1 (Current)</a>
+		<ul>
+			<li> <a href="#">Sub Link 1-1</a>
+				<ul>
+					<li><a href="#">Sub Link 1-1-1</a></li>
+					<li class="UbcLast"><a href="#">Sub Link 1-1-2</a></li>
+				</ul>
+			</li>
+			<li class="UbcLast"><a href="#">Sub Link 1-2</a></li>
+		</ul>
+	</li>
+	<li><a href="#">Link 2</a></li>
+	<li><a href="#">Link 3</a></li>
+	<li><a href="#">Link 3</a></li>
+	<li class="UbcLast"><a href="#">Link 4</a></li>
+	<% end %>
+</ul>

@@ -1,3 +1,6 @@
+<%
+@title 	= 'Sign volunteer contract'
+%>
 <h1>Volunteer Contract</h1>
 <% if flash[:error] %><p class="flash_error"><%=flash[:error]%></p><% end %>
 <% form_tag :action => :sign_contract do %>

@@ -1,0 +1,84 @@
+p.flash_message {
+	color: green;
+}
+
+p.flash_error {
+	color: red;
+}
+#UbcMainContent legend {
+	font-weight: bold;
+	margin: 5px 0 5px 0;
+}
+#UbcMainContent form ul {
+	list-style-type: none;
+	margin-left: 0;
+	padding-left: 0;
+}
+
+#UbcMainContent form ul li {
+	margin-bottom: 3px;
+}
+
+#UbcMainContent textarea {
+	height: 60px;
+}
+
+
+#UbcMainContent form ul li label {
+	float: left;
+	margin-left: 0px;
+	margin-right: 10px;
+	width: 250px;
+}
+
+#UbcMainContent form ul li label.normal {
+	width: auto;
+	float: none;
+}
+
+.mandatory {
+	color: red;
+}
+
+.fieldWithErrors {
+	padding-top: 2px;
+	padding-bottom: 2px;
+	background-color: #FF7C7C;
+}
+
+#errorExplanation {
+	width: 400px;
+	border: 2px solid red;
+	padding: 7px;
+	padding-bottom: 12px;
+	margin-bottom: 20px;
+	background-color: #f0f0f0;
+}
+
+#errorExplanation h2 {
+	text-align: left;
+	font-weight: bold;
+	padding: 5px 5px 5px 15px;
+	font-size: 12px;
+	margin: -7px;
+	background-color: #c00;
+	color: #fff;
+}
+
+#errorExplanation p {
+	color: #333;
+	margin-bottom: 0;
+	padding: 5px;
+}
+
+#errorExplanation ul, form #errorExplanation ul {
+	margin: auto;
+	margin-left: 20px;
+	padding: auto;
+}
+
+#errorExplanation ul li, form #errorExplanation ul li {
+	font-size: 12px;
+	list-style: square;
+}
+

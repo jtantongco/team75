@@ -1,0 +1,101 @@
+/********************************************************************************************
+File:           ie.css
+Version:        6.0
+Last Modified:  Aug-25-2009
+---------------------------------------------------------------------------------------------
+Description:    Stylehseet for the University of British Columbia's web sites.
+---------------------------------------------------------------------------------------------
+Notes:          CSS styles specific for stupid Internet Explorer.
+---------------------------------------------------------------------------------------------
+Version Notes:
+- v.6.0:        Official CSS styles released with Template 6.0.
+---------------------------------------------------------------------------------------------
+Contact:        UBC Public Affairs
+                t: 604.822.2130
+                e: web.admin@ubc.ca
+                w: www.webcommunications.ubc.ca
+
+********************************************************************************************/
+
+body .UbcContainer
+{
+	zoom: 1; /* IE Clear */
+}
+
+.UbcClear
+{
+	zoom: 1;
+}
+
+#UbcContent #UbcSecondNav li.UbcLast
+{
+	_border-bottom: 1px solid #fff;
+}
+
+#UbcMainContent li.UbcMenuSection li
+{
+	_border-bottom: 1px solid #fff;
+}
+
+#UbcContentSidebar div.UbcQuickLinks
+{
+	_height: 200px;
+}
+
+#UbcContentSidebar div.UbcQuickLinks ul.UbcLinksSection li
+{
+	_width: 330px;
+	/*display: none;*/
+}
+
+#UbcContentSidebar div.UbcQuickLinks ul.UbcLinksSection li.UbcMoreLink
+{
+	border: 1px solid #fff;
+	height: 1px;
+}
+
+#UbcContentSidebar div.UbcQuickLinks li a.UbcArrow
+{
+	_height: 22px;
+	_top: 15px;
+}
+
+#UbcContentSidebar div.UbcQuickLinks ul.UbcLinksBar li a
+{	
+	display: block;
+ 	position: relative;
+}
+
+/* From http://www.ilikespam.com/blog/centering-multiple-line-content-with-css*/
+#UbcContentSidebar div.UbcQuickLinks ul.UbcLinksBar li a span
+{
+    display: block;
+    position: absolute;
+    text-align: center;
+    left: 0px;
+    width: 63px;
+    cursor: pointer;
+    top: expression(this.parentElement.clientHeight / 2 - this.clientHeight / 2);
+}
+
+#UbcBottomNav li.UbcMenuSection li
+{
+	_border-bottom: 1px solid #fff;
+}
+
+#UBCHeadlineWidget
+{
+	background: #7895A6;
+}
+
+/* IE fixes */
+#UbcMainNav li a
+{
+	display: inline-block;
+}
+ul.UbcSubMenu {
+	margin-top: 39px;	
+}
+.UbcImageNav ul.UbcSubMenu {
+	margin: 0;	
+}

@@ -4,7 +4,7 @@ class Orientation < ActiveRecord::Base
   belongs_to :orientation_project
   
   validates_presence_of :start_time, :end_time, :name, :location
-  validate :dates_are_not_in_the_future, :end_date_is_after_start_date
+  validate :dates_are_not_in_the_past, :end_date_is_after_start_date
   
   def dates_are_not_in_the_past
     errors.add(:start_time, "can't be in the past")   if start_time  < Time.now
