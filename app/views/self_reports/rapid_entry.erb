@@ -1,0 +1,45 @@
+<% @page_title = 'Edit report' %>
+<h1>Rapid Entry</h1>
+<% if flash[:error] %><p class="flash_error"><%=flash[:error]%></p><% end %>
+<% if flash[:message] %><p class="flash_message"><%=flash[:message]%></p><% end %>
+	
+<% form_tag do -%>
+	<ul>
+		<li>
+			<label for="self_report_user_email">Username (email): <span class="mandatory">*</span></label>
+	 		<%= text_field "user", "email" %>&#x00A;
+		</li>
+	
+	<% fields_for @report, :url => { :action => :rapid_entry } do |f| %>
+		<%= f.error_messages %>
+	
+			<li>
+				<%=f.label :project_id, "Project: <span class=\"mandatory\">*</span>"%>
+				<%=f.collection_select :project_id, Project.find(:all, :order => :name), :id, :name %>
+			</li>
+			<li>
+				<%=f.label :supervisor_id, "Supervisor: <span class=\"mandatory\">*</span>"%>
+				<%=f.collection_select :supervisor_id, Supervisor.find(:all, :order => :name), :id, :name %>
+			</li>
+			<li>
+				<%=f.label :date, "Date: <span class=\"mandatory\">*</span>"%>
+				<%=f.date_select :date, :default => Date.today %>
+			</li>
+			<li>
+				<%=f.label :start_time, "Start time: <span class=\"mandatory\">*</span>"%>
+				<%=f.time_select :start_time, :default => Time.now - 1.hour, :minute_step => 15 %>
+			</li>
+			<li>
+				<%=f.label :end_time, "End time: <span class=\"mandatory\">*</span>"%>
+				<%=f.time_select :end_time, :default => Time.now, :minute_step => 15 %>
+			</li>
+			<li>
+				<%=f.label :task_description, "Task description: " %>
+				<%=f.text_area :task_description %>
+			</li>
+		</ul>
+	<% end %>
+<%= submit_tag "Submit" %> 
+<% end -%>
+
+<%= link_to 'Back', :action => :index %>
