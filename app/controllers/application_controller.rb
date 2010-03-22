@@ -15,6 +15,8 @@ class ApplicationController < ActionController::Base
     @user = Volunteer.find(session[:id]) if @user.nil? && session[:id]
   end 
 
+  
+
   def login_required
     return true if @user
     access_denied
