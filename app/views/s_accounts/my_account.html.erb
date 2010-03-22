@@ -1,0 +1,8 @@
+<h1>Supervisor Account Info</h1> 
+<% if flash[:message] %>
+	<p class="flash_message"><%=flash[:message]%></p>
+<% end %>
+
+<% supervisor = getSupervisor %>
+<p>Welcome <%= supervisor.name %>!</p>
+<p>You have successfully logged in. </p>
