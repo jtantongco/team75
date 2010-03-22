@@ -1,0 +1,10 @@
+<h1>Editing volunteer</h1>
+
+<% form_for(@volunteer) do |f| %>
+	<%= error_messages_for :object => [@volunteer] %>
+	<%= render :partial => "form_volunteer_info", :locals => {:form => f}%>
+	<p><%= f.submit 'Update' %></p>
+<% end %>
+
+<%= link_to 'Show', @volunteer %> |
+<%= link_to 'Back', volunteers_path %>
