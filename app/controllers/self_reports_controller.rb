@@ -4,12 +4,11 @@ class SelfReportsController < ApplicationController
   
   def create_report
     @report = SelfReport.new
-
     if request.post?
       @report = @user.self_reports.build(params[:self_report])
-
       if @report.save
         flash[:message] = 'Your hour report has been saved. It will be verified by the supervisor.'
+        join_project()
         redirect_to :action => :index
       end
     end
@@ -26,6 +25,7 @@ class SelfReportsController < ApplicationController
     if request.put? 
       if @report.update_attributes(params[:self_report])
         flash[:message] = 'Your report has been updated.'
+        join_project()
         redirect_to :action => :index
       end
     end
@@ -63,6 +63,18 @@ class SelfReportsController < ApplicationController
 	  	  flash[:error] = 'Volunteer not found.  Please make sure you correctly put in your email'	
 	  	end
   	end
+  end
+
+
+
+  protected
+  # Checks if the current user has joined the project s/he associated with the report
+  # If s/he has not joined the project, s/he is automatically joined to it.
+  def join_project()
+    if (!@user.projects.exists?(@report.project))
+      @user.projects << @report.project
+      flash[:message] += "<br />You have been automatically joined to the project \"#{@report.project.name}\""
+    end
   end
   
 end
