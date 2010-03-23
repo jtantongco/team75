@@ -1,0 +1,28 @@
+<h1>Current Projects</h1>
+<% if flash[:error] %><p class="flash_error"><%=flash[:error]%></p><% end %>
+<% if flash[:message] %><p class="flash_message"><%=flash[:message]%></p><% end %>
+
+<p>The following is a list of active projects that need help from volunteers.</p>
+
+<table border="1">
+	<tr> 
+		<td width="40%"><p align="center"><i><b>Name</b></i></td> 
+		<td width="20%"><p align="center"><i><b>Start Date</b></i></td>
+		<td width="20%"><p align="center"><i><b>End Date</b></i></td>
+		<td width="20%"><p align="center"><i><b>Description</b></i></td>
+		<td></td>
+	</tr>
+<% @projects.each do |project| %> 
+	<tr>
+		<td width="40%" align="center"><b><%= project.name %></b></td> 
+		<td width="20%" align="center"><b><%= project.start_date %></b></td>
+		<td width="20%" align="center"><b><%= project.end_date %> </b></td> 
+		<td width="20%" align="center"><b><%= project.description %> </b></td> 
+		<td><%=link_to 'Leave feedback', :controller => :projects, :action => :provide_feedback, :id => project.id %></td>
+	</tr>
+<% end %>
+</table>
+
+<p>
+<%= link_to 'Back', :controller => :accounts, :action => 'my_account' %>
+</p>

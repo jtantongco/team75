@@ -147,8 +147,4 @@ class AccountsController < ApplicationController
       end
     end
   end
-  
-  def view_projects
-     @projects = Project.all
-  end
 end
