@@ -1,6 +1,7 @@
-<% if flash[:message] %><p class="flash_message"><%=flash[:message]%></p><% end %>
-
-<h1>Unregistered Orientations</h1>
+<%
+@page_title 	= 'Unregistered orientations'
+@page_heading 	= 'Unregistered orientations'
+%>
 <p>No. of orientations you have not registered for: <%=@orien_view.count%></p>
 <table>
   <tr>

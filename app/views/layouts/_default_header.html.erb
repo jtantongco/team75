@@ -8,12 +8,7 @@ e: web.admin@ubc.ca
 w: www.webcommunications.ubc.ca 
 -->
 <head>
-<title>
-	<% if @title %>
-		<%=@title%> -
-	<% end %>
-	UBC Farm Volunteer Management System
-</title>
+<title><%="#{@page_title} - " if @page_title %>UBC Farm Volunteer Management System</title>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 <link href="/_ubc_clf/css/clf-required-fixedwidth.css" type="text/css" media="screen" rel="Stylesheet" />
 <link href="/_ubc_clf/css/clf-typography.css" type="text/css" media="screen" rel="Stylesheet" />
@@ -69,6 +64,6 @@ w: www.webcommunications.ubc.ca
 <div id="UbcContentWrapper">
   <div id="UbcContent" class="UbcContainer">
 	<ul id="UbcSecondNav">
-		<%= yield :navigation %>
+		<%= render :partial => 'layouts/left_navigation' %>
 	</ul>
     <div id="UbcMainContent">

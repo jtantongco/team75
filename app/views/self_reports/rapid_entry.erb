@@ -1,8 +1,7 @@
-<% @page_title = 'Edit report' %>
-<h1>Rapid Entry</h1>
-<% if flash[:error] %><p class="flash_error"><%=flash[:error]%></p><% end %>
-<% if flash[:message] %><p class="flash_message"><%=flash[:message]%></p><% end %>
-	
+<%
+@page_title 	= 'Rapid hour entry'
+@page_heading 	= 'Rapid Entry'
+%>
 <% form_tag do -%>
 	<ul>
 		<li>

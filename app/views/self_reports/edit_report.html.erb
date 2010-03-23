@@ -1,5 +1,5 @@
-<% @page_title = 'Edit report' %>
-<h1>Edit report</h1>
-<% if flash[:error] %><p class="flash_error"><%=flash[:error]%></p><% end %>
-<% if flash[:message] %><p class="flash_message"><%=flash[:message]%></p><% end %>
+<%
+@page_title 	= 'Edit hour report'
+@page_heading	= 'Edit hour report'
+%>
 <%= render :partial => 'report_form', :locals => {:form_action => 'edit_report', :submit => 'Save changes'} %>
