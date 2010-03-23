@@ -1,12 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
-<<<<<<< HEAD
   # map.resources :a_accounts
-
   # map.resources :s_accounts
-=======
   map.resources :administrators
->>>>>>> e079c8443443a038ba08a1a515e5cda2a9eea3cf
-
   map.resources :volunteers
 
   # The priority is based upon order of creation: first created -> highest priority.
