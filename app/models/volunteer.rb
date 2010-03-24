@@ -6,6 +6,8 @@ class Volunteer < ActiveRecord::Base
   has_many :self_reports
   has_many :project_feedbacks
   
+  has_and_belongs_to_many :projects, :join_table => 'volunteers_projects'
+  
   validates_presence_of :first_name, :last_name, :email, :password, :birthday,
     :address, :location, :postal_code, :province,
     :emrg_contact_name, :emrg_contact_relationship 

@@ -1,11 +1,7 @@
 <%
-@title 	= 'My account'
-%>
-<h1>Volunteer Account Info</h1> 
-<% if flash[:message] %>
-	<p class="flash_message"><%=flash[:message]%></p>
-<% end %>
-
+@page_title 	= 'My account'
+@page_heading 	= 'Volunteer Account Info'
+%> 
 <% if !@user.contract_signed %>
 	<p class="flash_error">
 		You have not yet signed the volunteer contract.
@@ -18,10 +14,10 @@
 <p>You have successfully logged in.  You may log out, change your account details, log hours or join a project!</p>
 
 <p>
-	<%= link_to 'Edit account', 	:action => :edit_account %> |
-	<%= link_to 'Report hours', 	:controller => :self_reports, :action => :index %> |
-	<%= link_to 'View current projects', 	:action => :view_projects %> |
-	<%= link_to 'My Registered Orientations', 	:controller => :orientations, :action => :v_orientations %>
+	<%= link_to 'Edit account', 												:action => :edit_account %> |
+	<%= link_to 'Report hours', 				:controller => :self_reports, 	:action => :index %> |
+	<%= link_to 'View current projects', 		:controller => :projects, 		:action => :index %> |
+	<%= link_to 'My Registered Orientations', 	:controller => :orientations, 	:action => :v_orientations %>
 </p>
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 <b><p>If for any reason you want to deactivate your account, you may do so by clicking on 'Deactive my account' below.

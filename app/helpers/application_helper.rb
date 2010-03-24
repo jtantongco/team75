@@ -38,19 +38,26 @@ module ApplicationHelper
     Nam facilisis tellus mi, vitae elementum tellus. Cras sed luctus lectus. Nulla eu egestas lectus. Donec metus magna, sodales sit amet ultricies ac, blandit nec justo. Pellentesque arcu orci, facilisis malesuada varius quis, cursus consectetur lorem. Vestibulum interdum metus at lorem viverra fringilla. Cras in leo ac lacus facilisis placerat et ac quam. Integer aliquet, mauris sed commodo commodo, nisl tortor pellentesque odio, at sodales mi quam id odio. Phasellus venenatis orci ut odio hendrerit vulputate. Cras ut lacus tortor."
   end
   
+  # Returns true if the current user is logged in as volunteer
   def volunteer_logged_in?
     session[:id] && session[:volunteer]
   end
   
+  # Returns true if the current controller and action are such that the volunteer menu should be printed
   def volunteer_menu?
     cont  = controller.controller_name
     act   = controller.action_name
+
+    volunteer_logged_in? &&
     cont == 'accounts' ||
-      cont == 'volunteers'    && (act == 'new') ||
-      cont == 'self_reports'  && (act == 'index' || act == 'create_report') ||
-      cont == 'orientations'  && (act == 'v_orientations' || act == 'v_register')
+      cont == 'volunteers'     && (act == 'new') ||
+      cont == 'self_reports'   && (act == 'index'           || act == 'create_report' || act == 'edit_report') ||
+      cont == 'orientations'   && (act == 'v_orientations'  || act == 'v_register') ||
+      cont == 'projects'       && (act == 'index'           || act == 'provide_feedback')
   end
   
+  # An extension of the normal link_to method that adds the CSS-class "UbcCurrent" to the link
+  # if the linked page is the current one. 
   def menu_link_to(text, options = {})
     if (options[:controller] == controller.controller_name && options[:action] == controller.action_name)
       link_to(text, options, :class => 'UbcCurrent')

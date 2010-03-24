@@ -1,6 +1,7 @@
-<% if flash[:message] %><p class="flash_message"><%=flash[:message]%></p><% end %>
-
-<h1>Your Registered Orientations</h1>
+<%
+@page_title 	= 'Registered orientations'
+@page_heading 	= 'Your Registered Orientations'
+%>
 <p>No. of orientations you have registered for in db: <%=@volunteers_orientations.count%></p>
 <table>
   <tr>

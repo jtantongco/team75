@@ -1,0 +1,9 @@
+<%=render :partial => 'layouts/default_header' %>
+
+<h1><%=@page_heading%></h1>
+<% if flash[:error] %><p class="flash_error"><%=flash[:error]%></p><% end %>
+<% if flash[:message] %><p class="flash_message"><%=flash[:message]%></p><% end %>
+
+<%= yield %>
+
+<%=render :partial => 'layouts/default_footer' %>

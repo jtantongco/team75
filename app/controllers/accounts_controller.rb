@@ -114,7 +114,7 @@ class AccountsController < ApplicationController
     user = Volunteer.find_by_v_id(session[:id])
     if user != nil && user.activation_code == params[:activation_code]
       user.update_attribute(:activated, true)
-      flash[:message] = "Account has been successfully activated!"
+      flash[:message] = "Your account has been successfully activated!"
       redirect_to :action => :my_account
     else
       flash[:error] = "Sorry, please make sure you have entered your activation code correctly."

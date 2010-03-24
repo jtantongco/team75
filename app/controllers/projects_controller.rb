@@ -8,12 +8,11 @@ class ProjectsController < ApplicationController
   def provide_feedback
     begin
       @project = Project.find_by_p_id(params[:id])
+      @project_feedback = @project.project_feedbacks.new
     rescue
       flash[:error] = 'Project not found'
       redirect_to :action => :index
     end
-    
-    @project_feedback = @project.project_feedbacks.new
     
     if request.post?
       @project_feedback = @project.project_feedbacks.new(params[:project_feedback])
@@ -24,6 +23,4 @@ class ProjectsController < ApplicationController
       end
     end
   end
-  
-  
 end
