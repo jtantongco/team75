@@ -84,6 +84,7 @@ class OrientationsController < ApplicationController
     user = Volunteer.find_by_v_id(session[:id])
     if user != nil
         @volunteers_orientations = VolunteersOrientation.find(:all, :conditions => { :volunteer_id => user.v_id })
+        @volunteers_orientations = removePastOrientations( @volunteers_orientations )
     else 
         redirect_to :action => :index
     end
@@ -116,10 +117,12 @@ class OrientationsController < ApplicationController
                 end
             }
 
-            if !is_registered
+            if !is_registered && Time.now < o.start_time
                 @orien_view.push(o)
             end
         }
+        
+    	# @orien_view = removePastOrientations( @orien_view )
     else
         redirect_to :action => :index
     end
@@ -152,6 +155,22 @@ class OrientationsController < ApplicationController
 
 	flash[:message] = 'Removed '+ params[:name]
     redirect_to :action => :v_orientations
+  end
+  	
+  protected
+  def removePastOrientations ( vo )
+  	
+  	theVo = vo
+  	returnee = Array.new
+  	theVo.each{ |von| 
+  	
+  		orien = Orientation.find_by_o_id( von.orientation_id )
+  		if Time.now < orien.start_time
+  			returnee.push( von )
+  		end
+  	
+  	}
+  	returnee
   end
   	
 end
