@@ -1,3 +1,5 @@
+require 'app/controllers/application_controller.rb'
+
 class DeleteOldVolunteers < ActiveRecord::Base
   # This is a test script.  It will delete the first volunteer in the database
 

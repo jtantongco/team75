@@ -12,6 +12,8 @@ class AccountsController < ApplicationController
     if request.post?
       user = Volunteer.find_by_email(params[:user][:email]) 
       if user != nil
+        user.last_login = Time.now
+        user.save
         if !user.active_status
           flash[:error] = 'Your account is currently deactivated.  You may not proceed until you reactivate it.  If you wish to reactivate your account, please click on "Reactive Account" below and follow the instructions to reactivate your account.'
           redirect_to :action => 'login', :email => params[:user][:email]

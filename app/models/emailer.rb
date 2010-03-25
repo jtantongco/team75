@@ -14,4 +14,12 @@ class Emailer < ActionMailer::Base
     sent_on  sent_at
   	body['code'] = code
   end
+
+  def volunteer_contract_reminder (recipient, sent_at = Time.now)
+  	subject  "Volunteer Account - Volunteer Contract reminder"
+    recipients  recipient
+    from  "iForgotPass@gmail.com"
+    sent_on  sent_at
+  end
+	
 end
