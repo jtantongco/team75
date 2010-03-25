@@ -18,7 +18,7 @@ class Volunteer < ActiveRecord::Base
 					  :message => 'must be valid'
 				
   validates_format_of :postal_code,
-					  :with => /^[a-zA-Z]\d[a-zA-Z]\d[a-zA-Z]\d$/,
+					  :with => /^[a-zA-Z]\d[a-zA-Z]\s?\d[a-zA-Z]\d$/,
 					  :message => 'must be valid'
 
   validates_uniqueness_of :email,
