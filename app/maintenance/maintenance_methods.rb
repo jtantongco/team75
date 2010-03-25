@@ -11,6 +11,17 @@ class MaintenanceMethods < ActiveRecord::Base
        }
    end
 
-   # This method checks all the volunteers 
+   # This method sends emails to all volunteers who have an active account but have not signed in for more than 6 months and sets their active_status to 0
+   def self.volunteerAccountStatusChecker
+
+       volunteers = Volunteer.all
+       volunteers.each { |v|
+	   if Time.now - v.last_login > 6.months && v.active_status
+	       v.active_status = 0
+	       v.save
+	       Emailer.deliver_volunteer_deactivation_notification(v.email)
+	   end
+       }
+   end
 end
 

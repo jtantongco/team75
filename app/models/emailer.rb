@@ -21,5 +21,12 @@ class Emailer < ActionMailer::Base
     from  "iForgotPass@gmail.com"
     sent_on  sent_at
   end
+
+  def volunteer_deactivation_notification (recipient, sent_at = Time.now)
+  	subject  "Volunteer Account - Deactivation notification"
+    recipients  recipient
+    from  "iForgotPass@gmail.com"
+    sent_on  sent_at
+  end
 	
 end
