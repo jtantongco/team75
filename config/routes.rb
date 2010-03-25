@@ -1,4 +1,12 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :rewards
+
+  map.resources :rewards
+
+  map.resources :rewards
+
+  map.resources :reward_profiles
+
 
   # map.resources :a_accounts
   # map.resources :s_accounts

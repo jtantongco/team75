@@ -156,23 +156,7 @@ class OrientationsController < ApplicationController
 	flash[:message] = 'Removed '+ params[:name]
     redirect_to :action => :v_orientations
   end
-  	
-  protected
-  def removePastOrientations ( vo )
-  	
-  	theVo = vo
-  	returnee = Array.new
-  	theVo.each{ |von| 
-  	
-  		orien = Orientation.find_by_o_id( von.orientation_id )
-  		if Time.now < orien.start_time
-  			returnee.push( von )
-  		end
-  	
-  	}
-  	returnee
-  end
-  	
+
   def showAttendees
 	@orientation = Orientation.find(params[:id])
 	@attendees = VolunteersOrientation.find(:all, :conditions => {:orientation_id => params[:id]})
@@ -209,5 +193,21 @@ class OrientationsController < ApplicationController
 
 	flash[:message] = 'Removed '+ params[:name]
 	redirect_to :action => :showAttendees, :id => params[:o_id]
+  end
+  
+  protected
+  def removePastOrientations ( vo )
+  	
+  	theVo = vo
+  	returnee = Array.new
+  	theVo.each{ |von| 
+  	
+  		orien = Orientation.find_by_o_id( von.orientation_id )
+  		if Time.now < orien.start_time
+  			returnee.push( von )
+  		end
+  	
+  	}
+  	returnee
   end
 end
