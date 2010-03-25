@@ -173,4 +173,41 @@ class OrientationsController < ApplicationController
   	returnee
   end
   	
+  def showAttendees
+	@orientation = Orientation.find(params[:id])
+	@attendees = VolunteersOrientation.find(:all, :conditions => {:orientation_id => params[:id]})
+	@volunteers = Volunteer.all
+	
+	@attendee_view = Array.new
+	
+	@attendees.each{ |a|
+		@volunteers.each{ |v|
+			if a.volunteer_id == v.v_id
+				@attendee_view.push([v.name, a.attended, a.orientation_id, a.volunteer_id])
+				break
+			end
+		}	
+	}
+  end
+
+  def s_confirmAttendance
+	@vo = VolunteersOrientation.find_by_orientation_id_and_volunteer_id(params[:o_id], params[:v_id])
+
+	@sql = "UPDATE volunteers_orientations SET attended = '1' WHERE volunteer_id = "+@vo.volunteer_id.to_s+" AND orientation_id = "+@vo.orientation_id.to_s
+	ActiveRecord::Base.connection.execute(@sql)
+
+	flash[:message] = params[:name] + ' has been marked as attended.'
+    redirect_to :action => :showAttendees, :id => @vo.orientation_id
+  end
+  
+   def s_cancelAttendance
+  	
+  	@vo = VolunteersOrientation.find_by_orientation_id_and_volunteer_id(params[:o_id], params[:v_id])
+
+	@sql = "DELETE FROM volunteers_orientations WHERE volunteer_id = "+@vo.volunteer_id.to_s+" AND orientation_id = "+@vo.orientation_id.to_s
+	ActiveRecord::Base.connection.execute(@sql)
+
+	flash[:message] = 'Removed '+ params[:name]
+	redirect_to :action => :showAttendees, :id => params[:o_id]
+  end
 end
