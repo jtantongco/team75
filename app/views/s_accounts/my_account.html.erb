@@ -6,3 +6,7 @@
 <% supervisor = getSupervisor %>
 <p>Welcome <%= supervisor.name %>!</p>
 <p>You have successfully logged in. </p>
+<br>
+<b><p><%= link_to 'Verify Self-Reports', :action => 'verify_reports' %></p></b>
+
+<b><p><%= link_to 'Logout', :action => 'logout' %></p></b>
