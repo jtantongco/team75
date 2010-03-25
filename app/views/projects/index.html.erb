@@ -3,27 +3,31 @@
 @page_heading 	= 'Current projects'
 %>
 
-<p>The following is a list of active projects that need help from volunteers.</p>
+<p>The following is a list of projects that you have joined.  To remove yourself from a project, please click on the corresponding "Leave" link.</p>
 
 <table border="1">
 	<tr> 
-		<td width="40%"><p align="center"><i><b>Name</b></i></td> 
+		<td width="30%"><p align="center"><i><b>Name</b></i></td> 
 		<td width="20%"><p align="center"><i><b>Start Date</b></i></td>
 		<td width="20%"><p align="center"><i><b>End Date</b></i></td>
 		<td width="20%"><p align="center"><i><b>Description</b></i></td>
-		<td></td>
+		<td width="5%"><p align="center"><i><b>Leave Project</b></i></td>
+		<td width="5%"><p align="center"><i><b>Provide Feedback</b></i></td>
 	</tr>
-<% @projects.each do |project| %> 
+<% @volunteers_projects.each do |vp| %> 
 	<tr>
-		<td width="40%" align="center"><b><%= project.name %></b></td> 
-		<td width="20%" align="center"><b><%= project.start_date %></b></td>
-		<td width="20%" align="center"><b><%= project.end_date %> </b></td> 
-		<td width="20%" align="center"><b><%= project.description %> </b></td> 
-		<td><%=link_to 'Leave feedback', :controller => :projects, :action => :provide_feedback, :id => project.id %></td>
+	    <% project = Project.find_by_p_id( vp.project_id ) %>
+		<td width="30%"><p align="center"><b><%= project.name %></b></td> 
+		<td width="20%"><p align="center"><%= project.start_date %></td>
+		<td width="20%"><p align="center"><%= project.end_date %></td> 
+		<td width="20%"><p align="center"><%= project.description %></td>
+		<td width="5%"><%= link_to 'Leave', :action => :leave, :p_id => vp.project_id, :v_id => vp.volunteer_id, :name => project.name %></td>
+		<td width="5%"><%= link_to 'Feedback', :controller => :projects, :action => :provide_feedback, :id => project.id %></td>
 	</tr>
 <% end %>
 </table>
 
 <p>
+<%= link_to 'Join a project', :action => :join_projects %> |
 <%= link_to 'Back', :controller => :accounts, :action => 'my_account' %>
 </p>

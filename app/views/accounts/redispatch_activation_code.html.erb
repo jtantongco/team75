@@ -1,0 +1,14 @@
+<%
+@page_title 	= 'Redispatch Activation Code'
+@page_heading 	= 'Redispatch Activation Code'
+%>
+
+<p>Please enter the email that you registered your account with below and your activation code will be sent to that email address shortly.  Please also check your spam folders in case the email has been marked as spam.</p>
+
+<% form_tag :action => 'redispatch_activation_code' do -%>
+Email: <%= text_field_tag "email" %>
+<p>
+<%= submit_tag "Submit" %> 
+<% end -%>
+<p>
+<%= link_to 'Back', 'verify' %>

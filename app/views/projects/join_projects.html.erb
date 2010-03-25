@@ -1,0 +1,25 @@
+<h1>Current Projects</h1>
+
+<p>The following is a list of projects you have not joined.  To add yourself to a project, just click the corresponding "Join" link.</p>
+
+<table border="1">
+	<tr> 
+		<td width="30%"><p align="center"><i><b>Name</b></i></td> 
+		<td width="20%"><p align="center"><i><b>Start Date</b></i></td>
+		<td width="20%"><p align="center"><i><b>End Date</b></i></td>
+		<td width="20%"><p align="center"><i><b>Description</b></i></td>
+		<td width="10%"><p align="center"><i><b>Join Project</b></i></td>
+	</tr>
+	
+<% @projects_view.each do |p| %> 
+	<tr>
+		<td width="30%"><p align="center"><b><%= p.name %></b></td> 
+		<td width="20%"><p align="center"><%= p.start_date %></td>
+		<td width="20%"><p align="center"><%= p.end_date %></td> 
+		<td width="20%"><p align="center"><%= p.description %></td>
+		<td width="10%"><p align="center"><%= link_to 'Join', :action => :join, :project => p %></td>
+	</tr>
+<% end %>
+</table>
+
+<%= link_to 'Back', :action => :index %>

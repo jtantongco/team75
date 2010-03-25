@@ -1,1 +1,10 @@
-Volunteer was successfully created. An email has been sent to the registered email with details on how to activate your account. Click <%= link_to 'here', :controller => "accounts", :action => "index" %> to login, or wait a few seconds and you will be redirected.
+<p>Your volunteer account was successfully created!  However, you must first verify your account to finalize the registration process.  An email containing an activation code has been sent to the email address you have just registered your account with.  You will need to provide both your activation code and your registered email address to verify your account.  You will be redirected to the verification page in 8 seconds automatically or you can click <%= link_to 'here', :controller => "accounts", :action => "verify" %> if you choose not to wait.</p>
+
+<script language="JavaScript">
+var time = null
+function move() {
+window.location = 'http://localhost:3000/accounts/login'
+}
+</script>
+
+<body onload="timer=setTimeout('move()',8000)">

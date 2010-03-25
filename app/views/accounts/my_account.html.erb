@@ -16,10 +16,10 @@
 <p>
 	<%= link_to 'Edit account', 												:action => :edit_account %> |
 	<%= link_to 'Report hours', 				:controller => :self_reports, 	:action => :index %> |
-	<%= link_to 'View current projects', 		:controller => :projects, 		:action => :index %> |
+	<%= link_to 'Projects', 		:controller => :projects, 		:action => :index %> |
 	<%= link_to 'My Registered Orientations', 	:controller => :orientations, 	:action => :v_orientations %>
 </p>
-----------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------
 <b><p>If for any reason you want to deactivate your account, you may do so by clicking on 'Deactive my account' below.
 <br></br>
 Please note that will be logged out afterwards and will be unable to log back in.
@@ -29,7 +29,7 @@ Should you want to reactivate your account at a later time, please click on 'Rea
 <i><p>
 <%= link_to 'Deactivate my account', :action => 'deactivate_account' %>
 </p></i>
-----------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------
 <br>
 
 <b><p><%= link_to 'Logout', :action => 'logout' %></p></b>

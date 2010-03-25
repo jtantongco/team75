@@ -3,13 +3,11 @@
 @page_heading 	= 'Account Login'
 %>
 
-<% if flash[:message] %><p class="flash_message"><%= flash[:message] %></p><% end %>
-<% if flash[:error] %><p class="flash_error"><%= flash[:error] %></p><% end %> 
-
 <p>Please log into your UBC Volunteer Farm account below with your username and password.</p>
 <b>Your username is the email that you used to register your volunteer account with.</b>
 <p>If you do not have an account yet, then please click on 'Register' and create one now!</p>
 <p>If you have forgotten your password, then please click on 'Forgot Password' and follow the instructions to retrieve it.<p>
+<p>If you have just registered for an account, you need to verify it by clicking on 'Account Verification' below and following the instructions before you can log in.<p>
 <p>If you have deactivated your account and would like to reactivate it, then please click on 'Reactivate Account' and follow the instructions to reactivate it.<p>
 
 <% form_tag do -%>
@@ -20,4 +18,5 @@ Password: <%= password_field "user", "password" %>&#x00A;
 <p>
 <%= link_to 'Register', new_volunteer_path %> |
 <%= link_to 'Forgot Password', 'forgot_password' %> |
+<%= link_to 'Account Verification', 'verify' %> |
 <%= link_to 'Reactivate Account', 'reactivate_account' %>
