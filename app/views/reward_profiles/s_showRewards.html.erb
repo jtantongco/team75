@@ -1,0 +1,33 @@
+<% if flash[:message] %><p class="flash_message"><%=flash[:message]%></p><% end %>
+
+<h1>Listing rewards for <%=@reward_profile.Name%></h1>
+<p>No. of rewards expected for this reward profile in db: <%=@rewards.count%></p>
+
+<table>
+  <tr>
+    <th>Rid</th>
+    <th>Rpid</th>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Hours</th>
+  </tr>
+
+<% @rewards.each do |reward| %>
+  <tr>
+    <td><%=h reward.Rid %></td>
+    <td><%=h reward.RPid %></td>
+    <td><%=h reward.Name %></td>
+    <td><%=h reward.Description %></td>
+    <td><%=h reward.Hours %></td>
+    <td><%= link_to 'Show', reward %></td>
+    <td><%= link_to 'Edit', edit_reward_path(reward) %></td>
+    <td><%= link_to 'Destroy', reward, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New reward', new_reward_path %>
+
+

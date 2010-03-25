@@ -84,6 +84,7 @@ class OrientationsController < ApplicationController
     user = Volunteer.find_by_v_id(session[:id])
     if user != nil
         @volunteers_orientations = VolunteersOrientation.find(:all, :conditions => { :volunteer_id => user.v_id })
+        @volunteers_orientations = removePastOrientations( @volunteers_orientations )
     else 
         redirect_to :action => :index
     end
@@ -116,10 +117,12 @@ class OrientationsController < ApplicationController
                 end
             }
 
-            if !is_registered
+            if !is_registered && Time.now < o.start_time
                 @orien_view.push(o)
             end
         }
+        
+    	# @orien_view = removePastOrientations( @orien_view )
     else
         redirect_to :action => :index
     end
@@ -153,5 +156,58 @@ class OrientationsController < ApplicationController
 	flash[:message] = 'Removed '+ params[:name]
     redirect_to :action => :v_orientations
   end
+
+  def showAttendees
+	@orientation = Orientation.find(params[:id])
+	@attendees = VolunteersOrientation.find(:all, :conditions => {:orientation_id => params[:id]})
+	@volunteers = Volunteer.all
+	
+	@attendee_view = Array.new
+	
+	@attendees.each{ |a|
+		@volunteers.each{ |v|
+			if a.volunteer_id == v.v_id
+				@attendee_view.push([v.name, a.attended, a.orientation_id, a.volunteer_id])
+				break
+			end
+		}	
+	}
+  end
+
+  def s_confirmAttendance
+	@vo = VolunteersOrientation.find_by_orientation_id_and_volunteer_id(params[:o_id], params[:v_id])
+
+	@sql = "UPDATE volunteers_orientations SET attended = '1' WHERE volunteer_id = "+@vo.volunteer_id.to_s+" AND orientation_id = "+@vo.orientation_id.to_s
+	ActiveRecord::Base.connection.execute(@sql)
+
+	flash[:message] = params[:name] + ' has been marked as attended.'
+    redirect_to :action => :showAttendees, :id => @vo.orientation_id
+  end
+  
+   def s_cancelAttendance
   	
+  	@vo = VolunteersOrientation.find_by_orientation_id_and_volunteer_id(params[:o_id], params[:v_id])
+
+	@sql = "DELETE FROM volunteers_orientations WHERE volunteer_id = "+@vo.volunteer_id.to_s+" AND orientation_id = "+@vo.orientation_id.to_s
+	ActiveRecord::Base.connection.execute(@sql)
+
+	flash[:message] = 'Removed '+ params[:name]
+	redirect_to :action => :showAttendees, :id => params[:o_id]
+  end
+  
+  protected
+  def removePastOrientations ( vo )
+  	
+  	theVo = vo
+  	returnee = Array.new
+  	theVo.each{ |von| 
+  	
+  		orien = Orientation.find_by_o_id( von.orientation_id )
+  		if Time.now < orien.start_time
+  			returnee.push( von )
+  		end
+  	
+  	}
+  	returnee
+  end
 end

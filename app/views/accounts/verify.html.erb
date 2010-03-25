@@ -1,2 +1,22 @@
-<% if flash[:error] %><p class="flash_error"><%=flash[:error]%></p><% end %>
-<% if flash[:message] %><p class="flash_message"><%=flash[:message]%></p><% end %>
+<h1>Account Verification</h1>
+
+<b><p>If you have just created a new account, you will need to verify it to finalize the account registration process.</p></b>
+
+<p>Please fill in the required fields below to activate your account.  You will need to provide your email address (the one you signed up for account with) and the activation code (which should be sent to your registered email account).</p>
+
+<p>Please check your spam folders for the email containing the activation code.  If you wish to be sent another email with your activation code, click <%= link_to 'here', :action => :redispatch_activation_code %> and follow the instructions.</p>
+
+<% form_tag :action => 'verify' do -%>
+	<p>
+		Email:  <%= text_field_tag "email" %>
+	</p>
+	<p>
+		Activation Code:  <%= text_field_tag "activation_code" %>
+	</p>
+	<p>
+	    <%= submit_tag "Submit" %> 
+	</p>
+<% end -%>
+<p>
+<%= link_to 'Back', 'login' %>
+</p>

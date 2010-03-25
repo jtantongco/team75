@@ -64,8 +64,9 @@ class VolunteersController < ApplicationController
 
         dispatch_confirmation( @volunteer )       
 
-        flash[:notice] = 'Volunteer was successfully created. An email has been sent to the registered email with details on how to activate your account.'
-        format.html { redirect_to :controller => 'accounts', :action => 'account_created' }
+        flash[:message] = "Your account has been successfully created!"
+        
+        format.html { redirect_to :controller => 'accounts', :action => 'verify' }
         format.xml  { render :xml => @volunteer, :status => :created, :location => @volunteer }
       else
         @volunteer_extra = @volunteer.volunteer_extra

@@ -1,0 +1,24 @@
+<h1>Editing reward_profile</h1>
+
+<% form_for(@reward_profile) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :RPid %><br />
+    <%= f.text_field :RPid %>
+  </p>
+  <p>
+    <%= f.label :Description %><br />
+    <%= f.text_field :Description %>
+  </p>
+  <p>
+    <%= f.label :Name %><br />
+    <%= f.text_field :Name %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @reward_profile %> |
+<%= link_to 'Back', reward_profiles_path %>

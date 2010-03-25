@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  Rid: 
+  RPid: 
+  Name: MyString
+  Description: MyString
+  Hours: 
+
+two:
+  Rid: 
+  RPid: 
+  Name: MyString
+  Description: MyString
+  Hours: 

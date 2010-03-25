@@ -1,7 +1,18 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :rewards
+
+  map.resources :rewards
+
+  map.resources :rewards
+
+  map.resources :reward_profiles
+
+
   # map.resources :a_accounts
   # map.resources :s_accounts
+
   map.resources :administrators
+
   map.resources :volunteers
 
   # The priority is based upon order of creation: first created -> highest priority.
