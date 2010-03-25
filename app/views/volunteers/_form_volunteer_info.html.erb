@@ -69,7 +69,7 @@ skip_password = nil if local_assigns[:skip_password].nil?
 				<%= form.text_field :phone_work %>
 			</li>
 			<li>
-				<%= form.label :preferred_contact_method, "Contact method: "%>
+				<%= form.label :preferred_contact_method, "Preferred contact method: "%>
 				<%= form.select :preferred_contact_method, options_for_select([["E-mail", 0], ["Home phone", 1], ["Work phone", 2], ["Cell phone", 3]])%>
 			</li>
 			<li>

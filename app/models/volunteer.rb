@@ -29,4 +29,17 @@ class Volunteer < ActiveRecord::Base
   def name
     first_name + " " + last_name
   end
+  
+  # Checks if the current user has joined the project 
+  # If s/he has not joined the project, s/he is joined to it.
+  # Returns true if the user was joined, false otherwise
+  def join_project(project)
+    if (!projects.exists?(project))
+      projects << project
+      true
+    else
+      false
+    end
+  end
+  
 end

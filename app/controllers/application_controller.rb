@@ -40,5 +40,4 @@ class ApplicationController < ActionController::Base
   def hash (str)
     return Digest::SHA1.hexdigest(str)
   end
-  
 end

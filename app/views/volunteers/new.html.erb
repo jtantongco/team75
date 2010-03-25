@@ -42,8 +42,8 @@
 		<legend>Interests</legend>
 		<ul>
 			<li>
-				<%= label_tag "Interested to work with:"%>
-				<i>(TODO: list all projects)</i>
+				<%= label_tag "project_interests", "Please choose the project(s) you're interested in volunteering for: <br />(Hold Ctrl to select multiple projects)"%>
+				<i><%= select_tag "project_interests", options_from_collection_for_select(@active_projects, 'id', 'name'), :multiple => true%></i>
 			</li>
 			<li>
 				<%= volunteer_extra.label :how_often_volunteer, "How often would you like to volunteer at the UBC Farm?"%>
