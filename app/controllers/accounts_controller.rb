@@ -109,8 +109,13 @@ class AccountsController < ApplicationController
     if request.post?
       user = Volunteer.find_by_email(params[:email])
       if user != nil
-        Emailer.deliver_confirm_email(user.email, user.activation_code)
-        flash[:message] = "Your request has been received and an email will be sent to you shortly."
+        if !user.activated
+          Emailer.deliver_confirm_email(user.email, user.activation_code)
+          flash[:message] = "Your request has been received and an email will be sent to you shortly."
+        else
+          flash[:message] = "Your account has already been activated. Feel free to log in!"
+          redirect_to :action => :login
+        end
       else
         flash[:error] = "Sorry we could not locate an account registered with that email address.  Please check your spelling."
       end
@@ -118,10 +123,11 @@ class AccountsController < ApplicationController
   end
 
   def verify
-    if request.post?
+    if request.post? || params[:email] && params[:activation_code]
       user = Volunteer.find_by_email(params[:email])
       if user != nil && user.activated
         flash[:message] = "Your account has already been activated."
+        redirect_to :action => :login
       elsif user != nil && user.activation_code == params[:activation_code]
         user.update_attribute(:activated, true)
         flash[:message] = "Your account has been successfully activated!  You may now log into your account."

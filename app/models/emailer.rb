@@ -12,6 +12,10 @@ class Emailer < ActionMailer::Base
     recipients  recipient
     from  "iForgotPass@gmail.com"
     sent_on  sent_at
+    
+    link = 'http://localhost:3000/accounts/verify'
+    body['short_link'] = link
+    body['link'] = link + "?activation_code=#{code}&email=#{recipient}"
   	body['code'] = code
   end
 
