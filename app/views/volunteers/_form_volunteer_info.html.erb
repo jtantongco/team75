@@ -32,7 +32,7 @@ skip_password = nil if local_assigns[:skip_password].nil?
 			<% end %>
 			<li>
 				<%= form.label :birthday, "Date of birth: <span class=\"mandatory\">*</span>"%>
-				<%= form.date_select :birthday, :start_year => Time.now.year-50, :end_year => Time.now.year-10 %>
+				<%= form.date_select :birthday, :start_year => Time.now.year-80, :end_year => Time.now.year-10 %>
 			</li>
 			
 		</ul>

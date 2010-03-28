@@ -7,6 +7,11 @@
 			<% if controller.action_name == 'edit_account' || controller.action_name == 'change_password' %>
 			<ul>
 				<li><%=menu_link_to('Change password', :controller => 'accounts', :action => 'change_password')%></li>
+				<li>
+					<%=menu_link_to('Deactivate account',
+						{:controller => 'accounts', :action => 'deactivate_account'},
+						{:confirm => 'Are you sure you want to deactivate your account?'})%>
+				</li>
 			</ul>
 			<% end %>
 		</li>

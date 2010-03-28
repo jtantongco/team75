@@ -5,6 +5,7 @@
 # => unverified (true if the listed reports are the unverified ones)
 
 unverified = false if local_assigns[:unverified].nil?
+if @reports.count > 0
 %>
 <table>
 	<tr>
@@ -34,3 +35,6 @@ unverified = false if local_assigns[:unverified].nil?
 	<% end %>
 <% end %>
 </table>
+<% else %>
+	<p>No reports to view.</p>
+<% end %>

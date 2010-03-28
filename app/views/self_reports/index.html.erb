@@ -2,10 +2,6 @@
 @page_title 	= 'List of reports'
 @page_heading 	= 'Your reported hours'
 %>
-<p>
-	<%= link_to '&laquo; Back to my account', :controller => :accounts, :action => :my_account %> |
-	<%= link_to 'Create a new hour report', :action => :create_report %>
-</p>
 <h2>Unverified reports</h2>
 <%= render :partial => 'self_reports_table', :locals => {:reports => @reports, :unverified => true}%>
 

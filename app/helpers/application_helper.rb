@@ -41,11 +41,10 @@ module ApplicationHelper
   
   # An extension of the normal link_to method that adds the CSS-class "UbcCurrent" to the link
   # if the linked page is the current one. 
-  def menu_link_to(text, options = {})
+  def menu_link_to(text, options = {}, html_options = {})
     if (options[:controller] == controller.controller_name && options[:action] == controller.action_name)
-      link_to(text, options, :class => 'UbcCurrent')
-    else
-      link_to(text, options)
+      html_options['class'] = 'UbcCurrent'
     end
+    link_to(text, options, html_options)
   end
 end

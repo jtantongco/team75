@@ -1,6 +1,6 @@
 <%
 @page_title 	= 'My account'
-@page_heading 	= 'Volunteer Account Info'
+@page_heading 	= 'My account'
 %> 
 <% if !@user.contract_signed %>
 	<p class="flash_error">
@@ -11,7 +11,8 @@
 
 
 <p>Welcome <%= @user.name %>!</p>
-<p>You have successfully logged in.  You may log out, change your account details, log hours or join a project!</p>
+<p>You have successfully logged in.</p>
+<!--<p> You may log out, change your account details, log hours or join a project!</p>
 
 <p>
 	<%= link_to 'Edit account', 												:action => :edit_account %> |
@@ -33,3 +34,4 @@ Should you want to reactivate your account at a later time, please click on 'Rea
 <br>
 
 <b><p><%= link_to 'Logout', :action => 'logout' %></p></b>
+-->
