@@ -138,10 +138,10 @@ class OrientationsController < ApplicationController
   	@orien_vol.attended = false
   	
   	if @orien_vol.save
-        flash[:message] = 'Successfully registered for '+orientation.name+'!'
-        redirect_to :action => :v_register
+        flash[:message] = 'Successfully registered for ' + orientation.name + '!'
+        redirect_to :action => :v_orientations
       else
-      	flash[:message] = 'Something went wrong with the v_add_orientation method :('
+      	flash[:message] = 'Something went wrong when registering for the orientation.'
         render :action => :v_register
      end
   end

@@ -24,7 +24,7 @@
 		</td>
 	
 
-	    <td><%= link_to 'Cancel registration', :action => :v_cancel, :o_id => vo.orientation_id, :v_id => vo.volunteer_id, :name => orientation.name  %></td>
+	    <td><%= link_to 'Cancel registration', {:action => :v_cancel, :o_id => vo.orientation_id, :v_id => vo.volunteer_id, :name => orientation.name}, {:confirm => 'Are you sure you want to cancel your registration for ' + orientation.name + '?'}  %></td>
 	  </tr>
 	<% end %>
 </table>

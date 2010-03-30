@@ -30,10 +30,10 @@
 		<td>
 			<%=h o.end_time %>
 		</td>
-	    <td><%= link_to 'Register', :action => :v_add_orientation, :orien => o %></td>
+	    <td><%= link_to 'Register', {:action => :v_add_orientation, :orien => o}, {:confirm => 'Do you want to register for this orientation session?'} %></td>
 	  </tr>
 	<% end %>
 	</table>
 <% else %>
-	<p>There are no orientation sessions planned at the moment.</p>
+	<p>There are no orientation sessions planned at the moment (that you have not already registered to).</p>
 <% end %>
