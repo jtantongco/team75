@@ -1,5 +1,5 @@
 class AccountsController < ApplicationController
- before_filter :login_required, :except => [:login, :process_login, :index, :logout, :forgot_password, :reactivate_account, :redispatch_activation_code, :verify]
+  before_filter :login_required, :except => [:login, :process_login, :index, :logout, :forgot_password, :reactivate_account, :redispatch_activation_code, :verify]
 
   @user = Volunteer.find_by_v_id(session[:id]) if defined? session[:id]
 
@@ -10,19 +10,20 @@ class AccountsController < ApplicationController
     if session[:id] != nil
       redirect_to :action => 'my_account'
     end
-    
+
     if request.post?
       user = Volunteer.find_by_email(params[:user][:email]) 
       if user != nil
-        user.last_login = Time.now
-        user.save
-        
+
         if user.activated != true
           flash[:error] = 'Please verify your account first.  You can do so by clicking on "Account Verification" below and following the instructions.'
         elsif !user.active_status
           flash[:error] = 'Your account is currently deactivated.  You may not proceed until you reactivate it.  If you wish to reactivate your account, please click on "Reactivate Account" below and follow the instructions to reactivate your account.'
           redirect_to :action => 'login', :email => params[:user][:email]
         elsif user.password == hash(params[:user][:password])
+          user.last_login = Time.now
+          user.save
+          
           session[:volunteer] = true
           session[:id] = user.id # Remember the user's id during this session 
           redirect_to :action => 'my_account'
@@ -50,7 +51,7 @@ class AccountsController < ApplicationController
     if request.post?
       if params[:accept] == '1'
         @user.update_attribute(:contract_signed, true)
-        
+
         flash[:message] = 'You have successfully signed the Volunteer Contract.'
         redirect_to :action => :my_account
       else
@@ -58,7 +59,7 @@ class AccountsController < ApplicationController
       end
     end
   end
-  
+
   def edit_account
     if request.put?
       if @user.update_attributes(params[:volunteer])
@@ -88,7 +89,7 @@ class AccountsController < ApplicationController
       end
     end
   end
-  
+
   def forgot_password
     if request.post?
       user = Volunteer.find_by_email(params[:user][:email])
@@ -137,23 +138,23 @@ class AccountsController < ApplicationController
       end
     end
   end
-  
+
   def deactivate_account
     user = Volunteer.find_by_v_id(session[:id])
     if user != nil
       user.active_status = 0
       user.save
-      
+
       #Removes deactivated volunteers from their joined projects
       @sql = "DELETE FROM volunteers_projects WHERE volunteer_id = "+user.id.to_s
       ActiveRecord::Base.connection.execute(@sql)
     end
-    
+
     reset_session
     flash[:message] = 'Your account has been deactivated.' 
     redirect_to :action => 'login' 
   end 
-  
+
   def reactivate_account
     if request.post?
       user = Volunteer.find_by_email(params[:user][:email])
