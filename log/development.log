@@ -1317,3 +1317,115 @@ Rendered layouts/_left_navigation (0.0ms)
 Rendered layouts/_default_header (4.0ms)
 Rendered layouts/_default_footer (0.0ms)
 Completed in 155ms (View: 17, DB: 190) | 200 OK [http://localhost/s_accounts/my_account]
+  [4;35;1mSQL (109.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (26.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Users/lg/Desktop/workspace/team75/app/controllers/accounts_controller.rb:4)
+
+
+Processing AccountsController#index (for 127.0.0.1 at 2010-03-30 14:01:49) [GET]
+  [4;35;1mSupervisor Columns (28.0ms)[0m   [0mSHOW FIELDS FROM `supervisors`[0m
+  [4;36;1mSupervisor Load (34.0ms)[0m   [0;1mSELECT * FROM `supervisors` WHERE (`supervisors`.`s_id` = 7) [0m
+Rendering template within layouts/application
+Rendering accounts/index
+Rendered layouts/_main_navigation (0.0ms)
+Rendered layouts/_menu_volunteers (1.0ms)
+Rendered layouts/_left_navigation (2.0ms)
+Rendered layouts/_default_header (4.0ms)
+Rendered layouts/_default_footer (0.0ms)
+Completed in 82ms (View: 10, DB: 197) | 200 OK [http://localhost/]
+  [4;35;1mSQL (69.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (26.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Users/lg/Desktop/workspace/team75/app/controllers/a_accounts_controller.rb:5)
+
+
+Processing AAccountsController#index (for 127.0.0.1 at 2010-03-30 14:02:25) [GET]
+  [4;35;1mSupervisor Columns (30.0ms)[0m   [0mSHOW FIELDS FROM `supervisors`[0m
+  [4;36;1mSupervisor Load (28.0ms)[0m   [0;1mSELECT * FROM `supervisors` WHERE (`supervisors`.`s_id` = 7) [0m
+Rendering template within layouts/application
+Rendering a_accounts/index
+Rendered layouts/_main_navigation (0.0ms)
+Rendered layouts/_left_navigation (0.0ms)
+Rendered layouts/_default_header (3.0ms)
+Rendered layouts/_default_footer (0.0ms)
+Completed in 96ms (View: 26, DB: 153) | 200 OK [http://localhost/a_accounts]
+  [4;35;1mSQL (31.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (27.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Users/lg/Desktop/workspace/team75/app/controllers/a_accounts_controller.rb:5)
+
+
+Processing AAccountsController#login (for 127.0.0.1 at 2010-03-30 14:02:27) [GET]
+  [4;35;1mSupervisor Columns (42.0ms)[0m   [0mSHOW FIELDS FROM `supervisors`[0m
+  [4;36;1mSupervisor Load (35.0ms)[0m   [0;1mSELECT * FROM `supervisors` WHERE (`supervisors`.`s_id` = 7) [0m
+  [4;35;1mAdministrator Columns (264.0ms)[0m   [0mSHOW FIELDS FROM `administrators`[0m
+Rendering template within layouts/application
+Rendering a_accounts/login
+Rendered layouts/_main_navigation (0.0ms)
+Rendered layouts/_left_navigation (1.0ms)
+Rendered layouts/_default_header (102.0ms)
+Rendered layouts/_default_footer (0.0ms)
+Completed in 487ms (View: 127, DB: 399) | 200 OK [http://localhost/a_accounts/login]
+  [4;36;1mSQL (28.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (82.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Users/lg/Desktop/workspace/team75/app/controllers/a_accounts_controller.rb:5)
+
+
+Processing AAccountsController#login (for 127.0.0.1 at 2010-03-30 14:03:03) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"PNnXI+hWYnbHoUgK6H/xWa822tH/LyvueFP5x7nlCWw=", "a_user"=>{"login_name"=>"sysadmin", "password"=>"abcd1234"}}
+  [4;36;1mSupervisor Columns (30.0ms)[0m   [0;1mSHOW FIELDS FROM `supervisors`[0m
+  [4;35;1mSupervisor Load (27.0ms)[0m   [0mSELECT * FROM `supervisors` WHERE (`supervisors`.`s_id` = 7) [0m
+  [4;36;1mAdministrator Columns (70.0ms)[0m   [0;1mSHOW FIELDS FROM `administrators`[0m
+  [4;35;1mAdministrator Load (28.0ms)[0m   [0mSELECT * FROM `administrators` WHERE (`administrators`.`login_name` = 'sysadmin') LIMIT 1[0m
+Redirected to http://localhost:3000/a_accounts/my_account
+Completed in 183ms (DB: 265) | 302 Found [http://localhost/a_accounts/login]
+  [4;36;1mSQL (30.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (31.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Users/lg/Desktop/workspace/team75/app/controllers/a_accounts_controller.rb:5)
+
+
+Processing AAccountsController#my_account (for 127.0.0.1 at 2010-03-30 14:03:05) [GET]
+  [4;36;1mSupervisor Columns (27.0ms)[0m   [0;1mSHOW FIELDS FROM `supervisors`[0m
+  [4;35;1mSupervisor Load (30.0ms)[0m   [0mSELECT * FROM `supervisors` WHERE (`supervisors`.`s_id` = 7) [0m
+  [4;36;1mAdministrator Columns (29.0ms)[0m   [0;1mSHOW FIELDS FROM `administrators`[0m
+  [4;35;1mAdministrator Load (27.0ms)[0m   [0mSELECT * FROM `administrators` WHERE (`administrators`.`a_id` = 1) [0m
+Rendering template within layouts/application
+Rendering a_accounts/my_account
+  [4;36;1mAdministrator Load (28.0ms)[0m   [0;1mSELECT * FROM `administrators` WHERE (`administrators`.`a_id` = 1) LIMIT 1[0m
+Rendered layouts/_main_navigation (0.0ms)
+Rendered layouts/_left_navigation (0.0ms)
+Rendered layouts/_default_header (3.0ms)
+Rendered layouts/_default_footer (1.0ms)
+Completed in 182ms (View: 20, DB: 202) | 200 OK [http://localhost/a_accounts/my_account]
+  [4;35;1mSQL (25.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (26.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DataReportsController#index (for 127.0.0.1 at 2010-03-30 14:03:08) [GET]
+  [4;35;1mSupervisor Columns (93.0ms)[0m   [0mSHOW FIELDS FROM `supervisors`[0m
+  [4;36;1mSupervisor Load (101.0ms)[0m   [0;1mSELECT * FROM `supervisors` WHERE (`supervisors`.`s_id` = 7) [0m
+  [4;35;1mAdministrator Columns (199.0ms)[0m   [0mSHOW FIELDS FROM `administrators`[0m
+  [4;36;1mAdministrator Load (29.0ms)[0m   [0;1mSELECT * FROM `administrators` WHERE (`administrators`.`a_id` = 1) [0m
+Rendering template within layouts/application
+Rendering data_reports/index
+Rendered layouts/_main_navigation (0.0ms)
+Rendered layouts/_left_navigation (0.0ms)
+Rendered layouts/_default_header (4.0ms)
+Rendered layouts/_default_footer (0.0ms)
+Completed in 527ms (View: 83, DB: 473) | 200 OK [http://localhost/data_reports]
+  [4;35;1mSQL (27.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (26.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from C:/Users/lg/Desktop/workspace/team75/app/controllers/a_accounts_controller.rb:5)
+
+
+Processing AAccountsController#my_account (for 127.0.0.1 at 2010-03-30 14:03:11) [GET]
+  [4;35;1mSupervisor Columns (181.0ms)[0m   [0mSHOW FIELDS FROM `supervisors`[0m
+  [4;36;1mSupervisor Load (29.0ms)[0m   [0;1mSELECT * FROM `supervisors` WHERE (`supervisors`.`s_id` = 7) [0m
+  [4;35;1mAdministrator Columns (57.0ms)[0m   [0mSHOW FIELDS FROM `administrators`[0m
+  [4;36;1mAdministrator Load (30.0ms)[0m   [0;1mSELECT * FROM `administrators` WHERE (`administrators`.`a_id` = 1) [0m
+Rendering template within layouts/application
+Rendering a_accounts/my_account
+  [4;35;1mAdministrator Load (30.0ms)[0m   [0mSELECT * FROM `administrators` WHERE (`administrators`.`a_id` = 1) LIMIT 1[0m
+Rendered layouts/_main_navigation (0.0ms)
+Rendered layouts/_left_navigation (0.0ms)
+Rendered layouts/_default_header (6.0ms)
+Rendered layouts/_default_footer (0.0ms)
+Completed in 380ms (View: 22, DB: 380) | 200 OK [http://localhost/a_accounts/my_account]
