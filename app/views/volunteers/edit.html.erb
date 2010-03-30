@@ -1,4 +1,8 @@
-<h1>Editing volunteer</h1>
+<%
+@page_title 	= 'Editing volunteer'
+@page_heading 	= 'Editing volunteer'
+%>
+
 
 <% form_for(@volunteer) do |f| %>
 	<%= error_messages_for :object => [@volunteer] %>

@@ -1,35 +1,33 @@
 <%
 @page_title 	= 'Registered orientations'
-@page_heading 	= 'Your Registered Orientations'
+@page_heading 	= 'Your registered orientations'
 %>
-<p>No. of orientations you have registered for in db: <%=@volunteers_orientations.count%></p>
-<table>
-  <tr>
-    <th>Name</th>
-    <th>description</th>
-    <th>attended?</th>
-  </tr>
+<% if @volunteers_orientations.count > 0%>
+	<table>
+	  <tr>
+	    <th>Name</th>
+	    <th>description</th>
+	    <th>attended?</th>
+	  </tr>
 
-<% @volunteers_orientations.each do |vo| %>
-  <tr>
-  	<% orientation = Orientation.find_by_o_id( vo.orientation_id ) %>
-    <td>
-		<%=h orientation.name %>
-	</td>
-	<td>
-		<%=h orientation.description %>
-	</td>
-	<td>
-		<%=vo.attended %>
-	</td>
+	<% @volunteers_orientations.each do |vo| %>
+	  <tr>
+	  	<% orientation = Orientation.find_by_o_id( vo.orientation_id ) %>
+	    <td>
+			<%=h orientation.name %>
+		</td>
+		<td>
+			<%=h orientation.description %>
+		</td>
+		<td>
+			<%=vo.attended %>
+		</td>
 	
 
-    <td><%= link_to 'Cancle orientation', :action => :v_cancle, :o_id => vo.orientation_id, :v_id => vo.volunteer_id, :name => orientation.name  %></td>
-  </tr>
-<% end %>
+	    <td><%= link_to 'Cancel registration', :action => :v_cancel, :o_id => vo.orientation_id, :v_id => vo.volunteer_id, :name => orientation.name  %></td>
+	  </tr>
+	<% end %>
 </table>
-
-    <%= link_to 'Register', :action => :v_register %> |
-    <%= link_to 'Back', :controller => :accounts, :action => :my_account %>
-
-<br />
+<% else %>
+	<p>You have not registered for any <%=link_to 'upcoming orientations', :action => :v_register %> yet.</p>
+<% end %>

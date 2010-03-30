@@ -2,8 +2,13 @@
 @page_title 	= 'List of reports'
 @page_heading 	= 'Your reported hours'
 %>
-<h2>Unverified reports</h2>
-<%= render :partial => 'self_reports_table', :locals => {:reports => @reports, :unverified => true}%>
 
-<h2>Verified reports</h2>
-<%= render :partial => 'self_reports_table', :locals => {:reports => @reports}%>
+<% if @unverified_reports.count > 0 %>
+	<h2>Unverified reports</h2>
+	<%= render :partial => 'self_reports_table', :locals => {:reports => @unverified_reports, :unverified => true}%>
+<% end %>
+
+<% if @verified_reports.count > 0 %>
+	<h2>Verified reports</h2>
+	<%= render :partial => 'self_reports_table', :locals => {:reports => @verified_reports}%>
+<% end %>

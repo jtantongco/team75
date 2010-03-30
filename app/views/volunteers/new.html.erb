@@ -1,42 +1,13 @@
-<h1>New volunteer</h1>
+<%
+@page_title 	= 'New volunteer'
+@page_heading 	= 'New volunteer'
+%>
+
 <% form_for(@volunteer) do |f| %>
 	<%= error_messages_for :object => [@volunteer, @volunteer_extra, @student] %>
 	
 	<%= render :partial => "form_volunteer_info", :locals => {:form => f}%>
 	
-	<p>
-		<%= check_box_tag "is_student", "1", {}, :onchange => "$('#student_information').toggle()"%>
-		<%= label_tag "is_student", "Are you a student?", :class => "normal"%>
-	</p>
-	<% fields_for(@student) do |student| %>
-	<fieldset id="student_information">
-		<legend>Student information</legend>
-		<ul>
-			<li>
-			</li>
-			<li>
-				<%= student.label :student_id,  "Student ID: <span class=\"mandatory\">*</span>"%>
-				<%= student.text_field :student_id %>
-			</li>
-			<li>
-				<%= student.label :faculty, "Faculty: <span class=\"mandatory\">*</span>"%>
-				<%= student.text_field :faculty %>
-			</li>
-			<li>
-				<%= student.label :program, "Program: <span class=\"mandatory\">*</span>"%>
-				<%= student.text_field :program %>
-			</li>
-			<li>
-				<%= student.label :year, "Year: <span class=\"mandatory\">*</span>"%>
-				<%= student.select :year, options_for_select([["1","1"],["2","2"],["3","3"],["4","4"],["5","5"],["6","6"]]) %>
-			</li>
-			<li>
-				<%= student.label :grad_date, "Graduation Date:"%>
-				<%= student.date_select :grad_date, :start_year => Time.now.year, :end_year => Time.now.year+10 %>
-			</li>
-		</ul>
-	</fieldset>
-	<% end %>
 	<% fields_for(@volunteer_extra) do |volunteer_extra| %>
 	<fieldset>
 		<legend>Interests</legend>
@@ -104,6 +75,39 @@
 				
 				<%= volunteer_extra.radio_button :own_transportation, "false"%> 
 				<%= label_tag "volunteer_extra_own_transportation_0", "No", :class => "normal"%>
+			</li>
+		</ul>
+	</fieldset>
+	<% end %>
+	<p>
+		<%= check_box_tag "is_student", "1", {}, :onchange => "$('#student_information').toggle()"%>
+		<%= label_tag "is_student", "I'm a student at UBC.", :class => "normal"%>
+	</p>
+	<% fields_for(@student) do |student| %>
+	<fieldset id="student_information">
+		<legend>Student information</legend>
+		<ul>
+			<li>
+			</li>
+			<li>
+				<%= student.label :student_id,  "Student ID: <span class=\"mandatory\">*</span>"%>
+				<%= student.text_field :student_id %>
+			</li>
+			<li>
+				<%= student.label :faculty, "Faculty: <span class=\"mandatory\">*</span>"%>
+				<%= student.text_field :faculty %>
+			</li>
+			<li>
+				<%= student.label :program, "Program: <span class=\"mandatory\">*</span>"%>
+				<%= student.text_field :program %>
+			</li>
+			<li>
+				<%= student.label :year, "Year: <span class=\"mandatory\">*</span>"%>
+				<%= student.select :year, options_for_select([["1","1"],["2","2"],["3","3"],["4","4"],["5","5"],["6","6"]]) %>
+			</li>
+			<li>
+				<%= student.label :grad_date, "Graduation Date:"%>
+				<%= student.date_select :grad_date, :start_year => Time.now.year, :end_year => Time.now.year+10 %>
 			</li>
 		</ul>
 	</fieldset>

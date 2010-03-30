@@ -33,7 +33,9 @@ class SelfReportsController < ApplicationController
   
   # Lists the volunteers reported hours
   def index
-    @reports = @user.self_reports
+    @unverified_reports = @user.self_reports.find(:all, :conditions => "verified = 0") 
+    @verified_reports = @user.self_reports.find(:all, :conditions => "verified = 1")
+    
   end
   
   def delete

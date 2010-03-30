@@ -146,7 +146,7 @@ class OrientationsController < ApplicationController
      end
   end
   
-  def v_cancle
+  def v_cancel
   	
   	@vo = VolunteersOrientation.find_by_orientation_id_and_volunteer_id(params[:o_id], params[:v_id])
 

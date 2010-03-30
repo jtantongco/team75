@@ -5,7 +5,6 @@ class ProjectsController < ApplicationController
   def index
     user = Volunteer.find_by_v_id(session[:id])
     if user != nil
-      #@volunteers_projects = VolunteersProjects.find(:all, :conditions => { :volunteer_id => user.v_id })
       @volunteers_projects = user.projects
     end
   end
@@ -33,7 +32,6 @@ class ProjectsController < ApplicationController
     user = Volunteer.find_by_v_id(session[:id])
     if user != nil
       # Find all projects that the volunteer joined
-      #@volunteers_projects = VolunteersProjects.find(:all, :conditions => { :volunteer_id => user.v_id })
       @volunteers_projects = user.projects
       
       # Get all projects
