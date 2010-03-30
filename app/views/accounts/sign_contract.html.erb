@@ -2,11 +2,35 @@
 @page_title 	= 'Sign volunteer contract'
 @page_heading 	= 'Volunteer Contract'
 %>
+<p>
+	Welcome to UBC Farm!<br />We are excited that you will be joining us.  Our organization relies on volunteers like you.
+</p>
+<p>As a volunteer with UBC Farm, you have the responsibility to:</p>
+<ul>
+	<li>Follow through on your commitments</li>
+	<li>Take responsibility for your assigned role  </li>
+	<li>Treat other volunteers and staff with respect</li>
+	<li>Take charge of recording your hours </li>
+	<li>Report any injuries to the supervisor on site</li>
+	<li>Maintain high standards as a UBC Farm team member</li>
+	<li>Cancel your shift at least 48 hours in advance so that we can fill it with another volunteer</li>
+	<li>Raise any concerns to the Outreach Coordinator as quickly as possible</li>
+	<li>Seek and accept feedback on performance</li>
+	<li>Have fun!</li>
+</ul>
+<p>	As an organization working with volunteers, we have the responsibility to:</p>
+<ul>
+	<li>Provide you with meaningful work</li>
+	<li>Treat you as an equal co-worker</li>
+	<li>Provide effective training, supervision and feedback</li>
+	<li>Provide you with the opportunity to participate fully</li>
+	<li>Recognize and thank you for work done</li>
+</ul>
+<p>Before your first scheduled shift, an orientation will be provided to you.  Further training opportunities may be available throughout the year.</p>
 <% form_tag :action => :sign_contract do %>
-	<p><%= text_area_tag 'volunteer_contract', volunteer_contract_text, :readonly => 'readonly' %></p>
 	<p>
 		<%= check_box_tag :accept %>
-		<%= label_tag :accept, "I have read the contract thoroughly and accept something something...." %>
+		<%= label_tag :accept, "I have read and agree to the above." %>
 	</p>
 	<p>
 		<%= submit_tag "Submit" %>

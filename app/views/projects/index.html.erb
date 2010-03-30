@@ -1,33 +1,34 @@
 <%
-@page_title 	= 'Projects list'
-@page_heading 	= 'Current projects'
+@page_title 	= 'Current projects'
+@page_heading 	= 'Your current projects'
 %>
 
 <p>The following is a list of projects that you have joined.  To remove yourself from a project, please click on the corresponding "Leave" link.</p>
-
-<table border="1">
-	<tr> 
-		<td width="30%"><p align="center"><i><b>Name</b></i></td> 
-		<td width="20%"><p align="center"><i><b>Start Date</b></i></td>
-		<td width="20%"><p align="center"><i><b>End Date</b></i></td>
-		<td width="20%"><p align="center"><i><b>Description</b></i></td>
-		<td width="5%"><p align="center"><i><b>Leave Project</b></i></td>
-		<td width="5%"><p align="center"><i><b>Provide Feedback</b></i></td>
-	</tr>
-<% @volunteers_projects.each do |vp| %> 
-	<tr>
-	    <% project = Project.find_by_p_id( vp.project_id ) %>
-		<td width="30%"><p align="center"><b><%= project.name %></b></td> 
-		<td width="20%"><p align="center"><%= project.start_date %></td>
-		<td width="20%"><p align="center"><%= project.end_date %></td> 
-		<td width="20%"><p align="center"><%= project.description %></td>
-		<td width="5%"><%= link_to 'Leave', :action => :leave, :p_id => vp.project_id, :v_id => vp.volunteer_id, :name => project.name %></td>
-		<td width="5%"><%= link_to 'Feedback', :controller => :projects, :action => :provide_feedback, :id => project.id %></td>
-	</tr>
+<% if @volunteers_projects.count > 0 %>
+	<table>
+		<tr> 
+			<th class="project_name">Name</th>
+			<th>Start Date</th>
+			<th>End Date</th>
+			<th>Description</th>
+			<th></th>
+			<th></th>
+		</tr>
+	<% @volunteers_projects.each do |project| %> 
+		<tr>
+			<td class="project_name"><%= project.name %></td> 
+			<td><%= project.start_date %></td>
+			<td><%= project.end_date %></td> 
+			<td><%= project.description %></td>
+			<td><%= link_to 'Feedback', :controller => :projects, :action => :provide_feedback, :id => project.id %></td>
+			<td>
+				<%= link_to 'Leave project',
+					{:action => :leave, :p_id => project.id, :v_id => @user.id, :name => project.name},
+					{:confirm => 'Are you sure you want to leave "' + project.name + '"?'} %>
+			</td>
+		</tr>
+	<% end %>
+	</table>
+<% else %>
+	<p>You have not joined any projects yet. Please view the <%=link_to 'list of active projects', :action => :join_projects %> to start.</p>
 <% end %>
-</table>
-
-<p>
-<%= link_to 'Join a project', :action => :join_projects %> |
-<%= link_to 'Back', :controller => :accounts, :action => 'my_account' %>
-</p>

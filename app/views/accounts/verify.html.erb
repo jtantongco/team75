@@ -1,6 +1,10 @@
-<h1>Account Verification</h1>
+<%
+@page_title 	= 'Account Verification'
+@page_heading 	= 'Account Verification'
+%>
 
-<b><p>If you have just created a new account, you will need to verify it to finalize the account registration process.</p></b>
+
+<p><b>If you have just created a new account, you will need to verify it to finalize the account registration process.</b></p>
 
 <p>Please fill in the required fields below to activate your account.  You will need to provide your email address (the one you signed up for account with) and the activation code (which should be sent to your registered email account).</p>
 
@@ -8,10 +12,10 @@
 
 <% form_tag :action => 'verify' do -%>
 	<p>
-		Email:  <%= text_field_tag "email" %>
+		Email:  <%= text_field_tag "email", params[:email] %>
 	</p>
 	<p>
-		Activation Code:  <%= text_field_tag "activation_code" %>
+		Activation Code:  <%= text_field_tag "activation_code", params[:activation_code] %>
 	</p>
 	<p>
 	    <%= submit_tag "Submit" %> 

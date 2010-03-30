@@ -5,10 +5,6 @@ p.flash_message {
 p.flash_error {
 	color: red;
 }
-#UbcMainContent legend {
-	font-weight: bold;
-	margin: 5px 0 5px 0;
-}
 #UbcMainContent form ul {
 	list-style-type: none;
 	margin-left: 0;
@@ -21,6 +17,7 @@ p.flash_error {
 
 #UbcMainContent textarea {
 	height: 60px;
+	width: 220px;
 }
 
 
@@ -80,5 +77,27 @@ p.flash_error {
 #errorExplanation ul li, form #errorExplanation ul li {
 	font-size: 12px;
 	list-style: square;
+}
+
+/** Projects **/
+th.project_name, td.project_name {
+	width: 100px;
+	font-weight: bold;
+}
+
+/** Volunteer registration page **/
+.new_volunteer fieldset, .edit_volunteer fieldset {
+	margin-top: 10px;
+	padding: 10px;
+	border: 1px solid #aaa;
+}
+.new_volunteer legend, .edit_volunteer legend {
+	font-weight: bold;
+	margin: 5px;
+	padding: 5px;
+}
+
+select#project_interests {
+	width: 220px;
 }
 

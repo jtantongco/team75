@@ -34,7 +34,8 @@ class VolunteersController < ApplicationController
     @volunteer = Volunteer.new
     @volunteer_extra = VolunteerExtra.new
     @student = Student.new
-
+    @active_projects = Project.find(:all)
+    
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @volunteer }
@@ -49,6 +50,7 @@ class VolunteersController < ApplicationController
   # POST /volunteers
   # POST /volunteers.xml
   def create
+    @active_projects = Project.find(:all)
     @volunteer = Volunteer.new(params[:volunteer])
     @volunteer.build_volunteer_extra(params[:volunteer_extra])
     @volunteer.activation_code = hash(@volunteer.email)
@@ -64,8 +66,12 @@ class VolunteersController < ApplicationController
 
         dispatch_confirmation( @volunteer )       
 
-        flash[:message] = "Your account has been successfully created!"
+        params[:project_interests].each do |project_id|
+          project = Project.find_by_p_id(project_id)
+          @volunteer.projects << project if project
+        end
         
+        flash[:message] = "Your account has been successfully created! We have sent an email to you with instructions on how to verify your account registration."
         format.html { redirect_to :controller => 'accounts', :action => 'verify' }
         format.xml  { render :xml => @volunteer, :status => :created, :location => @volunteer }
       else
