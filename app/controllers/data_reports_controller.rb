@@ -1,4 +1,5 @@
 class DataReportsController < ApplicationController
+	before_filter :login_required_s
    
   def volunteer_report
   	
