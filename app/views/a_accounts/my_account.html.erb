@@ -1,7 +1,5 @@
 <h1>Administrator Account Info</h1> 
-<% if flash[:message] %>
-	<p class="flash_message"><%=flash[:message]%></p>
-<% end %>
+
 
 <% administrator = getAdministrator %>
 <p>Welcome <%= administrator.name %>!</p>

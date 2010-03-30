@@ -1,4 +1,6 @@
 class AAccountsController < ApplicationController
+	before_filter :login_required_a, :except => [:login, :index, :logout]
+   
    
     @a_user = Administrator.find_by_a_id(session[:aid]) if defined? session[:aid]    
     
