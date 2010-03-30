@@ -29,7 +29,7 @@ class SelfReport < ActiveRecord::Base
     errors.add(:project_id, 'does not exist.') if !Project.exists?(project_id)
   end
 
-  # Checks if the chosen project exists
+  # Checks if the chosen supervisor exists
   def supervisor_exists
     errors.add(:supervisor_id, 'does not exist.') if !Supervisor.exists?(supervisor_id)
   end

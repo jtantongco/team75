@@ -1,10 +1,19 @@
 p.flash_message {
 	color: green;
+	border: 1px solid green;
+	background: url('../images/message.png') no-repeat 10px center #ddffdd;
+	padding: 10px;
+	padding-left: 35px;
 }
 
-p.flash_error {
+p.flash_error, #errorExplanation {
 	color: red;
+	border: 1px solid red;
+	background: url('../images/error.png') no-repeat 10px 10px #ffdddd;
+	padding: 10px;
+	padding-left: 35px;
 }
+
 #UbcMainContent form ul {
 	list-style-type: none;
 	margin-left: 0;
@@ -40,16 +49,8 @@ p.flash_error {
 .fieldWithErrors {
 	padding-top: 2px;
 	padding-bottom: 2px;
-	background-color: #FF7C7C;
-}
-
-#errorExplanation {
-	width: 400px;
-	border: 2px solid red;
-	padding: 7px;
-	padding-bottom: 12px;
-	margin-bottom: 20px;
-	background-color: #f0f0f0;
+	background-color: #ffdddd;
+	color: red;
 }
 
 #errorExplanation h2 {
@@ -58,14 +59,12 @@ p.flash_error {
 	padding: 5px 5px 5px 15px;
 	font-size: 12px;
 	margin: -7px;
-	background-color: #c00;
-	color: #fff;
+	color: #000;
 }
 
 #errorExplanation p {
 	color: #333;
 	margin-bottom: 0;
-	padding: 5px;
 }
 
 #errorExplanation ul, form #errorExplanation ul {
