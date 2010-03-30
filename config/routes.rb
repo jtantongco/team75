@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :group_reports
+
   map.resources :rewards
 
   map.resources :rewards

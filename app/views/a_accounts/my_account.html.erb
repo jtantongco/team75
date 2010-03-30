@@ -1,11 +1,12 @@
 <h1>Administrator Account Info</h1> 
-<% if flash[:message] %>
-	<p class="flash_message"><%=flash[:message]%></p>
-<% end %>
+
 
 <% administrator = getAdministrator %>
 <p>Welcome <%= administrator.name %>!</p>
 <p>You have successfully logged in. </p>
 <br>
+
+
+<b><p><%= link_to 'View Statistics', :controller => :data_reports, :action => :index %></p></b>
 
 <b><p><%= link_to 'Logout', :action => 'logout' %></p></b>

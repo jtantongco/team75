@@ -32,5 +32,18 @@ class Emailer < ActionMailer::Base
     from  "iForgotPass@gmail.com"
     sent_on  sent_at
   end
+  
+  def rejection_notification (recipient, dat, pro, sup, hr, td, cm, sent_at = Time.now)
+  	subject  "Supervisor Account - Rejection Notification"
+    recipients  recipient
+    from  "iForgotPass@gmail.com"
+    sent_on  sent_at
+    body['date'] = dat
+  	body['p_id'] = pro
+  	body['s_id'] = sup
+  	body['hours'] = hr
+  	body['task_description'] = td
+  	body['comm'] = cm
+  end
 	
 end
