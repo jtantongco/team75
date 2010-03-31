@@ -1,0 +1,24 @@
+<h1>New group_profile</h1>
+
+<% form_for(@group_profile) do |f| %>
+  <%= f.error_messages %>
+
+
+  <p>
+    <%= f.label :Name %><br />
+    <%= f.text_field :Name %>
+  </p>
+  <p>
+    <%= f.label :NumberOfParticipants %><br />
+    <%= f.text_field :NumberOfParticipants %>
+  </p>
+  <p>
+    <%= f.label :s_id %><br />
+    <%= f.text_field :s_id %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', group_profiles_path %>

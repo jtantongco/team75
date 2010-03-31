@@ -1,0 +1,23 @@
+<p>
+  <b>Gid:</b>
+  <%=h @group_profile.Gid %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%=h @group_profile.Name %>
+</p>
+
+<p>
+  <b>Numberofparticipants:</b>
+  <%=h @group_profile.NumberOfParticipants %>
+</p>
+
+<p>
+  <b>Vsid:</b>
+  <%=h @group_profile.s_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_group_profile_path(@group_profile) %> |
+<%= link_to 'Back', group_profiles_path %>
