@@ -1,0 +1,73 @@
+<h1>Self-Report Edit</h1> 
+<br />
+<br />
+<br />
+<hr>
+<h3>Original Report:</h3>
+<br />
+
+<b>Volunteer Name: </b><%= @temp_reports.volunteer.name %>
+<br />
+<b>Project Name: </b><%= @temp_reports.project.name %>
+<br />
+<b>Supervisor Name: </b><%= @temp_reports.supervisor.name %>
+<br />
+<b>Date: </b><%= @temp_reports.date %>
+<br />
+<b>Start Time: </b><%= @temp_reports.start_time %>
+<br />
+<b>End Time: </b><%= @temp_reports.end_time %>
+<br />
+<b>Task Description: </b><%= @temp_reports.task_description %>
+<br />
+
+<br />
+
+<hr>
+<br />
+<br />
+<% form_tag do -%>
+	<% fields_for @temp_reports, :url => { :action => :edit_reports } do |d| %>
+
+<ul>
+			<li>
+				<%=d.label :volunteer_id, "Volunteer: <span class=\"mandatory\">*</span>"%>
+				<%=d.collection_select :volunteer_id, Volunteer.find(:all, :order => :first_name), :id, :name %>
+			
+			</li>
+            <li>
+				<%=d.label :project_id, "Project: <span class=\"mandatory\">*</span>"%>
+				<%=d.collection_select :project_id, Project.find(:all, :order => :name), :id, :name %>
+		    </li>
+		    <li>
+				<%=d.label :supervisor_id, "Supervisor: <span class=\"mandatory\">*</span>"%>
+				<%=d.collection_select :supervisor_id, Supervisor.find(:all, :order => :name), :id, :name %>
+			</li>
+			<li>
+				<%=d.label :date, "Date: <span class=\"mandatory\">*</span>"%>
+				<%=d.date_select :date, :default => Date.today %>
+			</li>
+			<li>
+				<%=d.label :start_time, "Start time: <span class=\"mandatory\">*</span>"%>
+				<%=d.time_select :start_time, :default => Time.now - 1.hour, :minute_step => 15 %>
+			</li>
+			<li>
+				<%=d.label :end_time, "End time: <span class=\"mandatory\">*</span>"%>
+				<%=d.time_select :end_time, :default => Time.now, :minute_step => 15 %>
+			</li>
+			<li>
+				<%=d.label :task_description, "Task description: " %>
+				<%=d.text_area :task_description %>
+			</li>
+	
+</ul>
+
+
+
+	<% end %>
+
+<%= submit_tag "Update" %> 
+<% end -%>
+<br />
+<br />
+<%= link_to 'Back', :action => :verify_reports %>

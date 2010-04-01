@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  gr_id: 
+  g_id: 
+  p_id: 
+  start_time: 2010-03-29 15:36:50
+  end_time: 2010-03-29 15:36:50
+  date: 2010-03-29
+  task_description: MyText
+
+two:
+  gr_id: 
+  g_id: 
+  p_id: 
+  start_time: 2010-03-29 15:36:50
+  end_time: 2010-03-29 15:36:50
+  date: 2010-03-29
+  task_description: MyText

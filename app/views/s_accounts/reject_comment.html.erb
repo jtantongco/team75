@@ -1,0 +1,20 @@
+<h1>Reject Self-Report</h1> 
+<br /><br /><br />
+<p>
+
+<% form_tag do -%>
+<b>Comments: </b>
+
+<br></br> 
+(This comment will be sent to the volunteer)
+<br></br> 
+<br></br> 
+<%= text_area "tempo", "comment" %>
+
+<br></br>
+<%= submit_tag "Reject report & Send notification e-mail" %> 
+<% end -%>
+<br></br>
+<%= link_to "Back", :action => 'verify_reports' %>
+
+</p>

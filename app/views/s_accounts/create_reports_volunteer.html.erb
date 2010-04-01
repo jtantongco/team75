@@ -1,0 +1,51 @@
+<h1>Create Self-Report</h1> 
+<br />
+<br />
+<br />
+
+
+<% form_tag do -%>
+	<% fields_for @tempo_report, :url => { :action => :create_reports_volunteer } do |d| %>
+
+<ul>
+			<li>
+				<%=d.label :volunteer_id, "Volunteer: <span class=\"mandatory\">*</span>"%>
+				<%=d.collection_select :volunteer_id, Volunteer.find(:all, :order => :first_name), :id, :name %>
+			
+			</li>
+            <li>
+				<%=d.label :project_id, "Project: <span class=\"mandatory\">*</span>"%>
+				<%=d.collection_select :project_id, Project.find(:all, :order => :name), :id, :name %>
+		    </li>
+		    <li>
+				<%=d.label :supervisor_id, "Supervisor: <span class=\"mandatory\">*</span>"%>
+				<%=d.collection_select :supervisor_id, Supervisor.find(:all, :order => :name), :id, :name %>
+			</li>
+			<li>
+				<%=d.label :date, "Date: <span class=\"mandatory\">*</span>"%>
+				<%=d.date_select :date, :default => Date.today %>
+			</li>
+			<li>
+				<%=d.label :start_time, "Start time: <span class=\"mandatory\">*</span>"%>
+				<%=d.time_select :start_time, :default => Time.now - 1.hour, :minute_step => 15 %>
+			</li>
+			<li>
+				<%=d.label :end_time, "End time: <span class=\"mandatory\">*</span>"%>
+				<%=d.time_select :end_time, :default => Time.now, :minute_step => 15 %>
+			</li>
+			<li>
+				<%=d.label :task_description, "Task description: " %>
+				<%=d.text_area :task_description %>
+			</li>
+	
+</ul>
+
+
+
+	<% end %>
+
+<%= submit_tag "Create" %> 
+<% end -%>
+<br />
+<br />
+<%= link_to 'Back', :action => :my_account %>

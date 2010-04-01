@@ -1,0 +1,34 @@
+<h1>Listing group_reports</h1>
+
+<table>
+  <tr>
+    <th>Gr</th>
+    <th>G</th>
+    <th>P</th>
+    <th>S</th>
+    <th>Start time</th>
+    <th>End time</th>
+    <th>Date</th>
+    <th>Task description</th>
+  </tr>
+
+<% @group_reports.each do |group_report| %>
+  <tr>
+    <td><%=h group_report.gr_id %></td>
+    <td><%=h group_report.g_id %></td>
+    <td><%=h group_report.p_id %></td>
+    <td><%=h group_report.s_id %></td>
+    <td><%=h group_report.start_time %></td>
+    <td><%=h group_report.end_time %></td>
+    <td><%=h group_report.date %></td>
+    <td><%=h group_report.task_description %></td>
+    <td><%= link_to 'Show', group_report %></td>
+    <td><%= link_to 'Edit', edit_group_report_path(group_report) %></td>
+    <td><%= link_to 'Destroy', group_report, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New group_report', new_group_report_path %>

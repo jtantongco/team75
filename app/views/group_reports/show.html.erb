@@ -1,0 +1,43 @@
+<p>
+  <b>Gr:</b>
+  <%=h @group_report.gr_id %>
+</p>
+
+<p>
+  <b>G:</b>
+  <%=h @group_report.g_id %>
+</p>
+
+<p>
+  <b>P:</b>
+  <%=h @group_report.p_id %>
+</p>
+
+<p>
+  <b>S:</b>
+  <%=h @group_report.s_id %>
+</p>
+
+<p>
+  <b>Start time:</b>
+  <%=h @group_report.start_time %>
+</p>
+
+<p>
+  <b>End time:</b>
+  <%=h @group_report.end_time %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%=h @group_report.date %>
+</p>
+
+<p>
+  <b>Task description:</b>
+  <%=h @group_report.task_description %>
+</p>
+
+
+<%= link_to 'Edit', edit_group_report_path(@group_report) %> |
+<%= link_to 'Back', group_reports_path %>

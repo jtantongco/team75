@@ -1,0 +1,43 @@
+<h1>Verifying Self-Reports</h1> 
+
+
+
+
+
+
+
+
+
+<br>
+<table border="1">
+	<tr> 
+		<td width="5%"><p align="center"><i><b>Date</b></i></td> 
+		<td width="10%"><p align="center"><i><b>Volunteer</b></i></td>
+		<td width="10%"><p align="center"><i><b>Porject</b></i></td>
+		<td width="5%"><p align="center"><i><b>Hours</b></i></td>
+		<td width="60%"><p align="center"><i><b>Description</b></i></td>
+
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+<% @own_reports.each do |reports| %> 
+	<tr>
+
+		<td width="5%" align="center"><b><%= reports.date %></b></td> 
+		<td width="5%" align="center"><b><%= reports.volunteer.name %></b></td>
+		<td width="5%" align="center"><b><%= reports.project.name %> </b></td> 
+		<td width="15%" align="center"><b><%= reports.hours %> </b></td> 
+		<td width="15%" align="center"><b><%= reports.task_description %> </b></td> 
+
+		<td><%= link_to "Accept", {:action => :accept, :id => reports.r_id}, {:confirm => 'Are you sure you want to accept this hour report?'} %> </td>
+		<td><%= link_to "Edit", {:action => :edit_reports, :id => reports.r_id} %></td>
+		<td><%= link_to "Reject", {:action => :reject_comment, :id => reports.r_id} %></td>
+		
+    </tr>
+<% end %>
+</table>
+
+
+<b><p><%= link_to 'Accept All', {:action => :acceptall}, {:confirm => 'Are you sure you want to accept ALL the hour reports?'} %></p></b>
+<b><p><%= link_to 'Back', :action => 'my_account' %></p></b>

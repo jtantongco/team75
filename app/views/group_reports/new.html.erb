@@ -1,0 +1,43 @@
+<h1>New group_report</h1>
+
+<% form_for(@group_report) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :gr_id %><br />
+    <%= f.text_field :gr_id %>
+  </p>
+  <p>
+    <%= f.label :g_id %><br />
+    <%= f.text_field :g_id %>
+  </p>
+  <p>
+    <%= f.label :p_id %><br />
+    <%= f.text_field :p_id %>
+  </p>
+  <p>
+    <%= f.label :s_id %><br />
+    <%= f.text_field :s_id %>
+  </p>
+  <p>
+    <%= f.label :start_time %><br />
+    <%= f.datetime_select :start_time %>
+  </p>
+  <p>
+    <%= f.label :end_time %><br />
+    <%= f.datetime_select :end_time %>
+  </p>
+  <p>
+    <%= f.label :date %><br />
+    <%= f.date_select :date %>
+  </p>
+  <p>
+    <%= f.label :task_description %><br />
+    <%= f.text_area :task_description %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', group_reports_path %>
