@@ -1,4 +1,4 @@
-<% if flash[:message] %><p class="flash_message"><%=flash[:message]%></p><% end %>
+<% if flash[:success] %><p class="flash_success"><%=flash[:success]%></p><% end %>
 
 <h1>Listing rewards for <%=@reward_profile.Name%></h1>
 <p>No. of rewards expected for this reward profile in db: <%=@rewards.count%></p>

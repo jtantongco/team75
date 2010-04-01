@@ -9,7 +9,7 @@ class GroupProfilesController < ApplicationController
     @group_profile = GroupProfile.new(params[:group_profile])
     if request.post?
       if @group_profile.save
-        flash[:message] = 'Group profile successfully created'
+        flash[:success] = 'Group profile successfully created'
         redirect_to :action => :index
       end
     end
@@ -19,7 +19,7 @@ class GroupProfilesController < ApplicationController
     @group_profile = GroupProfile.find(params[:id])
     if request.put?
       if @group_profile.update_attributes(params[:group_profile])
-        flash[:message] = 'Your changes have been saved'
+        flash[:success] = 'Your changes have been saved'
         redirect_to :action => :index
       end
     end
@@ -30,7 +30,7 @@ class GroupProfilesController < ApplicationController
     @group_profile.deleted = true
     @group_profile.save
 
-    flash[:message] = 'Group profile removed'
+    flash[:success] = 'Group profile removed'
     redirect_to :action => :index
   end
 end

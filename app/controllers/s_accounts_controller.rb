@@ -27,13 +27,12 @@ class SAccountsController < ApplicationController
   def my_account
     @supervisor = @s_user
 	  @own_reports = SelfReport.find(:all, :conditions => {:supervisor_id => session[:sid], :verified => false})
-  	flash.now[:message] = 'There are ' + @own_reports.count.to_s + ' unverified self-reports. 
-  	  Please verify them <a href="' + url_for(:action => :verify_reports) + '">here</a>.'
+  	flash.now[:info] = 'There are ' + @own_reports.count.to_s + ' unverified self-reports. Please verify them <a href="' + url_for(:action => :verify_reports) + '">here</a>.'
   end
   
   def logout
     reset_session
-    flash[:message] = 'Logged out.' 
+    flash[:success] = 'Logged out.' 
     redirect_to :action => 'login' 
   end
   

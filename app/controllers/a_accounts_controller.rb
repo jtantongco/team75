@@ -28,7 +28,7 @@ class AAccountsController < ApplicationController
   
   def logout
     reset_session
-    flash[:message] = 'Logged out.' 
+    flash[:success] = 'Logged out.' 
     redirect_to :action => 'login' 
   end
   

@@ -40,7 +40,7 @@ class AccountsController < ApplicationController
 
   def logout
     reset_session
-    flash[:message] = 'Logged out.' 
+    flash[:success] = 'Logged out.' 
     redirect_to :action => 'login' 
   end
 
@@ -52,7 +52,7 @@ class AccountsController < ApplicationController
       if params[:accept] == '1'
         @user.update_attribute(:contract_signed, true)
 
-        flash[:message] = 'You have successfully signed the Volunteer Contract.'
+        flash[:success] = 'You have successfully signed the Volunteer Contract.'
         redirect_to :action => :my_account
       else
         flash[:error] = 'You forgot to accept the contract.'
@@ -63,7 +63,7 @@ class AccountsController < ApplicationController
   def edit_account
     if request.put?
       if @user.update_attributes(params[:volunteer])
-        flash[:message] = 'Your account has been updated.'
+        flash[:success] = 'Your account has been updated.'
         redirect_to :action => :my_account
       else
         render :action => "edit_account"
@@ -79,7 +79,7 @@ class AccountsController < ApplicationController
       if @user.password == hash(old_password)
         if new_password.length > 0 && new_password == confirm_password
           @user.update_attribute("password", hash(new_password))
-          flash[:message] = 'Your password has been changed.'
+          flash[:success] = 'Your password has been changed.'
           redirect_to :action => :my_account
         else
           @user.errors.add "New password", "and confirmation password do not match."
@@ -94,13 +94,13 @@ class AccountsController < ApplicationController
     if request.post?
       user = Volunteer.find_by_email(params[:user][:email])
       if user == nil
-        flash[:message] = "Sorry we could not find an account associated with that email. Please register for an account first."
+        flash[:success] = "Sorry we could not find an account associated with that email. Please register for an account first."
       else
         new_pass = random_string(10)
         user.password = hash(new_pass)
         user.save
         Emailer.deliver_forgot_password(user.email, new_pass)
-        flash[:message] = "Your request has been received and an email will sent to you shortly.  If you do not find it in your inbox, please check your spam folders."
+        flash[:success] = "Your request has been received and an email will sent to you shortly.  If you do not find it in your inbox, please check your spam folders."
         redirect_to :action => :login
       end
     end
@@ -112,9 +112,9 @@ class AccountsController < ApplicationController
       if user != nil
         if !user.activated
           Emailer.deliver_confirm_email(user.email, user.activation_code)
-          flash[:message] = "Your request has been received and an email will be sent to you shortly."
+          flash[:success] = "Your request has been received and an email will be sent to you shortly."
         else
-          flash[:message] = "Your account has already been activated. Feel free to log in!"
+          flash[:success] = "Your account has already been activated. Feel free to log in!"
           redirect_to :action => :login
         end
       else
@@ -127,11 +127,11 @@ class AccountsController < ApplicationController
     if request.post? || params[:email] && params[:activation_code]
       user = Volunteer.find_by_email(params[:email])
       if user != nil && user.activated
-        flash[:message] = "Your account has already been activated."
+        flash[:success] = "Your account has already been activated."
         redirect_to :action => :login
       elsif user != nil && user.activation_code == params[:activation_code]
         user.update_attribute(:activated, true)
-        flash[:message] = "Your account has been successfully activated!  You may now log into your account."
+        flash[:success] = "Your account has been successfully activated!  You may now log into your account."
         redirect_to :action => :login
       else
         flash[:error] = "Sorry we could not activate your account.  Please make sure that you have entered your email and/or activation code correctly."
@@ -151,7 +151,7 @@ class AccountsController < ApplicationController
     end
 
     reset_session
-    flash[:message] = 'Your account has been deactivated.' 
+    flash[:success] = 'Your account has been deactivated.' 
     redirect_to :action => 'login' 
   end 
 
@@ -159,14 +159,14 @@ class AccountsController < ApplicationController
     if request.post?
       user = Volunteer.find_by_email(params[:user][:email])
       if user == nil
-        flash[:message] = "Sorry we could not find an account associated with that email.  Please check your typing."
+        flash[:success] = "Sorry we could not find an account associated with that email.  Please check your typing."
       elsif !user.active_status
         user.active_status = 1
         user.save
-        flash[:message] = "Your account has now been reactivated.  Please try logging in."
+        flash[:success] = "Your account has now been reactivated.  Please try logging in."
         redirect_to :action => :login
       else
-        flash[:message] = "Your account is currently active."
+        flash[:success] = "Your account is currently active."
       end
     end
   end

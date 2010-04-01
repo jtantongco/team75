@@ -1,8 +1,10 @@
 <%=render :partial => 'layouts/default_header' %>
 
 <h1><%=@page_heading%></h1>
-<% if flash[:error] %><p class="flash_error"><%=flash[:error]%></p><% end %>
-<% if flash[:message] %><p class="flash_message"><%=flash[:message]%></p><% end %>
+
+<% flash.each  do |key, msg| %>
+	<p class="flash_<%=key%>"><%=msg%></p>
+<% end %>
 
 <%= yield %>
 
