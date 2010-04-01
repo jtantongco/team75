@@ -1,26 +1,20 @@
-<h1>Listing group_profiles</h1>
+<%
+@page_title = 'Group profiles'
+@page_heading = 'Group profiles'
+%>
+<p><%= link_to 'Create group profile', :action => :new %></p>
 
 <table>
   <tr>
-    <th>Gid</th>
     <th>Name</th>
-    <th>Numberofparticipants</th>
-    <th>s_id</th>
+    <th></th>
+	<th></th>
   </tr>
-
 <% @group_profiles.each do |group_profile| %>
   <tr>
-    <td><%=h group_profile.Gid %></td>
-    <td><%=h group_profile.Name %></td>
-    <td><%=h group_profile.NumberOfParticipants %></td>
-    <td><%=h group_profile.s_id %></td>
-    <td><%= link_to 'Show', group_profile %></td>
-    <td><%= link_to 'Edit', edit_group_profile_path(group_profile) %></td>
-    <td><%= link_to 'Destroy', group_profile, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%=h group_profile.name %></td>
+    <td><%= link_to 'Edit',   :action => :edit, :id => group_profile.id %></td>
+    <td><%= link_to 'Delete', {:action => :delete, :id => group_profile.id}, {:confirm => 'Are you sure?'} %></td>
   </tr>
 <% end %>
 </table>
-
-<br />
-
-<%= link_to 'New group_profile', new_group_profile_path %>

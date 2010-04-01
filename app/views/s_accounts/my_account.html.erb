@@ -1,17 +1,15 @@
-<hr>
-<h1>Supervisor Account Info</h1> 
-
-
-<% supervisor = getSupervisor %>
-<p>Welcome <%= supervisor.name %>!</p>
+<%
+@page_title = 'Supervisor account info'
+@page_heading = 'Supervisor account info'
+%> 
+<p>Welcome <%= @supervisor.name %>!</p>
 <p>You have successfully logged in. </p>
-<br /><br /><br />
 <hr>
 <p>Create Report: &nbsp 
 <b><%= link_to 'for a Volunteer', :action => 'create_reports_volunteer' %></b>
 <br />
 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-<b><%= link_to 'for a Group', :action => 'create_reports_group' %></b></p>
+<b><%= link_to 'for a Group', :controller => :group_profiles, :action => :index %></b></p>
 
 <b><p><%= link_to 'Verify Self-Reports', :action => 'verify_reports' %></p></b>
 

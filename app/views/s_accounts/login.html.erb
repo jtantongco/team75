@@ -1,19 +1,11 @@
-<h1>Supervisor Account Login</h1>
-
-
-<br />
-<br />
-<p>
+<%
+@page_title = 'Supervisor login'
+@page_heading = 'Log in as supervisor'
+%>
 
 <% form_tag do -%>
-Username: <%= text_field "s_user", "login_name" %>&#x00A;
-<br />
-Password: &nbsp<%= password_field "s_user", "password" %>&#x00A;
-
-<%= submit_tag "Submit" %> 
+	<p>
+		Username: <%= text_field "s_user", "login_name" %>
+		Password: &nbsp<%= password_field "s_user", "password" %>
+		<%= submit_tag "Submit" %> </p>
 <% end -%>
-<br />
-<br />
-<br />
-<%= link_to "Back", :action => :index %>
-</p>

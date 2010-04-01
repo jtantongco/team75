@@ -9,24 +9,26 @@ class SAccountsController < ApplicationController
 
     if request.post?
       @s_user = Supervisor.find_by_login_name(params[:s_user][:login_name]) 
-    
+
+      if @s_user != nil
         if @s_user.password == params[:s_user][:password]
           session[:supervisor] = true
           session[:sid] = @s_user.s_id # Remember the user's id during this session 
           redirect_to :action => :my_account
         else
           flash[:error] = 'Invalid login.'
-          redirect_to :action => :login
         end
-  
+      else
+        flash[:error] = 'Invalid login.'
+      end
     end
   end 
 
   def my_account
-  #	@own_reports = SelfReport.all
-  #	@own_reports = SelfReport.find_by_supervisor_id([params[:sid]])
-	@own_reports = SelfReport.find(:all, :conditions => {:supervisor_id => session[:sid], :verified => false})
-  	flash[:message] = 'There are ' + @own_reports.count.to_s + ' unverified self-reports.'
+    @supervisor = @s_user
+	  @own_reports = SelfReport.find(:all, :conditions => {:supervisor_id => session[:sid], :verified => false})
+  	flash.now[:message] = 'There are ' + @own_reports.count.to_s + ' unverified self-reports. 
+  	  Please verify them <a href="' + url_for(:action => :verify_reports) + '">here</a>.'
   end
   
   def logout
