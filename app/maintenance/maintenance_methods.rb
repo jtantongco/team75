@@ -39,5 +39,20 @@ class MaintenanceMethods < ActiveRecord::Base
   	    	end
   	  }
    end
+   
+   def self.exportLegacy
+   	
+   		orientations = Orientation.all
+   		exportee = Array.new
+   		orientations.each{ |o|
+   		
+   			if o.end_time < Time.now
+   				exportee.push(o)
+   				o.destroy
+   			end
+   		}
+   		
+   		export(exportee)
+   end
 end
 
