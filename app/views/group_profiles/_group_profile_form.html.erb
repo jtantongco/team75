@@ -1,0 +1,17 @@
+<%
+# Partial for group profile form
+# Parameters: form_action, submit_text
+%>
+
+<% form_for @group_profile, :url => { :action => form_action } do |f| %>
+	<%= f.error_messages %>
+	<ul>
+		<li>
+			<%=f.label :name, 'Group name: <span class="mandatory">*</span>' %>
+			<%=f.text_field :name %>
+		</li>
+		<li>
+			<%= f.submit submit_text %>
+		</li>
+	</ul>
+<% end %>

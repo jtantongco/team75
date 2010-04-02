@@ -7,8 +7,8 @@ class SelfReportsController < ApplicationController
     if request.post?
       @report = @user.self_reports.build(params[:self_report])
       if @report.save
-        flash[:message] = 'Your hour report has been saved. It will be verified by the supervisor.'
-        flash[:message] += "<br />You have been automatically joined to the project \"#{@report.project.name}\"" if @user.join_project(@report.project)
+        flash[:success] = 'Your hour report has been saved. It will be verified by the supervisor.'
+        flash[:success] += "<br />You have been automatically joined to the project \"#{@report.project.name}\"" if @user.join_project(@report.project)
         redirect_to :action => :index
       end
     end
@@ -24,8 +24,8 @@ class SelfReportsController < ApplicationController
     
     if request.put? 
       if @report.update_attributes(params[:self_report])
-        flash[:message] = 'Your report has been updated.'    
-        flash[:message] += "<br />You have been automatically joined to the project \"#{@report.project.name}\"" if @user.join_project(@report.project)
+        flash[:success] = 'Your report has been updated.'    
+        flash[:success] += "<br />You have been automatically joined to the project \"#{@report.project.name}\"" if @user.join_project(@report.project)
         redirect_to :action => :index
       end
     end
@@ -58,7 +58,7 @@ class SelfReportsController < ApplicationController
 	  	  
 	  	if @volunteer != nil && @report != nil
 	  	  if @report.save
-		  	flash[:message] = 'Your hour report has been saved. It will be verified by the supervisor.'
+		  	flash[:success] = 'Your hour report has been saved. It will be verified by the supervisor.'
 		    redirect_to :action => :rapid_entry
 	      end
 	  	else

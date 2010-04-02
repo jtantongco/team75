@@ -30,9 +30,9 @@ class DataReportsController < ApplicationController
 	  	
 	  	file.close
 	  	
-	  	flash[:message] = "Volunteers report successfully generated"
+	  	flash[:success] = "Volunteers report successfully generated"
   	else
-  		flash[:message] = "No volunteers were found in the date range specified"
+  		flash[:success] = "No volunteers were found in the date range specified"
   	end
   	redirect_to :action =>  :index
 
@@ -62,7 +62,7 @@ class DataReportsController < ApplicationController
   			
   	}
   	file.close
-  	flash[:message] = "Projects report successfully generated"
+  	flash[:success] = "Projects report successfully generated"
   	redirect_to :action => :index
   end
   

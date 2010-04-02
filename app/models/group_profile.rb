@@ -1,6 +1,6 @@
 class GroupProfile < ActiveRecord::Base
-set_primary_key "Gid"
+  set_primary_key "g_id"
 
-validates_presence_of :Name, :NumberOfParticipants, :s_id
-#note check that there is such a supervisor id available.
+  validates_presence_of :name, :no_of_participants
+  validates_numericality_of :no_of_participants
 end

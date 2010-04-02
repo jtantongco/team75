@@ -71,7 +71,7 @@ class VolunteersController < ApplicationController
           @volunteer.projects << project if project
         end
         
-        flash[:message] = "Your account has been successfully created! We have sent an email to you with instructions on how to verify your account registration."
+        flash[:success] = "Your account has been successfully created! We have sent an email to you with instructions on how to verify your account registration."
         format.html { redirect_to :controller => 'accounts', :action => 'verify' }
         format.xml  { render :xml => @volunteer, :status => :created, :location => @volunteer }
       else

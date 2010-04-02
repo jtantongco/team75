@@ -22,7 +22,7 @@ class ProjectsController < ApplicationController
       @project_feedback = @project.project_feedbacks.new(params[:project_feedback])
       @project_feedback.volunteer_id = @user.id
       if @project_feedback.save
-        flash[:message] = "Thank you for your feedback!"
+        flash[:success] = "Thank you for your feedback!"
         redirect_to :action => :index
       end
     end
@@ -66,9 +66,9 @@ class ProjectsController < ApplicationController
     user = Volunteer.find_by_v_id(session[:id])
 
     if user.join_project(project)
-      flash[:message] = 'Successfully joined '+project.name+'!'
+      flash[:success] = 'Successfully joined '+project.name+'!'
     else
-      flash[:message] = 'Error: Could not join the project! Maybe you have already joined it?'
+      flash[:success] = 'Error: Could not join the project! Maybe you have already joined it?'
     end
     redirect_to :action => :join_projects
   end
@@ -77,7 +77,7 @@ class ProjectsController < ApplicationController
     user = Volunteer.find_by_v_id(session[:id])
     user.projects.delete(Project.find_by_p_id(params[:p_id]))
 
-    flash[:message] = 'Removed '+ params[:name]
+    flash[:success] = 'Removed '+ params[:name]
     redirect_to :action => :index
   end
 
