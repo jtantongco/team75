@@ -3,10 +3,6 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :rewards
 
-  map.resources :rewards
-
-  map.resources :rewards
-
   map.resources :reward_profiles
 
 

@@ -45,7 +45,7 @@ class DataReportsController < ApplicationController
   	
   	@projects.each{ |p|
   	
-  		@self_reports = SelfReport.find(:all, :conditions => { :project_id => p.p_id })
+  		@self_reports = SelfReport.find(:all, :conditions => { :project_id => p.p_id, :verified => true })
   	    time_total = 0
   	    @self_reports.each{ |r| time_total = time_total + (r.end_time - r.start_time) }
   		time_total = time_total.to_f / 3600

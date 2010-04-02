@@ -1,0 +1,15 @@
+Greetings!
+
+As of <%= @sent_at %>, you have <%= @sr.length %> unverified self reports!
+<% time = @sent_at.month.to_s+"/"+@sent_at.day.to_s+"/"+@sent_at.year.to_s %>
+Volunteer Name ----- Project Name ----- Date ----- Hours
+
+<% @sr.each do |sr| %><% vol = Volunteer.find_by_v_id( sr.volunteer_id ) %><% proj = Project.find_by_p_id( sr.project_id ) %> <% if vol && proj %> <%= vol.first_name+" "+vol.last_name %> ----- <%= proj.name %> ----- <%= sr.start_time.day.to_s+"/"+sr.start_time.month.to_s+"/"+sr.start_time.year.to_s %> ----- <%= (sr.end_time - sr.start_time).to_f/3600 %> <% end %>
+<% end %>
+
+Please login to your account and verify these hours!
+
+Or you can click on the following link to verify ALL hours:
+<%= @link+time %>
+
+Cheers!
