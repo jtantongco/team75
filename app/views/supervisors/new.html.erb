@@ -1,0 +1,38 @@
+<h1>New supervisor</h1>
+
+<% form_for(@supervisor) do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :login_name %><br />
+    <%= f.text_field :login_name %>
+  </p>
+  <p>
+    <%= f.label :password %><br />
+    <%= f.text_field :password %>
+    <%= f.label :password_confirmation %><br />
+    <%= f.text_field :password_confirmation %> 
+    <p>
+  <p>
+    <%= f.label :address %><br />
+    <%= f.text_field :address %>
+  </p>
+  <p>
+    <%= f.label :phone_num %><br />
+    <%= f.text_field :phone_num %>
+  </p>
+  <p>
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+    <%= f.label :email_confirmation %><br />
+    <%= f.text_field :email_confirmation %> 
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', supervisors_path %>

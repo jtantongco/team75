@@ -1,0 +1,32 @@
+<h1>Listing supervisors</h1>
+
+<table>
+  <tr>
+    <th>S</th>
+    <th>Name</th>
+    <th>Login name</th>
+    <th>Password</th>
+    <th>Address</th>
+    <th>Phone num</th>
+    <th>Email</th>
+  </tr>
+
+<% @supervisors.each do |supervisor| %>
+  <tr>
+    <td><%=h supervisor.s_id %></td>
+    <td><%=h supervisor.name %></td>
+    <td><%=h supervisor.login_name %></td>
+    <td><%=h supervisor.password %></td>
+    <td><%=h supervisor.address %></td>
+    <td><%=h supervisor.phone_num %></td>
+    <td><%=h supervisor.email %></td>
+    <td><%= link_to 'Show', supervisor %></td>
+    <td><%= link_to 'Edit', edit_supervisor_path(supervisor) %></td>
+    <td><%= link_to 'Destroy', supervisor, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New supervisor', new_supervisor_path %>

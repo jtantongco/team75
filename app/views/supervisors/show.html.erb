@@ -1,0 +1,39 @@
+<p>
+  <b>S:</b>
+  <%=h @supervisor.s_id %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%=h @supervisor.name %>
+</p>
+
+<p>
+  <b>Login name:</b>
+  <%=h @supervisor.login_name %>
+</p>
+
+<p>
+  <b>Password:</b>
+  <%=h @supervisor.password %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%=h @supervisor.address %>
+</p>
+
+<p>
+  <b>Phone num:</b>
+  <%=h @supervisor.phone_num %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%=h @supervisor.email %>
+</p>
+
+
+
+<%= link_to 'Edit', edit_supervisor_path(@supervisor) %> |
+<%= link_to 'Back', supervisors_path %>

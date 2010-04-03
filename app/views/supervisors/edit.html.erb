@@ -1,0 +1,40 @@
+<h1>Editing supervisor</h1>
+
+<% form_for(@supervisor) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :s_id %><br />
+    <%= f.text_field :s_id %>
+  </p>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :login_name %><br />
+    <%= f.text_field :login_name %>
+  </p>
+  <p>
+    <%= f.label :password %><br />
+    <%= f.text_field :password %>
+  </p>
+  <p>
+    <%= f.label :address %><br />
+    <%= f.text_field :address %>
+  </p>
+  <p>
+    <%= f.label :phone_num %><br />
+    <%= f.text_field :phone_num %>
+  </p>
+  <p>
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @supervisor %> |
+<%= link_to 'Back', supervisors_path %>
