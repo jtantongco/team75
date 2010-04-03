@@ -25,6 +25,16 @@ class Emailer < ActionMailer::Base
     from  "iForgotPass@gmail.com"
     sent_on  sent_at
   end
+  
+  def self_report_notification (recipient, hashEmail, selfReport, sent_at = Time.now)
+  	subject  "Supervisor Account - Weekly Unverified Self Reports"
+    recipients  recipient
+    from  "iForgotPass@gmail.com"
+    sent_on  sent_at
+    body['sr'] = selfReport
+    body['sent_at'] = sent_at
+    body['link'] = 'http://localhost:3000/s_accounts/autoVerifySelfReport' + "?email=#{hashEmail}&time="
+  end
 
   def volunteer_deactivation_notification (recipient, sent_at = Time.now)
   	subject  "Volunteer Account - Deactivation notification"
@@ -45,5 +55,7 @@ class Emailer < ActionMailer::Base
   	body['task_description'] = td
   	body['comm'] = cm
   end
-	
+  
+
+  	
 end

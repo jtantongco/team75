@@ -1,3 +1,5 @@
+require 'Time.rb'
+
 class MaintenanceMethods < ActiveRecord::Base
   
    # This method sends emails to all the volunteers who have not signed their volunteer contracts
@@ -22,6 +24,35 @@ class MaintenanceMethods < ActiveRecord::Base
 	       Emailer.deliver_volunteer_deactivation_notification(v.email)
 	   end
        }
+   end
+   
+   def self.dispatchSelfReports
+   
+      supervisor = Supervisor.all
+      
+      supervisor.each { |s|
+      
+      	    selfReports = SelfReport.find(:all, :conditions => {:supervisor_id => s.s_id, :verified => false})
+      	    
+      	    if selfReports.length != 0
+      	    	Emailer.deliver_self_report_notification(s.email, Digest::SHA1.hexdigest(s.email), selfReports)
+  	    	end
+  	  }
+   end
+   
+   def self.exportLegacy
+   	
+   		orientations = Orientation.all
+   		exportee = Array.new
+   		orientations.each{ |o|
+   		
+   			if o.end_time < Time.now
+   				exportee.push(o)
+   				o.destroy
+   			end
+   		}
+   		
+   		export(exportee)
    end
 end
 

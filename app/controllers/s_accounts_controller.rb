@@ -1,5 +1,7 @@
+require 'app/maintenance/maintenance_methods.rb'
+
 class SAccountsController < ApplicationController
-	before_filter :login_required_s, :except => [:login, :index, :logout]
+	before_filter :login_required_s, :except => [:login, :index, :logout, :autoVerifySelfReport]
     
   @s_user = Supervisor.find_by_s_id(session[:sid]) if defined? session[:sid]    
     
@@ -142,7 +144,34 @@ class SAccountsController < ApplicationController
     end
   end
   
-  
+  def autoVerifySelfReport
+  	
+      ti = Time.parse( params[:time] )
+      Supervisor.all.each{ |s|
+      
+      	if Digest::SHA1.hexdigest(s.email) == params[:email]
+  			
+  			reports = Array.new
+  			sr = SelfReport.find(:all, :conditions => {:supervisor_id => s.s_id, :verified => false})
+  			
+  			sr.each { |sr|
+  				
+  				if sr.created_at < ti
+  					reports.push(sr)
+  				end
+  			}
+  			
+  			reports.each { |sr1|
+  				
+  				sr1.verified = true
+  				sr1.save
+  			}
+  		end
+      }
+      
+      flash[:message] = "All self reports created before #{params[:time]} have been verified!"
+      redirect_to :action => :login
+  end
   
   def create_reports_group
   	
