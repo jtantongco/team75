@@ -1,0 +1,39 @@
+<p>
+  <b>P:</b>
+  <%=h @project.p_id %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%=h @project.name %>
+</p>
+
+<p>
+  <b>Start date:</b>
+  <%=h @project.start_date %>
+</p>
+
+<p>
+  <b>End date:</b>
+  <%=h @project.end_date %>
+</p>
+
+<p>
+  <b>Status:</b>
+  # <%=h @project.status %>
+  
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @project.description %>
+</p>
+
+<p>
+  <b>Rewardprofile:</b>
+  <%=h @project.rewardprofile_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>
