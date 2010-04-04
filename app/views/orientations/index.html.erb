@@ -19,7 +19,7 @@
 		<%=h orientation.description %>
 	</td>
 	<td><%= link_to 'Show attendees', :action => :showAttendees, :id => orientation.o_id %></td>
-    <td><%= link_to 'Edit', :action => :edit %></td>
+    <td><%= link_to 'Edit', :action => :edit, :id => orientation.o_id %></td>
     <td><%= link_to 'Destroy', :confirm => 'Are you sure?', :action => :delete %></td>
   </tr>
 <% end %>

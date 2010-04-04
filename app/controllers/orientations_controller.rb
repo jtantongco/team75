@@ -71,13 +71,16 @@ class OrientationsController < ApplicationController
   # DELETE /orientations/1
   # DELETE /orientations/1.xml
   def destroy
-    @orientation = Orientation.find(params[:id])
-    @orientation.destroy
-
-    respond_to do |format|
-      format.html { redirect_to(orientations_url) }
-      format.xml  { head :ok }
-    end
+    if Orientation.exists?(:o_id => params[:id])
+    	@orientation = Orientation.find(params[:id])
+    	@sql = "DELETE FROM volunteers_orientations WHERE orientation_id = "+@orientation.o_id.to_s
+		ActiveRecord::Base.connection.execute(@sql)
+		@orientation.destroy
+		flash[:success] = 'Successfully destroyed orientation and all attendees for: '+@orientation.name+'.'
+	else 
+		flash[:error] = 'Orientation could not be found. Please try again or contact the System Administrator.'
+	end
+	redirect_to :action => :index
   end
 
   def v_orientations
@@ -141,7 +144,7 @@ class OrientationsController < ApplicationController
         flash[:success] = 'Successfully registered for ' + orientation.name + '!'
         redirect_to :action => :v_orientations
       else
-      	flash[:success] = 'Something went wrong when registering for the orientation.'
+      	flash[:error] = 'Something went wrong when registering for the orientation.'
         render :action => :v_register
      end
   end
@@ -175,13 +178,18 @@ class OrientationsController < ApplicationController
   end
 
   def s_confirmAttendance
-	@vo = VolunteersOrientation.find_by_orientation_id_and_volunteer_id(params[:o_id], params[:v_id])
-
-	@sql = "UPDATE volunteers_orientations SET attended = '1' WHERE volunteer_id = "+@vo.volunteer_id.to_s+" AND orientation_id = "+@vo.orientation_id.to_s
-	ActiveRecord::Base.connection.execute(@sql)
-
-	flash[:success] = params[:name] + ' has been marked as attended.'
-    redirect_to :action => :showAttendees, :id => @vo.orientation_id
+  	#if VolunteersOrientation.exists?(:orientation_id => params[:o_id] && :volunteer_id => params[:v_id])
+		@vo = VolunteersOrientation.find_by_orientation_id_and_volunteer_id(params[:o_id], params[:v_id])
+	
+		@sql = "UPDATE volunteers_orientations SET attended = '1' WHERE volunteer_id = "+@vo.volunteer_id.to_s+" AND orientation_id = "+@vo.orientation_id.to_s
+		ActiveRecord::Base.connection.execute(@sql)
+	
+		flash[:success] = params[:name] + ' has been marked as attended.'
+		redirect_to :action => :showAttendees, :id => @vo.orientation_id
+	#else
+	#	flash[:error] = 'System could not find that volunteer for that orientation. Please try again.'
+	#	redirect_to :action => index
+	#end
   end
   
    def s_cancelAttendance
