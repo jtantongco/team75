@@ -1,4 +1,4 @@
-<% if flash[:success] %><p class="flash_success"><%=flash[:success]%></p><% end %>
+<% if flash[:message] %><p class="flash_message"><%=flash[:message]%></p><% end %>
 
 <h1>Listing attendees for <%=@orientation.name%></h1>
 <p>No. of attendees expected for this orientation in db: <%=@attendees.count%></p>

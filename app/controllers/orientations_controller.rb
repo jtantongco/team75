@@ -43,7 +43,6 @@ class OrientationsController < ApplicationController
   # POST /orientations
   # POST /orientations.xml
   def create
-  	
     @orientation = Orientation.new(params[:orientation])
 
     if @orientation.save
@@ -70,19 +69,21 @@ class OrientationsController < ApplicationController
 
   # DELETE /orientations/1
   # DELETE /orientations/1.xml
+  # DELETE /orientations/1
+  # DELETE /orientations/1.xml
   def destroy
-    if Orientation.exists?(:o_id => params[:id])
-    	@orientation = Orientation.find(params[:id])
+    @orientation = Orientation.find(params[:id])
+    if @orientation != nil
     	@sql = "DELETE FROM volunteers_orientations WHERE orientation_id = "+@orientation.o_id.to_s
 		ActiveRecord::Base.connection.execute(@sql)
 		@orientation.destroy
-		flash[:success] = 'Successfully destroyed orientation and all attendees for: '+@orientation.name+'.'
+		flash[:success] = 'Successfully destroyed all attendees for '+@orientation.name+' as well as '+@orientation.name+'!'
 	else 
 		flash[:error] = 'Orientation could not be found. Please try again or contact the System Administrator.'
 	end
 	redirect_to :action => :index
   end
-
+  
   def v_orientations
     user = Volunteer.find_by_v_id(session[:id])
     if user != nil
@@ -141,22 +142,22 @@ class OrientationsController < ApplicationController
   	@orien_vol.attended = false
   	
   	if @orien_vol.save
-        flash[:success] = 'Successfully registered for ' + orientation.name + '!'
-        redirect_to :action => :v_orientations
+        flash[:message] = 'Successfully registered for '+orientation.name+'!'
+        redirect_to :action => :v_register
       else
-      	flash[:error] = 'Something went wrong when registering for the orientation.'
+      	flash[:message] = 'Something went wrong with the v_add_orientation method :('
         render :action => :v_register
      end
   end
   
-  def v_cancel
+  def v_cancle
   	
   	@vo = VolunteersOrientation.find_by_orientation_id_and_volunteer_id(params[:o_id], params[:v_id])
 
 	@sql = "DELETE FROM volunteers_orientations WHERE volunteer_id = "+@vo.volunteer_id.to_s+" AND orientation_id = "+@vo.orientation_id.to_s
 	ActiveRecord::Base.connection.execute(@sql)
 
-	flash[:success] = 'Removed '+ params[:name]
+	flash[:message] = 'Removed '+ params[:name]
     redirect_to :action => :v_orientations
   end
 
@@ -178,18 +179,13 @@ class OrientationsController < ApplicationController
   end
 
   def s_confirmAttendance
-  	#if VolunteersOrientation.exists?(:orientation_id => params[:o_id] && :volunteer_id => params[:v_id])
-		@vo = VolunteersOrientation.find_by_orientation_id_and_volunteer_id(params[:o_id], params[:v_id])
-	
-		@sql = "UPDATE volunteers_orientations SET attended = '1' WHERE volunteer_id = "+@vo.volunteer_id.to_s+" AND orientation_id = "+@vo.orientation_id.to_s
-		ActiveRecord::Base.connection.execute(@sql)
-	
-		flash[:success] = params[:name] + ' has been marked as attended.'
-		redirect_to :action => :showAttendees, :id => @vo.orientation_id
-	#else
-	#	flash[:error] = 'System could not find that volunteer for that orientation. Please try again.'
-	#	redirect_to :action => index
-	#end
+	@vo = VolunteersOrientation.find_by_orientation_id_and_volunteer_id(params[:o_id], params[:v_id])
+
+	@sql = "UPDATE volunteers_orientations SET attended = '1' WHERE volunteer_id = "+@vo.volunteer_id.to_s+" AND orientation_id = "+@vo.orientation_id.to_s
+	ActiveRecord::Base.connection.execute(@sql)
+
+	flash[:message] = params[:name] + ' has been marked as attended.'
+    redirect_to :action => :showAttendees, :id => @vo.orientation_id
   end
   
    def s_cancelAttendance
@@ -199,7 +195,7 @@ class OrientationsController < ApplicationController
 	@sql = "DELETE FROM volunteers_orientations WHERE volunteer_id = "+@vo.volunteer_id.to_s+" AND orientation_id = "+@vo.orientation_id.to_s
 	ActiveRecord::Base.connection.execute(@sql)
 
-	flash[:success] = 'Removed '+ params[:name]
+	flash[:message] = 'Removed '+ params[:name]
 	redirect_to :action => :showAttendees, :id => params[:o_id]
   end
   
